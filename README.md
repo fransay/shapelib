@@ -1,2 +1,2 @@
-# geom-go
+# katachi
 geometrical functions for scientific computation
