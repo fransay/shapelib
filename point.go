@@ -5,7 +5,6 @@ an exact location in space.
 */
 package siffa  
 
-import "wkt.go"
 
 // Create point type 
 type Point struct{ 
@@ -30,9 +29,4 @@ func Width(point Point) float64{
 
 func Centriod(point Point) float64{
 	return 0.0
-}
-
-// returns the dimensions of a point in a well known text representation format.
-func Dim(point Point){
-	return wkt.Pointstruct2wkt(point)
 }
