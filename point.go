@@ -24,7 +24,7 @@ func length(point Point) float64{
 }
 
 // A point has no width 
-func width(point Point) float64{
+func Width(point Point) float64{
 	return 0.0
 }
 
@@ -32,7 +32,7 @@ func Centriod(point Point) float64{
 	return 0.0
 }
 
-// returns the dimensions of a point in a well known text format.
+// returns the dimensions of a point in a well known text representation format.
 func Dim(point Point){
-
+	return wkt.Pointstruct2wkt(point)
 }
