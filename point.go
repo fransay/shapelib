@@ -13,20 +13,20 @@ type Point struct{
 }
 
 // A point has no size
-func Size(point Point) float64{
+func (*Point) Size(point Point) float64{
 	return 0.0
 }
 
 // A point has no length 
-func length(point Point) float64{
+func (*Point) length(point Point) float64{
 	return 0.0
 }
 
 // A point has no width 
-func Width(point Point) float64{
+func (*Point) Width(point Point) float64{
 	return 0.0
 }
-
-func Centriod(point Point) float64{
+// A Point has no centriod
+func (*Point) Centriod(point Point) float64{
 	return 0.0
 }
