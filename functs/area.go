@@ -1,5 +1,5 @@
-// Package functs provide basic functions for geometric
-// related problems
+// Package functs provide basic functions for geometric related usage
+
 
 package functs
 
@@ -15,7 +15,6 @@ import "math"
 func AreaOfTriangle(base, height float64) (area float64) {
 	area = base * height
 	return area
-
 }
 
 // AreaOfTriangleSide represent computation of area
@@ -48,21 +47,33 @@ func AreaOfRectangle(length float64) (area float64) {
 	area = length * length
 	return area
 }
-
+// Area of a parallelogram
 func AreaOfParallelogram(base, height float64) (area float64){
 	area = base * height
 	return area
 }
-
-func AreaOfKite(){
-
+// Area of a kite
+// function arguments are the two diagonals in a kite
+func AreaOfKite(diag1, diag2 float64) (area float){
+	area = (diag1 + diag2) / 2
+	return area
 }
-
+// Area of a rhombus 
 func AreaOfRhombus(){
 	
 }
-
-func AreaOf(){
+// Area of a trapezoid
+func AreaOfTrapezoid(){
 	
 }
 // Figures with 5 sides
+
+
+// Figures with non-straight sides
+// Area of a circle
+func AreaOfCircle(radius float64){
+	const pi float64 = 22/7
+	return radius * radius * pi
+
+}
+
