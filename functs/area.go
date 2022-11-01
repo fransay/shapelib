@@ -5,7 +5,7 @@ package functs
 
 import "math"
 
-// 2D figures
+// 2D OR Plane figures
 
 // Area of a triangle
 
@@ -32,11 +32,12 @@ func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
 // using the angle properties of the triangle
 // angle described must be opposite to side3 of the triangle
 func AreaOfTriangleAngle(side1, side2 , angle float64) (area float64) {
-	area = (side1 * side2)
-
+	area = (side1 * side2) * math.Sin(angle) /2 
+	return area
 
 }
 
+// Figures with four sides , aka quadilaterals
 // Area of a square  
 func AreaOfSquare(length float64) (area float64) {
 	area = length * length
@@ -48,4 +49,20 @@ func AreaOfRectangle(length float64) (area float64) {
 	return area
 }
 
+func AreaOfParallelogram(base, height float64) (area float64){
+	area = base * height
+	return area
+}
 
+func AreaOfKite(){
+
+}
+
+func AreaOfRhombus(){
+	
+}
+
+func AreaOf(){
+	
+}
+// Figures with 5 sides
