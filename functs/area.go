@@ -4,7 +4,7 @@ package functs
 
 import "math"
 
-// 2D OR Plane figures
+// Plane figures | 2D
 
 // Area of a triangle
 
@@ -62,8 +62,11 @@ func AreaOfKite(diag1, diag2 float64) (area float64) {
 }
 
 // Area of a rhombus
-func AreaOfRhombus() {
-
+// func arguments are the two diagonals of the rhombus
+// area algo same as kite
+func AreaOfRhombus(diag1, diag2 float64) (area float64) {
+	area = AreaOfKite(diag1, diag2)
+	return area
 }
 
 // Area of a trapezoid
@@ -72,6 +75,10 @@ func AreaOfTrapezoid() {
 }
 
 // Figures with 5 sides
+
+func AreaOfPentagon()
+
+// figures with 6 sides
 
 // Figures with non-straight sides
 // Area of a circle
