@@ -1,4 +1,4 @@
-// Package functs provide basic functions for geometric related usage
+// Package functs provide standalone functions for geometric related usage
 
 package functs
 
