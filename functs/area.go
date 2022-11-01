@@ -30,11 +30,22 @@ func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
 
 // AreaOfTriangleL represents computation of area
 // using the angle properties of the triangle
-func AreaOfTriangleAngle() {
+// angle described must be opposite to side3 of the triangle
+func AreaOfTriangleAngle(side1, side2 , angle float64) (area float64) {
+	area = (side1 * side2)
+
 
 }
 
+// Area of a square  
 func AreaOfSquare(length float64) (area float64) {
 	area = length * length
-	return
+	return area
 }
+// Area of a rectangle
+func AreaOfRectangle(length float64) (area float64) {
+	area = length * length
+	return area
+}
+
+
