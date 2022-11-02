@@ -1,4 +1,4 @@
-// spells us two dimensional types
+// spells us two dimensional types and their respective methods
 package types
 
 // type of a Point
