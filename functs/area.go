@@ -9,7 +9,6 @@ import "math"
 
 // AreaOfTriangle represent computation of area
 // using the base and height properties of the triangle
-
 func AreaOfTriangle(base, height float64) (area float64) {
 	area = base * height
 	return area
@@ -86,7 +85,9 @@ func AreaOfRPentagon(length float64) (area float64) {
 // Figures with 6 sides
 // AreaOfRHexagon returns the area of a regular Hexagon
 // R in the midst of AreaOfRHexagon represents regular
-func AreaOfRHexagon() {
+func AreaOfRHexagon(side float64) (area float64) {
+	area = (3 / 2) * math.Sqrt(3) * math.Pow(side, 2)
+	return area
 
 }
 
@@ -100,12 +101,14 @@ func AreaOfCircle(radius float64) (area float64) {
 }
 
 // Area of a semi circle
+// 1/2 the area of full circle ~ area of a semi circle
 func AreaOfSemiCircle(radius float64) (area float64) {
 	area = 0.5 * AreaOfCircle(radius)
 	return area
 }
 
 // Area of an oval
-func AreaOfOval() {
-
+func AreaOfOval(semiMajorAxis float64, semiMinorAxis float64) (area float64) {
+	area = math.Pi * semiMajorAxis * semiMajorAxis
+	return area
 }
