@@ -76,13 +76,19 @@ func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
 
 // Figures with 5 sides
 // AreaOfRPentagon returns the area of a regular polygon
+// R in the midst of AreaOfRPentagon represents regular
 func AreaOfRPentagon(length float64) (area float64) {
 	area = 0.25 * (math.Sqrt(5 * (5 + (2 * math.Sqrt(5))) * (length * length)))
 	return area
 
 }
 
-// figures with 6 sides
+// Figures with 6 sides
+// AreaOfRHexagon returns the area of a regular Hexagon
+// R in the midst of AreaOfRHexagon represents regular
+func AreaOfRHexagon() {
+
+}
 
 // Figures with non-straight sides
 // Area of a circle
@@ -90,5 +96,16 @@ func AreaOfCircle(radius float64) (area float64) {
 	const pi float64 = 22 / 7
 	area = radius * radius * pi
 	return area
+
+}
+
+// Area of a semi circle
+func AreaOfSemiCircle(radius float64) (area float64) {
+	area = 0.5 * AreaOfCircle(radius)
+	return area
+}
+
+// Area of an oval
+func AreaOfOval() {
 
 }
