@@ -5,7 +5,6 @@ package functs
 import "math"
 
 // Plane figures | 2D
-
 // Area of a triangle
 
 // AreaOfTriangle represent computation of area
@@ -70,13 +69,18 @@ func AreaOfRhombus(diag1, diag2 float64) (area float64) {
 }
 
 // Area of a trapezoid
-func AreaOfTrapezoid() {
-
+func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
+	area = 0.5 * (side1 + side2) * height
+	return area
 }
 
 // Figures with 5 sides
+// AreaOfRPentagon returns the area of a regular polygon
+func AreaOfRPentagon(length float64) (area float64) {
+	area = 0.25 * (math.Sqrt(5 * (5 + (2 * math.Sqrt(5))) * (length * length)))
+	return area
 
-func AreaOfPentagon()
+}
 
 // figures with 6 sides
 
