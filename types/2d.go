@@ -27,3 +27,8 @@ type Rectangle struct {
 }
 
 // type of parallelogram
+type Parallelogram struct {
+	base   float64
+	side   float64
+	height float64
+}
