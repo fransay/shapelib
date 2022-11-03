@@ -12,7 +12,7 @@ type LineSegment struct {
 	PointB Point
 }
 
-// culidean distance of a line segment
+// eculidean distance of a line segment
 func (l *LineSegment) Distance() (dist float64) {
 	deltaX := l.PointB.X - l.PointB.X
 	deltaY := l.PointB.Y - l.PointB.Y
