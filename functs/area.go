@@ -93,7 +93,8 @@ func AreaOfRHexagon(side float64) (area float64) {
 
 // AreaOfRHeptagon :returns the area of a regular heptagon
 func AreaOfRHeptagon(side float64) (area float64) {
-	area = 3.634 * side * side
+	const apothem float64 = 3.634
+	area = apothem * side * side
 	return area
 }
 
