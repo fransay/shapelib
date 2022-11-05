@@ -38,7 +38,7 @@ func PerimOfRParallelogram(northSide, westSide float64) (perim float64) {
 // Perimeter of a regular Kite
 
 func PerimOfRKite(shortDiag, longDiag float64) (perim float64) {
-	perim = (shortDiag * 2) * (longDiag * 2)
+	perim = (shortDiag * 2) + (longDiag * 2)
 	return perim
 
 }
