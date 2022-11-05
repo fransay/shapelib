@@ -16,23 +16,29 @@ func PerimOfRTriangle(sideA, sideB, sideC float64) (perim float64) {
 
 // PerimOfRSquare : perimeter of a regular square
 func PerimOfRSquare(side float64) (perim float64) {
-	perim = side * side
+	perim = side * 4
 	return perim
 }
 
 // Perimeter of a regular rectangle
 
 func PerimOfRRectangle(sideLength, sideWidth float64) (perim float64) {
-	perim = (sideWidth * 2) * (sideLength * 2)
+	perim = (sideWidth * 2) + (sideLength * 2)
 	return perim
 }
 
 // Perimeter of a regular parallelogram
 
 func PerimOfRParallelogram(northSide, westSide float64) (perim float64) {
-	perim = (northSide * 2) * (westSide * 2)
+	perim = (northSide * 2) + (westSide * 2)
 	return perim
 
 }
 
-// Perimeter
+// Perimeter of a regular Kite
+
+func PerimOfRKite(shortDiag, longDiag float64) (perim float64) {
+	perim = (shortDiag * 2) * (longDiag * 2)
+	return perim
+
+}

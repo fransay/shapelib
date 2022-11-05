@@ -25,7 +25,7 @@ func (l *LineSegment) MidPoint() Point {
 
 }
 
-// Bearing :bearing of the line segment in space
+// Bearing :bearing of the line segment in a vector space
 func (l *LineSegment) Bearing() (bear float64) {
 	deltaX := l.PointB.X - l.PointB.X
 	deltaY := l.PointB.Y - l.PointB.Y
