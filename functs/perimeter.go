@@ -42,3 +42,18 @@ func PerimOfRKite(shortDiag, longDiag float64) (perim float64) {
 	return perim
 
 }
+
+// Perimeter of a regular Rhombus
+
+func PerimOfRRhombus(side float64) (perim float64) {
+	perim = side * 4
+	return perim
+}
+
+// Perimeter of regular trapezoid
+// A trapezoid has unequal sides
+
+func PerimOfRTrapezoid(side1, side2, side3, side4 float64) (perim float64) {
+	perim = side1 + side2 + side3 + side4
+	return perim
+}
