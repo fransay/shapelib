@@ -50,10 +50,31 @@ func PerimOfRRhombus(side float64) (perim float64) {
 	return perim
 }
 
-// Perimeter of regular trapezoid
+// Perimeter of Trapezoid
 // A trapezoid has unequal sides
 
 func PerimOfRTrapezoid(side1, side2, side3, side4 float64) (perim float64) {
 	perim = side1 + side2 + side3 + side4
+	return perim
+}
+
+// Perimeter of regular Pentagon 
+func PerimOfRPentagon(side float64)(perim float64){
+	perim = side * 5 
+	return perim
+
+}
+
+
+// Perimeter of a regular Hexagon 
+func PerimOfRHexagon(side float64)(perim float64){
+	perim = side * 6
+	return perim
+}
+
+// Perimeter of a regular Heptagon 
+
+func PerimOfRHeptagon(side float64)(perim float64){
+	perim = side * 7
 	return perim
 }

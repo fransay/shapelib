@@ -10,7 +10,7 @@ import "math"
 // AreaOfTriangle :represent computation of area
 // using the base and height properties of the triangle
 func AreaOfTriangle(base, height float64) (area float64) {
-	area = base * height
+	area = 0.5 * base * height
 	return area
 }
 
