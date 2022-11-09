@@ -105,6 +105,13 @@ func AreaOfRHexagon(side float64) (area float64) {
 
 }
 
+// AreaOfIHexagon : return the area of irregular hexagon
+// I in the midst of AreaOfRIPentagon represents irregular
+// Given the coordinates
+func AreaOfIHexagon(cords ...Point) (area float64) {
+	return AreaC(cords)
+}
+
 // AreaOfRHeptagon :returns the area of a regular heptagon
 func AreaOfRHeptagon(side float64) (area float64) {
 	const apothem float64 = 3.634
