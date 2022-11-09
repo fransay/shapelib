@@ -5,17 +5,17 @@ package functs
 import "math"
 
 // Plane figures | 2D
-// Area of a triangle
+// Area of triangle
 
-// AreaOfTriangle :represent computation of area
-// using the base and height properties of the triangle
-func AreaOfTriangle(base, height float64) (area float64) {
+// AreaOfTriangle :returns the results of area of a triangle
+// given the base and height quantities of the triangle
+func AreaOfTriangleBH(base, height float64) (area float64) {
 	area = 0.5 * base * height
 	return area
 }
 
-// AreaOfTriangleSide :represent computation of area
-// using the length properties of the triangle
+// AreaOfTriangleSide :returns the results of area of a triangle
+// given the length quantity of the triangle
 func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
 	averageSides := (side1 + side2 + side3) / 3
 	area = math.Sqrt(averageSides * (averageSides - side1) * (averageSides - side2) *
@@ -24,66 +24,80 @@ func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
 
 }
 
-// AreaOfTriangleAngle :AreaOfTriangleL represents computation of area
-// using the angle properties of the triangle
-// angle described must be opposite to side3 of the triangle
+// AreaOfTriangleAngle :returns the results of area of a triangle
+// given the angle properties of the triangle
+// angle described must be opposite to side3 of the triangle as defined locally
 func AreaOfTriangleAngle(side1, side2, angle float64) (area float64) {
 	area = (side1 * side2) * math.Sin(angle) / 2
 	return area
 
 }
 
-// AreaOfSquare :Figures with four sides , aka quadrilaterals
-// Area of a square
+// Area of quadrilateral
+// AreaOfSquare :return the area of square
+// given the length property
 func AreaOfSquare(length float64) (area float64) {
 	area = length * length
 	return area
 }
 
-// AreaOfRectangle :Area of a rectangle
-func AreaOfRectangle(length float64) (area float64) {
-	area = length * length
+// AreaOfRectangle :return the area of rectangle
+// given the length and width properties
+func AreaOfRectangle(length, width float64) (area float64) {
+	area = length * width
 	return area
 }
 
-// AreaOfParallelogram :Area of a parallelogram
+// AreaOfParallelogram :return the area of parallelogram
+// given the base and height properties
 func AreaOfParallelogram(base, height float64) (area float64) {
 	area = base * height
 	return area
 }
 
-// AreaOfKite :Area of a kite
-// function arguments are the two diagonals in a kite
+// AreaOfKite :return the area of kite
+// given the diagonal properties
 func AreaOfKite(diag1, diag2 float64) (area float64) {
 	area = (diag1 + diag2) / 2
 	return area
 }
 
-// AreaOfRhombus :Area of a rhombus
-// func arguments are the two diagonals of the rhombus
-// area algo same as kite
+// AreaOfRhombus :return the area of rhombus
+// given the diagonal properties
 func AreaOfRhombus(diag1, diag2 float64) (area float64) {
 	area = AreaOfKite(diag1, diag2)
 	return area
 }
 
-// AreaOfTrapezoid :Area of a trapezoid
+// AreaOfTrapezoid :returns the area trapezoid
+// given the sides and height properties
 func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
 	area = 0.5 * (side1 + side2) * height
 	return area
 }
 
-// AreaOfRPentagon :Figures with 5 sides
-// AreaOfRPentagon returns the area of a regular polygon
+// Area of pentagon
+
+// AreaOfRPentagon :returns the area of a regular polygon
 // R in the midst of AreaOfRPentagon represents regular
+// given the side length properties of the pentagon
 func AreaOfRPentagon(length float64) (area float64) {
 	area = 0.25 * (math.Sqrt(5 * (5 + (2 * math.Sqrt(5))) * (length * length)))
 	return area
 
 }
 
-// AreaOfRHexagon :Figures with 6 sides
-// AreaOfRHexagon returns the area of a regular Hexagon
+// AreaOfRIPentagon :returns the area of an irrgular polygon
+// I in the midst of AreaOfRIPentagon represents irregular
+// given the cordinates properties inf the nodes/stations of an irregular pentagon
+func AreaOfIPentagon(cords ...Point) float64 {
+	return AreaC(cords)
+
+}
+
+// Area of hexagon
+
+// AreaOfRHexagon :returns the area of a regular Hexagon
 // R in the midst of AreaOfRHexagon represents regular
 func AreaOfRHexagon(side float64) (area float64) {
 	area = (3 / 2) * math.Sqrt(3) * math.Pow(side, 2)
@@ -124,4 +138,11 @@ func AreaOfOval(semiMajorAxis float64, semiMinorAxis float64) (area float64) {
 func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 	area = AreaOfOval(semiMajorAxis, semiMinorAxis)
 	return area
+}
+
+// AreaC :returns the area of any 2D shape
+// given the coordinates of the shape.
+func AreaC(cords ...Point) float64 {
+	return 0.0
+
 }
