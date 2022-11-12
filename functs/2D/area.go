@@ -153,9 +153,9 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 	return area
 }
 
-// AreaC :returns the area of any 2D shape
+// AreaCord :returns the area of any 2D shape
 // given the coordinates of the shape.
-func AreaC(cords ...Point) float64 {
+func AreaCord(cords ...Point) float64 {
 	// employ shoelace algorithm
 	var forPass float64
 	var backPass float64
@@ -166,5 +166,4 @@ func AreaC(cords ...Point) float64 {
 	}
 	area := (forPass - backPass) / 2
 	return area
-
 }
