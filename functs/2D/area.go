@@ -4,10 +4,15 @@ package functs
 
 import "math"
 
+type Point struct {
+	X float64
+	Y float64
+}
+
 // Plane figures | 2D
 // Area of triangle
 
-// AreaOfTriangle :returns the results of area of a triangle
+// AreaOfTriangleBH :returns the results of area of a triangle
 // given the base and height quantities of the triangle
 func AreaOfTriangleBH(base, height float64) (area float64) {
 	area = 0.5 * base * height
@@ -91,7 +96,8 @@ func AreaOfRPentagon(length float64) (area float64) {
 // I in the midst of AreaOfRIPentagon represents irregular
 // given the cordinates properties inf the nodes/stations of an irregular pentagon
 func AreaOfIPentagon(cords ...Point) float64 {
-	return AreaC(cords)
+	area := AreaC(cords)
+	return area
 
 }
 
@@ -109,7 +115,7 @@ func AreaOfRHexagon(side float64) (area float64) {
 // I in the midst of AreaOfRIPentagon represents irregular
 // Given the coordinates
 func AreaOfIHexagon(cords ...Point) (area float64) {
-	return AreaC(cords)
+	return AreaC(cords[1])
 }
 
 // AreaOfRHeptagon :returns the area of a regular heptagon
@@ -150,6 +156,15 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 // AreaC :returns the area of any 2D shape
 // given the coordinates of the shape.
 func AreaC(cords ...Point) float64 {
-	return 0.0
+	// employ shoelace algorithm
+	var forPass float64
+	var backPass float64
+	var numberOfCords = len(cords)
+	for i, j := 0, 1; j <= numberOfCords; i, j = i+1, j+1 {
+		forPass += cords[i].Y * cords[j].X
+		backPass += cords[j].Y * cords[i].X
+	}
+	area := (forPass - backPass) / 2
+	return area
 
 }
