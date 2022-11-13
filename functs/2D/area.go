@@ -125,6 +125,19 @@ func AreaOfRHeptagon(side float64) (area float64) {
 	return area
 }
 
+// AreaOfROctagon :returns the area of a regular octagon
+func AreaOfROctagon(side float64) (area float64) {
+	area = 2 * (1 + math.Sqrt(2.0)) * (side * side)
+	return area
+}
+
+// AreaOfRNonagon :returns the area of a regular nonagon
+func AreaOfRNonagon(side float64) (area float64) {
+	area = 9 / 4 * math.Pow(side, 2.0) * (math.Cos(180/9) / math.Sin(180/9))
+	return area
+
+}
+
 // AreaOfCircle :Figures with non-straight sides
 // Area of a circle
 func AreaOfCircle(radius float64) (area float64) {
