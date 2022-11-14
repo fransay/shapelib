@@ -138,6 +138,12 @@ func AreaOfRNonagon(side float64) (area float64) {
 
 }
 
+// AreaOfRDecagon :returns the area of a regular decagon
+func AreaOfRDecagon(side float64) (area float64) {
+	area = 5 / 2 * (side * side) * math.Sqrt(5.0+2*math.Sqrt(5.0))
+	return area
+}
+
 // AreaOfCircle :Figures with non-straight sides
 // Area of a circle
 func AreaOfCircle(radius float64) (area float64) {
