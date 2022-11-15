@@ -1,4 +1,4 @@
-// Package functs provide standalone functions for geometric related usage
+// Package functs provide standalone functions for two-dimensional geometric related usage
 
 package functs
 
@@ -9,8 +9,7 @@ type Point struct {
 	Y float64
 }
 
-// Plane figures | 2D
-// Area of triangle
+/*                      AREA OF TRIANGLES                   */
 
 // AreaOfTriangleBH :returns the results of area of a triangle
 // given the base and height quantities of the triangle
@@ -38,7 +37,8 @@ func AreaOfTriangleAngle(side1, side2, angle float64) (area float64) {
 
 }
 
-// Area of quadrilateral
+/*                      AREA OF QUADRILATERALS                  */
+
 // AreaOfSquare :return the area of square
 // given the length property
 func AreaOfSquare(length float64) (area float64) {
@@ -81,7 +81,7 @@ func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
 	return area
 }
 
-// Area of pentagon
+/*                      AREA OF PENTAGONS                  */
 
 // AreaOfRPentagon :returns the area of a regular polygon
 // R in the midst of AreaOfRPentagon represents regular
@@ -92,9 +92,9 @@ func AreaOfRPentagon(length float64) (area float64) {
 
 }
 
-// AreaOfRIPentagon :returns the area of an irrgular polygon
+// AreaOfIPentagon :returns the area of an irregular polygon
 // I in the midst of AreaOfRIPentagon represents irregular
-// given the cordinates properties inf the nodes/stations of an irregular pentagon
+// given the coordinates properties inf the nodes/stations of an irregular pentagon
 func AreaOfIPentagon(cords ...Point) float64 {
 	area := AreaCord(cords)
 	return area
