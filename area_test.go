@@ -55,3 +55,11 @@ func TestOfAreaOfSquare(t *testing.T) {
 		t.Errorf("expected %f got %f", exp, res)
 	}
 }
+
+func TestOfRectangle(t *testing.T) {
+	res := functs.AreaOfRectangle(10.00, 5.00)
+	exp := math.Trunc(50.00)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f, found %f", exp, res)
+	}
+}
