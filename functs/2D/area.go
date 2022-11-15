@@ -90,7 +90,7 @@ func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
 // R in the midst of AreaOfRPentagon represents regular
 // given the side length properties of the pentagon
 func AreaOfRPentagon(length float64) (area float64) {
-	area = 0.25 * (math.Sqrt(5 * (5 + (2 * math.Sqrt(5))) * (length * length)))
+	area = 0.25 * math.Sqrt(5.0*(5.0+(2.0*math.Sqrt(5.0)))) * (length * length)
 	return area
 
 }
