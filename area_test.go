@@ -1,6 +1,7 @@
 package shapelib
 
 import (
+	"math"
 	"shapelib/functs/2D"
 	"testing"
 )
@@ -30,5 +31,27 @@ func TestAreaOfTriangleBH(t *testing.T) {
 }
 
 func TestAreaOfTriangleSide(t *testing.T) {
+	res := functs.AreaOfTriangleSide(12.0, 8.0, 10.00)
+	exp := 0.0 // inaccuracies increase
+	if exp != res {
+		t.Errorf("expected %f, got %f", exp, res)
+	}
 
+}
+
+func TestAreaOfTriangleAngle(t *testing.T) {
+	res := functs.AreaOfTriangleAngle(10.00, 5.00, 120.00)
+	exp := math.Trunc(14.515280)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f, got %f", exp, res)
+	}
+
+}
+
+func TestOfAreaOfSquare(t *testing.T) {
+	res := functs.AreaOfSquare(5.0)
+	exp := math.Trunc(25.0)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f got %f", exp, res)
+	}
 }
