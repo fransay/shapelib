@@ -88,3 +88,11 @@ func TestAreaOfTrapezoid(t *testing.T) {
 	}
 
 }
+
+func TestAreaOfRPentagon(t *testing.T) {
+	res := functs.AreaOfRPentagon(5.0)
+	exp := math.Trunc(43.01194)
+	if math.Trunc(res) != exp {
+		t.Errorf("%f, %f", exp, res)
+	}
+}
