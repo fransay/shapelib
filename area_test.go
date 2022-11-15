@@ -48,7 +48,7 @@ func TestAreaOfTriangleAngle(t *testing.T) {
 
 }
 
-func TestOfAreaOfSquare(t *testing.T) {
+func TestAreaOfSquare(t *testing.T) {
 	res := functs.AreaOfSquare(5.0)
 	exp := math.Trunc(25.0)
 	if math.Trunc(res) != exp {
@@ -56,7 +56,7 @@ func TestOfAreaOfSquare(t *testing.T) {
 	}
 }
 
-func TestOfRectangle(t *testing.T) {
+func TestAreaOfRectangle(t *testing.T) {
 	res := functs.AreaOfRectangle(10.00, 5.00)
 	exp := math.Trunc(50.00)
 	if math.Trunc(res) != exp {
@@ -64,7 +64,7 @@ func TestOfRectangle(t *testing.T) {
 	}
 }
 
-func TestOfParallelogram(t *testing.T) {
+func TestAreaOfParallelogram(t *testing.T) {
 	res := functs.AreaOfParallelogram(20.0, 10.0)
 	exp := math.Trunc(200.00)
 	if math.Trunc(res) != exp {
