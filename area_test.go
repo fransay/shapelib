@@ -63,3 +63,11 @@ func TestOfRectangle(t *testing.T) {
 		t.Errorf("expected %f, found %f", exp, res)
 	}
 }
+
+func TestOfParallelogram(t *testing.T) {
+	res := functs.AreaOfParallelogram(20.0, 10.0)
+	exp := math.Trunc(200.00)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f, found %f", exp, res)
+	}
+}
