@@ -71,3 +71,20 @@ func TestAreaOfParallelogram(t *testing.T) {
 		t.Errorf("expected %f, found %f", exp, res)
 	}
 }
+
+func TestAreaOfRhombus(t *testing.T) {
+	res := functs.AreaOfRhombus(10, 5)
+	exp := math.Trunc(7.5)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f, got %f", exp, res)
+	}
+}
+
+func TestAreaOfTrapezoid(t *testing.T) {
+	res := functs.AreaOfTrapezoid(10.0, 5.0, 5.0)
+	exp := math.Trunc(37.0)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f, got %f", exp, res)
+	}
+
+}

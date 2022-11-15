@@ -104,7 +104,7 @@ func AreaOfIPentagon(cords ...Point) float64 {
 
 }
 
-// Area of hexagon
+/*                    AREA OF HEXAGONS              */
 
 // AreaOfRHexagon :returns the area of a regular Hexagon
 // R in the midst of AreaOfRHexagon represents regular
@@ -121,6 +121,8 @@ func AreaOfIHexagon(cords ...Point) (area float64) {
 	//return AreaCord(cords[1])
 	return 0.0
 }
+
+/*                    AREA OF HEPTAGONS              */
 
 // AreaOfRHeptagon :returns the area of a regular heptagon
 func AreaOfRHeptagon(side float64) (area float64) {
