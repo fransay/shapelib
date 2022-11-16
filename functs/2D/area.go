@@ -99,8 +99,8 @@ func AreaOfRPentagon(length float64) (area float64) {
 // I in the midst of AreaOfRIPentagon represents irregular
 // given the coordinates properties of the nodes/stations of an irregular pentagon
 func AreaOfIPentagon(cords ...Point) float64 {
-	//area := AreaCord(cords)
-	return 0.0
+	area := AreaCoordinates(cords[0], cords[1])
+	return area
 
 }
 
@@ -109,7 +109,7 @@ func AreaOfIPentagon(cords ...Point) float64 {
 // AreaOfRHexagon :returns the area of a regular Hexagon
 // R in the midst of AreaOfRHexagon represents regular
 func AreaOfRHexagon(side float64) (area float64) {
-	area = (3 / 2) * math.Sqrt(3) * math.Pow(side, 2)
+	area = 1.5 * math.Sqrt(3) * math.Pow(side, 2)
 	return area
 
 }
@@ -178,10 +178,9 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 	return area
 }
 
-/*
-// AreaCord :returns the area of any 2D shape
+// AreaCoordinates :returns the area of any 2D shape
 // given the coordinates of the shape.
-func AreaCord(cords ...Point) float64 {
+func AreaCoordinates(cords ...Point) float64 {
 	// employ shoelace algorithm
 	var forPass float64
 	var backPass float64
@@ -193,5 +192,3 @@ func AreaCord(cords ...Point) float64 {
 	area := (forPass - backPass) / 2
 	return area
 }
-
-*/
