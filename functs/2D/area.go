@@ -151,7 +151,7 @@ func AreaOfRDecagon(side float64) (area float64) {
 }
 
 // AreaOfCircle :Figures with non-straight sides
-// Area of a circle
+// Area of a circle given the radius property
 func AreaOfCircle(radius float64) (area float64) {
 	const pi float64 = 22 / 7
 	area = radius * radius * pi
