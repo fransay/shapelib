@@ -139,14 +139,14 @@ func AreaOfROctagon(side float64) (area float64) {
 
 // AreaOfRNonagon :returns the area of a regular nonagon
 func AreaOfRNonagon(side float64) (area float64) {
-	area = 9 / 4 * math.Pow(side, 2.0) * (math.Cos(180/9) / math.Sin(180/9))
+	area = (9 / 4) * math.Pow(side, 2.0) * math.Atan(180/9)
 	return area
 
 }
 
 // AreaOfRDecagon :returns the area of a regular decagon
 func AreaOfRDecagon(side float64) (area float64) {
-	area = 5 / 2 * (side * side) * math.Sqrt(5.0+2*math.Sqrt(5.0))
+	area = 2.5 * (side * side) * math.Sqrt(5.0+2*math.Sqrt(5.0))
 	return area
 }
 
