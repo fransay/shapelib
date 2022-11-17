@@ -65,7 +65,7 @@ func PerimOfRPentagon(side float64) (perim float64) {
 
 }
 
-// Perimeter of a regular Hexagon
+// PerimOfRHexagon Perimeter of a regular Hexagon
 func PerimOfRHexagon(side float64) (perim float64) {
 	perim = side * 6
 	return perim
