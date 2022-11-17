@@ -114,6 +114,23 @@ func TestAreaOfRHeptagon(t *testing.T) {
 
 }
 
+func TestAreaOfCircle(t *testing.T) {
+	res := functs.AreaOfCircle(5.00)
+	exp := math.Trunc(75.00)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f got %f", res, exp)
+	}
+}
+
+func TestAreaOfSemiCircle(t *testing.T) {
+	res := functs.AreaOfSemiCircle(5.00)
+	exp := math.Trunc(37.50)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f got %f", res, exp)
+	}
+
+}
+
 func TestAreaOfOval(t *testing.T) {
 	res := functs.AreaOfOval(10.00, 8.0)
 	exp := math.Trunc(314.03)
