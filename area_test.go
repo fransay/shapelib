@@ -113,3 +113,23 @@ func TestAreaOfRHeptagon(t *testing.T) {
 	}
 
 }
+
+func TestAreaOfOval(t *testing.T) {
+	res := functs.AreaOfOval(10.00, 8.0)
+	exp := math.Trunc(314.03)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f got %f", res, exp)
+
+	}
+
+}
+
+func TestAreaOfEllipse(t *testing.T) {
+	res := functs.AreaOfEllipse(10.00, 8.0)
+	exp := math.Trunc(314.03)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f got %f", res, exp)
+
+	}
+
+}

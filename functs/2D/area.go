@@ -20,7 +20,7 @@ func AreaOfTriangleBH(base, height float64) (area float64) {
 
 // AreaOfTriangleSide :returns the results of area of a triangle
 // given the length quantity of the triangle
-// using the heron math formula
+// using the heron mathematical formula
 // limitation: for areas where lengths approximate to the other,
 // the formula might not yield a good result
 func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
