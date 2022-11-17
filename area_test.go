@@ -105,6 +105,30 @@ func TestAreaOfRHexagon(t *testing.T) {
 	}
 }
 
+func TestAreaOfROctagon(t *testing.T) {
+	res := functs.AreaOfROctagon(5.00)
+	exp := math.Trunc(120.7)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f got %f", exp, res)
+	}
+
+}
+func TestAreaOfRNonagon(t *testing.T) {
+	res := functs.AreaOfRNonagon(5.00)
+	exp := math.Trunc(1.0)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f got %f", exp, res)
+	}
+
+}
+func TestAreaOfRDecagon(t *testing.T) {
+	res := functs.AreaOfRDecagon(5.00)
+	exp := math.Trunc(192.355)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f got %f", exp, res)
+	}
+
+}
 func TestAreaOfRHeptagon(t *testing.T) {
 	res := functs.AreaOfRHeptagon(5.00)
 	exp := math.Trunc(90.85)
