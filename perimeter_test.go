@@ -13,3 +13,12 @@ func TestPerimeterOfTriangle(t *testing.T) {
 		t.Errorf("expected %f, got %f", exp, res)
 	}
 }
+
+func TestPerimeterOfSquare(t *testing.T) {
+	res := functs.PerimOfRSquare(5.0)
+	exp := math.Trunc(20.0)
+	if res != exp {
+		t.Errorf("expected %f, got %f", exp, res)
+	}
+
+}
