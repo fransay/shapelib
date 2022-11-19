@@ -179,7 +179,7 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 }
 
 // AreaCoordinates :returns the area of any 2D shape
-// given the coordinates of the shape.
+// given the coordinates of the nodes
 func AreaCoordinates(cords ...Point) float64 {
 	// employ shoelace algorithm
 	var forPass float64
