@@ -38,3 +38,11 @@ func TestPerimeterOfParallelogram(t *testing.T) {
 		t.Errorf("expected %f, got %f", exp, res)
 	}
 }
+
+func TestPerimOfKite(t *testing.T) {
+	res := functs.PerimOfRKite(5.0, 4.0)
+	exp := math.Trunc(18.0)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f, got %f", exp, res)
+	}
+}
