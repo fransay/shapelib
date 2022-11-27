@@ -46,3 +46,11 @@ func TestPerimOfKite(t *testing.T) {
 		t.Errorf("expected %f, got %f", exp, res)
 	}
 }
+
+func TestPerimOfRhombus(t *testing.T) {
+	res := functs.PerimOfRRhombus(5.0)
+	exp := math.Trunc(20.0)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %f, got %f", exp, res)
+	}
+}
