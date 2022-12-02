@@ -4,11 +4,7 @@ package functs
 
 // PerimOfRTriangle : perimeter of a regular triangle
 func PerimOfRTriangle(sideA, sideB, sideC float64) (perim float64) {
-	if sideA != sideB { // equilateral triangles
-		perim = sideA + sideB + sideC
-	} else {
-		perim = 3 * sideA
-	}
+	perim = sideA + sideB + sideC
 	return perim
 }
 
