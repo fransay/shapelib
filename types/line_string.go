@@ -1,6 +1,6 @@
 package types
 
-type LineString []Point
+type LineString []Point2D
 
 // Length of a line string
 
@@ -19,7 +19,7 @@ func (ll *LineString) length() int {
 }
 
 // takes a Point type argument and returns its position
-func (ll *LineString) index(args Point) (index int) {
+func (ll *LineString) index(args Point2D) (index int) {
 	var pos int
 	for index, value := range *ll {
 		if value == args {

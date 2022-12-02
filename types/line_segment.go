@@ -3,8 +3,8 @@ package types
 import "math"
 
 type LineSegment struct {
-	PointA Point
-	PointB Point
+	PointA Point2D
+	PointB Point2D
 }
 
 // Distance :euclidean distance of a line segment
@@ -17,18 +17,18 @@ func (l *LineSegment) Distance() (dist float64) {
 }
 
 // MidPoint :midpoint of a line segment
-func (l *LineSegment) MidPoint() Point {
+func (l *LineSegment) MidPoint() Point2D {
 	deltaX := (l.PointB.X + l.PointB.X) / 2
 	deltaY := (l.PointB.Y + l.PointB.Y) / 2
-	midPoint := Point{deltaX, deltaY}
+	midPoint := Point2D{deltaX, deltaY}
 	return midPoint
 
 }
 
 // Bearing :bearing of the line segment in a vector space
-func (l *LineSegment) Bearing() (bear float64) {
+func (l *LineSegment) Bearing() (bearing float64) {
 	deltaX := l.PointB.X - l.PointB.X
 	deltaY := l.PointB.Y - l.PointB.Y
-	bear = math.Atan(deltaX / deltaY)
-	return bear
+	bearing = math.Atan(deltaX / deltaY)
+	return bearing
 }
