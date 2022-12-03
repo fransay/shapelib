@@ -6,7 +6,9 @@ essential for euclidean geometry challenges.
 Geometry is one of the oldest branches of mathematics, it concerned with the properties of space such as 
 distance, shape, size and relative positioning of figures. Euclidean geometry investigates of the fundamental
 notion of points, lines and planes ...[Read More](https://en.wikipedia.org/wiki/Geometry)  
-![3dShapeImg](https://static.vecteezy.com/system/resources/previews/005/095/834/original/math-picture-set-of-geometry-shapes-3d-icon-illustration-outline-vector.jpg)
+![3dShapeImg](https://static.vecteezy.com/system/resources/previews/005/095/834/original/math-picture-set-of-geometry-shapes-3d-icon-illustration-outline-vector.jpg)  
+_Image Credit: Vecteezy_
+
 # Fundamental Objects of Geometry
 The basic objects of geometry include the point, line and planes;
 ## Point 
