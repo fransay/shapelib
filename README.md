@@ -3,12 +3,15 @@ Shapelib is a mathematical library designed to provide users with generic mathem
 essential for euclidean geometry challenges.
 ```DON'T USE LIB YET```
 # Geometry
-Geometry is one of the oldest branches of mathematics, it concerned with the properties of space such as 
+<div style="text-align: justify">
 distance, shape, size and relative positioning of figures. A high level classification shall render the field
 into two categories. They are euclidean geometry non-euclidean geometry. Euclidean geometry is primarily concerned
 with the fundamental notion of points, lines and planes.Non-Euclidean is mostly concerned with the study of surfaces
 which are not flat, straight lines are not usual in non-euclidean engagements. Non-euclidean is absolutely practical 
-in the measurement of distances/length on the surface of the earth...[Read More](https://en.wikipedia.org/wiki/Geometry)  
+in the measurement of distances/length on the surface of the earth... </div>
+
+[Read More](https://en.wikipedia.org/wiki/Geometry)
+
 ![3dShapeImg](https://static.vecteezy.com/system/resources/previews/005/095/834/original/math-picture-set-of-geometry-shapes-3d-icon-illustration-outline-vector.jpg)  
 _Image Credit: Vecteezy_
 
