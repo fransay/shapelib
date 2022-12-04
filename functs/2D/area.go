@@ -82,18 +82,18 @@ func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
 	return area
 }
 
-// AreaOfPentagon :returns the area of a regular polygon
+// AreaOfRPentagon :returns the area of a regular polygon
 // R in the midst of AreaOfRPentagon represents regular
 // given the side length properties of the pentagon
-func AreaOfPentagon(length float64) (area float64) {
+func AreaOfRPentagon(length float64) (area float64) {
 	area = 0.25 * math.Sqrt(5.0*(5.0+(2.0*math.Sqrt(5.0)))) * (length * length)
 	return area
 
 }
 
-// AreaOfHexagon :returns the area of a regular Hexagon
+// AreaOfRHexagon :returns the area of a regular Hexagon
 // R in the midst of AreaOfRHexagon represents regular
-func AreaOfHexagon(side float64) (area float64) {
+func AreaOfRHexagon(side float64) (area float64) {
 	area = 1.5 * math.Sqrt(3) * math.Pow(side, 2)
 	return area
 
