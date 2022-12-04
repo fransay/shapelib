@@ -2,7 +2,7 @@
 Shapelib is a library designed to provide users with generic mathematical functions 
 essential for euclidean geometry computational schemes.
 ```DON'T USE LIB YET```
-# Geometry
+# Geometry :triangular_ruler:
 
 Geometry is one of the oldest branches of mathematics, it concerned with the properties of space such as 
 distance, shape, size and relative positioning of figures. A high level classification shall render the field
