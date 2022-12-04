@@ -2,12 +2,10 @@
 
 package functs
 
-import "math"
-
-type Point struct {
-	X float64
-	Y float64
-}
+import (
+	"math"
+	"shapelib/types"
+)
 
 // AREA OF TRIANGLES
 
@@ -84,45 +82,22 @@ func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
 	return area
 }
 
-/*                      AREA OF PENTAGONS                  */
-
-// AreaOfRPentagon :returns the area of a regular polygon
+// AreaOfPentagon :returns the area of a regular polygon
 // R in the midst of AreaOfRPentagon represents regular
 // given the side length properties of the pentagon
-func AreaOfRPentagon(length float64) (area float64) {
+func AreaOfPentagon(length float64) (area float64) {
 	area = 0.25 * math.Sqrt(5.0*(5.0+(2.0*math.Sqrt(5.0)))) * (length * length)
 	return area
 
 }
 
-// AreaOfIPentagon :returns the area of an irregular polygon
-// I in the midst of AreaOfRIPentagon represents irregular
-// given the coordinates properties of the nodes/stations of an irregular pentagon
-func AreaOfIPentagon(cords ...Point) float64 {
-	area := AreaCoordinates(cords[0], cords[1])
-	return area
-
-}
-
-/*                    AREA OF HEXAGONS              */
-
-// AreaOfRHexagon :returns the area of a regular Hexagon
+// AreaOfHexagon :returns the area of a regular Hexagon
 // R in the midst of AreaOfRHexagon represents regular
-func AreaOfRHexagon(side float64) (area float64) {
+func AreaOfHexagon(side float64) (area float64) {
 	area = 1.5 * math.Sqrt(3) * math.Pow(side, 2)
 	return area
 
 }
-
-// AreaOfIHexagon : return the area of irregular hexagon
-// I in the midst of AreaOfRIPentagon represents irregular
-// Given the coordinates
-func AreaOfIHexagon(cords ...Point) (area float64) {
-	//return AreaCord(cords[1])
-	return 0.0
-}
-
-/*                    AREA OF HEPTAGONS              */
 
 // AreaOfRHeptagon :returns the area of a regular heptagon
 func AreaOfRHeptagon(side float64) (area float64) {
@@ -167,7 +142,7 @@ func AreaOfSemiCircle(radius float64) (area float64) {
 
 // AreaOfOval :Area of an oval
 func AreaOfOval(semiMajorAxis float64, semiMinorAxis float64) (area float64) {
-	area = math.Pi * semiMajorAxis * semiMajorAxis
+	area = math.Pi * semiMajorAxis * semiMinorAxis
 	return area
 }
 
@@ -180,15 +155,17 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 
 // AreaCoordinates :returns the area of any 2D shape
 // given coordinates of the nodes
-func AreaCoordinates(cords ...Point) float64 {
-	// employ shoelace algorithm
+// employ shoelace algorithm
+func AreaCoordinates(cords ...types.Point2D) float64 {
 	var forPass float64
 	var backPass float64
-	var numberOfCords = len(cords)
+	var numberOfCords = len(cords) - 1
 	for i, j := 0, 1; j <= numberOfCords; i, j = i+1, j+1 {
 		forPass += cords[i].Y * cords[j].X
 		backPass += cords[j].Y * cords[i].X
 	}
-	area := (forPass - backPass) / 2
+	// due to orientation of types.Point2D type
+	// results from area is negated
+	var area = -1 * (forPass - backPass) / 2
 	return area
 }
