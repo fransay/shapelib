@@ -1,4 +1,4 @@
-# Shapelib :book_closed:
+# Shapelib :library:
 Shapelib is a library designed to provide users with generic mathematical functions 
 essential for euclidean geometry computational schemes.
 ```DON'T USE LIB YET```
