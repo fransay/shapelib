@@ -9,7 +9,7 @@ type Point struct {
 	Y float64
 }
 
-/*                      AREA OF TRIANGLES                   */
+// AREA OF TRIANGLES
 
 // AreaOfTriangleBH :returns the results of area of a triangle
 // given the base and height quantities of the triangle
@@ -22,7 +22,7 @@ func AreaOfTriangleBH(base, height float64) (area float64) {
 // given the length quantity of the triangle
 // using the heron mathematical formula
 // limitation: for areas where lengths approximate to the other,
-// the formula might not yield a good result
+// this formula might not yield a good result
 func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
 	averageSides := (side1 + side2 + side3) / 3
 	compute := averageSides * (averageSides - side1) * (averageSides - side2) * (averageSides - side3)
@@ -40,7 +40,7 @@ func AreaOfTriangleAngle(side1, side2, angle float64) (area float64) {
 
 }
 
-/*                      AREA OF QUADRILATERALS                  */
+// AREA OF QUADRILATERALS
 
 // AreaOfSquare :return the area of square
 // given the length property
