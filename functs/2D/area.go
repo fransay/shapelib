@@ -113,8 +113,9 @@ func AreaOfROctagon(side float64) (area float64) {
 }
 
 // AreaOfRNonagon :returns the area of a regular nonagon
+// TODO: exam why function doesn't produce the desired output
 func AreaOfRNonagon(side float64) (area float64) {
-	var cotFunction = 1.0 / math.Tan(180/9)
+	var cotFunction = 1 / math.Tan(180/9)
 	area = (9 / 4) * (side * side) * cotFunction
 	return area
 
