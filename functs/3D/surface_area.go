@@ -4,8 +4,8 @@ package functs
 import "math"
 
 // SurfAreaOfTetrahedron :surface area of a tetrahedron
-func SurfAreaOfTetrahedron() (surfArea float64) {
-
+func SurfAreaOfTetrahedron(sideLength float64) (surfArea float64) {
+	surfArea = math.Sqrt(3) * sideLength
 	return surfArea
 
 }
