@@ -1,7 +1,10 @@
 // Package functs computes the surface area of 3D geometries
 package functs
 
-import "math"
+import (
+	"math"
+	functs "shapelib/functs/2D"
+)
 
 // SurfAreaOfTetrahedron :surface area of a tetrahedron
 func SurfAreaOfTetrahedron(sideLength float64) (surfArea float64) {
@@ -30,4 +33,28 @@ func SurfAreaOfCuboid(sideLength, sideWidth, sideHeigth float64) (surfArea float
 	return surfArea
 }
 
-// surface
+// SurfAreaOfPentahedron :surface area of pentahedron
+func SurfAreaOfPentahedron(sideLength, height float64) (sideArea float64) {
+	sideArea = sideLength * (sideLength + math.Sqrt(math.Pow(sideLength, 2.0)+4*(math.Pow(height, 2.0))))
+	return sideArea
+
+}
+
+// SurfAreaOfHexahedron :surface area of hexahedron
+func SurfAreaOfHexahedron(sideLength float64) (surfArea float64) {
+	surfArea = 6 * (sideLength * sideLength)
+	return surfArea
+}
+
+// SurfAreaOfHeptahedron surface area of heptahedron
+func SurfAreaOfHeptahedron(sideLength, thickness float64) (surfArea float64) {
+	surfArea = 2*(functs.AreaOfRHeptagon(sideLength)) + 2*(functs.AreaOfRectangle(sideLength, thickness))
+	return surfArea
+
+}
+
+// SurfAreaOfRightCylinder :surface area of a right cylinder
+func SurfAreaOfRightCylinder(radius, height float64) (surfArea float64) {
+	surfArea = 2*math.Pi*radius*height + 2*math.Pi*math.Pow(radius, 2)
+	return surfArea
+}
