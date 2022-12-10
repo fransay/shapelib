@@ -14,7 +14,8 @@ practical in the measurement of distances on the surface of the earth :earth_afr
 _Image Credit: Vecteezy_
 
 # Fundamental Objects of Geometry
-The basic objects of geometry include the point, line and planes;
+Three fundamental objects of geometry includes point, lines and polygon, points are the most fundamental 
+blocks of geometry.
 ## Point 
 A point is a primitive notion that models an exact location in space and has no length, width or thickness.
 Points are the basic building blocks of every geometric figure, a point is represented in space by its spatial 
