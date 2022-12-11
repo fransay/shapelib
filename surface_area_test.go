@@ -37,3 +37,29 @@ func TestSurfAreaOfCuboid(t *testing.T) {
 	}
 
 }
+
+func TestSurfAreaOfHeptahedron(t *testing.T) {
+	var res = functs.SurfAreaOfHeptahedron(10.0, 10.0)
+	var exp = math.Trunc(1257.1)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %v got %v", exp, res)
+	}
+}
+
+func TestSurfAreaOfPentahedron(t *testing.T) {
+	var res = functs.SurfAreaOfPentahedron(10.0, 10.0)
+	var exp = math.Trunc(1257.1)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %v got %v", exp, res)
+	}
+
+}
+
+func TestSurfAreaOfRightCylinder(t *testing.T) {
+	var res = functs.SurfAreaOfRightCylinder(10.0, 10.0)
+	var exp = math.Trunc(1257.1)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %v got %v", exp, res)
+	}
+
+}
