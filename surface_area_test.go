@@ -63,3 +63,12 @@ func TestSurfAreaOfRightCylinder(t *testing.T) {
 	}
 
 }
+
+func TestSurfAreaOfHexahedron(t *testing.T) {
+	var res = functs.SurfAreaOfHexahedron(10.0)
+	var exp = math.Trunc(600.0)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %v got %v", exp, res)
+	}
+
+}
