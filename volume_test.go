@@ -14,3 +14,11 @@ func TestVolOfTetrahedron(t *testing.T) {
 	}
 
 }
+func TestVolOfRightAngledTriPyramid(t *testing.T) {
+	var result = functs.VolOfRightAngledTriPyramid(10, 10, 10)
+	var expected = math.Trunc(166.666)
+	if math.Trunc(result) != expected {
+		t.Errorf("expected %v got %v", expected, result)
+	}
+
+}
