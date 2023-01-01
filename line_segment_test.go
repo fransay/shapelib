@@ -8,7 +8,7 @@ import (
 
 // distance test
 func TestLineSegmentDistance(t *testing.T) {
-	// negative outcomes square under square roots
+	// line segment one
 	var lineSegmentOne types.LineSegment = types.LineSegment{PointA: struct {
 		X float64
 		Y float64
@@ -16,7 +16,7 @@ func TestLineSegmentDistance(t *testing.T) {
 		X float64
 		Y float64
 	}{X: 10, Y: 15}}
-
+	// line segment two
 	var lineSegmentTwo types.LineSegment = types.LineSegment{PointA: struct {
 		X float64
 		Y float64
@@ -25,7 +25,7 @@ func TestLineSegmentDistance(t *testing.T) {
 		Y float64
 	}{X: 544.654, Y: 354.544}}
 
-	// line segment result check
+	// line segment one result
 	var distanceResultLineSegmentOne = lineSegmentOne.Distance()
 	var distanceExpectedLineSegmentOne = 7.017
 	if math.Trunc(distanceResultLineSegmentOne) != math.Trunc(distanceExpectedLineSegmentOne) {
