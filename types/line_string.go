@@ -1,31 +1,34 @@
 package types
 
+// LineString type
 type LineString []Point2D
 
-// Length of a line string
-
-func (ll *LineString) Distance() float64 {
+// Length of a linestring
+// TODO complete length function
+func (l *LineString) Length() float64 {
 	return 0.0
 }
 
-// returns the total number of elements in an instance of type LineString
-func (ll *LineString) length() int {
+// NumberOfLineSegments returns the total number of elements in an instance of type LineString
+func (l *LineString) NumberOfLineSegments() int {
 	var indexTracker int
-	for index, _ := range *ll {
+	for index, _ := range *l {
 		indexTracker += index
 	}
 	return indexTracker
 	// complexity : O(n)
+	// TODO improve complexity to O(1): constant time
 }
 
-// takes a Point type argument and returns its position
-func (ll *LineString) index(args Point2D) (index int) {
+// Index takes a Point type argument and returns its position
+func (l *LineString) Index(args Point2D) (index int) {
 	var pos int
-	for index, value := range *ll {
+	for index, value := range *l {
 		if value == args {
 			pos = index
 		}
 	}
 	return pos
 	// complexity : O(n)
+	// TODO improve complexity to O(1): constant time
 }
