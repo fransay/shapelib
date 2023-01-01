@@ -4,7 +4,9 @@ import (
 	"math"
 )
 
-// VolOfTetrahedron :volume of a tetrahedron
+// TODO read more about volume of 3D figures
+
+// VolOfTetrahedron volume of a tetrahedron
 func VolOfTetrahedron(side float64) (vol float64) {
 	vol = (side * side * side) / (6 * math.Sqrt(2))
 	return vol
@@ -32,11 +34,4 @@ func VolOfCuboid(length, width, height float64) (vol float64) {
 func VolOfPentahedron(lengthOfBase, height float64) (vol float64) {
 	vol = (math.Pow(lengthOfBase, 2) * height) / 3
 	return vol
-
-}
-
-// VolOfHexahedron volume of a hexahedron
-func VolOfHexahedron() (vol float64) {
-	return vol
-
 }
