@@ -57,4 +57,22 @@ func TestLineSegmentMidPoint(t *testing.T) {
 	if midPointLineExpectedLineSegmentOne != midPointLineResultLineSegmentOne {
 		t.Errorf("Expected %f, got %f", midPointLineExpectedLineSegmentOne, midPointLineResultLineSegmentOne)
 	}
+	// midpoint test two
+	var lineSegmentTwo types.LineSegment = types.LineSegment{PointA: struct {
+		X float64
+		Y float64
+	}{X: 10, Y: 14}, PointB: struct {
+		X float64
+		Y float64
+	}{X: 20, Y: 22}}
+
+	// midpoint test one
+	var midPointLineResultLineSegmentTwo types.Point2D = lineSegmentTwo.MidPoint()
+	var midPointLineExpectedLineSegmentTwo types.Point2D = types.Point2D{X: 15, Y: 18}
+	if midPointLineExpectedLineSegmentTwo != midPointLineResultLineSegmentTwo {
+		t.Errorf("Expected %f, got %f", midPointLineExpectedLineSegmentTwo, midPointLineResultLineSegmentTwo)
+	}
+
 }
+
+// bearing test
