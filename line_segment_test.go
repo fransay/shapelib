@@ -76,3 +76,38 @@ func TestLineSegmentMidPoint(t *testing.T) {
 }
 
 // bearing test
+func TestLineSegmentBearing(t *testing.T) {
+	var lineSegmentOne types.LineSegment = types.LineSegment{
+		PointA: struct {
+			X float64
+			Y float64
+		}{X: 20, Y: 70}, PointB: struct {
+			X float64
+			Y float64
+		}{X: 80, Y: 100}}
+
+	// bearing one
+	var bearingLineResultLineSegmentOne float64 = lineSegmentOne.Bearing()
+	var bearingLineExpectedLineSegmentOne float64 = 1.107
+	if math.Trunc(bearingLineExpectedLineSegmentOne) != math.Trunc(bearingLineResultLineSegmentOne) {
+		t.Errorf("Expected %f got %f", bearingLineExpectedLineSegmentOne, bearingLineResultLineSegmentOne)
+	}
+
+	// bearing two
+	var lineSegmentTwo types.LineSegment = types.LineSegment{
+		PointA: struct {
+			X float64
+			Y float64
+		}{X: -20, Y: 50}, PointB: struct {
+			X float64
+			Y float64
+		}{X: 80, Y: -100}}
+
+	// bearing one
+	var bearingLineResultLineSegmentTwo float64 = lineSegmentTwo.Bearing()
+	var bearingLineExpectedLineSegmentTwo float64 = 0.5880026
+	if math.Trunc(bearingLineExpectedLineSegmentTwo) != math.Trunc(bearingLineResultLineSegmentTwo) {
+		t.Errorf("Expected %f got %f", bearingLineExpectedLineSegmentTwo, bearingLineResultLineSegmentTwo)
+	}
+
+}
