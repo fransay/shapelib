@@ -27,3 +27,4 @@ dimensions as (x,y).
 ```
 ![Point](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRegNSRT5ckAhKaTJBYBkUgNNAe2Ojex4xAdF4VfpXGjTv3q4rKDsu93Oo1_DZq1djhGqo&usqp=CAU)
 
+## Line Segment
