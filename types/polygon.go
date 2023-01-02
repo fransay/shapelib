@@ -13,17 +13,19 @@ func (p *Polygon) Area() (area float64) {
 }
 
 // Centroid returns the centroid of the polygon
-// a
+// algorithms: none yet
 func (p *Polygon) Centroid() (cent float64) {
 	return cent
 }
 
 // Perimeter returns total distance around the polygon
+// traverse the total length of compositing strings
 func (p *Polygon) Perimeter() (perim float64) {
 	return perim
 }
 
 // ShortestLineString returns the shortest line string
+// use ranking algorithm to sort out distances
 func (p *Polygon) ShortestLineString() (perim float64) {
 	return perim
 }
