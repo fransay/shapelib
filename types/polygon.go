@@ -6,11 +6,14 @@ type Polygon []Point2D
 // polygon methods
 
 // Area returns the area of the polygon
+// algorithm: shoelace
+// Optimise for resource and time complexities
 func (p *Polygon) Area() (area float64) {
 	return area
 }
 
 // Centroid returns the centroid of the polygon
+// a
 func (p *Polygon) Centroid() (cent float64) {
 	return cent
 }
