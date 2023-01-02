@@ -24,9 +24,9 @@ func (p *Polygon) Perimeter() (perim float64) {
 	return perim
 }
 
-// ShortestLineString returns the shortest line string
+// ShortestLineSegment returns the shortest line string
 // use ranking algorithm to sort out distances
-func (p *Polygon) ShortestLineString() (perim float64) {
+func (p *Polygon) ShortestLineSegment() (perim float64) {
 	return perim
 }
 
@@ -38,4 +38,9 @@ func (p *Polygon) IsClosed() (isClosedStatus float64) {
 // IsOpened returns a boolean value whether polygon is opened or not
 func (p *Polygon) IsOpened() (isOpenedStatus float64) {
 	return isOpenedStatus
+}
+
+// NumberOfLineSegments returns the number of compositing line segments
+func (p *Polygon) NumberOfLineSegments() float64 {
+	return 0.0
 }
