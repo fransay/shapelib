@@ -54,11 +54,9 @@ func (p *Polygon) NumberOfLineSegments() int {
 
 // NumberOfNodes returns number of nodes in a polygon
 func (p *Polygon) NumberOfNodes() int {
-	var numbReturn int = 1
+	var numbReturn int = 0
 	for index, _ := range *p {
 		numbReturn += index
 	}
 	return numbReturn
 }
-
-//
