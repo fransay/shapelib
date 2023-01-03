@@ -29,7 +29,12 @@ func (p *Polygon) Perimeter() (perim float64) {
 // ShortestLineSegment returns the shortest line string
 // use ranking algorithm to sort out distances
 func (p *Polygon) ShortestLineSegment() int {
-	return 0
+	// create a slice
+	// find the distance between consequence points/station
+	// append them to the slice
+	// sort distance
+	// return smallest
+	return 0.0
 }
 
 // IsClosed returns a boolean value whether polygon is closed or not
