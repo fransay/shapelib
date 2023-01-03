@@ -43,6 +43,19 @@ func (p *Polygon) IsClosed() (isClosedStatus float64) {
 // if element of first array is not equal to element of array
 // then polygon is opened
 func (p *Polygon) IsOpened() (isOpenedStatus bool) {
+	var firstElement, LastElement Point2D
+	for i, v := range *p {
+		if i == 0 {
+			firstElement = v
+		} else if i == len(*p)-1 {
+			LastElement = v
+		}
+		if firstElement == LastElement {
+			isOpenedStatus = true
+		} else {
+			isOpenedStatus = false
+		}
+	}
 	return isOpenedStatus
 }
 
