@@ -9,7 +9,9 @@ type Polygon []Point2D
 // algorithm: shoelace
 // Optimise for resource and time complexities
 func (p *Polygon) Area() (area float64) {
+	// fetch Point2D points
 	return area
+
 }
 
 // Centroid returns the centroid of the polygon
@@ -43,4 +45,13 @@ func (p *Polygon) IsOpened() (isOpenedStatus float64) {
 // NumberOfLineSegments returns the number of compositing line segments
 func (p *Polygon) NumberOfLineSegments() float64 {
 	return 0.0
+}
+
+// NumberOfNodes number of nodes in a polygon
+func (p *Polygon) NumberOfNodes() int {
+	var numbReturn int = 1
+	for index, _ := range *p {
+		numbReturn += index
+	}
+	return numbReturn
 }
