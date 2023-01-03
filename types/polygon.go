@@ -35,7 +35,12 @@ func (p *Polygon) ShortestLineSegment() int {
 // IsClosed returns a boolean value whether polygon is closed or not
 // if element of array is equal to last element of array
 // then polygon is closed
-func (p *Polygon) IsClosed() (isClosedStatus float64) {
+func (p *Polygon) IsClosed() (isClosedStatus bool) {
+	if !p.IsOpened() {
+		isClosedStatus = true
+	} else {
+		isClosedStatus = false
+	}
 	return isClosedStatus
 }
 
