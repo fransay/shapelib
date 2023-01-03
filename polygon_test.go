@@ -14,3 +14,5 @@ func TestPolygonNumberOfNodes(t *testing.T) {
 		t.Errorf("Expected %d, got %d", numberOfNodesExpected, numberOfNodesResult)
 	}
 }
+
+// number of line segment test
