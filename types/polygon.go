@@ -6,10 +6,9 @@ type Polygon []Point2D
 // polygon methods
 
 // Area returns the area of the polygon
-// algorithm: shoelace
+// algorithm: customised shoelace
 // Optimise for resource and time complexities
 func (p *Polygon) Area() (area float64) {
-	// fetch Point2D points
 	return area
 
 }
