@@ -93,7 +93,7 @@ func TestLineSegmentBearing(t *testing.T) {
 		t.Errorf("Expected %f got %f", bearingLineExpectedLineSegmentOne, bearingLineResultLineSegmentOne)
 	}
 
-	// bearing two
+	// line segment two
 	var lineSegmentTwo types.LineSegment = types.LineSegment{
 		PointA: struct {
 			X float64
@@ -103,7 +103,7 @@ func TestLineSegmentBearing(t *testing.T) {
 			Y float64
 		}{X: 80, Y: -100}}
 
-	// bearing one
+	// bearing two
 	var bearingLineResultLineSegmentTwo float64 = lineSegmentTwo.Bearing()
 	var bearingLineExpectedLineSegmentTwo float64 = 0.5880026
 	if math.Trunc(bearingLineExpectedLineSegmentTwo) != math.Trunc(bearingLineResultLineSegmentTwo) {
