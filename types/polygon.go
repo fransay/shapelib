@@ -83,3 +83,10 @@ func (p *Polygon) NumberOfNodes() int {
 	}
 	return numbReturn
 }
+
+// return the distance of a specific line segment using the indexes
+
+func (p *Polygon) LineSegmentDistance(ind int) (distance float64) {
+	return distance
+
+}
