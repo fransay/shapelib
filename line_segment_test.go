@@ -77,6 +77,7 @@ func TestLineSegmentMidPoint(t *testing.T) {
 
 // bearing test
 func TestLineSegmentBearing(t *testing.T) {
+	// instance 1 :line segment
 	var lineSegmentOne types.LineSegment = types.LineSegment{
 		PointA: struct {
 			X float64
@@ -93,7 +94,7 @@ func TestLineSegmentBearing(t *testing.T) {
 		t.Errorf("Expected %f got %f", bearingLineExpectedLineSegmentOne, bearingLineResultLineSegmentOne)
 	}
 
-	// line segment two
+	// instance 2 :line segment
 	var lineSegmentTwo types.LineSegment = types.LineSegment{
 		PointA: struct {
 			X float64
