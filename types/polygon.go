@@ -1,5 +1,9 @@
 package types
 
+import (
+	"fmt"
+)
+
 // Polygon type polygon
 type Polygon []Point2D
 
@@ -9,7 +13,11 @@ type Polygon []Point2D
 // algorithm: customised shoelace
 // Optimise for resource and time complexities
 func (p *Polygon) Area() (area float64) {
-	return area
+	// fetch all points/stations in the array
+	for _, points := range *p {
+		fmt.Println(points)
+	}
+	return 0.0
 
 }
 
