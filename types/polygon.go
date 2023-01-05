@@ -33,7 +33,7 @@ func (p *Polygon) Centroid() (cent Point2D) {
 		ySum = ySum + values.Y
 	}
 	cent = Point2D{
-		X: xSum, Y: ySum,
+		X: xSum / 2, Y: ySum / 2,
 	}
 	return cent
 }
@@ -95,11 +95,14 @@ func (p *Polygon) NumberOfLineSegments() int {
 
 // NumberOfNodes returns number of nodes in a polygon
 func (p *Polygon) NumberOfNodes() int {
-	var numbReturn int = 0
-	for index, _ := range *p {
-		numbReturn += index
-	}
-	return numbReturn
+
+	/*
+		var numbReturn int = 0
+		for index, _ := range *p {
+			numbReturn += index
+		}
+	*/
+	return len(*p)
 }
 
 // return the distance of a specific line segment using the indexes
