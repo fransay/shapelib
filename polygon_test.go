@@ -25,4 +25,13 @@ func TestPolygonLineSegment(t *testing.T) {
 	}
 }
 
-//
+// centroid test
+
+func TestPolygonCentroid(t *testing.T) {
+	var polygonOne = types.Polygon{types.Point2D{X: 7, Y: 9}, types.Point2D{X: 2, Y: 6}, types.Point2D{X: 4, Y: 8}}
+	var centroidResults = polygonOne.Centroid()
+	var centroidExpected = types.Point2D{X: 6.5, Y: 23}
+	if centroidExpected != centroidResults {
+		t.Errorf("Expected %f, got %f", centroidExpected, centroidResults)
+	}
+}
