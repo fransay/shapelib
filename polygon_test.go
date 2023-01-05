@@ -17,11 +17,27 @@ func TestPolygonNumberOfNodes(t *testing.T) {
 
 // number of line segment test
 func TestPolygonLineSegment(t *testing.T) {
+	// polygon instance one
 	var polygonOne = types.Polygon{types.Point2D{X: 7, Y: 9}, types.Point2D{X: 2, Y: 6}, types.Point2D{X: 4, Y: 8}}
 	var numberOfLineSegmentResult = polygonOne.NumberOfLineSegments()
 	var numberOfLineSegmentExpected = 3
 	if numberOfLineSegmentExpected != numberOfLineSegmentResult {
 		t.Errorf("Expected %d, got %d", numberOfLineSegmentExpected, numberOfLineSegmentResult)
+	}
+	// polygon instance two
+	var polygonTwo = types.Polygon{types.Point2D{X: 7, Y: 9}, types.Point2D{X: 2, Y: 6}, types.Point2D{X: 4, Y: 8}, types.Point2D{X: 4, Y: 50}}
+	var numberOfLineSegmentTwoResult = polygonTwo.NumberOfLineSegments()
+	var numberOfLineSegmentTwoExpected = 4
+	if numberOfLineSegmentTwoExpected != numberOfLineSegmentTwoResult {
+		t.Errorf("Expected %d, got %d", numberOfLineSegmentTwoExpected, numberOfLineSegmentTwoResult)
+	}
+	// polygon instance three
+	var polygonThree = types.Polygon{types.Point2D{X: 7, Y: 9}, types.Point2D{X: 2, Y: 6}, types.Point2D{X: 4, Y: 8}, types.Point2D{X: 12, Y: 43},
+		types.Point2D{X: 45, Y: 645}}
+	var numberOfLineSegmentThreeResult = polygonThree.NumberOfLineSegments()
+	var numberOfLineSegmentThreeExpected = 5
+	if numberOfLineSegmentThreeExpected != numberOfLineSegmentThreeResult {
+		t.Errorf("Expected %d, got %d", numberOfLineSegmentThreeExpected, numberOfLineSegmentThreeResult)
 	}
 }
 
