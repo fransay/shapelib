@@ -35,6 +35,18 @@ func TestPolygonCentroid(t *testing.T) {
 		t.Errorf("Expected %f, got %f", centroidExpected, centroidResults)
 	}
 	// polygon instance two
+	var polygonTwo = types.Polygon{types.Point2D{X: 1, Y: 5}, types.Point2D{X: 6, Y: 9}, types.Point2D{X: 5, Y: 10}}
+	var centroidTwoResult = polygonTwo.Centroid()
+	var centroidTwoExpected = types.Point2D{X: 6, Y: 12}
+	if centroidTwoExpected != centroidTwoResult {
+		t.Errorf("Expected %f, got %f", centroidTwoExpected, centroidTwoResult)
+	}
 
 	// polygon instance three
+	var polygonThree = types.Polygon{types.Point2D{X: 60, Y: 50}, types.Point2D{X: 22, Y: 65}, types.Point2D{X: 40, Y: 8}}
+	var centroidThreeResults = polygonThree.Centroid()
+	var centroidThreeExpected = types.Point2D{X: 61.0, Y: 61.5}
+	if centroidThreeExpected != centroidThreeResults {
+		t.Errorf("Expected %f, got %f", centroidThreeExpected, centroidThreeResults)
+	}
 }
