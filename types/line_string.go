@@ -1,12 +1,20 @@
 package types
 
+import functs "shapelib/functs/2D"
+
 // LineString type
-type LineString []Point2D
+type LineString [...]Point2D
 
 // Length of a linestring
 // TODO complete length function
 func (l *LineString) Length() float64 {
-	return 0.0
+	var totLength float64
+	for i, j := 0, 1; i < len(l); i, j = i+1, j+1 {
+		var pointOne Point2D = l[i]
+		var pointTwo Point2D = l[j]
+		totLength += functs.EDistance(pointOne, pointTwo)
+	}
+	return totLength
 }
 
 // NumberOfLineSegments returns the total number of elements in an instance of type LineString
