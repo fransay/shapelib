@@ -6,7 +6,7 @@ import functs "shapelib/functs/2D"
 type LineString [...]Point2D
 
 // Length of a linestring
-// TODO complete length function
+// TODO improve complexity to O(1): constant time
 func (l *LineString) Length() float64 {
 	var totLength float64
 	for i, j := 0, 1; i < len(l); i, j = i+1, j+1 {
@@ -18,17 +18,20 @@ func (l *LineString) Length() float64 {
 }
 
 // NumberOfLineSegments returns the total number of elements in an instance of type LineString
+// complexity : O(n)
+// TODO improve complexity to O(1): constant time
 func (l *LineString) NumberOfLineSegments() int {
 	var indexTracker int
 	for index, _ := range *l {
 		indexTracker += index
 	}
 	return indexTracker
-	// complexity : O(n)
-	// TODO improve complexity to O(1): constant time
+
 }
 
 // Index takes a Point type argument and returns its position
+// complexity : O(n)
+// TODO improve complexity to O(1): constant time
 func (l *LineString) Index(args Point2D) (index int) {
 	var pos int
 	for index, value := range *l {
@@ -37,6 +40,5 @@ func (l *LineString) Index(args Point2D) (index int) {
 		}
 	}
 	return pos
-	// complexity : O(n)
-	// TODO improve complexity to O(1): constant time
+
 }
