@@ -26,13 +26,15 @@ func (p *Polygon) Area() (area float64) {
 // average mean of x -- sum(x)/n
 // average mean of y -- sum(y)/y
 
-func (p *Polygon) Centroid() (cent float64) {
+func (p *Polygon) Centroid() (cent Point2D) {
 	var xSum, ySum float64
 	for _, values := range *p {
 		xSum = xSum + values.X
 		ySum = ySum + values.Y
 	}
-	cent = (xSum + ySum) / 2
+	cent = Point2D{
+		X: xSum, Y: ySum,
+	}
 	return cent
 }
 
