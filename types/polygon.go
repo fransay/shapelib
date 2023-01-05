@@ -22,8 +22,17 @@ func (p *Polygon) Area() (area float64) {
 }
 
 // Centroid returns the centroid of the polygon
-// algorithms: none yet
+// algorithms: mean
+// average mean of x -- sum(x)/n
+// average mean of y -- sum(y)/y
+
 func (p *Polygon) Centroid() (cent float64) {
+	var xSum, ySum float64
+	for _, values := range *p {
+		xSum = xSum + values.X
+		ySum = ySum + values.Y
+	}
+	cent = (xSum + ySum) / 2
 	return cent
 }
 
