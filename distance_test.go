@@ -22,6 +22,11 @@ func TestEDistance(t *testing.T) {
 		t.Errorf("Expected %f, got %f", eDistanceTwoExpected, eDistanceTwoResult)
 	}
 	// distance instance three
+	var eDistanceThreeExpected = functs.EDistance(types.Point2D{X: 5, Y: 20}, types.Point2D{X: 2, Y: 10})
+	var eDistanceThreeResult = 10.44
+	if math.Trunc(eDistanceThreeResult) != eDistanceThreeExpected {
+		t.Errorf("Expected %f, got %f", eDistanceThreeExpected, eDistanceThreeResult)
+	}
 
 	// distance instance four
 }
