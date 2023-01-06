@@ -12,3 +12,8 @@ func EDistance(pointOne, pointTwo types.Point2D) (dist float64) {
 	dist = math.Sqrt(math.Pow(deltaX, 2) + math.Pow(deltaY, 2))
 	return dist
 }
+
+// MinkowsiDistance returns minkowsi distance
+func MinkowsiDistance() (distMinkowsi float64) {
+	return distMinkowsi
+}
