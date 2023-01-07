@@ -13,7 +13,11 @@ func EDistance(pointOne, pointTwo types.Point2D) (dist float64) {
 	return dist
 }
 
-// MinkowsiDistance returns minkowsi distance
-func MinkowsiDistance() (distMinkowsi float64) {
+// MinkowsiDistance returns minkowsi distance of points in an N
+// dimensional space
+func MinkowsiDistance(PointA, PointB types.Point2D, p float64) (distMinkowsi float64) {
+	var deltaA = math.Pow(PointA.X-PointA.Y, p)
+	var deltaB = math.Pow(PointB.X-PointB.Y, p)
+	distMinkowsi = math.Pow(deltaA+deltaB, 1/p)
 	return distMinkowsi
 }
