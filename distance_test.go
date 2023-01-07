@@ -35,3 +35,14 @@ func TestEDistance(t *testing.T) {
 		t.Errorf("Expected %f, got %f", eDistanceFourExpected, eDistanceFourResult)
 	}
 }
+
+// test minkowski distance
+func TestMinkowskiDistance(t *testing.T) {
+	// instance one
+	var minkowskiDistExpected = functs.MinkowsiDistance(types.Point2D{X: 4, Y: 8}, types.Point2D{X: 2, Y: 6}, 2)
+	var minkowskiDistResult = 2.8284
+	if math.Trunc(minkowskiDistExpected) != math.Trunc(minkowskiDistResult) {
+		t.Errorf("Ëxpected %f, got %f", minkowskiDistExpected, minkowskiDistResult)
+	}
+
+}
