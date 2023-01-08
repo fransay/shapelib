@@ -1,6 +1,8 @@
 package types
 
-import functs "shapelib/functs/2D"
+import (
+	"shapelib/functs"
+)
 
 // LineString type
 type LineString [...]Point2D

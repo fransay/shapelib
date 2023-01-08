@@ -3,7 +3,6 @@ package functs
 
 import (
 	"math"
-	functs "shapelib/functs/2D"
 )
 
 // SurfAreaOfTetrahedron :surface area of a tetrahedron
@@ -48,7 +47,7 @@ func SurfAreaOfHexahedron(sideLength float64) (surfArea float64) {
 
 // SurfAreaOfHeptahedron surface area of heptahedron
 func SurfAreaOfHeptahedron(sideLength, thickness float64) (surfArea float64) {
-	surfArea = 2*(functs.AreaOfRHeptagon(sideLength)) + 2*(functs.AreaOfRectangle(sideLength, thickness))
+	surfArea = 2*(AreaOfRHeptagon(sideLength)) + 2*(AreaOfRectangle(sideLength, thickness))
 	return surfArea
 
 }

@@ -1,9 +1,5 @@
 package types
 
-import (
-	"fmt"
-)
-
 // Polygon type polygon
 type Polygon []Point2D
 
@@ -14,8 +10,8 @@ type Polygon []Point2D
 // Optimise for resource and time complexities
 func (p *Polygon) Area() (area float64) {
 	// fetch all points/stations in the array
-	for _, points := range *p {
-		fmt.Println(points)
+	for i, j := 0, 1; i < len(*p); i, j = i+1, j+1 {
+
 	}
 	return 0.0
 

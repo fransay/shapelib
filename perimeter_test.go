@@ -2,7 +2,7 @@ package shapelib
 
 import (
 	"math"
-	functs "shapelib/functs/2D"
+	"shapelib/functs"
 	"testing"
 )
 

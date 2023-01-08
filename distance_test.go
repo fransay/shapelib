@@ -2,8 +2,8 @@ package shapelib
 
 import (
 	"math"
-	"shapelib/functs/2D" //"shapelib/types"
-	"shapelib/types"     // "shapelib/functs/2D"
+	"shapelib/functs"
+	"shapelib/types" // "shapelib/functs/2D"
 	"testing"
 )
 
