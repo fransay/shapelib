@@ -3,7 +3,7 @@ package shapelib
 import (
 	"math"
 	"shapelib/functs"
-	"shapelib/types" // "shapelib/functs/2D"
+	"shapelib/types"
 	"testing"
 )
 
@@ -44,6 +44,6 @@ func TestMinkowskiDistance(t *testing.T) {
 	if math.Trunc(minkowskiDistExpected) != math.Trunc(minkowskiDistResult) {
 		t.Errorf("Ëxpected %f, got %f", minkowskiDistExpected, minkowskiDistResult)
 	}
-	// instance two
+	// Add more minkowski
 
 }
