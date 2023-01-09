@@ -44,6 +44,6 @@ func TestMinkowskiDistance(t *testing.T) {
 	if math.Trunc(minkowskiDistExpected) != math.Trunc(minkowskiDistResult) {
 		t.Errorf("Ëxpected %f, got %f", minkowskiDistExpected, minkowskiDistResult)
 	}
-	// Add more minkowski
+	// TODO include a few couple test instances
 
 }
