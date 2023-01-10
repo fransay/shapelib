@@ -4,8 +4,11 @@ import (
 	"shapelib/functs"
 )
 
+// TODO create homogenous method of type linestringH
+
 // LineString type
-type LineString [...]Point2D
+type LineString [...]Point2D // Non-Homogenous 2D point Type
+type LineStringH []Point2DH  // Homogenous 2D point type
 
 // Length of a linestring
 // TODO improve complexity to O(1): constant time
