@@ -1,6 +1,6 @@
 # Shapelib :books:
-Shapelib is a library designed to provide users with generic mathematical functions 
-essential for euclidean geometry computational schemes.
+Shapelib is a library designed to provide simple functions for geometrical computing and related scientific 
+endeavours.  
 ```DON'T USE LIB YET```
 # Geometry :triangular_ruler:
 
