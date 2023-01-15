@@ -47,3 +47,5 @@ func (l *LineString) Index(args Point2D) (index int) {
 	return pos
 
 }
+
+// TODO investigate other possible operational methods of linestring type
