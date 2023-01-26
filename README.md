@@ -26,7 +26,7 @@ dimensions as (x,y).
 
 ## Line Segment
 A line segment is a line defined by two distinct points in space.  
-![line segment](https://quizizz.com/media/resource/gs/quizizz-media/quizzes/c7d80361-57db-4e18-bcdc-00aee34228fc?w=90&h=90)
+![line segment](https://ccssmathanswers.com/wp-content/uploads/2021/04/line-segment.jpg)
 ### Properties
 ```
 1. Length
