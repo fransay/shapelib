@@ -1,15 +1,13 @@
 # Shapelib :books:
 Shapelib is a simple library designed to provide geometrical functions for general scientific applications.
 ```DON'T USE LIB YET```
-# Geometry :triangular_ruler:
-
+# Geometry :triangular_ruler:  
 Geometry is one of the oldest branches of mathematics, it concerned with the properties of space such as 
 distance, shape, size and relative positioning of figures. A high level classification shall render the field
 into two categories. They are euclidean geometry non-euclidean geometry. Euclidean geometry is primarily concerned
 with the fundamental notion of points, lines and planes.Non-Euclidean is mostly concerned with the study of surfaces
-which are not flat, straight lines are not usual in non-euclidean engagements....[Read More](https://en.wikipedia.org/wiki/Geometry)
-![3dShapeImg](https://static.vecteezy.com/system/resources/previews/005/095/834/original/math-picture-set-of-geometry-shapes-3d-icon-illustration-outline-vector.jpg)  
-_Image Credit: Vecteezy_
+which are not flat, straight lines are not usual in non-euclidean engagements ...[Read More](https://en.wikipedia.org/wiki/Geometry)
+![3dShapeImg](https://merriam-webster.com/assets/ld/images/legacy_print_images/geometry_rev.gif)  
 
 # Fundamental Objects of Geometry
 Three fundamental objects of geometry includes point, lines and polygon, points are the most fundamental 
@@ -27,3 +25,11 @@ dimensions as (x,y).
 ![Point](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRegNSRT5ckAhKaTJBYBkUgNNAe2Ojex4xAdF4VfpXGjTv3q4rKDsu93Oo1_DZq1djhGqo&usqp=CAU)
 
 ## Line Segment
+A line segment is a line defined by two distinct points in space.
+### Properties
+```
+1. Length
+2. Midpoint
+3. Bearing
+
+```
