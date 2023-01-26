@@ -15,21 +15,31 @@ blocks of geometry.
 ## Point 
 A point is a primitive notion that models an exact location in space and has no length, width or thickness.
 Points are the basic building blocks of every geometric figure, a point is represented in space by its spatial 
-dimensions as (x,y).
+dimensions as (x,y).  
+![Point](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRegNSRT5ckAhKaTJBYBkUgNNAe2Ojex4xAdF4VfpXGjTv3q4rKDsu93Oo1_DZq1djhGqo&usqp=CAU)  
 ### Properties
 ```
 1. No width or thickness 
 2. No length
 3. No centroid
 ```
-![Point](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRegNSRT5ckAhKaTJBYBkUgNNAe2Ojex4xAdF4VfpXGjTv3q4rKDsu93Oo1_DZq1djhGqo&usqp=CAU)
 
 ## Line Segment
-A line segment is a line defined by two distinct points in space.
+A line segment is a line defined by two distinct points in space.  
+![line segment](https://quizizz.com/media/resource/gs/quizizz-media/quizzes/c7d80361-57db-4e18-bcdc-00aee34228fc?w=90&h=90)
 ### Properties
 ```
 1. Length
 2. Midpoint
 3. Bearing
+```
 
+## Line String  
+Line string is a one dimensional contiguous representation of line segments and the sequences of points connecting them. 
+![line string](https://spin.atomicobject.com/wp-content/uploads/Screen-Shot-2020-08-16-at-10.52.17-AM-590x224.png)
+### Properties
+```
+1. Length
+2. Midpoint
+3. Bearing
 ```
