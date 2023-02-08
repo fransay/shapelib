@@ -24,7 +24,7 @@ func (l *LineString) Length() float64 {
 
 // NumberOfLineSegments returns the total number of elements in an instance of type LineString
 // complexity : O(n)
-// TODO improve complexity to O(1): constant time
+// TODO: improve complexity to O(1): constant time
 func (l *LineString) NumberOfLineSegments() int {
 	var indexTracker int
 	for index, _ := range *l {
@@ -48,4 +48,4 @@ func (l *LineString) Index(args Point2D) (index int) {
 
 }
 
-// TODO investigate other possible operational methods of linestring type
+// TODO: investigate other possible operational methods of linestring type
