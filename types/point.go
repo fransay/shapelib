@@ -81,12 +81,23 @@ func (p *Point3DH) Size() (size float64) {
 	return size
 }
 
-// Translate a point
-// Translate function takes an shift vector
+// Translate2D translates a 2D point
+// Translate2D function takes a shift vector
 // and return a new point
-func (p *Point2D) Translate(shiftVector Point2D) (translate Point2D) {
+func (p *Point2D) Translate2D(shiftVector Point2D) (translate Point2D) {
 	translateX := p.X + shiftVector.X
 	translateY := p.Y + shiftVector.Y
 	translate = Point2D{translateX, translateY}
+	return translate
+}
+
+// Translate3D translates a 3D point
+// Translate3D function takes a 3D shift vector
+// and return a new point
+func (p *Point3D) Translate3D(shiftVector Point3D) (translate Point3D) {
+	translateX := p.X + shiftVector.X
+	translateY := p.Y + shiftVector.Y
+	translateZ := p.Z + shiftVector.Y
+	translate = Point3D{translateX, translateY, translateZ}
 	return translate
 }
