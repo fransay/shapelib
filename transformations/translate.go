@@ -24,6 +24,20 @@ func Translate3D(point, shiftVector types.Point3D) (translate types.Point3D) {
 
 }
 
-// translate a line segment type
-// translate a linestring type
-// translate a polygon type
+// LineSegmentTranslate translate a line segment type
+// translate a lineSegment
+func LineSegmentTranslate() {
+
+}
+
+// LineStringTranslate translate a linestring type
+// translate a linestring
+func LineStringTranslate() {
+
+}
+
+// PolygonTranslate translate a polygon type
+// translate a polygon
+func PolygonTranslate() {
+
+}
