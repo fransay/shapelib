@@ -1,6 +1,6 @@
 # Shapelib :books:
-Shapelib is a simple library designed to provide geometrical functions for general scientific applications.
-```DON'T USE LIB YET```
+Shapelib is a simple library designed to provide geometrical functions for general scientific computations.  
+```DON'T USE LIB YET.```
 # Geometry :triangular_ruler:  
 Geometry is one of the oldest branches of mathematics, it concerned with the properties of space such as 
 distance, shape, size and relative positioning of figures. A high level classification shall render the field
@@ -23,7 +23,6 @@ dimensions as (x,y).
 2. No length
 3. No centroid
 ```
-
 ## Line Segment
 A line segment is a line defined by two distinct points in space.  
 ![line segment](https://ccssmathanswers.com/wp-content/uploads/2021/04/line-segment.jpg)
@@ -33,9 +32,8 @@ A line segment is a line defined by two distinct points in space.
 2. Midpoint
 3. Bearing
 ```
-
 ## Line String  
-Line string is a one dimensional contiguous representation of line segments and the sequences of points connecting them. 
+Line string is a one dimensional contiguous representation of line segments and the sequences of points connecting them.  
 ![line string](https://spin.atomicobject.com/wp-content/uploads/Screen-Shot-2020-08-16-at-10.52.17-AM-590x224.png)
 ### Properties
 ```
