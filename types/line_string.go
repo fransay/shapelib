@@ -1,7 +1,8 @@
 package types
 
+/**
 import (
-	"shapelib/functs"
+	"math"
 )
 
 // TODO create homogenous method of type linestringH
@@ -10,17 +11,28 @@ import (
 type LineString [...]Point2D // Non-Homogenous 2D point Type
 type LineStringH []Point2DH  // Homogenous 2D point type
 
+func Distance(pointOne, pointTwo Point2D) (dist float64) {
+	deltaX := pointTwo.X - pointOne.X
+	deltaY := pointOne.Y - pointOne.Y
+	dist = math.Sqrt(math.Pow(deltaX, 2) + math.Pow(deltaY, 2))
+	return dist
+
+}
+
+
 // Length of a linestring
 // TODO improve complexity to O(1): constant time
-func (l *LineString) Length() float64 {
+func (l LineString) Length() float64 {
 	var totLength float64
 	for i, j := 0, 1; i < len(l); i, j = i+1, j+1 {
 		var pointOne Point2D = l[i]
 		var pointTwo Point2D = l[j]
-		totLength += functs.EDistance(pointOne, pointTwo)
+		totLength += Distance(pointOne, pointTwo)
 	}
 	return totLength
 }
+
+
 
 // NumberOfLineSegments returns the total number of elements in an instance of type LineString
 // complexity : O(n)
@@ -49,3 +61,4 @@ func (l *LineString) Index(args Point2D) (index int) {
 }
 
 // TODO: investigate other possible operational methods of linestring type
+**/
