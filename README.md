@@ -41,3 +41,14 @@ Line string is a one dimensional contiguous representation of line segments and 
 2. Midpoint
 3. Bearing
 ```
+### Polygon
+A plane figure that is bounded by a finite chain of line segment closing in a loop to form a closed chain.  
+![Polygon](https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Regular_polygon_5_annotated.svg/330px-Regular_polygon_5_annotated.svg.png)
+### Properties
+```
+1. Area
+2. Centroid
+3. Perimeter
+4. Internal Angle
+5. External Angle
+```
