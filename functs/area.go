@@ -1,4 +1,4 @@
-// Package functs provide standalone functions for two-dimensional geometric related usage
+// Package functs provide standalone functions for two-dimensional geometries.
 
 package functs
 
@@ -31,7 +31,7 @@ func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
 
 // AreaOfTriangleAngle :returns the results of area of a triangle
 // given the angle properties of the triangle
-// angle described must be opposite to side3 of the triangle as defined locally
+// angle described must be opposite to side3 of the triangle as defined locally.
 func AreaOfTriangleAngle(side1, side2, angle float64) (area float64) {
 	area = (side1 * side2) * math.Sin(angle) / 2
 	return area
@@ -100,6 +100,7 @@ func AreaOfRHexagon(side float64) (area float64) {
 }
 
 // AreaOfRHeptagon :returns the area of a regular heptagon
+// given the sides of the
 func AreaOfRHeptagon(side float64) (area float64) {
 	const apothem float64 = 3.634
 	area = apothem * side * side
