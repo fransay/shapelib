@@ -138,10 +138,17 @@ func AreaOfCircle(radius float64) (area float64) {
 
 // AreaOfSemiCircle :returns the area of a semicircle
 // 1/2 the area of full circle ~ area of a semicircle
-// given the area of the underlying geometry
 func AreaOfSemiCircle(radius float64) (area float64) {
 	area = 0.5 * AreaOfCircle(radius)
 	return area
+}
+
+// AreaOfQuadCircle 1/4 is the area of a QuadCircle
+// returns the area of a fourth of any circle
+func AreaOfQuadCircle(radius float64) (area float64) {
+	area = AreaOfCircle(radius) / 4
+	return area
+	// TODO: Test [AreaOfQuadCircle]
 }
 
 // AreaOfOval :Area of an oval
