@@ -100,7 +100,7 @@ func AreaOfRHexagon(side float64) (area float64) {
 }
 
 // AreaOfRHeptagon :returns the area of a regular heptagon
-// given the sides of the
+// given the sides of the heptagon.
 func AreaOfRHeptagon(side float64) (area float64) {
 	const apothem float64 = 3.634
 	area = apothem * side * side
