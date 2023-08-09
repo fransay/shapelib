@@ -24,14 +24,12 @@ func Translate3D(point, shiftVector types.Point3D) (translate types.Point3D) {
 
 }
 
-// LineSegmentTranslate translate a line segment type
-// translate a lineSegment
+// LineSegmentTranslate translate a line of type line segment
 func LineSegmentTranslate() {
 
 }
 
-// LineStringTranslate translate a linestring type
-// translate a linestring
+// LineStringTranslate translate a linestring of type line segment
 func LineStringTranslate() {
 
 }
