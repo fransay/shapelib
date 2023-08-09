@@ -35,3 +35,5 @@ func VolOfPentahedron(lengthOfBase, height float64) (vol float64) {
 	vol = (math.Pow(lengthOfBase, 2) * height) / 3
 	return vol
 }
+
+// TODO: Explore geometric figures that have not yet be covered

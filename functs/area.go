@@ -164,9 +164,8 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 	return area
 }
 
-// AreaCoordinates :returns the area of any 2D shape
-// given coordinates of the nodes
-// employ shoelace algorithm
+// AreaCoordinates :returns the area of any 2D shape given coordinates of the nodes
+// algorithm: shoelace
 func AreaCoordinates(cords ...types.Point2D) float64 {
 	var forPass float64
 	var backPass float64
@@ -175,8 +174,6 @@ func AreaCoordinates(cords ...types.Point2D) float64 {
 		forPass += cords[i].Y * cords[j].X
 		backPass += cords[j].Y * cords[i].X
 	}
-	// due to orientation of types.Point2D type
-	// results from area is negated
-	var area = -1 * (forPass - backPass) / 2
+	var area = -1 * (forPass - backPass) / 2 // results of area are negated due to orientation of types.Point2D
 	return area
 }
