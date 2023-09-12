@@ -31,87 +31,88 @@ func PerimeterOfParallelogram(northSide, westSide float64) (perim float64) {
 
 }
 
-// PerimOfRKite :perimeter of a regular Kite
-func PerimOfRKite(shortDiag, longDiag float64) (perim float64) {
-	perim = (shortDiag * 2) + (longDiag * 2)
-	return perim
+// PerimeterOfKite returns the perimeter of a kite
+func PerimeterOfKite(shortDiag, longDiag float64) (perimeter float64) {
+	perimeter = (shortDiag * 2) + (longDiag * 2)
+	return perimeter
 
 }
 
-// PerimOfRRhombus :perimeter of a regular Rhombus
-func PerimOfRRhombus(side float64) (perim float64) {
-	perim = side * 4
-	return perim
+// PerimeterOfRhombus returns the perimeter of a rhombus
+func PerimeterOfRhombus(side float64) (perimeter float64) {
+	perimeter = side * 4
+	return perimeter
 }
 
-// PerimOfRTrapezoid :a trapezoid has unequal sides
-func PerimOfRTrapezoid(side1, side2, side3, side4 float64) (perim float64) {
-	perim = side1 + side2 + side3 + side4
-	return perim
+// PerimeterOfTrapezoid :a trapezoid has unequal sides
+func PerimeterOfTrapezoid(side1, side2, side3, side4 float64) (perimeter float64) {
+	perimeter = side1 + side2 + side3 + side4
+	return perimeter
 }
 
 // PERIMETER OF FIVE SIDED FIGURES
 
-// PerimOfRPentagon :perimeter of regular Pentagon
-func PerimOfRPentagon(side float64) (perim float64) {
-	perim = side * 5
-	return perim
+// PerimeterOfPentagon returns the perimeter of a pentagon
+func PerimeterOfPentagon(side float64) (perimeter float64) {
+	perimeter = side * 5
+	return perimeter
 
 }
 
 // PERIMETER OF SIX SIDED FIGURES
 
-// PerimOfRHexagon :perimeter of a regular Hexagon
-func PerimOfRHexagon(side float64) (perim float64) {
-	perim = side * 6
-	return perim
+// PerimeterOfHexagon :perimeter of a regular Hexagon
+func PerimeterOfHexagon(side float64) (perimeter float64) {
+	perimeter = side * 6
+	return perimeter
 }
 
 // PERIMETER OF SEVEN SIDED FIGURES
 
-// PerimOfRHeptagon :perimeter of a regular Heptagon
-func PerimOfRHeptagon(side float64) (perim float64) {
-	perim = side * 7
-	return perim
+// PerimeterOfHeptagon :perimeter of a regular Heptagon
+func PerimeterOfHeptagon(side float64) (perimeter float64) {
+	perimeter = side * 7
+	return perimeter
 }
 
 // PERIMETER OF EIGHT SIDED FIGURES
 
-// PerimOfROctagon :perimeter of a regular Octagon
-func PerimOfROctagon(side float64) (perim float64) {
-	perim = side * 8
-	return perim
+// PerimeterOfOctagon returns the perimeter of an octagon
+func PerimeterOfOctagon(side float64) (perimeter float64) {
+	perimeter = side * 8
+	return perimeter
 }
 
 // PERIMETER OF NINE SIDED FIGURES
 
-// PerimOfRNonagon  :perimeter of a regular Nonagon
-func PerimOfRNonagon(side float64) (perim float64) {
-	perim = side * 9
-	return perim
+// PerimeterOfNonagon returns the perimeter of a nonagon
+func PerimeterOfNonagon(side float64) (perimeter float64) {
+	perimeter = side * 9
+	return perimeter
 }
 
 // PERIMETER OF NINE SIDED FIGURES
 
-// PerimOfRDecagon :perimeter of a regular Decagon
-func PerimOfRDecagon(side float64) (perim float64) {
-	perim = side * 10
-	return perim
+// PerimeterOfDecagon returns the perimeter of a decagon
+func PerimeterOfDecagon(side float64) (perimeter float64) {
+	perimeter = side * 10
+	return perimeter
 }
 
 // PERIMETER OF GENERIC SHAPES
 
-// PerimOfRegularGeneric :perimeter of a regular generic shape
-func PerimOfRegularGeneric(sideLength float64, numberOfSides float64) (perim float64) {
-	perim = sideLength * numberOfSides
-	return perim
+// PerimeterOfShape returns the perimeter of any regular shape given the number of sides
+func PerimeterOfShape(sideLength float64, numberOfSides float64) (perimeter float64) {
+	perimeter = sideLength * numberOfSides
+	return perimeter
 }
 
-// PerimOfIrregularGeneric :perimeter of an irregular generic shape
-func PerimOfIrregularGeneric(side ...float64) (perim float64) {
+// PerimeterOfIrregularShape returns the perimeter of a shape given the sides
+func PerimeterOfIrregularShape(side ...float64) (perimeter float64) {
 	var total float64
 	for _, value := range side {
 		total = total + value
+
 	}
 	return total
 
