@@ -8,7 +8,7 @@ import (
 
 // perimeter of triangle test
 func TestPerimeterOfTriangle(t *testing.T) {
-	res := functs.PerimOfRTriangle(10.0, 10.0, 10.0)
+	res := functs.PerimeterOfTriangle(10.0, 10.0, 10.0)
 	exp := math.Trunc(30)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -17,7 +17,7 @@ func TestPerimeterOfTriangle(t *testing.T) {
 
 // perimeter of square test
 func TestPerimeterOfSquare(t *testing.T) {
-	res := functs.PerimOfRSquare(5.0)
+	res := functs.PerimeterOfSquare(5.0)
 	exp := math.Trunc(20.0)
 	if res != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -26,9 +26,18 @@ func TestPerimeterOfSquare(t *testing.T) {
 }
 
 // perimeter of rectangle test
-func TestPerimeterOfRectangle(t *testing.T) {
-	res := functs.PerimOfRRectangle(10.0, 5)
+func TestPerimeterOfRegularRectangle(t *testing.T) {
+	res := functs.PerimeterOfRegularRectangle(10.0, 5)
 	exp := math.Trunc(30.0)
+	if res != exp {
+		t.Errorf("expected %f, got %f", exp, res)
+	}
+}
+
+// perimeter of rectangle test
+func TestPerimeterOfIrregularRectangle(t *testing.T) {
+	res := functs.PerimeterOfIrregularFourSidedFigures(1, 5, 4, 8)
+	exp := math.Trunc(18.0)
 	if res != exp {
 		t.Errorf("expected %f, got %f", exp, res)
 	}
@@ -36,7 +45,7 @@ func TestPerimeterOfRectangle(t *testing.T) {
 
 // perimeter of parallelogram test
 func TestPerimeterOfParallelogram(t *testing.T) {
-	res := functs.PerimOfRParallelogram(2.0, 5.0)
+	res := functs.PerimeterOfParallelogram(2.0, 5.0)
 	exp := math.Trunc(14.0)
 	if res != exp {
 		t.Errorf("expected %f, got %f", exp, res)

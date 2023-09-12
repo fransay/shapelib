@@ -4,28 +4,28 @@ package functs
 
 // PERIMETER OF THREE SIDED FIGURES
 
-// PerimOfRTriangle : perimeter of a regular triangle
-func PerimOfRTriangle(sideA, sideB, sideC float64) (perim float64) {
+// PerimeterOfTriangle : perimeter of a regular triangle
+func PerimeterOfTriangle(sideA, sideB, sideC float64) (perim float64) {
 	perim = sideA + sideB + sideC
 	return perim
 }
 
 // PERIMETER OF FOUR SIDED FIGURES
 
-// PerimOfRSquare : perimeter of a regular square
-func PerimOfRSquare(side float64) (perim float64) {
-	perim = side * 4
-	return perim
+// PerimeterOfSquare : perimeter of a regular square
+func PerimeterOfSquare(side float64) (perimeter float64) {
+	perimeter = side * 4
+	return perimeter
 }
 
-// PerimOfRRectangle : perimeter of a regular rectangle
-func PerimOfRRectangle(sideLength, sideWidth float64) (perim float64) {
-	perim = (sideWidth * 2) + (sideLength * 2)
-	return perim
+// PerimeterOfRegularRectangle returns the perimeter of a regular rectangle
+func PerimeterOfRegularRectangle(sideLength, sideWidth float64) (perimeter float64) {
+	perimeter = (sideWidth * 2) + (sideLength * 2)
+	return perimeter
 }
 
-// PerimOfRParallelogram :perimeter of a regular parallelogram
-func PerimOfRParallelogram(northSide, westSide float64) (perim float64) {
+// PerimeterOfParallelogram :perimeter of a regular parallelogram
+func PerimeterOfParallelogram(northSide, westSide float64) (perim float64) {
 	perim = (northSide * 2) + (westSide * 2)
 	return perim
 
@@ -115,4 +115,10 @@ func PerimOfIrregularGeneric(side ...float64) (perim float64) {
 	}
 	return total
 
+}
+
+// PerimeterOfIrregularFourSidedFigures returns the perimeter of an irregular rectangle
+func PerimeterOfIrregularFourSidedFigures(sideOne, sideTwo, sideThree, sideFour float64) (perimeter float64) {
+	perimeter = sideOne + sideTwo + sideThree + sideFour
+	return perimeter
 }
