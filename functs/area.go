@@ -4,7 +4,7 @@ package functs
 
 import (
 	"math"
-	"shapelib/types"
+	"shapelib/types/point"
 )
 
 // AREA OF TRIANGLES
@@ -148,7 +148,6 @@ func AreaOfSemiCircle(radius float64) (area float64) {
 func AreaOfQuadCircle(radius float64) (area float64) {
 	area = AreaOfCircle(radius) / 4
 	return area
-	// TODO: Test [AreaOfQuadCircle]
 }
 
 // AreaOfOval :Area of an oval
@@ -166,7 +165,7 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 
 // AreaCoordinates :returns the area of any 2D shape given coordinates of the nodes
 // algorithm: shoelace
-func AreaCoordinates(cords ...types.Point2D) float64 {
+func AreaCoordinates(cords ...point.Point2D) float64 {
 	var forPass float64
 	var backPass float64
 	var numberOfCords = len(cords) - 1

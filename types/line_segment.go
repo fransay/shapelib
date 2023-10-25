@@ -1,11 +1,14 @@
 package types
 
-import "math"
+import (
+	"math"
+	"shapelib/types/point"
+)
 
 // LineSegment type
 type LineSegment struct {
-	PointA Point2D
-	PointB Point2D
+	PointA point.Point2D
+	PointB point.Point2D
 }
 
 // Distance euclidean distance of a line segment
@@ -18,10 +21,10 @@ func (l *LineSegment) Distance() (dist float64) {
 }
 
 // MidPoint midpoint of a line segment
-func (l *LineSegment) MidPoint() Point2D {
+func (l *LineSegment) MidPoint() point.Point2D {
 	deltaX := (l.PointB.X + l.PointA.X) / 2
 	deltaY := (l.PointB.Y + l.PointA.Y) / 2
-	midPoint := Point2D{deltaX, deltaY}
+	midPoint := point.Point2D{deltaX, deltaY}
 	return midPoint
 
 }

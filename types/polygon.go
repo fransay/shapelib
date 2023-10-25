@@ -1,7 +1,9 @@
 package types
 
+import "shapelib/types/point"
+
 // Polygon type polygon
-type Polygon []Point2D
+type Polygon []point.Point2D
 
 // polygon methods
 
@@ -22,13 +24,13 @@ func (p *Polygon) Area() (area float64) {
 // average mean of x -- sum(x)/n
 // average mean of y -- sum(y)/y
 
-func (p *Polygon) Centroid() (cent Point2D) {
+func (p *Polygon) Centroid() (cent point.Point2D) {
 	var xSum, ySum float64
 	for _, values := range *p {
 		xSum = xSum + values.X
 		ySum = ySum + values.Y
 	}
-	cent = Point2D{
+	cent = point.Point2D{
 		X: xSum / 2, Y: ySum / 2,
 	}
 	return cent
@@ -67,7 +69,7 @@ func (p *Polygon) IsClosed() (isClosedStatus bool) {
 // if element of first array is not equal to element of array
 // then polygon is opened
 func (p *Polygon) IsOpened() (isOpenedStatus bool) {
-	var firstElement, LastElement Point2D
+	var firstElement, LastElement point.Point2D
 	for i, v := range *p {
 		if i == 0 {
 			firstElement = v
