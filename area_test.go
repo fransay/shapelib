@@ -128,8 +128,8 @@ func TestAreaOfROctagon(t *testing.T) {
 
 // test area of a regular nonagon
 func TestAreaOfRNonagon(t *testing.T) {
-	res := functs.AreaOfRNonagon(5.00)
-	exp := math.Trunc(154.55)
+	res := functs.AreaOfRNonagon(5)
+	exp := math.Trunc(137.373850)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f got %f", exp, res)
 	}
