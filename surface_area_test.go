@@ -90,3 +90,12 @@ func TestSurfAreaOfSphere(t *testing.T) {
 		t.Errorf("expected %v got %v", exp, res)
 	}
 }
+
+// test surface area of torus
+func TestSurfAreaOfTorus(t *testing.T) {
+	var res = functs.SurfAreaOfTorus(10.0, 5)
+	var exp = math.Trunc(1973.921)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %v got %v", exp, res)
+	}
+}
