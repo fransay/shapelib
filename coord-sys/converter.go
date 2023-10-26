@@ -1,3 +1,3 @@
 package coord_sys
 
-//TODO: learn more and put in more work here on coordinate system
+//TODO: Design and map out coordinate system functionalities
