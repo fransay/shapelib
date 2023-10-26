@@ -5,7 +5,7 @@ import (
 	"shapelib/types/point"
 )
 
-// EuclideanDistance returns Euclidean distance between two points/coordinates
+// EuclideanDistance returns Euclidean distance between two points in a 2-dimensional space
 func EuclideanDistance(pointOne, pointTwo point.Point2D) (dist float64) {
 	deltaX := pointTwo.X - pointOne.X
 	deltaY := pointOne.Y - pointOne.Y
@@ -14,7 +14,6 @@ func EuclideanDistance(pointOne, pointTwo point.Point2D) (dist float64) {
 }
 
 // MinkowskiDistance returns minkowski distance of points in an N dimensional space,
-// basically an approx of Euclidean and manhattan distance.
 func MinkowskiDistance(PointA, PointB point.Point2D, p float64) (distMinkowski float64) {
 	var deltaA = math.Pow(PointA.X-PointA.Y, p)
 	var deltaB = math.Pow(PointB.X-PointB.Y, p)
