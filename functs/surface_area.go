@@ -63,3 +63,9 @@ func SurfAreaOfSphere(radius float64) (surfArea float64) {
 	surfArea = 4 * math.Pi * math.Pow(radius, 2)
 	return surfArea
 }
+
+// SurfAreaOfTorus returns the surface area of a Torus
+func SurfAreaOfTorus(innerRadius, outerRadius float64) (surfArea float64) {
+	surfArea = 4 * math.Pow(math.Pi, 2) * outerRadius * innerRadius
+	return surfArea
+}
