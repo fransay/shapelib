@@ -3,7 +3,7 @@ package point
 // Point2DH Homogeneous 2D point vector
 // when W is 1 PointH type is known as an augmented point vector
 // alternatively when W is 0, Point2DH type is known as an ideal point
-// or a point at infinity
+// or a point at infinity.
 type Point2DH struct {
 	X float64
 	Y float64
