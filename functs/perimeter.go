@@ -4,7 +4,7 @@ package functs
 
 // PERIMETER OF THREE SIDED FIGURES
 
-// PerimeterOfTriangle : perimeter of a regular triangle
+// PerimeterOfTriangle returns a perimeter of a regular triangle
 func PerimeterOfTriangle(sideA, sideB, sideC float64) (perim float64) {
 	perim = sideA + sideB + sideC
 	return perim
@@ -12,39 +12,39 @@ func PerimeterOfTriangle(sideA, sideB, sideC float64) (perim float64) {
 
 // PERIMETER OF FOUR SIDED FIGURES
 
-// PerimeterOfSquare : perimeter of a regular square
+// PerimeterOfSquare returns a perimeter of a regular square
 func PerimeterOfSquare(side float64) (perimeter float64) {
 	perimeter = side * 4
 	return perimeter
 }
 
-// PerimeterOfRegularRectangle returns the perimeter of a regular rectangle
+// PerimeterOfRegularRectangle returns a perimeter of a regular rectangle
 func PerimeterOfRegularRectangle(sideLength, sideWidth float64) (perimeter float64) {
 	perimeter = (sideWidth * 2) + (sideLength * 2)
 	return perimeter
 }
 
-// PerimeterOfParallelogram :perimeter of a regular parallelogram
+// PerimeterOfParallelogram returns the perimeter of a regular parallelogram
 func PerimeterOfParallelogram(northSide, westSide float64) (perim float64) {
 	perim = (northSide * 2) + (westSide * 2)
 	return perim
 
 }
 
-// PerimOfRKite :perimeter of a regular Kite
+// PerimOfRKite returns a perimeter of a regular Kite
 func PerimOfRKite(shortDiag, longDiag float64) (perim float64) {
 	perim = (shortDiag * 2) + (longDiag * 2)
 	return perim
 
 }
 
-// PerimOfRRhombus :perimeter of a regular Rhombus
+// PerimOfRRhombus returns a perimeter of a regular Rhombus
 func PerimOfRRhombus(side float64) (perim float64) {
 	perim = side * 4
 	return perim
 }
 
-// PerimOfRTrapezoid :a trapezoid has unequal sides
+// PerimOfRTrapezoid returns a perimeter of trapezoid has unequal sides
 func PerimOfRTrapezoid(side1, side2, side3, side4 float64) (perim float64) {
 	perim = side1 + side2 + side3 + side4
 	return perim
@@ -52,7 +52,7 @@ func PerimOfRTrapezoid(side1, side2, side3, side4 float64) (perim float64) {
 
 // PERIMETER OF FIVE SIDED FIGURES
 
-// PerimOfRPentagon :perimeter of regular Pentagon
+// PerimOfRPentagon returns a perimeter of regular Pentagon
 func PerimOfRPentagon(side float64) (perim float64) {
 	perim = side * 5
 	return perim
@@ -61,7 +61,7 @@ func PerimOfRPentagon(side float64) (perim float64) {
 
 // PERIMETER OF SIX SIDED FIGURES
 
-// PerimOfRHexagon :perimeter of a regular Hexagon
+// PerimOfRHexagon returns a perimeter of a regular Hexagon
 func PerimOfRHexagon(side float64) (perim float64) {
 	perim = side * 6
 	return perim
@@ -69,7 +69,7 @@ func PerimOfRHexagon(side float64) (perim float64) {
 
 // PERIMETER OF SEVEN SIDED FIGURES
 
-// PerimOfRHeptagon :perimeter of a regular Heptagon
+// PerimOfRHeptagon returns a perimeter of a regular Heptagon
 func PerimOfRHeptagon(side float64) (perim float64) {
 	perim = side * 7
 	return perim
@@ -77,7 +77,7 @@ func PerimOfRHeptagon(side float64) (perim float64) {
 
 // PERIMETER OF EIGHT SIDED FIGURES
 
-// PerimOfROctagon :perimeter of a regular Octagon
+// PerimOfROctagon returns a perimeter of a regular Octagon
 func PerimOfROctagon(side float64) (perim float64) {
 	perim = side * 8
 	return perim
@@ -85,7 +85,7 @@ func PerimOfROctagon(side float64) (perim float64) {
 
 // PERIMETER OF NINE SIDED FIGURES
 
-// PerimOfRNonagon  :perimeter of a regular Nonagon
+// PerimOfRNonagon returns a perimeter of a regular Nonagon
 func PerimOfRNonagon(side float64) (perim float64) {
 	perim = side * 9
 	return perim
@@ -93,7 +93,7 @@ func PerimOfRNonagon(side float64) (perim float64) {
 
 // PERIMETER OF NINE SIDED FIGURES
 
-// PerimOfRDecagon :perimeter of a regular Decagon
+// PerimOfRDecagon returns a perimeter of a regular Decagon
 func PerimOfRDecagon(side float64) (perim float64) {
 	perim = side * 10
 	return perim
@@ -101,13 +101,13 @@ func PerimOfRDecagon(side float64) (perim float64) {
 
 // PERIMETER OF GENERIC SHAPES
 
-// PerimOfRegularGeneric :perimeter of a regular generic shape
+// PerimOfRegularGeneric returns a perimeter of a regular generic shape
 func PerimOfRegularGeneric(sideLength float64, numberOfSides float64) (perim float64) {
 	perim = sideLength * numberOfSides
 	return perim
 }
 
-// PerimOfIrregularGeneric :perimeter of an irregular generic shape
+// PerimOfIrregularGeneric returns a perimeter of an irregular generic shape
 func PerimOfIrregularGeneric(side ...float64) (perim float64) {
 	var total float64
 	for _, value := range side {
