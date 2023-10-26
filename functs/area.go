@@ -29,7 +29,7 @@ func AreaOfTriangleAngle(side1, side2, angle float64) (area float64) {
 
 }
 
-// AREA OF QUADRILATERALS
+// AREA OF FOUR + SIDED FIGURES
 
 // AreaOfSquare :return the area of square given the length
 func AreaOfSquare(length float64) (area float64) {
