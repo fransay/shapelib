@@ -16,7 +16,7 @@ func AreaOfTriangleBH(base, height float64) (area float64) {
 	return area
 }
 
-// AreaOfTriangleSide :returns the results of area of a triangle
+// AreaOfTriangleSide returns the results of area of a triangle
 // given the length quantity of the triangle
 // using the heron mathematical formula
 // limitation: for areas where lengths approximate to the other,
@@ -128,8 +128,7 @@ func AreaOfRDecagon(side float64) (area float64) {
 	return area
 }
 
-// AreaOfCircle :Figures with non-straight sides
-// Area of a circle given the radius property
+// AreaOfCircle returns the area of a circle given its radius
 func AreaOfCircle(radius float64) (area float64) {
 	const pi float64 = 22 / 7
 	area = radius * radius * pi
