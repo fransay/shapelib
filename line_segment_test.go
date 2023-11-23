@@ -3,6 +3,7 @@ package shapelib
 import (
 	"math"
 	"shapelib/types"
+	"shapelib/types/point"
 	"testing"
 )
 
@@ -52,8 +53,8 @@ func TestLineSegmentMidPoint(t *testing.T) {
 	}{X: 20, Y: 22}}
 
 	// midpoint test one
-	var midPointLineResultLineSegmentOne types.Point2D = lineSegmentOne.MidPoint()
-	var midPointLineExpectedLineSegmentOne types.Point2D = types.Point2D{X: 15, Y: 18}
+	var midPointLineResultLineSegmentOne point.Point2D = lineSegmentOne.MidPoint()
+	var midPointLineExpectedLineSegmentOne point.Point2D = point.Point2D{X: 15, Y: 18}
 	if midPointLineExpectedLineSegmentOne != midPointLineResultLineSegmentOne {
 		t.Errorf("Expected %f, got %f", midPointLineExpectedLineSegmentOne, midPointLineResultLineSegmentOne)
 	}
@@ -67,8 +68,8 @@ func TestLineSegmentMidPoint(t *testing.T) {
 	}{X: 20, Y: 22}}
 
 	// midpoint test one
-	var midPointLineResultLineSegmentTwo types.Point2D = lineSegmentTwo.MidPoint()
-	var midPointLineExpectedLineSegmentTwo types.Point2D = types.Point2D{X: 15, Y: 18}
+	var midPointLineResultLineSegmentTwo point.Point2D = lineSegmentTwo.MidPoint()
+	var midPointLineExpectedLineSegmentTwo point.Point2D = point.Point2D{X: 15, Y: 18}
 	if midPointLineExpectedLineSegmentTwo != midPointLineResultLineSegmentTwo {
 		t.Errorf("Expected %f, got %f", midPointLineExpectedLineSegmentTwo, midPointLineResultLineSegmentTwo)
 	}

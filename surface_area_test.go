@@ -6,6 +6,7 @@ import (
 	"testing"
 )
 
+// test surface area of a right-angled pyramid
 func TestSurfAreaOfRightAngledPyramid(t *testing.T) {
 	var res = functs.SurfAreaOfRightAngledPyramid(10.0, 10.0, 10.0)
 	var exp = 1000.00
@@ -13,6 +14,8 @@ func TestSurfAreaOfRightAngledPyramid(t *testing.T) {
 		t.Errorf("expected %v got %v", exp, res)
 	}
 }
+
+// test surface area of tetrahedron
 func TestSurfAreaOfTetrahedron(t *testing.T) {
 	var res = functs.SurfAreaOfTetrahedron(10)
 	var exp = math.Trunc(17.320)
@@ -21,6 +24,8 @@ func TestSurfAreaOfTetrahedron(t *testing.T) {
 	}
 
 }
+
+// test surface area of cube
 func TestSurfAreaOfCube(T *testing.T) {
 	var res = functs.SurfAreaOfCube(10)
 	var exp = 60.0
@@ -29,6 +34,7 @@ func TestSurfAreaOfCube(T *testing.T) {
 	}
 }
 
+// test surface area of a cuboid
 func TestSurfAreaOfCuboid(t *testing.T) {
 	var res = functs.SurfAreaOfCuboid(3.0, 5.0, 7.0)
 	var exp = 30.0
@@ -38,6 +44,7 @@ func TestSurfAreaOfCuboid(t *testing.T) {
 
 }
 
+// test surface of a heptahedron
 func TestSurfAreaOfHeptahedron(t *testing.T) {
 	var res = functs.SurfAreaOfHeptahedron(10.0, 10.0)
 	var exp = math.Trunc(1257.1)
@@ -46,6 +53,7 @@ func TestSurfAreaOfHeptahedron(t *testing.T) {
 	}
 }
 
+// test surface area of a pentagon
 func TestSurfAreaOfPentahedron(t *testing.T) {
 	var res = functs.SurfAreaOfPentahedron(10.0, 10.0)
 	var exp = math.Trunc(1257.1)
@@ -55,6 +63,7 @@ func TestSurfAreaOfPentahedron(t *testing.T) {
 
 }
 
+// test surface area of right cylinder
 func TestSurfAreaOfRightCylinder(t *testing.T) {
 	var res = functs.SurfAreaOfRightCylinder(10.0, 10.0)
 	var exp = math.Trunc(1257.1)
@@ -64,11 +73,29 @@ func TestSurfAreaOfRightCylinder(t *testing.T) {
 
 }
 
+// test surface area of a hexahedron
 func TestSurfAreaOfHexahedron(t *testing.T) {
 	var res = functs.SurfAreaOfHexahedron(10.0)
 	var exp = math.Trunc(600.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %v got %v", exp, res)
 	}
+}
 
+// test surface area of sphere
+func TestSurfAreaOfSphere(t *testing.T) {
+	var res = functs.SurfAreaOfSphere(10.0)
+	var exp = math.Trunc(1256.63706)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %v got %v", exp, res)
+	}
+}
+
+// test surface area of torus
+func TestSurfAreaOfTorus(t *testing.T) {
+	var res = functs.SurfAreaOfTorus(10.0, 5)
+	var exp = math.Trunc(1973.921)
+	if math.Trunc(res) != exp {
+		t.Errorf("expected %v got %v", exp, res)
+	}
 }

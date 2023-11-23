@@ -1,26 +1,19 @@
-// Package functs provide standalone functions for two-dimensional geometries.
-
 package functs
 
 import (
 	"math"
-	"shapelib/types"
+	"shapelib/types/point"
 )
 
 // AREA OF TRIANGLES
 
-// AreaOfTriangleBH :returns the results of area of a triangle
-// given the base and height quantities of the triangle
+// AreaOfTriangleBH returns area of a triangle given the base and the height
 func AreaOfTriangleBH(base, height float64) (area float64) {
 	area = 0.5 * base * height
 	return area
 }
 
-// AreaOfTriangleSide :returns the results of area of a triangle
-// given the length quantity of the triangle
-// using the heron mathematical formula
-// limitation: for areas where lengths approximate to the other,
-// this formula might not yield a good result
+// AreaOfTriangleSide returns the area of a triangle given all three sides
 func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
 	averageSides := (side1 + side2 + side3) / 3
 	compute := averageSides * (averageSides - side1) * (averageSides - side2) * (averageSides - side3)
@@ -29,144 +22,125 @@ func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
 
 }
 
-// AreaOfTriangleAngle :returns the results of area of a triangle
-// given the angle properties of the triangle
-// angle described must be opposite to side3 of the triangle as defined locally.
+// AreaOfTriangleAngle returns the area of a triangle given two sides and an angle
 func AreaOfTriangleAngle(side1, side2, angle float64) (area float64) {
 	area = (side1 * side2) * math.Sin(angle) / 2
 	return area
 
 }
 
-// AREA OF QUADRILATERALS
+// AREA OF FOUR + SIDED FIGURES
 
-// AreaOfSquare :return the area of square
-// given the length property
+// AreaOfSquare :return the area of square given the length
 func AreaOfSquare(length float64) (area float64) {
 	area = length * length
 	return area
 }
 
-// AreaOfRectangle :return the area of rectangle
-// given the length and width properties
+// AreaOfRectangle returns the area of a rectangle given the length and width
 func AreaOfRectangle(length, width float64) (area float64) {
 	area = length * width
 	return area
 }
 
-// AreaOfParallelogram :return the area of parallelogram
-// given the base and height properties
+// AreaOfParallelogram returns the area of a parallelogram given the base and height
 func AreaOfParallelogram(base, height float64) (area float64) {
 	area = base * height
 	return area
 }
 
-// AreaOfKite :return the area of kite
-// given the diagonal properties
+// AreaOfKite returns the area of a kite given the main diagonals
 func AreaOfKite(diag1, diag2 float64) (area float64) {
 	area = (diag1 + diag2) / 2
 	return area
 }
 
-// AreaOfRhombus :return the area of rhombus
-// given the diagonal properties
+// AreaOfRhombus returns the area of a rhombus given the main diagonals
 func AreaOfRhombus(diag1, diag2 float64) (area float64) {
 	area = AreaOfKite(diag1, diag2)
 	return area
 }
 
-// AreaOfTrapezoid :returns the area trapezoid
-// given the sides and height properties
+// AreaOfTrapezoid returns the area trapezoid given the sides and the height
 func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
 	area = 0.5 * (side1 + side2) * height
 	return area
 }
 
-// AreaOfRPentagon :returns the area of a regular polygon
-// R in the midst of AreaOfRPentagon represents regular
-// given the side length properties of the pentagon
-func AreaOfRPentagon(length float64) (area float64) {
-	area = 0.25 * math.Sqrt(5.0*(5.0+(2.0*math.Sqrt(5.0)))) * (length * length)
+// AreaOfRPentagon returns the area of a regular pentagon given the side
+func AreaOfRPentagon(side float64) (area float64) {
+	area = 0.25 * math.Sqrt(5.0*(5.0+(2.0*math.Sqrt(5.0)))) * (side * side)
 	return area
 
 }
 
-// AreaOfRHexagon :returns the area of a regular Hexagon
-// R in the midst of AreaOfRHexagon represents regular
+// AreaOfRHexagon returns the area of a regular hexagon given the side
 func AreaOfRHexagon(side float64) (area float64) {
 	area = 1.5 * math.Sqrt(3) * math.Pow(side, 2)
 	return area
 
 }
 
-// AreaOfRHeptagon :returns the area of a regular heptagon
-// given the sides of the heptagon.
+// AreaOfRHeptagon returns the area of a regular heptagon given the side
 func AreaOfRHeptagon(side float64) (area float64) {
 	const apothem float64 = 3.634
 	area = apothem * side * side
 	return area
 }
 
-// AreaOfROctagon :returns the area of a regular octagon
+// AreaOfROctagon returns the area of a regular octagon given the side
 func AreaOfROctagon(side float64) (area float64) {
 	area = 2 * (1 + math.Sqrt(2.0)) * (side * side)
 	return area
 }
 
-// AreaOfRNonagon :returns the area of a regular nonagon
-// TODO: exam why function doesn't produce the desired output
+// AreaOfRNonagon returns the area of a regular nonagon given the side
 func AreaOfRNonagon(side float64) (area float64) {
-	var cotFunction = 1 / math.Tan(180/9)
-	area = (9 / 4) * (side * side) * cotFunction
+	const cotangent = 2.747477
+	area = (9 / 4) * math.Pow(side, 2.0) * cotangent
 	return area
 
 }
 
-// AreaOfRDecagon :returns the area of a regular decagon
+// AreaOfRDecagon returns the area of a regular decagon given the side
 func AreaOfRDecagon(side float64) (area float64) {
-	area = 2.5 * (side * side) * math.Sqrt(5.0+2*math.Sqrt(5.0))
+	area = 2.5 * math.Pow(side, 2.0) * math.Sqrt(5.0+2*math.Sqrt(5.0))
 	return area
 }
 
-// AreaOfCircle :Figures with non-straight sides
-// Area of a circle given the radius property
+// AreaOfCircle returns the area of a circle given its radius
 func AreaOfCircle(radius float64) (area float64) {
 	const pi float64 = 22 / 7
 	area = radius * radius * pi
 	return area
 }
 
-// AreaOfSemiCircle :returns the area of a semicircle
-// 1/2 the area of full circle ~ area of a semicircle
+// AreaOfSemiCircle returns the area of a semicircle given the radius
 func AreaOfSemiCircle(radius float64) (area float64) {
 	area = 0.5 * AreaOfCircle(radius)
 	return area
 }
 
-// AreaOfQuadCircle 1/4 is the area of a QuadCircle
-// returns the area of a fourth of any circle
+// AreaOfQuadCircle returns the area of a quad-circle
 func AreaOfQuadCircle(radius float64) (area float64) {
 	area = AreaOfCircle(radius) / 4
 	return area
-	// TODO: Test [AreaOfQuadCircle]
 }
 
-// AreaOfOval :Area of an oval
+// AreaOfOval returns the area of an oval
 func AreaOfOval(semiMajorAxis float64, semiMinorAxis float64) (area float64) {
 	area = math.Pi * semiMajorAxis * semiMinorAxis
 	return area
 }
 
-// AreaOfEllipse :Area of an oval
-// An Ellipse is the same as an oval but not all ovals are ellipse (Unidirectional casting)
+// AreaOfEllipse returns the area of an oval
 func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 	area = AreaOfOval(semiMajorAxis, semiMinorAxis)
 	return area
 }
 
-// AreaCoordinates :returns the area of any 2D shape given coordinates of the nodes
-// algorithm: shoelace
-func AreaCoordinates(cords ...types.Point2D) float64 {
+// AreaCoordinates returns the area of any two-dimensional shape given the coordinates of the vertices
+func AreaCoordinates(cords ...point.Point2D) float64 {
 	var forPass float64
 	var backPass float64
 	var numberOfCords = len(cords) - 1
