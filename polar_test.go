@@ -23,3 +23,22 @@ func TestDistance2DMS(t *testing.T) {
 		t.Errorf("expected %f, got %f", exp, obs)
 	}
 }
+
+func TestToRadians(t *testing.T) {
+	polarObj := cs.Polar{Distance: 3, Angle: 60}
+	obs := polarObj.ToRadians()
+	exp := 1.0471975511965976
+	if obs != exp {
+		t.Errorf("expected %f, got %f", exp, obs)
+	}
+}
+
+func TestPoint2PointDistance(t *testing.T) {
+	polarObj := cs.Polar{Distance: 3, Angle: 60}
+	var ex cs.Polar = cs.Polar{Distance: 5, Angle: 145}
+	obs := polarObj.Point2PointDistance(ex)
+	exp := 5.383017527390117
+	if obs != exp {
+		t.Errorf("expected %f, got %f", exp, obs)
+	}
+}
