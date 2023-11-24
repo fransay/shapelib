@@ -35,6 +35,10 @@ func (p *Polar) ToRadians() (rad float64) {
 }
 
 // Point2PointDistance Distance to another point with a polar representation
-func (p *Polar) Point2PointDistance(point Polar) float64 {
-	return 0.0
+func (p *Polar) Point2PointDistance(point Polar) (res float64) {
+	addDist := p.Distance + point.Distance
+	prodDist := p.Distance * point.Distance
+	addAngle := p.Angle + point.Angle
+	res = math.Sqrt(addDist - 2*prodDist*math.Cos(addAngle))
+	return res
 }
