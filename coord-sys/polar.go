@@ -1,34 +1,40 @@
 package coord_sys
 
-import "math"
+import (
+	"math"
+)
 
 type Polar struct {
-	distance float64 // distance from the origin, in dd
-	angle    float64 // referenced angle, i.e bearing
+	Distance float64 // Distance from the origin, in dd
+	Angle    float64 // referenced Angle, e.g. bearing
 }
 
-// converts polar to cartesian coordinates
-func (p *Polar) toCartesian() (c Cart) {
+// ToCartesian converts polar to cartesian coordinates
+func (p *Polar) ToCartesian() (c Cart) {
+	x := p.Distance * math.Cos(p.Angle)
+	y := p.Distance * math.Sin(p.Angle)
+	c.X = x
+	c.Y = y
 	return c
 }
 
-// converts distance to degree minutes and seconds representation
-func (p *Polar) distance2dms() (dms []float64) {
-	var deg = math.Floor(p.distance) // whole number part
-	var mins = math.Floor((p.distance - deg) * 60)
-	var sec = (p.distance-math.Floor(p.distance))*60 - math.Floor(p.distance-math.Floor(p.distance))*60
-	dms[0] = deg
-	dms[1] = mins
-	dms[2] = sec
+// Distance2DMS converts Distance to degree minutes and seconds representation
+func (p *Polar) Distance2DMS() (dms []float64) {
+	var degree = math.Floor(p.Distance) // whole number part
+	var decimalMinutes = (p.Distance - degree) * 60
+	var minutes = math.Floor(decimalMinutes)
+	var sec = (decimalMinutes - minutes) * 60
+	dms = append(dms, degree, minutes, sec)
 	return dms
 }
 
-// converts bearing in angles to radians
-func (p *Polar) toRadians() {
-	return
+// ToRadians converts bearing in degrees to radians
+func (p *Polar) ToRadians() (rad float64) {
+	rad = p.Angle * (math.Pi / 180)
+	return rad
 }
 
-// distance to another point with a polar representation
-func (p *Polar) point2PointDistance(point Polar) float64 {
-	return 0
+// Point2PointDistance Distance to another point with a polar representation
+func (p *Polar) Point2PointDistance(point Polar) float64 {
+	return 0.0
 }
