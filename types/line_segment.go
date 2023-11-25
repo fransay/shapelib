@@ -24,7 +24,7 @@ func (l *LineSegment) Distance() (dist float64) {
 func (l *LineSegment) MidPoint() point.Point2D {
 	deltaX := (l.PointB.X + l.PointA.X) / 2
 	deltaY := (l.PointB.Y + l.PointA.Y) / 2
-	midPoint := point.Point2D{deltaX, deltaY}
+	midPoint := point.Point2D{X: deltaX, Y: deltaY}
 	return midPoint
 
 }
