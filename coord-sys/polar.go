@@ -4,6 +4,7 @@ import (
 	"math"
 )
 
+// Polar type
 type Polar struct {
 	Distance float64 // Distance from the origin, in dd
 	Angle    float64 // referenced Angle, e.g. bearing

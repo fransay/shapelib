@@ -8,6 +8,13 @@ type Cart struct {
 	Y float64
 }
 
+// Cart3D cartesian type
+type Cart3D struct {
+	X float64
+	Y float64
+	Z float64
+}
+
 // ToPolar convert cartesian to Polar coordinates
 // reference point is origin
 func (c *Cart) ToPolar() (p Polar) {
