@@ -10,7 +10,7 @@ type Spherical struct {
 }
 
 // ToCartesianIn2D converts spherical coordinate to cartesian coordinates in 3D
-func (s *Spherical) ToCartesianIn2D() (cart Cart) {
+func (s *Spherical) ToCartesianIn2D() (cart Cart2D) {
 	x := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Cos(s.PolarAngle)
 	y := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Sin(s.PolarAngle)
 	cart.X = x

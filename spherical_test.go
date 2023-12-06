@@ -19,7 +19,7 @@ func TestSphericalPoint2PointDistance(t *testing.T) {
 func TestSphericalToCartesian2D(t *testing.T) {
 	spherObj := coordsys.Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
 	obsDist := spherObj.ToCartesianIn2D()
-	expDist := coordsys.Cart{X: 4, Y: 3} // incorrect expDist
+	expDist := coordsys.Cart2D{X: 4, Y: 3} // incorrect expDist
 	if obsDist != expDist {
 		t.Errorf("Expected %f, Got %f", expDist, obsDist)
 	}

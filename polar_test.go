@@ -9,7 +9,7 @@ import (
 func TestToCartesian(t *testing.T) {
 	polarObj := cs.Polar{Distance: 60.50, Angle: 15}
 	obs := polarObj.ToCartesian()
-	exp := cs.Cart{X: -45.961118727958684, Y: 39.34241432950557} //TODO: do calculation by hand for second check
+	exp := cs.Cart2D{X: -45.961118727958684, Y: 39.34241432950557} //TODO: do calculation by hand for second check
 	if exp != obs {
 		t.Errorf("expected %f, got %f", exp, obs)
 	}
