@@ -2,6 +2,7 @@ package types
 
 import (
 	"math"
+	s "shapelib/types"
 	"shapelib/types/point"
 	"testing"
 )
@@ -9,7 +10,7 @@ import (
 // distance test
 func TestLineSegmentDistance(t *testing.T) {
 	// line segment one
-	var lineSegmentOne LineSegment = LineSegment{PointA: struct {
+	var lineSegmentOne s.LineSegment = s.LineSegment{PointA: struct {
 		X float64
 		Y float64
 	}{X: 5, Y: 10}, PointB: struct {
@@ -17,7 +18,7 @@ func TestLineSegmentDistance(t *testing.T) {
 		Y float64
 	}{X: 10, Y: 15}}
 	// line segment two
-	var lineSegmentTwo LineSegment = LineSegment{PointA: struct {
+	var lineSegmentTwo s.LineSegment = s.LineSegment{PointA: struct {
 		X float64
 		Y float64
 	}{X: 234.543, Y: 24043.354}, PointB: struct {
@@ -43,7 +44,7 @@ func TestLineSegmentDistance(t *testing.T) {
 
 // midpoint test
 func TestLineSegmentMidPoint(t *testing.T) {
-	var lineSegmentOne LineSegment = LineSegment{PointA: struct {
+	var lineSegmentOne s.LineSegment = s.LineSegment{PointA: struct {
 		X float64
 		Y float64
 	}{X: 10, Y: 14}, PointB: struct {
@@ -58,7 +59,7 @@ func TestLineSegmentMidPoint(t *testing.T) {
 		t.Errorf("Expected %f, got %f", midPointLineExpectedLineSegmentOne, midPointLineResultLineSegmentOne)
 	}
 	// midpoint test two
-	var lineSegmentTwo LineSegment = LineSegment{PointA: struct {
+	var lineSegmentTwo s.LineSegment = s.LineSegment{PointA: struct {
 		X float64
 		Y float64
 	}{X: 10, Y: 14}, PointB: struct {
@@ -78,7 +79,7 @@ func TestLineSegmentMidPoint(t *testing.T) {
 // bearing test
 func TestLineSegmentBearing(t *testing.T) {
 	// instance 1 :line segment
-	var lineSegmentOne LineSegment = LineSegment{
+	var lineSegmentOne s.LineSegment = s.LineSegment{
 		PointA: struct {
 			X float64
 			Y float64
@@ -95,7 +96,7 @@ func TestLineSegmentBearing(t *testing.T) {
 	}
 
 	// instance 2 :line segment
-	var lineSegmentTwo LineSegment = LineSegment{
+	var lineSegmentTwo s.LineSegment = s.LineSegment{
 		PointA: struct {
 			X float64
 			Y float64
