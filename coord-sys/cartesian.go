@@ -66,23 +66,22 @@ func (c *Cart3D) Translate3D(vec [3]float64) (transCord Cart3D) {
 	return transCord
 }
 
-//// Rotate2D cartesian 2D point by a vector
-//func (c *Cart2D) Rotate2D() {
-//
-//}
-//
-//// Reflect2D cartesian 2D point by a vector
-//func (c *Cart2D) Reflect2D() {
-//
-//}
-//
-//
-//// Rotate3D cartesian 3D point by a vector
-//func (c *Cart2D) Rotate3D() {
-//
-//}
-//
-//// Reflect3D cartesian 3D point by a vector
-//func (c *Cart2D) Reflect3D() {
-//
-//}
+// Rotate2D cartesian 2D point around the x-axis
+func (c *Cart2D) Rotate2D(angle float64) (rotate Cart2D) {
+	xPrime := c.X*math.Cos(angle) - c.Y*math.Sin(angle)
+	yPrime := c.X*math.Sin(angle) - c.Y*math.Cos(angle)
+	rotate.X = xPrime
+	rotate.Y = yPrime
+	return rotate
+}
+
+// Rotate3D cartesian 3D point around the origin
+func (c *Cart3D) Rotate3D(rotationAngleAroundY, rotationAngleAroundZ float64) (rotate Cart3D) {
+	xPrime := c.X*math.Cos(rotationAngleAroundY)*math.Cos(rotationAngleAroundZ) - c.Y*math.Cos(rotationAngleAroundY)*math.Sin(rotationAngleAroundZ) + c.Z*math.Sin(rotationAngleAroundY)
+	yPrime := c.X*math.Sin(rotationAngleAroundZ) + c.Y*math.Cos(rotationAngleAroundZ) + c.Z*math.Sin(rotationAngleAroundY)
+	zPrime := -1*c.X*math.Sin(rotationAngleAroundY)*math.Cos(rotationAngleAroundZ) + c.Y*math.Sin(rotationAngleAroundZ) + c.Z*math.Cos(rotationAngleAroundY)
+	rotate.X = xPrime
+	rotate.Y = yPrime
+	rotate.Z = zPrime
+	return rotate
+}
