@@ -12,7 +12,7 @@ func TestPolygonNumberOfNodes(t *testing.T) {
 	var numberOfNodesResult = polygonOne.NumberOfNodes()
 	var numberOfNodesExpected = 3
 	if numberOfNodesResult != numberOfNodesExpected {
-		t.Errorf("Expected %d, got %d", numberOfNodesExpected, numberOfNodesResult)
+		t.Errorf("Expected %d, Got %d", numberOfNodesExpected, numberOfNodesResult)
 	}
 }
 
@@ -23,14 +23,14 @@ func TestPolygonLineSegment(t *testing.T) {
 	var numberOfLineSegmentResult = polygonOne.NumberOfLineSegments()
 	var numberOfLineSegmentExpected = 3
 	if numberOfLineSegmentExpected != numberOfLineSegmentResult {
-		t.Errorf("Expected %d, got %d", numberOfLineSegmentExpected, numberOfLineSegmentResult)
+		t.Errorf("Expected %d, Got %d", numberOfLineSegmentExpected, numberOfLineSegmentResult)
 	}
 	// polygon instance two
 	var polygonTwo = s.Polygon{point.Point2D{X: 7, Y: 9}, point.Point2D{X: 2, Y: 6}, point.Point2D{X: 4, Y: 8}, point.Point2D{X: 4, Y: 50}}
 	var numberOfLineSegmentTwoResult = polygonTwo.NumberOfLineSegments()
 	var numberOfLineSegmentTwoExpected = 4
 	if numberOfLineSegmentTwoExpected != numberOfLineSegmentTwoResult {
-		t.Errorf("Expected %d, got %d", numberOfLineSegmentTwoExpected, numberOfLineSegmentTwoResult)
+		t.Errorf("Expected %d, Got %d", numberOfLineSegmentTwoExpected, numberOfLineSegmentTwoResult)
 	}
 	// polygon instance three
 	var polygonThree = s.Polygon{point.Point2D{X: 7, Y: 9}, point.Point2D{X: 2, Y: 6}, point.Point2D{X: 4, Y: 8}, point.Point2D{X: 12, Y: 43},
@@ -38,7 +38,7 @@ func TestPolygonLineSegment(t *testing.T) {
 	var numberOfLineSegmentThreeResult = polygonThree.NumberOfLineSegments()
 	var numberOfLineSegmentThreeExpected = 5
 	if numberOfLineSegmentThreeExpected != numberOfLineSegmentThreeResult {
-		t.Errorf("Expected %d, got %d", numberOfLineSegmentThreeExpected, numberOfLineSegmentThreeResult)
+		t.Errorf("Expected %d, Got %d", numberOfLineSegmentThreeExpected, numberOfLineSegmentThreeResult)
 	}
 }
 
@@ -49,14 +49,14 @@ func TestPolygonCentroid(t *testing.T) {
 	var centroidResults = polygonOne.Centroid()
 	var centroidExpected = point.Point2D{X: 6.5, Y: 11.5}
 	if centroidExpected != centroidResults {
-		t.Errorf("Expected %f, got %f", centroidExpected, centroidResults)
+		t.Errorf("Expected %f, Got %f", centroidExpected, centroidResults)
 	}
 	// polygon instance two
 	var polygonTwo = s.Polygon{point.Point2D{X: 1, Y: 5}, point.Point2D{X: 6, Y: 9}, point.Point2D{X: 5, Y: 10}}
 	var centroidTwoResult = polygonTwo.Centroid()
 	var centroidTwoExpected = point.Point2D{X: 6, Y: 12}
 	if centroidTwoExpected != centroidTwoResult {
-		t.Errorf("Expected %f, got %f", centroidTwoExpected, centroidTwoResult)
+		t.Errorf("Expected %f, Got %f", centroidTwoExpected, centroidTwoResult)
 	}
 
 	// polygon instance three
@@ -64,6 +64,6 @@ func TestPolygonCentroid(t *testing.T) {
 	var centroidThreeResults = polygonThree.Centroid()
 	var centroidThreeExpected = point.Point2D{X: 61.0, Y: 61.5}
 	if centroidThreeExpected != centroidThreeResults {
-		t.Errorf("Expected %f, got %f", centroidThreeExpected, centroidThreeResults)
+		t.Errorf("Expected %f, Got %f", centroidThreeExpected, centroidThreeResults)
 	}
 }
