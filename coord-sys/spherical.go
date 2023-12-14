@@ -1,6 +1,8 @@
 package coord_sys
 
-import "math"
+import (
+	"math"
+)
 
 // Spherical type
 type Spherical struct {
@@ -13,8 +15,7 @@ type Spherical struct {
 func (s *Spherical) ToCartesianIn2D() (cart Cart2D) {
 	x := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Cos(s.PolarAngle)
 	y := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Sin(s.PolarAngle)
-	cart.X = x
-	cart.Y = y
+	cart = Cart2D{X: x, Y: y}
 	return cart
 }
 
@@ -23,9 +24,7 @@ func (s *Spherical) ToCartesianIn3D() (cart Cart3D) {
 	x := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Cos(s.PolarAngle)
 	y := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Sin(s.PolarAngle)
 	z := s.RadialDistance * math.Cos(s.PolarAngle)
-	cart.X = x
-	cart.Y = y
-	cart.Z = z
+	cart = Cart3D{X: x, Y: y, Z: z}
 	return cart
 }
 
