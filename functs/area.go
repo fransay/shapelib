@@ -5,8 +5,6 @@ import (
 	"shapelib/types/point"
 )
 
-// AREA OF TRIANGLES
-
 // AreaOfTriangleBH returns area of a triangle given the base and the height
 func AreaOfTriangleBH(base, height float64) (area float64) {
 	area = 0.5 * base * height
@@ -28,8 +26,6 @@ func AreaOfTriangleAngle(side1, side2, angle float64) (area float64) {
 	return area
 
 }
-
-// AREA OF FOUR + SIDED FIGURES
 
 // AreaOfSquare :return the area of square given the length
 func AreaOfSquare(length float64) (area float64) {
