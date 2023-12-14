@@ -1,14 +1,17 @@
 package coord_sys
 
-import "math"
+import (
+	"math"
+	"shapelib/utils"
+)
 
-// Cart2D cartesian type
+// Cart2D cartesian type for 2-dim
 type Cart2D struct {
 	X float64
 	Y float64
 }
 
-// Cart3D cartesian type
+// Cart3D cartesian type for 3-dim
 type Cart3D struct {
 	X float64
 	Y float64
@@ -16,13 +19,14 @@ type Cart3D struct {
 }
 
 // ToPolar convert cartesian to Polar coordinates
-// reference point is origin
-func (c *Cart2D) ToPolar() (p Polar) {
+// return multiple objects, angle in radians and degrees
+// origin (0,0):: reference point
+func (c *Cart2D) ToPolar() (pr, pd Polar) {
 	cartDist := distance(Cart2D{0, 0}, *c)
 	cartAngle := angle(Cart2D{0, 0}, *c)
-	p.Distance = cartDist
-	p.Angle = cartAngle
-	return p
+	pr = Polar{cartDist, cartAngle}
+	pd = Polar{cartDist, utils.Rad2Deg(cartAngle)}
+	return pr, pd
 }
 
 // Point2PointDistance2D distance in the cartesian coordinate system
@@ -42,7 +46,7 @@ func distance(pointOne, pointTwo Cart2D) (dist float64) {
 func angle(pointOne, pointTwo Cart2D) (ang float64) {
 	changeInEastings := pointTwo.X - pointOne.X
 	changeInNorthings := pointTwo.Y - pointOne.Y
-	ang = math.Atan(changeInEastings / changeInNorthings)
+	ang = math.Atan(changeInNorthings / changeInEastings)
 	return ang
 }
 
