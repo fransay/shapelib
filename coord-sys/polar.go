@@ -6,7 +6,7 @@ import (
 
 // Polar type
 type Polar struct {
-	Distance float64 // Distance from the origin, in dd
+	Distance float64 // Distance from the origin
 	Angle    float64 // referenced Angle, e.g. bearing
 }
 
@@ -14,8 +14,7 @@ type Polar struct {
 func (p *Polar) ToCartesian() (c Cart2D) {
 	x := p.Distance * math.Cos(p.Angle)
 	y := p.Distance * math.Sin(p.Angle)
-	c.X = x
-	c.Y = y
+	c = Cart2D{X: x, Y: y}
 	return c
 }
 
