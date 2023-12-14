@@ -29,7 +29,17 @@ func TestSphericalToCartesian2D(t *testing.T) {
 func TestSphericalToCartesian3D(t *testing.T) {
 	spherObj := coordsys.Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
 	obsDist := spherObj.ToCartesianIn3D()
-	expDist := coordsys.Cart3D{X: -9.534170, Y: 2.592347, Z: 9.649660} // incorrect expDist
+	expDist := coordsys.Cart3D{X: -9.534170, Y: 2.592347, Z: 9.649660} // incorrect expDist //TODO <-f
+	if obsDist != expDist {
+		t.Errorf("Expected %f, Got %f", expDist, obsDist)
+	}
+}
+
+// test toArray method
+func TestToArray(t *testing.T) {
+	spherObj := coordsys.Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
+	obsDist := spherObj.ToArray()
+	expDist := [3]float64{10.0, 50.0, 30.0}
 	if obsDist != expDist {
 		t.Errorf("Expected %f, Got %f", expDist, obsDist)
 	}

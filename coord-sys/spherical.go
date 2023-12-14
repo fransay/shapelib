@@ -38,3 +38,9 @@ func (s *Spherical) Point2PointDistance(point Spherical) (dist float64) {
 	dist = math.Sqrt(addRadialDist - 2*prodRadialDist*angArithmetic)
 	return dist
 }
+
+// ToArray return the array form of the spherical structure
+// array form: {azimuthAngle, polarAngle, radialDistance}
+func (s *Spherical) ToArray() [3]float64 {
+	return [3]float64{s.RadialDistance, s.PolarAngle, s.AzimuthAngle}
+}
