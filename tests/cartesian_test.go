@@ -1,6 +1,7 @@
 package types
 
 import (
+	"math"
 	cs "shapelib/coord-sys"
 	"testing"
 )
@@ -28,11 +29,20 @@ func TestToPolar(t *testing.T) {
 
 // test point2pointDist
 func TestPoint2PointDist(t *testing.T) {
+	// obj1
 	cartObj := cs.Cart2D{X: 20, Y: 5}
 	obs := cartObj.Point2PointDistance2D(cs.Cart2D{X: 10, Y: 5})
 	exp := 10.0
 	if obs != exp {
 		t.Errorf("expected %f, got %f", exp, obs)
+	}
+
+	// obj2
+	cartObj2 := cs.Cart2D{X: 20, Y: 5}
+	obs2 := cartObj2.Point2PointDistance2D(cs.Cart2D{X: 50, Y: 10})
+	exp2 := math.Sqrt(925)
+	if obs != exp {
+		t.Errorf("expected %f, got %f", exp2, obs2)
 	}
 }
 
