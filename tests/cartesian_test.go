@@ -7,15 +7,26 @@ import (
 
 // test topolar
 func TestToPolar(t *testing.T) {
+	// object 1
 	cartObj := cs.Cart2D{X: 20, Y: 5}
-	obs := cartObj.ToPolar()
-	exp := cs.Polar{Distance: 20.615528128088304, Angle: 1.3258176636680323}
-	if obs != exp {
-		t.Errorf("expected %f, got %f", exp, obs)
+	obsRR, obsRD := cartObj.ToPolar()
+	expRR, expRD := cs.Polar{Distance: 20.615528128088304, Angle: 0.24497866312686414}, cs.Polar{Distance: 20.615528128088304, Angle: 14.036243467926479}
+	if obsRR != expRR && obsRD != expRD {
+		t.Errorf("expected %f, got %f", expRR, obsRR)
+		t.Errorf("expected %f, got %f", expRD, obsRD)
+	}
+
+	// object 2
+	cartObj2 := cs.Cart2D{X: 0, Y: 1}
+	obsRR2, obsRD2 := cartObj2.ToPolar()
+	expRR2, expRD2 := cs.Polar{Distance: 1.0, Angle: 1.5707963267948966}, cs.Polar{Distance: 1.0, Angle: 90}
+	if obsRR2 != expRR2 && obsRD2 != expRD2 {
+		t.Errorf("expected %f, got %f", expRR2, obsRR2)
+		t.Errorf("expected %f, got %f", expRD2, obsRD2)
 	}
 }
 
-// test point2pointdist
+// test point2pointDist
 func TestPoint2PointDist(t *testing.T) {
 	cartObj := cs.Cart2D{X: 20, Y: 5}
 	obs := cartObj.Point2PointDistance2D(cs.Cart2D{X: 10, Y: 5})
