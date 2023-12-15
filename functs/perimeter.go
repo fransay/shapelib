@@ -1,16 +1,12 @@
-// Package functs: The perimeter of a 2D shape is the total distance around the respective shape
-// Package functs: Package for computing the perimeter of REGULAR 2D shapes
+// Package functs: The perimeter of a 2D shape is the total distance around it.
+// Package functs: Provide free functions for computing perimeters of a wide array of 2D
 package functs
-
-// PERIMETER OF THREE SIDED FIGURES
 
 // PerimeterOfTriangle : perimeter of a regular triangle
 func PerimeterOfTriangle(sideA, sideB, sideC float64) (perim float64) {
 	perim = sideA + sideB + sideC
 	return perim
 }
-
-// PERIMETER OF FOUR SIDED FIGURES
 
 // PerimeterOfSquare : perimeter of a regular square
 func PerimeterOfSquare(side float64) (perimeter float64) {
@@ -59,8 +55,6 @@ func PerimOfRPentagon(side float64) (perim float64) {
 
 }
 
-// PERIMETER OF SIX SIDED FIGURES
-
 // PerimOfRHexagon :perimeter of a regular Hexagon
 func PerimOfRHexagon(side float64) (perim float64) {
 	perim = side * 6
@@ -74,8 +68,6 @@ func PerimOfRHeptagon(side float64) (perim float64) {
 	perim = side * 7
 	return perim
 }
-
-// PERIMETER OF EIGHT SIDED FIGURES
 
 // PerimOfROctagon :perimeter of a regular Octagon
 func PerimOfROctagon(side float64) (perim float64) {
@@ -91,24 +83,20 @@ func PerimOfRNonagon(side float64) (perim float64) {
 	return perim
 }
 
-// PERIMETER OF NINE SIDED FIGURES
-
 // PerimOfRDecagon :perimeter of a regular Decagon
 func PerimOfRDecagon(side float64) (perim float64) {
 	perim = side * 10
 	return perim
 }
 
-// PERIMETER OF GENERIC SHAPES
-
-// PerimOfRegularGeneric :perimeter of a regular generic shape
-func PerimOfRegularGeneric(sideLength float64, numberOfSides float64) (perim float64) {
+// PerimOfRGeneral :perimeter of a regular generic shape
+func PerimOfRGeneral(sideLength float64, numberOfSides float64) (perim float64) {
 	perim = sideLength * numberOfSides
 	return perim
 }
 
-// PerimOfIrregularGeneric :perimeter of an irregular generic shape
-func PerimOfIrregularGeneric(side ...float64) (perim float64) {
+// PerimOfIrGeneral :perimeter of an irregular generic shape
+func PerimOfIrGeneral(side ...float64) (perim float64) {
 	var total float64
 	for _, value := range side {
 		total = total + value
@@ -117,8 +105,8 @@ func PerimOfIrregularGeneric(side ...float64) (perim float64) {
 
 }
 
-// PerimeterOfIrregularFourSidedFigures returns the perimeter of an irregular rectangle
-func PerimeterOfIrregularFourSidedFigures(sideOne, sideTwo, sideThree, sideFour float64) (perimeter float64) {
+// PerimOfIrr4Sided returns the perimeter of an irregular four sides figure
+func PerimOfIrr4Sided(sideOne, sideTwo, sideThree, sideFour float64) (perimeter float64) {
 	perimeter = sideOne + sideTwo + sideThree + sideFour
 	return perimeter
 }

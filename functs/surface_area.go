@@ -13,11 +13,10 @@ func SurfAreaOfTetrahedron(sideLength float64) (surfArea float64) {
 }
 
 // SurfAreaOfRightAngledPyramid returns surface area of a right-angled pyramid
-func SurfAreaOfRightAngledPyramid(baseLength float64, baseWidth float64, pyramidHeight float64) (surfArea float64) {
-	surfArea = (baseLength * baseWidth) + baseLength*(math.Sqrt(((baseWidth/2)*(baseWidth/2))+(pyramidHeight*pyramidHeight))) +
-		baseWidth*(math.Sqrt(((baseLength/2)*(baseLength/2))+(pyramidHeight*pyramidHeight)))
+// pyramidHeight is also known as slant height.
+func SurfAreaOfRightAngledPyramid(baseArea float64, basePerimeter float64, pyramidHeight float64) (surfArea float64) {
+	surfArea = baseArea + basePerimeter*pyramidHeight/2
 	return surfArea
-
 }
 
 // SurfAreaOfCube returns surface area of a cube
@@ -33,7 +32,7 @@ func SurfAreaOfCuboid(sideLength, sideWidth, sideHeight float64) (surfArea float
 }
 
 // SurfAreaOfPentahedron returns the surface area of pentahedron
-func SurfAreaOfPentahedron(sideLength, height float64) (sideArea float64) {
+func SurfAreaOfPentahedron(base, slantHeight float64) (sideArea float64) {
 	sideArea = sideLength * (sideLength + math.Sqrt(math.Pow(sideLength, 2.0)+4*(math.Pow(height, 2.0))))
 	return sideArea
 
@@ -46,8 +45,8 @@ func SurfAreaOfHexahedron(sideLength float64) (surfArea float64) {
 }
 
 // SurfAreaOfHeptahedron returns the surface area of heptahedron
-func SurfAreaOfHeptahedron(sideLength, thickness float64) (surfArea float64) {
-	surfArea = 2*(AreaOfRHeptagon(sideLength)) + 2*(AreaOfRectangle(sideLength, thickness))
+func SurfAreaOfHeptahedron(apothem, slantHeight float64) (surfArea float64) {
+	surfArea = (7 * apothem * slantHeight) / 4
 	return surfArea
 
 }

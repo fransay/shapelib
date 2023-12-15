@@ -2,7 +2,9 @@ package functs
 
 import (
 	"math"
+	"shapelib/types"
 	"shapelib/types/point"
+	"shapelib/utils"
 )
 
 // EuclideanDistance returns Euclidean distance between two points in a 2-dimensional space
@@ -19,4 +21,15 @@ func MinkowskiDistance(PointA, PointB point.Point2D, p float64) (distMinkowski f
 	var deltaB = math.Pow(PointB.X-PointB.Y, p)
 	distMinkowski = math.Pow(deltaA+deltaB, 1/p)
 	return distMinkowski
+}
+
+// HaversineDistance returns the physical space between to locations on earth
+func HaversineDistance(PointA, PointB types.LatLong) (dist float64) {
+	const radiusOfEarth = 6371 // in kilometers
+	latitudeDiff := utils.Deg2Rad(PointA.Latitude - PointB.Latitude)
+	longitudeDiff := utils.Deg2Rad(PointA.Longitude - PointB.Longitude)
+	haversine := math.Pow(math.Sinh(latitudeDiff/2), 2) + math.Cos(PointA.Latitude)*math.Cos(PointA.Latitude)*math.Pow(math.Sin(longitudeDiff/2), 2)
+	centralAngle := 2 * math.Atan2(math.Sqrt(haversine), math.Sqrt(1-haversine))
+	dist = radiusOfEarth * centralAngle
+	return dist
 }

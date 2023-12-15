@@ -9,7 +9,7 @@ import (
 // test surface area of a right-angled pyramid
 func TestSurfAreaOfRightAngledPyramid(t *testing.T) {
 	var res = functs.SurfAreaOfRightAngledPyramid(10.0, 10.0, 10.0)
-	var exp = 1000.00
+	var exp = 300.0
 	if exp != res {
 		t.Errorf("expected %v got %v", exp, res)
 	}
@@ -22,7 +22,6 @@ func TestSurfAreaOfTetrahedron(t *testing.T) {
 	if exp != math.Trunc(res) {
 		t.Errorf("expected %v got %v", exp, res)
 	}
-
 }
 
 // test surface area of cube
@@ -46,8 +45,8 @@ func TestSurfAreaOfCuboid(t *testing.T) {
 
 // test surface of a heptahedron
 func TestSurfAreaOfHeptahedron(t *testing.T) {
-	var res = functs.SurfAreaOfHeptahedron(10.0, 10.0)
-	var exp = math.Trunc(1257.1)
+	var res = functs.SurfAreaOfHeptahedron(10, 10.0)
+	var exp = 175.00
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %v got %v", exp, res)
 	}

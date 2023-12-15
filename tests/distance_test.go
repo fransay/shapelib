@@ -3,6 +3,7 @@ package types
 import (
 	"math"
 	"shapelib/functs"
+	"shapelib/types"
 	"shapelib/types/point"
 	"testing"
 )
@@ -24,5 +25,16 @@ func TestMinkowskiDistance(t *testing.T) {
 	var minkowskiDistResult = 5.656854249492381
 	if math.Trunc(minkowskiDistExpected) != math.Trunc(minkowskiDistResult) {
 		t.Errorf("Ëxpected %f, Got %f", minkowskiDistExpected, minkowskiDistResult)
+	}
+}
+
+// test haversine distance
+func TestHaversineDistance(t *testing.T) {
+	stationA := types.LatLong{Latitude: 20.0, Longitude: 60.0}
+	stationB := types.LatLong{Latitude: 40.0, Longitude: 100.0}
+	haversineDistanceObs := functs.HaversineDistance(stationA, stationB)
+	haversineDistanceExp := 2880.8708298130377
+	if haversineDistanceExp != haversineDistanceObs {
+		t.Errorf("Ëxpected %f, Got %f", haversineDistanceExp, haversineDistanceObs)
 	}
 }
