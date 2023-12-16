@@ -53,5 +53,85 @@ func TestVolOfPentahedron(t *testing.T) {
 	if math.Trunc(result) != expected {
 		t.Errorf("expected %v got %v", expected, result)
 	}
+}
 
+// test volume of triangular pyramid
+func TestVolOfTriPymd(t *testing.T) {
+	var result = functs.VolOfTriPymd(5, 10)
+	var expected = 16.666666666666668
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of a pentagonal pyramids
+func TestVolOfPentPymd(t *testing.T) {
+	var result = functs.VolOfPentPymd(5.0, 10.0)
+	var expected = 70.1875104841729
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of hexagonal pyramid
+func TestVolOfHexaPymd(t *testing.T) {
+	var result = functs.VolOfHexaPymd(5, 10)
+	var expected = 216.50635094610965
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of cone frustrum
+func TestVolOfConeFrustrum(t *testing.T) {
+	var result = functs.VolOfConeFrustum(5, 10)
+	var expected = 261.79938779914943
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of cylinder frustum
+func TestVolOfCyFrustrum(t *testing.T) {
+	var result = functs.VolOfCyFrustum(5, 10)
+	var expected = 785.3981633974483
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of ellipsoid
+func TestVolOfEllipsoid(t *testing.T) {
+	var result = functs.VolOfEllipsoid(5, 10, 15)
+	var expected = 3141.592653589793
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of torus
+func TestVolOfTorus(t *testing.T) {
+	var result = functs.VolOfTorus(5, 2)
+	var expected = 394.78417604357435
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of a decahedron
+func TestVolOfDecahedron(t *testing.T) {
+	var result = functs.VolOfDecahedron(5)
+	var expected = 957.8898700780791
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of icosahedron
+func TestVolOfIcosahedron(t *testing.T) {
+	var result = functs.VolOfIcosahedron(5)
+	var expected = 272.71187382811405
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
 }
