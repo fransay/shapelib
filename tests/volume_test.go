@@ -55,6 +55,50 @@ func TestVolOfPentahedron(t *testing.T) {
 	}
 }
 
+func TestVolOfTriPrism(t *testing.T) {
+	var result = functs.VolOfTriPrism(10.00, 5.00, 10.0, 5)
+	var expected = 860.2387002944835
+	if result != expected {
+		t.Errorf("expected %v got %v", expected, result)
+	}
+}
+
+// test volume of pentagonal prism
+func TestVolOfPentPrism(t *testing.T) {
+	var result = functs.VolOfPentPrism(10.00, 5.00)
+	var expected = 860.2387002944835
+	if result != expected {
+		t.Errorf("expected %v got %v", expected, result)
+	}
+}
+
+// test volume of hexagonal prism
+func TestVolOfHexaPrism(t *testing.T) {
+	var result = functs.VolOfHexaPrism(10.00, 5.00)
+	var expected = 1299.038105676658
+	if result != expected {
+		t.Errorf("expected %v got %v", expected, result)
+	}
+}
+
+// test volume of octagonal prism
+func TestVolOfOctPrism(t *testing.T) {
+	var result = functs.VolOfOctPrism(5, 10)
+	var expected = 1207.1067811865473
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
+// test volume of a square pyramid
+func TestVolOfSquarePyramid(t *testing.T) {
+	var result = functs.VolOfSquarePymd(5, 10)
+	var expected = 83.33333333333333
+	if result != expected {
+		t.Errorf("Expected %v Got %v", expected, result)
+	}
+}
+
 // test volume of triangular pyramid
 func TestVolOfTriPymd(t *testing.T) {
 	var result = functs.VolOfTriPymd(5, 10)

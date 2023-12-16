@@ -50,19 +50,41 @@ func VolOfCylinder() {}
 func VolOfRectPrism() {}
 
 // VolOfTriPrism return volume of triangular prism
-func VolOfTriPrism() {}
+func VolOfTriPrism(baseSideA, baseSideB, baseSideC, height float64) (vol float64) { //todo check triangular prism and fix
+	// assert args
+	if baseSideB+baseSideC < baseSideA || baseSideA+baseSideB < baseSideC {
+		panic("Either (sideB + sideC) > sideA or (sideA + sideB) > sideC.")
+	}
+	factor := -1*math.Pow(baseSideA, 4) + 2*math.Pow(baseSideA*baseSideB, 2.0) - math.Pow(baseSideB, 4) + 2*math.Pow(baseSideB*baseSideC, 2) - math.Pow(baseSideC, 4)
+	vol = height * math.Sqrt(factor) / 4
+	return vol
+}
 
 // VolOfPentPrism return volume of pentagonal prism
-func VolOfPentPrism() {}
+func VolOfPentPrism(baseEdge, height float64) (vol float64) {
+	factor := math.Sqrt(5*(5+2*math.Sqrt(5))) / 4
+	vol = factor * math.Pow(baseEdge, 2) * height
+	return vol
+}
 
 // VolOfHexaPrism return volume of hexagonal prism
-func VolOfHexaPrism() {}
+func VolOfHexaPrism(baseEdge, height float64) (vol float64) {
+	vol = (3 * math.Sqrt(3)) / 2 * math.Pow(baseEdge, 2) * height
+	return vol
+}
 
 // VolOfOctPrism return volume of octagonal prism
-func VolOfOctPrism() {}
+func VolOfOctPrism(baseEdge, height float64) (vol float64) {
+	factor := 2 * (1 + math.Sqrt(2))
+	vol = factor * math.Pow(baseEdge, 2) * height
+	return vol
+}
 
 // VolOfSquarePymd return volume of square pyramid
-func VolOfSquarePymd() {}
+func VolOfSquarePymd(baseEdge, height float64) (vol float64) {
+	vol = math.Pow(baseEdge, 2) * height / 3
+	return vol
+}
 
 // VolOfTriPymd return volume of a triangular pyramid
 func VolOfTriPymd(areaOfBase, height float64) (vol float64) {
