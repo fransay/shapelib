@@ -41,13 +41,22 @@ func VolOfSphere(radius float64) (vol float64) {
 }
 
 // VolOfCone return volume of a cone
-func VolOfCone() {}
+func VolOfCone(radius, height float64) (vol float64) {
+	vol = (math.Pi * math.Pow(radius, 2) * height) / 3
+	return vol
+}
 
 // VolOfCylinder return volume of cylinder
-func VolOfCylinder() {}
+func VolOfCylinder(radius, height float64) (vol float64) {
+	vol = radius * height
+	return vol
+}
 
 // VolOfRectPrism return volume of a rectangular prism
-func VolOfRectPrism() {}
+func VolOfRectPrism(length, width, height float64) (vol float64) {
+	vol = length * width * height
+	return vol
+}
 
 // VolOfTriPrism return volume of triangular prism
 func VolOfTriPrism(baseSideA, baseSideB, baseSideC, height float64) (vol float64) { //todo check triangular prism and fix
