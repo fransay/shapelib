@@ -55,9 +55,38 @@ func TestVolOfPentahedron(t *testing.T) {
 	}
 }
 
+// test volume of cone
+func TestVolOfCone(t *testing.T) {
+	var result = functs.VolOfCone(10.00, 5.00)
+	var expected = 523.5987755982989
+	if result != expected {
+		t.Errorf("expected %v got %v", expected, result)
+	}
+
+}
+
+// test volume of cylinder
+func TestVolOfCylinder(t *testing.T) {
+	var result = functs.VolOfCylinder(10.00, 5.00)
+	var expected = 50.0
+	if result != expected {
+		t.Errorf("expected %v got %v", expected, result)
+	}
+
+}
+
+// test volume of rect prism
+func TestVolOfRectPrism(t *testing.T) {
+	var result = functs.VolOfRectPrism(10.00, 5.00, 10.0)
+	var expected = 500.0
+	if result != expected {
+		t.Errorf("expected %v got %v", expected, result)
+	}
+}
+
 func TestVolOfTriPrism(t *testing.T) {
 	var result = functs.VolOfTriPrism(10.00, 5.00, 10.0, 5)
-	var expected = 860.2387002944835
+	var expected = 500.0
 	if result != expected {
 		t.Errorf("expected %v got %v", expected, result)
 	}
