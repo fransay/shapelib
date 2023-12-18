@@ -1,29 +1,28 @@
 package types
 
-import "shapelib/types/point"
+import (
+	"math"
+	"shapelib/types/point"
+)
 
 // Polygon type polygon
 type Polygon []point.Point2D
 
-// polygon methods
-
-// Area returns the area of the polygon
-// algorithm: customised shoelace
-// Optimise for resource and time complexities
-func (p *Polygon) Area() (area float64) {
-	// fetch all points/stations in the array
-	for i, j := 0, 1; i < len(*p); i, j = i+1, j+1 {
-
+// Area returns area of a polygon using shoelace
+func (p Polygon) Area() (area float64) {
+	var forwardPass = 0.0
+	var backwardPass = 0.0
+	for i, j := 0, 1; j < len(p); i, j = i+1, j+1 {
+		startPoint := p[i]
+		terminalPoint := p[j]
+		forwardPass = forwardPass + startPoint.X*terminalPoint.Y
+		backwardPass = backwardPass + terminalPoint.X*startPoint.Y
+		area = (forwardPass - backwardPass) / 2
 	}
-	return 0.0
-
+	return math.Abs(area) // abs for magnitude sense only
 }
 
-// Centroid returns the centroid of the polygon
-// algorithms: mean
-// average mean of x -- sum(x)/n
-// average mean of y -- sum(y)/y
-
+// Centroid returns the centre point of polygon
 func (p *Polygon) Centroid() (cent point.Point2D) {
 	var xSum, ySum float64
 	for _, values := range *p {
@@ -36,14 +35,12 @@ func (p *Polygon) Centroid() (cent point.Point2D) {
 	return cent
 }
 
-// Perimeter returns total distance around the polygon
-// traverse the total length of compositing strings
+// Perimeter returns the total perimeter of a polygon
 func (p *Polygon) Perimeter() (perim float64) {
 	return perim
 }
 
-// ShortestLineSegment returns the shortest line string
-// use ranking algorithm to sort out distances
+// ShortestLineSegment returns the shortest line segment of a polygon
 func (p *Polygon) ShortestLineSegment() int {
 	// create a slice
 	// find the distance between consequence points/station
@@ -53,9 +50,7 @@ func (p *Polygon) ShortestLineSegment() int {
 	return 0.0
 }
 
-// IsClosed returns a boolean value whether polygon is closed or not
-// if element of array is equal to last element of array
-// then polygon is closed
+// IsClosed returns a boolean if a polygon is closed or not
 func (p *Polygon) IsClosed() (isClosedStatus bool) {
 	if !p.IsOpened() {
 		isClosedStatus = true
@@ -65,9 +60,7 @@ func (p *Polygon) IsClosed() (isClosedStatus bool) {
 	return isClosedStatus
 }
 
-// IsOpened returns a boolean value whether polygon is opened or not
-// if element of first array is not equal to element of array
-// then polygon is opened
+// IsOpened returns a boolean if a polygon is closed or not
 func (p *Polygon) IsOpened() (isOpenedStatus bool) {
 	var firstElement, LastElement point.Point2D
 	for i, v := range *p {
@@ -85,8 +78,7 @@ func (p *Polygon) IsOpened() (isOpenedStatus bool) {
 	return isOpenedStatus
 }
 
-// NumberOfLineSegments returns the number of compositing line segments
-// number of line segments is equal to number of nodes
+// NumberOfLineSegments returns the number of line segments forming a polygon
 func (p *Polygon) NumberOfLineSegments() int {
 	return p.NumberOfNodes()
 }
@@ -103,9 +95,28 @@ func (p *Polygon) NumberOfNodes() int {
 	return len(*p)
 }
 
-// return the distance of a specific line segment using the indexes
-
+// LineSegmentDistance returns the distance of a specific line segment using the indexes
 func (p *Polygon) LineSegmentDistance(ind int) (distance float64) {
 	return distance
 
+}
+
+// Affine returns the transformed set of points (forming the polygon) under affine transformation
+func (p *Polygon) Affine() (affine Polygon) {
+	return affine
+}
+
+// Projective return the transformed set of points (forming the polygon) under projective transformation
+func (p *Polygon) Projective() (projective Polygon) {
+	return projective
+}
+
+// Rotate return the set of points (forming the polygon) under rotate transformation
+func (p *Polygon) Rotate() (rotate Polygon) {
+	return rotate
+}
+
+// Scale return the set of points (forming the polygon) under a scale transformation
+func (p *Polygon) Scale() (scale Polygon) {
+	return scale
 }

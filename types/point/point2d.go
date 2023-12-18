@@ -38,3 +38,8 @@ func (p *Point2D) Translate2D(shiftVector Point2D) (translate Point2D) {
 	translate = Point2D{translateX, translateY}
 	return translate
 }
+
+// add affine
+// add projective
+// add rotate
+// add scaling

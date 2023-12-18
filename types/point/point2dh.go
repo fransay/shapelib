@@ -28,3 +28,8 @@ func (p *Point2DH) Translate2DH(shiftVector Point2DH) (coordinates Point2DH) {
 	translatePoint2DH := Point2DH{translateX, translateY, translateH}
 	return translatePoint2DH
 }
+
+// add affine
+// add projective
+// add rotate
+// add scaling

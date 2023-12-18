@@ -27,4 +27,7 @@ func (p *Point3D) Coordinates() (coordinates []float64) {
 	return coordinates
 }
 
-//TODO: Add methods [consider extra additional functions]
+// add affine
+// add projective
+// add rotate
+// add scaling

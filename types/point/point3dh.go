@@ -17,4 +17,7 @@ func (p *Point3DH) Size() (size float64) {
 	return 0.0
 }
 
-//TODO: Add methods [consider extra additional functions]
+// add affine
+// add projective
+// add rotate
+// add scaling
