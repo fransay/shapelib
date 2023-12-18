@@ -59,13 +59,10 @@ func VolOfRectPrism(length, width, height float64) (vol float64) {
 }
 
 // VolOfTriPrism return volume of triangular prism
-func VolOfTriPrism(baseSideA, baseSideB, baseSideC, height float64) (vol float64) { //todo check triangular prism and fix
-	// assert args
-	if baseSideB+baseSideC < baseSideA || baseSideA+baseSideB < baseSideC {
-		panic("Either (sideB + sideC) > sideA or (sideA + sideB) > sideC.")
-	}
-	factor := -1*math.Pow(baseSideA, 4) + 2*math.Pow(baseSideA*baseSideB, 2.0) - math.Pow(baseSideB, 4) + 2*math.Pow(baseSideB*baseSideC, 2) - math.Pow(baseSideC, 4)
-	vol = height * math.Sqrt(factor) / 4
+// with an equilateral base.
+func VolOfTriPrism(baseSideA, baseSideB, height float64) (vol float64) {
+	areaOfBase := baseSideA * baseSideB
+	vol = areaOfBase * height
 	return vol
 }
 

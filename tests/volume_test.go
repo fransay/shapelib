@@ -85,7 +85,7 @@ func TestVolOfRectPrism(t *testing.T) {
 }
 
 func TestVolOfTriPrism(t *testing.T) {
-	var result = functs.VolOfTriPrism(10.00, 5.00, 10.0, 5)
+	var result = functs.VolOfTriPrism(10.00, 5.00, 10.0)
 	var expected = 500.0
 	if result != expected {
 		t.Errorf("expected %v got %v", expected, result)
