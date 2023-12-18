@@ -3,6 +3,7 @@ package types
 import (
 	"math"
 	"shapelib/types/point"
+	"shapelib/utils"
 )
 
 // Polygon type polygon
@@ -10,8 +11,8 @@ type Polygon []point.Point2D
 
 // Area returns area of a polygon using shoelace
 func (p Polygon) Area() (area float64) {
-	var forwardPass = 0.0
-	var backwardPass = 0.0
+	var forwardPass float64
+	var backwardPass float64
 	for i, j := 0, 1; j < len(p); i, j = i+1, j+1 {
 		startPoint := p[i]
 		terminalPoint := p[j]
@@ -35,8 +36,22 @@ func (p *Polygon) Centroid() (cent point.Point2D) {
 	return cent
 }
 
+// Perimeter TODO: Fix perimeter
 // Perimeter returns the total perimeter of a polygon
-func (p *Polygon) Perimeter() (perim float64) {
+func (p Polygon) Perimeter() (perim float64) {
+	for i, j := 0, 1; j < len(p); i, j = i+1, j+1 {
+		// destruct element
+		startPoint := []float64{p[i].X, p[i].Y}
+		nextPoint := []float64{p[j].X, p[j].Y}
+		segDistance := utils.Distance(startPoint, nextPoint)
+		perim += segDistance
+	}
+	// add perimeter of closing segment
+	terminalPoint := []float64{p[len(p)-1].X, p[len(p)-1].Y}
+	origStartPoint := []float64{p[0].X, p[0].Y}
+	finalSegDistance := utils.Distance(origStartPoint, terminalPoint)
+	perim += finalSegDistance
+
 	return perim
 }
 
