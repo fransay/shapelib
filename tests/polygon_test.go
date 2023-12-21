@@ -108,9 +108,8 @@ func TestScale(t *testing.T) {
 	var polygonOne = s.Polygon{point.Point2D{X: 60, Y: 50}, point.Point2D{X: 22, Y: 65}, point.Point2D{X: 40, Y: 8}}
 	var scaledPolygonObserved = polygonOne.Scale([]float64{2.0, 2.0})
 	var scaledPolygonExpected = s.Polygon{point.Point2D{X: 120, Y: 100}, point.Point2D{X: 44, Y: 130}, point.Point2D{X: 80, Y: 16}}
-	if scaledPolygonExpected.IsEqual(scaledPolygonObserved) {
+	if !scaledPolygonObserved.IsEqual(scaledPolygonExpected) {
 		t.Errorf("Expected %v, Got %v", scaledPolygonExpected, scaledPolygonObserved)
-
 	}
 }
 
