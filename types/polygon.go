@@ -57,11 +57,6 @@ func (p Polygon) Perimeter() (perim float64) {
 
 // ShortestLineSegment returns the shortest line segment of a polygon
 func (p *Polygon) ShortestLineSegment() int {
-	// create a slice
-	// find the distance between consequence points/station
-	// append them to the slice
-	// sort distance
-	// return smallest
 	return 0.0
 }
 
@@ -95,43 +90,65 @@ func (p *Polygon) IsOpened() (isOpenedStatus bool) {
 
 // NumberOfLineSegments returns the number of line segments forming a polygon
 func (p *Polygon) NumberOfLineSegments() int {
-	return p.NumberOfNodes()
+	return p.NumberOfNodes() - 1
 }
 
 // NumberOfNodes returns number of nodes in a polygon
 func (p *Polygon) NumberOfNodes() int {
-
-	/*
-		var numbReturn int = 0
-		for index, _ := range *p {
-			numbReturn += index
-		}
-	*/
 	return len(*p)
 }
 
-// LineSegmentDistance returns the distance of a specific line segment using the indexes
-func (p *Polygon) LineSegmentDistance(ind int) (distance float64) {
-	return distance
-
-}
-
-// Affine returns the transformed set of points (forming the polygon) under affine transformation
-func (p *Polygon) Affine() (affine Polygon) {
-	return affine
-}
-
-// Projective return the transformed set of points (forming the polygon) under projective transformation
-func (p *Polygon) Projective() (projective Polygon) {
-	return projective
-}
-
 // Rotate return the set of points (forming the polygon) under rotate transformation
-func (p *Polygon) Rotate() (rotate Polygon) {
-	return rotate
+func (p *Polygon) Rotate(rotationAngle float64) (rotate Polygon) {
+	var transformPolygon Polygon
+	angleRad := utils.Deg2Rad(rotationAngle)
+
+	for _, pointInPoly := range *p {
+		pointInPoly.X = pointInPoly.X*math.Cos(angleRad) - pointInPoly.Y*math.Sin(angleRad)
+		pointInPoly.Y = pointInPoly.X*math.Sin(angleRad) + pointInPoly.Y*math.Cos(angleRad)
+		transformPolygon = append(transformPolygon, pointInPoly)
+
+	}
+
+	return transformPolygon
 }
 
 // Scale return the set of points (forming the polygon) under a scale transformation
-func (p *Polygon) Scale() (scale Polygon) {
-	return scale
+func (p *Polygon) Scale(scalarVector []float64) (scale Polygon) {
+	var scaledPolygon Polygon
+	for _, element := range *p {
+		element.X = element.X * scalarVector[0]
+		element.Y = element.Y * scalarVector[1]
+		scaledPolygon = append(scaledPolygon, element)
+	}
+	return scaledPolygon
+}
+
+// IsEqual returns equal status in boolean by comparing two polygons
+func (p *Polygon) IsEqual(polygon Polygon) (equal bool) {
+	// for two polygons to be equal, they must be of the same or similar length
+	equal = false
+	containSuccessChecker := 0
+	for _, polygonElement := range *p {
+		if p.Contains(polygon, polygonElement) {
+			containSuccessChecker += 1
+		}
+	}
+
+	if containSuccessChecker == len(*p) {
+		equal = true
+
+	}
+	return equal
+}
+
+// Contains returns a boolean representing the presence of a point in an array of Polygon types
+func (p *Polygon) Contains(poly Polygon, point point.Point2D) (contains bool) {
+	contains = false
+	for _, pointElement := range poly {
+		if pointElement == point {
+			contains = true
+		}
+	}
+	return contains
 }
