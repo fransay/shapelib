@@ -37,17 +37,6 @@ func (l *LineSegment) Bearing() (bearing float64) {
 	return bearing
 }
 
-// Affine return a transformed line segment under affine transformation
-func (l *LineSegment) Affine() (ls LineSegment) {
-	return ls
-}
-
-// Projective return a transformed line segment under projective transformation
-func (l *LineSegment) Projective() (ls LineSegment) {
-	return ls
-
-}
-
 func (l *LineSegment) Rotate() (ls LineSegment) {
 	return ls
 

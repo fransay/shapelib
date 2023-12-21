@@ -39,7 +39,12 @@ func (p *Point2D) Translate2D(shiftVector Point2D) (translate Point2D) {
 	return translate
 }
 
-// add affine
-// add projective
-// add rotate
-// add scaling
+// Rotate returns a transformed point undergone a rotation transformation
+func (p *Point2D) Rotate(rotationAngle float64) (rotate Point2D) {
+	return rotate
+}
+
+// Scale returns a transformed point undergone a scaling transformation
+func (p *Point2D) Scale(scalarVector float64) (scale Point2D) {
+	return scale
+}

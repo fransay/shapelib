@@ -63,7 +63,5 @@ func (l *LineString) Index(args Point2D) (index int) {
 // TODO: investigate other possible operational methods of linestring type
 **/
 
-// add affine
-// add projective
 // add rotate
-// add scaling
+// add scale
