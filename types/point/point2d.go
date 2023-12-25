@@ -1,6 +1,9 @@
 package point
 
-import "math"
+import (
+	"math"
+	"shapelib/utils"
+)
 
 // Point2D point type
 // characterise by x and y coordination
@@ -29,9 +32,7 @@ func (p *Point2D) Polar() (distanceR float64, bearing float64) {
 	return distanceR, bearing
 }
 
-// Translate2D translates a 2D point
-// Translate2D function takes a shift vector
-// and return a new point
+// Translate2D returns a transformed 2D point undergone a translation transformation
 func (p *Point2D) Translate2D(shiftVector Point2D) (translate Point2D) {
 	translateX := p.X + shiftVector.X
 	translateY := p.Y + shiftVector.Y
@@ -41,10 +42,15 @@ func (p *Point2D) Translate2D(shiftVector Point2D) (translate Point2D) {
 
 // Rotate returns a transformed point undergone a rotation transformation
 func (p *Point2D) Rotate(rotationAngle float64) (rotate Point2D) {
+	angleRad := utils.Deg2Rad(rotationAngle)
+	rotate.X = p.X + math.Cos(angleRad) - p.Y*math.Sin(angleRad)
+	rotate.Y = p.X*math.Sin(angleRad) + p.Y*math.Cos(angleRad)
 	return rotate
 }
 
 // Scale returns a transformed point undergone a scaling transformation
-func (p *Point2D) Scale(scalarVector float64) (scale Point2D) {
+func (p *Point2D) Scale(scalarVector []float64) (scale Point2D) {
+	scale.X = p.X * scalarVector[0]
+	scale.Y = p.Y * scalarVector[1]
 	return scale
 }

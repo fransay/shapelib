@@ -42,10 +42,10 @@ func (l *LineSegment) Bearing() (bearing float64) {
 func (l *LineSegment) Rotate(rotationAngle float64) (ls LineSegment) {
 	// compute is done on object prior to garbage collection
 	angleRad := utils.Deg2Rad(rotationAngle)
-	l.PointA.X = l.PointA.X*math.Cos(angleRad) - l.PointA.Y*math.Sin(angleRad)
-	l.PointA.Y = l.PointA.X*math.Sin(angleRad) - l.PointA.Y*math.Cos(angleRad)
-	l.PointB.X = l.PointB.X*math.Cos(angleRad) - l.PointB.Y*math.Sin(angleRad)
-	l.PointB.Y = l.PointB.X*math.Sin(angleRad) - l.PointB.Y*math.Cos(angleRad)
+	ls.PointA.X = l.PointA.X*math.Cos(angleRad) - l.PointA.Y*math.Sin(angleRad)
+	ls.PointA.Y = l.PointA.X*math.Sin(angleRad) - l.PointA.Y*math.Cos(angleRad)
+	ls.PointB.X = l.PointB.X*math.Cos(angleRad) - l.PointB.Y*math.Sin(angleRad)
+	ls.PointB.Y = l.PointB.X*math.Sin(angleRad) - l.PointB.Y*math.Cos(angleRad)
 	ls = *l
 	return ls
 
@@ -54,10 +54,10 @@ func (l *LineSegment) Rotate(rotationAngle float64) (ls LineSegment) {
 // Scale return a transformed line segment under scale transformation
 func (l *LineSegment) Scale(scalarVector []float64) (ls LineSegment) {
 	// compute is done on object prior to garbage collection
-	l.PointA.X = l.PointA.X * scalarVector[0]
-	l.PointA.Y = l.PointA.Y * scalarVector[1]
-	l.PointB.X = l.PointB.X * scalarVector[0]
-	l.PointB.Y = l.PointB.Y * scalarVector[1]
+	ls.PointA.X = l.PointA.X * scalarVector[0]
+	ls.PointA.Y = l.PointA.Y * scalarVector[1]
+	ls.PointB.X = l.PointB.X * scalarVector[0]
+	ls.PointB.Y = l.PointB.Y * scalarVector[1]
 	ls = *l
 	return ls
 

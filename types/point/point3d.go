@@ -16,7 +16,7 @@ func (p *Point3D) Size() (size float64) {
 func (p *Point3D) Translate3D(shiftVector Point3D) (translate Point3D) {
 	translateX := p.X + shiftVector.X
 	translateY := p.Y + shiftVector.Y
-	translateZ := p.Z + shiftVector.Y
+	translateZ := p.Z + shiftVector.Z
 	translate = Point3D{translateX, translateY, translateZ}
 	return translate
 }
@@ -27,7 +27,11 @@ func (p *Point3D) Coordinates() (coordinates []float64) {
 	return coordinates
 }
 
-// add affine
-// add projective
-// add rotate
-// add scaling
+// Scale returns a transformed point3D under a scaling transformation
+func (p *Point3D) Scale(scalarVector []float64) (scale Point3D) {
+	scale.X = p.X * scalarVector[0]
+	scale.Y = p.Y * scalarVector[1]
+	scale.Z = p.Z * scalarVector[2]
+	return scale
+
+}

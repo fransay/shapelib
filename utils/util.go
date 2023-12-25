@@ -39,6 +39,6 @@ func Deg2Rad(deg float64) (rad float64) {
 
 // Distance return distance between two stns with coordinates in an array form
 func Distance(stn1, stn2 []float64) (dist float64) {
-	dist = math.Sqrt((stn2[0] - stn1[0]) + (stn2[1] - stn1[1]))
+	dist = math.Sqrt(math.Abs(stn2[0]-stn1[0]) + math.Abs(stn2[1]-stn1[1]))
 	return dist
 }

@@ -1,55 +1,38 @@
 package types
 
-/**
 import (
-	"math"
+	"shapelib/types/point"
+	"shapelib/utils"
 )
 
-// TODO create homogenous method of type linestringH
-
 // LineString type
-type LineString [...]Point2D // Non-Homogenous 2D point Type
-type LineStringH []Point2DH  // Homogenous 2D point type
-
-func Distance(pointOne, pointTwo Point2D) (dist float64) {
-	deltaX := pointTwo.X - pointOne.X
-	deltaY := pointOne.Y - pointOne.Y
-	dist = math.Sqrt(math.Pow(deltaX, 2) + math.Pow(deltaY, 2))
-	return dist
-
-}
-
+type LineString []point.Point2D // Non-Homogenous 2D point Type
 
 // Length of a linestring
-// TODO improve complexity to O(1): constant time
-func (l LineString) Length() float64 {
-	var totLength float64
-	for i, j := 0, 1; i < len(l); i, j = i+1, j+1 {
-		var pointOne Point2D = l[i]
-		var pointTwo Point2D = l[j]
-		totLength += Distance(pointOne, pointTwo)
+func (l LineString) Length() (totLength float64) {
+	for i, j := 0, 1; j < len(l); i, j = i+1, j+1 {
+		pointOne := l[i]
+		pointTwo := l[j]
+		pointOneArr := []float64{pointOne.X, pointOne.Y}
+		pointTwoArr := []float64{pointTwo.X, pointTwo.Y}
+		dist := utils.Distance(pointOneArr, pointTwoArr)
+		totLength = totLength + dist
 	}
 	return totLength
 }
 
-
-
 // NumberOfLineSegments returns the total number of elements in an instance of type LineString
-// complexity : O(n)
-// TODO: improve complexity to O(1): constant time
 func (l *LineString) NumberOfLineSegments() int {
 	var indexTracker int
 	for index, _ := range *l {
 		indexTracker += index
 	}
-	return indexTracker
+	return indexTracker - 1
 
 }
 
-// Index takes a Point type argument and returns its position
-// complexity : O(n)
-// TODO improve complexity to O(1): constant time
-func (l *LineString) Index(args Point2D) (index int) {
+// Index returns index of linestring in LineString array
+func (l *LineString) Index(args point.Point2D) (index int) {
 	var pos int
 	for index, value := range *l {
 		if value == args {
@@ -59,9 +42,3 @@ func (l *LineString) Index(args Point2D) (index int) {
 	return pos
 
 }
-
-// TODO: investigate other possible operational methods of linestring type
-**/
-
-// add rotate
-// add scale
