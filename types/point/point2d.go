@@ -2,6 +2,8 @@ package point
 
 import (
 	"math"
+	"shapelib/functs"
+	"shapelib/types"
 	"shapelib/utils"
 )
 
@@ -53,4 +55,18 @@ func (p *Point2D) Scale(scalarVector []float64) (scale Point2D) {
 	scale.X = p.X * scalarVector[0]
 	scale.Y = p.Y * scalarVector[1]
 	return scale
+}
+
+// IsEqual returns a boolean that shows where Point instance is equal
+// to another object of Point type.
+func (p *Point2D) IsEqual(point Point2D) (isEqual bool) {
+	isEqual = point.X == p.X && point.Y == p.Y
+	return isEqual
+}
+
+// pointOnLine determines if a point falls on a line segment or not
+func (p *Point2D) pointOnLine(segment types.LineSegment) (onLine bool) {
+	var area = functs.AreaCoordinates(*p, segment.PointA, segment.PointB)
+	onLine = utils.IsClose(area, 0, 0.001)
+	return onLine
 }

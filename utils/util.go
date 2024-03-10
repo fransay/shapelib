@@ -37,8 +37,21 @@ func Deg2Rad(deg float64) (rad float64) {
 	return rad
 }
 
-// Distance return distance between two stns with coordinates in an array form
+// Distance return distance between two stations with coordinates in an array form
 func Distance(stn1, stn2 []float64) (dist float64) {
 	dist = math.Sqrt(math.Abs(stn2[0]-stn1[0]) + math.Abs(stn2[1]-stn1[1]))
 	return dist
+}
+
+// Diff returns the absolute difference between two floating point numbers
+func Diff(a, b float64) (diff float64) {
+	diff = math.Abs(b - a)
+	return diff
+}
+
+// IsClose checks how close two numbers using a tolerance
+func IsClose(a float64, b float64, tolerance float64) (isClose bool) {
+	var diff = Diff(a, b)
+	isClose = diff <= tolerance
+	return isClose
 }
