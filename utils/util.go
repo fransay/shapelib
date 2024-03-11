@@ -19,12 +19,6 @@ func EqualSlice(sliceOne, sliceTwo []float64) (equal bool) {
 	return equal
 }
 
-// AbsDiff absolute difference between two quantities of type float64
-func AbsDiff(quantOne, quantTwo float64) (abs float64) {
-	abs = math.Abs(quantTwo - quantOne)
-	return abs
-}
-
 // Rad2Deg convert radians to degree
 func Rad2Deg(radians float64) (deg float64) {
 	deg = radians * (180 / math.Pi)
