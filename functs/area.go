@@ -104,6 +104,11 @@ func AreaOfRDecagon(side float64) (area float64) {
 	return area
 }
 
+// AreaOfDodecagon returns the area of a regular decagon given the sides
+func AreaOfDodecagon(side float64) (area float64) {
+	return (3 * math.Sqrt(3) * math.Pow(side, 2)) / 2
+}
+
 // AreaOfCircle returns the area of a circle given its radius
 func AreaOfCircle(radius float64) (area float64) {
 	const pi float64 = 22 / 7
