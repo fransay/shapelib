@@ -49,3 +49,15 @@ func IsClose(a float64, b float64, tolerance float64) (isClose bool) {
 	isClose = diff <= tolerance
 	return isClose
 }
+
+// CompareTrio an equality boolean check of three float64 types
+func CompareTrio(a, b, c float64) (comp bool) {
+	comp = (a == b) && (a == c) && (b == c)
+	return comp
+}
+
+// CompareDuo an equality boolean check of three float64 types
+func CompareDuo(a, b float64) (comp bool) {
+	comp = a == b
+	return comp
+}
