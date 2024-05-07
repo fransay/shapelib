@@ -47,15 +47,11 @@ func (t *Triangle) Type() (typeT string) {
 		typeT = equilateral
 	}
 
-	if utils.CompareDuo(t.SideOne, t.SideTwo) ||
-		utils.CompareDuo(t.SideTwo, t.SideThree) ||
-		utils.CompareDuo(t.SideOne, t.SideThree) {
+	if utils.CompareDuo(t.SideOne, t.SideTwo) || utils.CompareDuo(t.SideTwo, t.SideThree) || utils.CompareDuo(t.SideOne, t.SideThree) {
 		typeT = isosceles
 	}
 
-	if !utils.CompareDuo(t.SideOne, t.SideTwo) ||
-		!utils.CompareDuo(t.SideTwo, t.SideThree) ||
-		!utils.CompareDuo(t.SideOne, t.SideThree) {
+	if !utils.CompareDuo(t.SideOne, t.SideTwo) || !utils.CompareDuo(t.SideTwo, t.SideThree) || !utils.CompareDuo(t.SideOne, t.SideThree) {
 		typeT = scalene
 	}
 
