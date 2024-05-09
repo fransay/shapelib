@@ -54,6 +54,5 @@ func (t *Triangle) Type() (typeT string) {
 	if !utils.CompareDuo(t.SideOne, t.SideTwo) || !utils.CompareDuo(t.SideTwo, t.SideThree) || !utils.CompareDuo(t.SideOne, t.SideThree) {
 		typeT = scalene
 	}
-
 	return typeT
 }
