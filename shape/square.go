@@ -52,3 +52,8 @@ func (s *Square) GoldenRation() (goldenRatio float64) {
 	goldenRatio = diag / s.Length
 	return goldenRatio
 }
+
+// IsQuad is a placeholder method for defining the quadrilateral interface
+func (s *Square) IsQuad() bool {
+	return true
+}

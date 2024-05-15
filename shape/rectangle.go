@@ -31,3 +31,8 @@ func (r *Rectangle) Diagonal() (diagonal float64) {
 func NewRectangle(length, width float64) *Rectangle {
 	return &Rectangle{Length: length, Width: width}
 }
+
+// IsQuad is a placeholder method for defining the quadrilateral interface
+func (r *Rectangle) IsQuad() bool {
+	return true
+}

@@ -17,3 +17,8 @@ func (p *Parallelogram) Perimeter() (perimeter float64) {
 	perimeter = 2 * (p.Base + p.Side)
 	return perimeter
 }
+
+// IsQuad is a placeholder method for defining the quadrilateral interface
+func (p *Parallelogram) IsQuad() bool {
+	return true
+}
