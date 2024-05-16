@@ -33,6 +33,6 @@ func NewRectangle(length, width float64) *Rectangle {
 }
 
 // IsQuad is a placeholder method for defining the quadrilateral interface
-func (r *Rectangle) IsQuad() bool {
+func (r Rectangle) IsQuad() bool {
 	return true
 }

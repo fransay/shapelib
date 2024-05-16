@@ -6,7 +6,7 @@ type Square struct {
 	Length float64
 }
 
-const InteriorAngle = 90.0
+const squareInteriorAngle = 90.0
 
 // Area returns the area of a square
 func (s *Square) Area() (area float64) {

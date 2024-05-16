@@ -18,20 +18,18 @@ type Cart3D struct {
 	Z float64
 }
 
-// ToPolar convert cartesian to Polar coordinates
-// return multiple objects, angle in radians and degrees
-// origin (0,0):: reference point
-func (c *Cart2D) ToPolar() (pr, pd Polar) {
+// ToPolar convert cartesian to Polar coordinates return multiple objects,
+// angle in radians and degrees origin (0,0):: reference point
+func (c *Cart2D) ToPolar() (polarRadians, polarDegrees Polar) {
 	cartDist := distance(Cart2D{0, 0}, *c)
 	cartAngle := angle(Cart2D{0, 0}, *c)
-	pr = Polar{cartDist, cartAngle}
-	pd = Polar{cartDist, utils.Rad2Deg(cartAngle)}
-	return pr, pd
+	polarRadians = Polar{cartDist, cartAngle}
+	polarDegrees = Polar{cartDist, utils.Rad2Deg(cartAngle)}
+	return polarRadians, polarDegrees
 }
 
 // Point2PointDistance2D distance in the cartesian coordinate system
-func (c *Cart2D) Point2PointDistance2D(
-	point Cart2D) (p float64) {
+func (c *Cart2D) Point2PointDistance2D(point Cart2D) (p float64) {
 	return distance(*c, point)
 }
 
@@ -82,9 +80,7 @@ func (c *Cart2D) Rotate2D(angle float64) (rotate Cart2D) {
 }
 
 // Rotate3D cartesian 3D point around the origin
-func (c *Cart3D) Rotate3D(
-	rotationAngleAroundY,
-	rotationAngleAroundZ float64) (rotate Cart3D) {
+func (c *Cart3D) Rotate3D(rotationAngleAroundY, rotationAngleAroundZ float64) (rotate Cart3D) {
 	xPrime := c.X*math.Cos(rotationAngleAroundY)*
 		math.Cos(rotationAngleAroundZ) - c.Y*math.Cos(rotationAngleAroundY)*
 		math.Sin(rotationAngleAroundZ) + c.Z*math.Sin(rotationAngleAroundY)

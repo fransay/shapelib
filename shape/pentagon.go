@@ -6,8 +6,8 @@ type Pentagon struct {
 	Side float64
 }
 
-const interiorAngle = 105
-const exteriorAngle = 108
+const pentagonInteriorAngle = 105
+const pentagonExteriorAngle = 108
 
 // Area return area of pentagon
 func (p *Pentagon) Area() (area float64) {
