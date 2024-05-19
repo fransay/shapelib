@@ -12,3 +12,8 @@ func SumOfInteriorAngle(numberOfSide int) (intAngles int) {
 	intAngles = (numberOfSide - 2) * 180
 	return intAngles
 }
+
+// ExteriorAngle return the exterior angle regular polgyon given the number of sides
+func ExteriorAngle(numberOfSides float64) float64 {
+	return 360.0 / numberOfSides
+}
