@@ -1,9 +1,18 @@
 package test
 
 import (
+	"math"
 	"shapelib/utils"
 	"testing"
 )
+
+func TestCot(t *testing.T) {
+	result := utils.Cot(60)
+	expect := 3.0
+	if math.Trunc(result) != expect {
+		t.Errorf("expect %f, actual %f", expect, result)
+	}
+}
 
 func TestSumOfExteriorAngle(t *testing.T) {
 	result := utils.SumOfInteriorAngle(5)
