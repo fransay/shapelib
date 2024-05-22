@@ -1,4 +1,4 @@
-package types
+package test
 
 import (
 	"math"
@@ -8,7 +8,7 @@ import (
 
 // test ToPolar
 func TestToPolar(t *testing.T) {
-	// object 1
+	// obj 1
 	cartObj := cs.Cart2D{X: 20, Y: 5}
 	obsRR, obsRD := cartObj.ToPolar()
 	expRR, expRD := cs.Polar{
@@ -19,7 +19,7 @@ func TestToPolar(t *testing.T) {
 		t.Errorf("expected %f, got %f", expRD, obsRD)
 	}
 
-	// object 2
+	// obj 2
 	cartObj2 := cs.Cart2D{X: 0, Y: 1}
 	obsRR2, obsRD2 := cartObj2.ToPolar()
 	expRR2, expRD2 := cs.Polar{
