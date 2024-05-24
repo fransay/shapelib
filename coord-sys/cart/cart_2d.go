@@ -11,34 +11,34 @@ type Axis struct {
 	Step  float64
 }
 
-type Cart2d struct {
+type Cart2D struct {
 	X           Axis
 	Y           Axis
 	OriginPoint point.Point2D
 }
 
-func (c *Cart2d) Init(X, Y Axis) Cart2d {
-	return Cart2d{
+func (c *Cart2D) Init(X, Y Axis) Cart2D {
+	return Cart2D{
 		X: X,
 		Y: Y,
 	}
 }
 
-func (c *Cart2d) XValues() (arr []float64) {
+func (c *Cart2D) XValues() (arr []float64) {
 	for value := c.X.Start; value <= c.X.End; value += c.X.Step {
 		arr = append(arr, value)
 	}
 	return arr
 }
 
-func (c *Cart2d) YValues() (arr []float64) {
+func (c *Cart2D) YValues() (arr []float64) {
 	for value := c.Y.Start; value <= c.Y.End; value += c.Y.Step {
 		arr = append(arr, value)
 	}
 	return arr
 }
 
-func (c *Cart2d) Origin() point.Point2D {
+func (c *Cart2D) Origin() point.Point2D {
 	if &c.OriginPoint != nil {
 		return c.OriginPoint
 	}

@@ -7,7 +7,7 @@ import (
 )
 
 func TestCart2d(t *testing.T) {
-	cart2dObject := cart.Cart2d{
+	cart2dObject := cart.Cart2D{
 		X: cart.Axis{Start: 0, Step: 4, End: 20},
 		Y: cart.Axis{Start: 60, Step: 5, End: 70},
 	}
