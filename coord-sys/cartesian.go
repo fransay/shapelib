@@ -33,7 +33,7 @@ func (c *Cart2D) Point2PointDistance2D(point Cart2D) (p float64) {
 	return distance(*c, point)
 }
 
-// distance for point of Cart2D types
+// distance for points of Cart2D types
 func distance(pointOne, pointTwo Cart2D) (dist float64) {
 	changeInEastings := pointTwo.X - pointOne.X
 	changeInNorthings := pointTwo.Y - pointOne.Y
