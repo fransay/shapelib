@@ -1,7 +1,8 @@
-package coord_sys
+package others
 
 import (
 	"math"
+	"shapelib/coord-sys/polar"
 	"shapelib/utils"
 )
 
@@ -20,11 +21,11 @@ type Cart3D struct {
 
 // ToPolar convert cartesian to Polar coordinates return multiple objects,
 // angle in radians and degrees origin (0,0):: reference point
-func (c *Cart2D) ToPolar() (polarRadians, polarDegrees Polar) {
+func (c *Cart2D) ToPolar() (polarRadians, polarDegrees polar.Polar) {
 	cartDist := distance(Cart2D{0, 0}, *c)
 	cartAngle := angle(Cart2D{0, 0}, *c)
-	polarRadians = Polar{cartDist, cartAngle}
-	polarDegrees = Polar{cartDist, utils.Rad2Deg(cartAngle)}
+	polarRadians = polar.Polar{Distance: cartDist, Angle: cartAngle}
+	polarDegrees = polar.Polar{Distance: cartDist, Angle: utils.Rad2Deg(cartAngle)}
 	return polarRadians, polarDegrees
 }
 

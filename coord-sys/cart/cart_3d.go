@@ -1,14 +1,17 @@
-package _d
+package cart
 
-import "shapelib/coord-sys/cart"
+import (
+	"shapelib/types/point"
+)
 
 type Cart3d struct {
-	X cart.Axis
-	Y cart.Axis
-	Z cart.Axis
+	X           Axis
+	Y           Axis
+	Z           Axis
+	OriginPoint point.Point3D
 }
 
-func (c *Cart3d) Init(X, Y, Z cart.Axis) Cart3d {
+func (c *Cart3d) Init(X, Y, Z Axis) Cart3d {
 	return Cart3d{
 		X: X,
 		Y: Y,
@@ -35,4 +38,11 @@ func (c *Cart3d) ZValues() (arr []float64) {
 		arr = append(arr, value)
 	}
 	return arr
+}
+
+func (c *Cart3d) Origin() point.Point3D {
+	if &c.OriginPoint != nil {
+		return c.OriginPoint
+	}
+	return point.Point3D{X: c.X.Start, Y: c.Y.Start, Z: c.Z.Start}
 }
