@@ -4,43 +4,43 @@ import (
 	"shapelib/types/point"
 )
 
-type Cart3d struct {
+type Cartesian3D struct {
 	X           Axis
 	Y           Axis
 	Z           Axis
 	OriginPoint point.Point3D
 }
 
-func (c *Cart3d) Init(X, Y, Z Axis) Cart3d {
-	return Cart3d{
+func (c *Cartesian3D) Init(X, Y, Z Axis) Cartesian3D {
+	return Cartesian3D{
 		X: X,
 		Y: Y,
 		Z: Z,
 	}
 }
 
-func (c *Cart3d) XValues() (arr []float64) {
+func (c *Cartesian3D) XValues() (arr []float64) {
 	for value := c.X.Start; value <= c.X.End; value += c.X.Step {
 		arr = append(arr, value)
 	}
 	return arr
 }
 
-func (c *Cart3d) YValues() (arr []float64) {
+func (c *Cartesian3D) YValues() (arr []float64) {
 	for value := c.Y.Start; value <= c.Y.End; value += c.Y.Step {
 		arr = append(arr, value)
 	}
 	return arr
 }
 
-func (c *Cart3d) ZValues() (arr []float64) {
+func (c *Cartesian3D) ZValues() (arr []float64) {
 	for value := c.Z.Start; value <= c.Z.End; value += c.Z.Step {
 		arr = append(arr, value)
 	}
 	return arr
 }
 
-func (c *Cart3d) Origin() point.Point3D {
+func (c *Cartesian3D) Origin() point.Point3D {
 	if &c.OriginPoint != nil {
 		return c.OriginPoint
 	}

@@ -7,7 +7,7 @@ import (
 )
 
 func TestCart3d(t *testing.T) {
-	cart3D := cart.Cart3d{
+	cart3D := cart.Cartesian3D{
 		X: cart.Axis{Start: 0, Step: 5, End: 15},
 		Y: cart.Axis{Start: 5, Step: 5, End: 20},
 		Z: cart.Axis{Start: 10, Step: 10, End: 30},
