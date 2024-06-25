@@ -1,9 +1,8 @@
-package point
+package types
 
 import (
 	"math"
 	"shapelib/functs"
-	"shapelib/types"
 	"shapelib/utils"
 )
 
@@ -65,7 +64,7 @@ func (p *Point2D) IsEqual(point Point2D) (isEqual bool) {
 }
 
 // pointOnLine determines if a point falls on a line segment or not
-func (p *Point2D) pointOnLine(segment types.LineSegment) (onLine bool) {
+func (p *Point2D) pointOnLine(segment LineSegment) (onLine bool) {
 	var area = functs.AreaCoordinates(*p, segment.PointA, segment.PointB)
 	onLine = utils.IsClose(area, 0, 0.001)
 	return onLine

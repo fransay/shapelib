@@ -1,4 +1,4 @@
-package cart_test
+package tests_test
 
 import (
 	"reflect"
@@ -12,14 +12,14 @@ func TestCart2d(t *testing.T) {
 		Y: cart.Axis{Start: 60, Step: 5, End: 70},
 	}
 
-	// test for x values
+	// funct_tests for x values
 	resultX2d := cart2dObject.XValues()
 	expectX2d := []float64{0, 4, 8, 12, 16, 20}
 	if !reflect.DeepEqual(expectX2d, resultX2d) {
 		t.Errorf("Expect2d %v, Got %v", expectX2d, resultX2d)
 	}
 
-	// test for y values
+	// funct_tests for y values
 	resultY2d := cart2dObject.YValues()
 	expectY2d := []float64{60, 65, 70}
 	if !reflect.DeepEqual(expectY2d, resultY2d) {

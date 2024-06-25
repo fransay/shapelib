@@ -2,7 +2,7 @@ package polar
 
 import (
 	"math"
-	"shapelib/others"
+	"shapelib/types"
 )
 
 // Polar type
@@ -12,10 +12,10 @@ type Polar struct {
 }
 
 // ToCartesian converts polar to cartesian coordinates
-func (p *Polar) ToCartesian() (c others.Cart2D) {
+func (p *Polar) ToCartesian() (c types.Point2D) {
 	x := p.Distance * math.Cos(p.Angle)
 	y := p.Distance * math.Sin(p.Angle)
-	c = others.Cart2D{X: x, Y: y}
+	c = types.Point2D{X: x, Y: y}
 	return c
 }
 

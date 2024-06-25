@@ -2,12 +2,11 @@ package types
 
 import (
 	"math"
-	"shapelib/types/point"
 	"shapelib/utils"
 )
 
 // Polygon type polygon
-type Polygon []point.Point2D
+type Polygon []Point2D
 
 // Area returns area of a polygon using shoelace
 func (p Polygon) Area() (area float64) {
@@ -24,13 +23,13 @@ func (p Polygon) Area() (area float64) {
 }
 
 // Centroid returns the centre point of polygon
-func (p *Polygon) Centroid() (cent point.Point2D) {
+func (p *Polygon) Centroid() (cent Point2D) {
 	var xSum, ySum float64
 	for _, values := range *p {
 		xSum = xSum + values.X
 		ySum = ySum + values.Y
 	}
-	cent = point.Point2D{
+	cent = Point2D{
 		X: xSum / 2, Y: ySum / 2,
 	}
 	return cent
@@ -72,7 +71,7 @@ func (p *Polygon) IsClosed() (isClosedStatus bool) {
 
 // IsOpened returns a boolean if a polygon is closed or not
 func (p *Polygon) IsOpened() (isOpenedStatus bool) {
-	var firstElement, LastElement point.Point2D
+	var firstElement, LastElement Point2D
 	for i, v := range *p {
 		if i == 0 {
 			firstElement = v
@@ -143,7 +142,7 @@ func (p *Polygon) IsEqual(polygon Polygon) (equal bool) {
 }
 
 // Contains returns a boolean representing the presence of a point in an array of Polygon types
-func (p *Polygon) Contains(poly Polygon, point point.Point2D) (contains bool) {
+func (p *Polygon) Contains(poly Polygon, point Point2D) (contains bool) {
 	contains = false
 	for _, pointElement := range poly {
 		if pointElement == point {

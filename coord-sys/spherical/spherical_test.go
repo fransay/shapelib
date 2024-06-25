@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// test point to point distance spherical
+// funct_tests point to point distance spherical
 func TestSphericalPoint2PointDistance(t *testing.T) {
 	spherObj := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
 	obsDist := spherObj.Point2PointDistance(Spherical{RadialDistance: 30.0, PolarAngle: 40.0, AzimuthAngle: 50.0})
@@ -15,7 +15,7 @@ func TestSphericalPoint2PointDistance(t *testing.T) {
 	}
 }
 
-// test spherical to cartesian coordinate in two-dim
+// funct_tests spherical to cartesian coordinate in two-dim
 func TestSphericalToCartesian2D(t *testing.T) {
 	spherObj := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
 	obsDist := spherObj.ToCartesianIn2D()
@@ -25,7 +25,7 @@ func TestSphericalToCartesian2D(t *testing.T) {
 	}
 }
 
-// test spherical to cartesian coordinate in three-dim
+// funct_tests spherical to cartesian coordinate in three-dim
 func TestSphericalToCartesian3D(t *testing.T) {
 	spherObj := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
 	obsDist := spherObj.ToCartesianIn3D()
@@ -35,7 +35,7 @@ func TestSphericalToCartesian3D(t *testing.T) {
 	}
 }
 
-// test toArray
+// funct_tests toArray
 func TestToArray(t *testing.T) {
 	spherObj := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
 	obsDist := spherObj.ToArray()

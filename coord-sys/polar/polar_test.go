@@ -1,22 +1,22 @@
 package polar
 
 import (
-	cs "shapelib/others"
+	"shapelib/types"
 	ut "shapelib/utils"
 	"testing"
 )
 
-// test to cartesian
+// funct_tests to cartesian
 func TestToCartesian(t *testing.T) {
 	polarObj := Polar{Distance: 60.50, Angle: 15}
 	obs := polarObj.ToCartesian()
-	exp := cs.Cart2D{X: -45.961118727958684, Y: 39.34241432950557}
+	exp := types.Point2D{X: -45.961118727958684, Y: 39.34241432950557}
 	if exp != obs {
 		t.Errorf("expected %f, got %f", exp, obs)
 	}
 }
 
-// test distance to degree minutes second representation
+// funct_tests distance to degree minutes second representation
 func TestDistance2DMS(t *testing.T) {
 	polarObj := Polar{Distance: 60.50, Angle: 15}
 	obs := polarObj.Distance2DMS()
@@ -26,7 +26,7 @@ func TestDistance2DMS(t *testing.T) {
 	}
 }
 
-// test toRadians
+// funct_tests toRadians
 func TestToRadians(t *testing.T) {
 	polarObj := Polar{Distance: 3, Angle: 60}
 	obs := polarObj.ToRadians()
@@ -36,7 +36,7 @@ func TestToRadians(t *testing.T) {
 	}
 }
 
-// test point to point distance
+// funct_tests point to point distance
 func TestPoint2PointDistance(t *testing.T) {
 	polarObj := Polar{Distance: 3, Angle: 60}
 	var ex Polar = Polar{Distance: 5, Angle: 145}

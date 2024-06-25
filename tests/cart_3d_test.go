@@ -1,4 +1,4 @@
-package cart_test
+package tests_test
 
 import (
 	"reflect"

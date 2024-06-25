@@ -2,14 +2,14 @@ package shape
 
 import (
 	"math"
-	"shapelib/types/point"
+	"shapelib/types"
 )
 
 type Circle struct {
 	Diameter float64
 	Radius   float64
 	Chord    float64
-	Centroid point.Point2D
+	Centroid types.Point2D
 }
 
 // Area returns the area of a circle

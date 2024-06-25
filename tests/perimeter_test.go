@@ -1,4 +1,4 @@
-package test
+package tests
 
 import (
 	"math"
@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-// perimeter of triangle test
+// perimeter of triangle funct_tests
 func TestPerimeterOfTriangle(t *testing.T) {
 	res := functs.PerimeterOfTriangle(10.0, 10.0, 10.0)
 	exp := math.Trunc(30)
@@ -15,7 +15,7 @@ func TestPerimeterOfTriangle(t *testing.T) {
 	}
 }
 
-// perimeter of square test
+// perimeter of square funct_tests
 func TestPerimeterOfSquare(t *testing.T) {
 	res := functs.PerimeterOfSquare(5.0)
 	exp := math.Trunc(20.0)
@@ -25,7 +25,7 @@ func TestPerimeterOfSquare(t *testing.T) {
 
 }
 
-// perimeter of rectangle test
+// perimeter of rectangle funct_tests
 func TestPerimeterOfRegularRectangle(t *testing.T) {
 	res := functs.PerimeterOfRegularRectangle(10.0, 5)
 	exp := math.Trunc(30.0)
@@ -34,7 +34,7 @@ func TestPerimeterOfRegularRectangle(t *testing.T) {
 	}
 }
 
-// perimeter of rectangle test
+// perimeter of rectangle funct_tests
 func TestPerimeterOfIrregularRectangle(t *testing.T) {
 	res := functs.PerimOfIrr4Sided(1, 5, 4, 8)
 	exp := math.Trunc(18.0)
@@ -43,7 +43,7 @@ func TestPerimeterOfIrregularRectangle(t *testing.T) {
 	}
 }
 
-// perimeter of parallelogram test
+// perimeter of parallelogram funct_tests
 func TestPerimeterOfParallelogram(t *testing.T) {
 	res := functs.PerimeterOfParallelogram(2.0, 5.0)
 	exp := math.Trunc(14.0)
@@ -52,7 +52,7 @@ func TestPerimeterOfParallelogram(t *testing.T) {
 	}
 }
 
-// perimeter of kite test
+// perimeter of kite funct_tests
 func TestPerimOfKite(t *testing.T) {
 	res := functs.PerimOfRKite(5.0, 4.0)
 	exp := math.Trunc(18.0)
@@ -61,7 +61,7 @@ func TestPerimOfKite(t *testing.T) {
 	}
 }
 
-// perimeter of rhombus test
+// perimeter of rhombus funct_tests
 func TestPerimOfRhombus(t *testing.T) {
 	res := functs.PerimOfRRhombus(5.0)
 	exp := math.Trunc(20.0)
@@ -70,7 +70,7 @@ func TestPerimOfRhombus(t *testing.T) {
 	}
 }
 
-// perimeter of trapezoid test
+// perimeter of trapezoid funct_tests
 func TestPerimOfTrapezoid(t *testing.T) {
 	res := functs.PerimOfRTrapezoid(5.0, 10.0, 5.0, 20.0)
 	exp := math.Trunc(40.0)
@@ -79,7 +79,7 @@ func TestPerimOfTrapezoid(t *testing.T) {
 	}
 }
 
-// perimeter of pentagon test
+// perimeter of pentagon funct_tests
 func TestPerimOfPentagon(t *testing.T) {
 	res := functs.PerimOfRPentagon(5.0)
 	exp := math.Trunc(25.0)
@@ -88,7 +88,7 @@ func TestPerimOfPentagon(t *testing.T) {
 	}
 }
 
-// perimeter of hexagon test
+// perimeter of hexagon funct_tests
 func TestPerimOfHexagon(t *testing.T) {
 	res := functs.PerimOfRHexagon(5.0)
 	exp := math.Trunc(30.0)
@@ -97,7 +97,7 @@ func TestPerimOfHexagon(t *testing.T) {
 	}
 }
 
-// perimeter of heptagon test
+// perimeter of heptagon funct_tests
 func TestPerimOfHeptagon(t *testing.T) {
 	res := functs.PerimOfRHeptagon(5.0)
 	exp := math.Trunc(35.0)
@@ -106,7 +106,7 @@ func TestPerimOfHeptagon(t *testing.T) {
 	}
 }
 
-// perimeter of octagon test
+// perimeter of octagon funct_tests
 func TestPerimOfOctagon(t *testing.T) {
 	res := functs.PerimOfROctagon(5.0)
 	exp := math.Trunc(40.0)
@@ -115,7 +115,7 @@ func TestPerimOfOctagon(t *testing.T) {
 	}
 }
 
-// perimeter of nonagon test
+// perimeter of nonagon funct_tests
 func TestPerimOfNonagon(t *testing.T) {
 	res := functs.PerimOfRNonagon(5.0)
 	exp := math.Trunc(45.0)
@@ -124,7 +124,7 @@ func TestPerimOfNonagon(t *testing.T) {
 	}
 }
 
-// perimeter of decagon test
+// perimeter of decagon funct_tests
 func TestPerimOfDecagon(t *testing.T) {
 	res := functs.PerimOfRDecagon(5.0)
 	exp := math.Trunc(50.0)
@@ -133,7 +133,7 @@ func TestPerimOfDecagon(t *testing.T) {
 	}
 }
 
-// perimeter of regular generic shapes test
+// perimeter of regular generic shapes funct_tests
 func TestPerimOfRegularGeneric(t *testing.T) {
 	res := functs.PerimOfRGeneral(5.0, 15.0)
 	exp := math.Trunc(75.0)
@@ -142,7 +142,7 @@ func TestPerimOfRegularGeneric(t *testing.T) {
 	}
 }
 
-// perimeter of irregular generic shape test
+// perimeter of irregular generic shape funct_tests
 func TestPerimOfIrregularGeneric(t *testing.T) {
 	res := functs.PerimOfIrGeneral(5.0, 6.0, 5.0, 7.0, 8.0)
 	exp := math.Trunc(31.0)

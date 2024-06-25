@@ -1,13 +1,13 @@
 package cart
 
 import (
-	"shapelib/types/point"
+	"shapelib/types"
 )
 
 type Cartesian2D struct {
 	X           Axis
 	Y           Axis
-	OriginPoint point.Point2D
+	OriginPoint types.Point2D
 }
 
 func (c *Cartesian2D) Init(X, Y Axis) Cartesian2D {
@@ -31,9 +31,12 @@ func (c *Cartesian2D) YValues() (arr []float64) {
 	return arr
 }
 
-func (c *Cartesian2D) Origin() point.Point2D {
+func (c *Cartesian2D) Origin() types.Point2D {
 	if &c.OriginPoint != nil {
 		return c.OriginPoint
 	}
-	return point.Point2D{X: c.X.Start, Y: c.Y.Start}
+	return types.Point2D{X: c.X.Start, Y: c.Y.Start}
 }
+
+// PointInCart checks if a point lie the range of self vector space
+func (c *Cartesian2D) PointInCart() {}

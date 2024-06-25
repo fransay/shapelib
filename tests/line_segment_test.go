@@ -1,13 +1,12 @@
-package test
+package tests_test
 
 import (
 	"math"
 	s "shapelib/types"
-	"shapelib/types/point"
 	"testing"
 )
 
-// distance test
+// distance funct_tests
 func TestLineSegmentDistance(t *testing.T) {
 	// line segment one
 	var lineSegmentOne s.LineSegment = s.LineSegment{PointA: struct {
@@ -42,7 +41,7 @@ func TestLineSegmentDistance(t *testing.T) {
 
 }
 
-// midpoint test
+// midpoint funct_tests
 func TestLineSegmentMidPoint(t *testing.T) {
 	var lineSegmentOne s.LineSegment = s.LineSegment{PointA: struct {
 		X float64
@@ -52,13 +51,13 @@ func TestLineSegmentMidPoint(t *testing.T) {
 		Y float64
 	}{X: 20, Y: 22}}
 
-	// midpoint test one
-	var midPointLineResultLineSegmentOne point.Point2D = lineSegmentOne.MidPoint()
-	var midPointLineExpectedLineSegmentOne point.Point2D = point.Point2D{X: 15, Y: 18}
+	// midpoint funct_tests one
+	var midPointLineResultLineSegmentOne s.Point2D = lineSegmentOne.MidPoint()
+	var midPointLineExpectedLineSegmentOne s.Point2D = s.Point2D{X: 15, Y: 18}
 	if midPointLineExpectedLineSegmentOne != midPointLineResultLineSegmentOne {
 		t.Errorf("Expected %f, got %f", midPointLineExpectedLineSegmentOne, midPointLineResultLineSegmentOne)
 	}
-	// midpoint test two
+	// midpoint funct_tests two
 	var lineSegmentTwo s.LineSegment = s.LineSegment{PointA: struct {
 		X float64
 		Y float64
@@ -67,16 +66,16 @@ func TestLineSegmentMidPoint(t *testing.T) {
 		Y float64
 	}{X: 20, Y: 22}}
 
-	// midpoint test one
-	var midPointLineResultLineSegmentTwo point.Point2D = lineSegmentTwo.MidPoint()
-	var midPointLineExpectedLineSegmentTwo point.Point2D = point.Point2D{X: 15, Y: 18}
+	// midpoint funct_tests one
+	var midPointLineResultLineSegmentTwo s.Point2D = lineSegmentTwo.MidPoint()
+	var midPointLineExpectedLineSegmentTwo s.Point2D = s.Point2D{X: 15, Y: 18}
 	if midPointLineExpectedLineSegmentTwo != midPointLineResultLineSegmentTwo {
 		t.Errorf("Expected %f, got %f", midPointLineExpectedLineSegmentTwo, midPointLineResultLineSegmentTwo)
 	}
 
 }
 
-// bearing test
+// bearing funct_tests
 func TestLineSegmentBearing(t *testing.T) {
 	// instance 1 :line segment
 	var lineSegmentOne s.LineSegment = s.LineSegment{

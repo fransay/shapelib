@@ -1,14 +1,14 @@
 package cart
 
 import (
-	"shapelib/types/point"
+	"shapelib/types"
 )
 
 type Cartesian3D struct {
 	X           Axis
 	Y           Axis
 	Z           Axis
-	OriginPoint point.Point3D
+	OriginPoint types.Point3D
 }
 
 func (c *Cartesian3D) Init(X, Y, Z Axis) Cartesian3D {
@@ -40,9 +40,9 @@ func (c *Cartesian3D) ZValues() (arr []float64) {
 	return arr
 }
 
-func (c *Cartesian3D) Origin() point.Point3D {
+func (c *Cartesian3D) Origin() types.Point3D {
 	if &c.OriginPoint != nil {
 		return c.OriginPoint
 	}
-	return point.Point3D{X: c.X.Start, Y: c.Y.Start, Z: c.Z.Start}
+	return types.Point3D{X: c.X.Start, Y: c.Y.Start, Z: c.Z.Start}
 }

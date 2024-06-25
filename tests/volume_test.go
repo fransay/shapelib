@@ -1,4 +1,4 @@
-package test
+package tests
 
 import (
 	"math"
@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-// test volume of tetrahedron
+// funct_tests volume of tetrahedron
 func TestVolOfTetrahedron(t *testing.T) {
 	var result = functs.VolOfTetrahedron(10)
 	var expected = math.Trunc(117.80)
@@ -16,7 +16,7 @@ func TestVolOfTetrahedron(t *testing.T) {
 
 }
 
-// test volume of right angle triangular pyramid
+// funct_tests volume of right angle triangular pyramid
 func TestVolOfRightAngledTriPyramid(t *testing.T) {
 	var result = functs.VolOfRightAngledTriPyramid(10, 10, 10)
 	var expected = math.Trunc(166.666)
@@ -26,7 +26,7 @@ func TestVolOfRightAngledTriPyramid(t *testing.T) {
 
 }
 
-// test volume of cube
+// funct_tests volume of cube
 func TestVolOfCube(t *testing.T) {
 	var result = functs.VolOfCube(10)
 	var expected = math.Trunc(1000.000)
@@ -36,7 +36,7 @@ func TestVolOfCube(t *testing.T) {
 
 }
 
-// test volume of cuboid
+// funct_tests volume of cuboid
 func TestVolOfCuboid(t *testing.T) {
 	var result = functs.VolOfCuboid(10, 5.0, 7.0)
 	var expected = math.Trunc(350.00)
@@ -46,7 +46,7 @@ func TestVolOfCuboid(t *testing.T) {
 
 }
 
-// test volume of pentahedron
+// funct_tests volume of pentahedron
 func TestVolOfPentahedron(t *testing.T) {
 	var result = functs.VolOfPentahedron(10.00, 5.00)
 	var expected = math.Trunc(166.666)
@@ -55,7 +55,7 @@ func TestVolOfPentahedron(t *testing.T) {
 	}
 }
 
-// test volume of cone
+// funct_tests volume of cone
 func TestVolOfCone(t *testing.T) {
 	var result = functs.VolOfCone(10.00, 5.00)
 	var expected = 523.5987755982989
@@ -65,7 +65,7 @@ func TestVolOfCone(t *testing.T) {
 
 }
 
-// test volume of cylinder
+// funct_tests volume of cylinder
 func TestVolOfCylinder(t *testing.T) {
 	var result = functs.VolOfCylinder(10.00, 5.00)
 	var expected = 50.0
@@ -75,7 +75,7 @@ func TestVolOfCylinder(t *testing.T) {
 
 }
 
-// test volume of rect prism
+// funct_tests volume of rect prism
 func TestVolOfRectPrism(t *testing.T) {
 	var result = functs.VolOfRectPrism(10.00, 5.00, 10.0)
 	var expected = 500.0
@@ -92,7 +92,7 @@ func TestVolOfTriPrism(t *testing.T) {
 	}
 }
 
-// test volume of pentagonal prism
+// funct_tests volume of pentagonal prism
 func TestVolOfPentPrism(t *testing.T) {
 	var result = functs.VolOfPentPrism(10.00, 5.00)
 	var expected = 860.2387002944835
@@ -101,7 +101,7 @@ func TestVolOfPentPrism(t *testing.T) {
 	}
 }
 
-// test volume of hexagonal prism
+// funct_tests volume of hexagonal prism
 func TestVolOfHexaPrism(t *testing.T) {
 	var result = functs.VolOfHexaPrism(10.00, 5.00)
 	var expected = 1299.038105676658
@@ -110,7 +110,7 @@ func TestVolOfHexaPrism(t *testing.T) {
 	}
 }
 
-// test volume of octagonal prism
+// funct_tests volume of octagonal prism
 func TestVolOfOctPrism(t *testing.T) {
 	var result = functs.VolOfOctPrism(5, 10)
 	var expected = 1207.1067811865473
@@ -119,7 +119,7 @@ func TestVolOfOctPrism(t *testing.T) {
 	}
 }
 
-// test volume of a square pyramid
+// funct_tests volume of a square pyramid
 func TestVolOfSquarePyramid(t *testing.T) {
 	var result = functs.VolOfSquarePymd(5, 10)
 	var expected = 83.33333333333333
@@ -128,7 +128,7 @@ func TestVolOfSquarePyramid(t *testing.T) {
 	}
 }
 
-// test volume of triangular pyramid
+// funct_tests volume of triangular pyramid
 func TestVolOfTriPymd(t *testing.T) {
 	var result = functs.VolOfTriPymd(5, 10)
 	var expected = 16.666666666666668
@@ -137,7 +137,7 @@ func TestVolOfTriPymd(t *testing.T) {
 	}
 }
 
-// test volume of a pentagonal pyramids
+// funct_tests volume of a pentagonal pyramids
 func TestVolOfPentPymd(t *testing.T) {
 	var result = functs.VolOfPentPymd(5.0, 10.0)
 	var expected = 70.1875104841729
@@ -146,7 +146,7 @@ func TestVolOfPentPymd(t *testing.T) {
 	}
 }
 
-// test volume of hexagonal pyramid
+// funct_tests volume of hexagonal pyramid
 func TestVolOfHexaPymd(t *testing.T) {
 	var result = functs.VolOfHexaPymd(5, 10)
 	var expected = 216.50635094610965
@@ -155,7 +155,7 @@ func TestVolOfHexaPymd(t *testing.T) {
 	}
 }
 
-// test volume of cone frustrum
+// funct_tests volume of cone frustrum
 func TestVolOfConeFrustrum(t *testing.T) {
 	var result = functs.VolOfConeFrustum(5, 10)
 	var expected = 261.79938779914943
@@ -164,7 +164,7 @@ func TestVolOfConeFrustrum(t *testing.T) {
 	}
 }
 
-// test volume of cylinder frustum
+// funct_tests volume of cylinder frustum
 func TestVolOfCyFrustrum(t *testing.T) {
 	var result = functs.VolOfCyFrustum(5, 10)
 	var expected = 785.3981633974483
@@ -173,7 +173,7 @@ func TestVolOfCyFrustrum(t *testing.T) {
 	}
 }
 
-// test volume of ellipsoid
+// funct_tests volume of ellipsoid
 func TestVolOfEllipsoid(t *testing.T) {
 	var result = functs.VolOfEllipsoid(5, 10, 15)
 	var expected = 3141.592653589793
@@ -182,7 +182,7 @@ func TestVolOfEllipsoid(t *testing.T) {
 	}
 }
 
-// test volume of torus
+// funct_tests volume of torus
 func TestVolOfTorus(t *testing.T) {
 	var result = functs.VolOfTorus(5, 2)
 	var expected = 394.78417604357435
@@ -191,7 +191,7 @@ func TestVolOfTorus(t *testing.T) {
 	}
 }
 
-// test volume of a decahedron
+// funct_tests volume of a decahedron
 func TestVolOfDecahedron(t *testing.T) {
 	var result = functs.VolOfDecahedron(5)
 	var expected = 957.8898700780791
@@ -200,7 +200,7 @@ func TestVolOfDecahedron(t *testing.T) {
 	}
 }
 
-// test volume of icosahedron
+// funct_tests volume of icosahedron
 func TestVolOfIcosahedron(t *testing.T) {
 	var result = functs.VolOfIcosahedron(5)
 	var expected = 272.71187382811405

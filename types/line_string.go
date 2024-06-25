@@ -1,12 +1,11 @@
 package types
 
 import (
-	"shapelib/types/point"
 	"shapelib/utils"
 )
 
 // LineString type
-type LineString []point.Point2D // Non-Homogenous 2D point Type
+type LineString []Point2D // Non-Homogenous 2D point Type
 
 // Length of a linestring
 func (l LineString) Length() (totLength float64) {
@@ -32,7 +31,7 @@ func (l *LineString) NumberOfLineSegments() int {
 }
 
 // Index returns index of linestring in LineString array
-func (l *LineString) Index(args point.Point2D) (index int) {
+func (l *LineString) Index(args Point2D) (index int) {
 	var pos int
 	for index, value := range *l {
 		if value == args {

@@ -1,4 +1,4 @@
-package point
+package types
 
 // Point3D PointZ 3D point type, characterise by x,y and z coordination
 type Point3D struct {
