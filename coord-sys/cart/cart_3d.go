@@ -19,6 +19,15 @@ func (c *Cartesian3D) Init(X, Y, Z Axis) Cartesian3D {
 	}
 }
 
+func NewCart3D(X Axis, Y Axis, Z Axis, OriginPoint types.Point3D) *Cartesian3D {
+	return &Cartesian3D{
+		X:           X,
+		Y:           Y,
+		Z:           Z,
+		OriginPoint: OriginPoint,
+	}
+}
+
 func (c *Cartesian3D) XValues() (arr []float64) {
 	for value := c.X.Start; value <= c.X.End; value += c.X.Step {
 		arr = append(arr, value)

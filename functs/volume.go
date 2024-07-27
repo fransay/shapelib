@@ -110,7 +110,7 @@ func VolOfHexaPymd(baseEdge, height float64) (vol float64) {
 	return vol
 }
 
-// VolOfConeFrustum return volume of cone frustrum
+// VolOfConeFrustum return volume of cone frustum
 func VolOfConeFrustum(radius, height float64) (vol float64) {
 	vol = math.Pi * math.Pow(radius, 2) * height / 3
 	return vol

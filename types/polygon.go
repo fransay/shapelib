@@ -141,7 +141,7 @@ func (p *Polygon) IsEqual(polygon Polygon) (equal bool) {
 	return equal
 }
 
-// Contains returns a boolean representing the presence of a point in an array of Polygon types
+// Contains checks if a point is in a polygon
 func (p *Polygon) Contains(poly Polygon, point Point2D) (contains bool) {
 	contains = false
 	for _, pointElement := range poly {

@@ -1,0 +1,28 @@
+package cart_test
+
+import (
+	"reflect"
+	"shapelib/coord-sys/cart"
+	"testing"
+)
+
+func TestCart2D(t *testing.T) {
+	cart2dObject := cart.Cartesian2D{
+		X: cart.Axis{Start: 0, Step: 4, End: 20},
+		Y: cart.Axis{Start: 60, Step: 5, End: 70},
+	}
+
+	// tests for x values
+	resultX2D := cart2dObject.XValues()
+	expectX2D := []float64{0, 4, 8, 12, 16, 20}
+	if !reflect.DeepEqual(resultX2D, expectX2D) {
+		t.Errorf("Expect2d %v, Got %v", expectX2D, resultX2D)
+	}
+
+	// tests for y values
+	resultY2D := cart2dObject.YValues()
+	expectY2D := []float64{60, 65, 70}
+	if !reflect.DeepEqual(resultY2D, expectY2D) {
+		t.Errorf("Expect2d %v, Got %v", expectY2D, resultY2D)
+	}
+}

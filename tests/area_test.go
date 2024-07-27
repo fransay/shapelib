@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-// funct_tests area of triangle given base and height
+// test area of triangle given base and height
 func TestAreaOfTriangleBH(t *testing.T) {
 	res1 := functs.AreaOfTriangleBH(10.0, 5.0)
 	expected1 := 25.0
@@ -32,7 +32,7 @@ func TestAreaOfTriangleBH(t *testing.T) {
 
 }
 
-// funct_tests area of a triangle given the sides
+// tests area of a triangle given the sides
 func TestAreaOfTriangleSide(t *testing.T) {
 	res := functs.AreaOfTriangleSide(12.0, 8.0, 10.00)
 	exp := 0.0 // inaccuracies increase
@@ -42,7 +42,7 @@ func TestAreaOfTriangleSide(t *testing.T) {
 
 }
 
-// funct_tests area of a triangle given the angles
+// tests area of a triangle given the angles
 func TestAreaOfTriangleAngle(t *testing.T) {
 	res := functs.AreaOfTriangleAngle(10.00, 5.00, 120.00)
 	exp := math.Trunc(14.515280)
@@ -52,7 +52,7 @@ func TestAreaOfTriangleAngle(t *testing.T) {
 
 }
 
-// funct_tests area of a square
+// tests area of a square
 func TestAreaOfSquare(t *testing.T) {
 	res := functs.AreaOfSquare(5.0)
 	exp := math.Trunc(25.0)
@@ -61,7 +61,7 @@ func TestAreaOfSquare(t *testing.T) {
 	}
 }
 
-// funct_tests area of a rectangle
+// tests area of a rectangle
 func TestAreaOfRectangle(t *testing.T) {
 	res := functs.AreaOfRectangle(10.00, 5.00)
 	exp := math.Trunc(50.00)
@@ -70,7 +70,7 @@ func TestAreaOfRectangle(t *testing.T) {
 	}
 }
 
-// funct_tests area of a parallelogram
+// tests area of a parallelogram
 func TestAreaOfParallelogram(t *testing.T) {
 	res := functs.AreaOfParallelogram(20.0, 10.0)
 	exp := math.Trunc(200.00)
@@ -79,7 +79,7 @@ func TestAreaOfParallelogram(t *testing.T) {
 	}
 }
 
-// funct_tests area of a rhombus
+// tests area of a rhombus
 func TestAreaOfRhombus(t *testing.T) {
 	res := functs.AreaOfRhombus(10, 5)
 	exp := math.Trunc(7.5)
@@ -88,26 +88,26 @@ func TestAreaOfRhombus(t *testing.T) {
 	}
 }
 
-// funct_tests area of a trapezoid
+// tests area of a trapezoid
 func TestAreaOfTrapezoid(t *testing.T) {
 	res := functs.AreaOfTrapezoid(10.0, 5.0, 5.0)
 	exp := math.Trunc(37.0)
 	if math.Trunc(res) != exp {
-		t.Errorf("expected %f, Got %f", exp, res)
+		t.Errorf("Expected %f, Got %f", exp, res)
 	}
 
 }
 
-// funct_tests area of a regular pentagon
+// tests area of a regular pentagon
 func TestAreaOfRPentagon(t *testing.T) {
 	res := functs.AreaOfRPentagon(5.0)
 	exp := math.Trunc(43.01194)
 	if math.Trunc(res) != exp {
-		t.Errorf("%f, %f", exp, res)
+		t.Errorf(" Expected %f, Got %f", exp, res)
 	}
 }
 
-// funct_tests area of a regular hexagon
+// tests area of a regular hexagon
 func TestAreaOfRHexagon(t *testing.T) {
 	res := functs.AreaOfRHexagon(10.0)
 	exp := math.Trunc(259.81)
@@ -116,7 +116,7 @@ func TestAreaOfRHexagon(t *testing.T) {
 	}
 }
 
-// funct_tests area of a regular octagon
+// tests area of a regular octagon
 func TestAreaOfROctagon(t *testing.T) {
 	res := functs.AreaOfROctagon(5.00)
 	exp := math.Trunc(120.7)
@@ -126,7 +126,7 @@ func TestAreaOfROctagon(t *testing.T) {
 
 }
 
-// funct_tests area of a regular nonagon
+// tests area of a regular nonagon
 func TestAreaOfRNonagon(t *testing.T) {
 	res := functs.AreaOfRNonagon(5)
 	exp := math.Trunc(137.373850)
@@ -135,7 +135,7 @@ func TestAreaOfRNonagon(t *testing.T) {
 	}
 }
 
-// funct_tests area of a regular decagon
+// tests area of a regular decagon
 func TestAreaOfRDecagon(t *testing.T) {
 	res := functs.AreaOfRDecagon(5.00)
 	exp := math.Trunc(192.355)
@@ -145,7 +145,7 @@ func TestAreaOfRDecagon(t *testing.T) {
 
 }
 
-// funct_tests area of a regular heptagon
+// tests area of a regular heptagon
 func TestAreaOfRHeptagon(t *testing.T) {
 	res := functs.AreaOfRHeptagon(5.00)
 	exp := math.Trunc(90.85)
@@ -155,6 +155,7 @@ func TestAreaOfRHeptagon(t *testing.T) {
 
 }
 
+// tests area of a regular dodecagon
 func TestAreaOfRDodecagon(t *testing.T) {
 	res := functs.AreaOfDodecagon(5)
 	exp := math.Trunc(64.9519052838)
@@ -163,7 +164,7 @@ func TestAreaOfRDodecagon(t *testing.T) {
 	}
 }
 
-// funct_tests area of a circle
+// tests area of a circle
 func TestAreaOfCircle(t *testing.T) {
 	res := functs.AreaOfCircle(5.00)
 	exp := math.Trunc(75.00)
@@ -172,7 +173,7 @@ func TestAreaOfCircle(t *testing.T) {
 	}
 }
 
-// funct_tests area of a semicircle
+// tests area of a semicircle
 func TestAreaOfSemiCircle(t *testing.T) {
 	res := functs.AreaOfSemiCircle(5.00)
 	exp := math.Trunc(37.50)
@@ -182,7 +183,7 @@ func TestAreaOfSemiCircle(t *testing.T) {
 
 }
 
-// funct_tests area of a quad circle
+// tests area of a quad circle
 func TestAreaOfQuadCircle(t *testing.T) {
 	res := functs.AreaOfQuadCircle(5.00)
 	exp := math.Trunc(18.75)
@@ -191,7 +192,7 @@ func TestAreaOfQuadCircle(t *testing.T) {
 	}
 }
 
-// funct_tests area of an oval
+// tests area of an oval
 func TestAreaOfOval(t *testing.T) {
 	res := functs.AreaOfOval(10.00, 8.0)
 	exp := math.Trunc(251.32)
@@ -202,7 +203,7 @@ func TestAreaOfOval(t *testing.T) {
 
 }
 
-// funct_tests area of an ellipse
+// tests area of an ellipse
 func TestAreaOfEllipse(t *testing.T) {
 	res := functs.AreaOfEllipse(10.00, 8.0)
 	exp := math.Trunc(251.32)
@@ -213,7 +214,7 @@ func TestAreaOfEllipse(t *testing.T) {
 
 }
 
-// funct_tests area given coordinates
+// tests area given coordinates
 func TestAreaCoordinates(t *testing.T) {
 	var res = functs.AreaCoordinates(types.Point2D{X: 1, Y: 4}, types.Point2D{X: 3, Y: 6}, types.Point2D{X: 8, Y: 5})
 	var exp = math.Trunc(-19.500)
