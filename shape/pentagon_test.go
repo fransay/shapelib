@@ -1,4 +1,4 @@
-package tests_test
+package shape_test
 
 import (
 	"testing"

@@ -1,14 +1,13 @@
-package tests
+package functs
 
 import (
 	"math"
-	"shapelib/functs"
 	"testing"
 )
 
 // perimeter of triangle funct_tests
 func TestPerimeterOfTriangle(t *testing.T) {
-	res := functs.PerimeterOfTriangle(10.0, 10.0, 10.0)
+	res := PerimeterOfTriangle(10.0, 10.0, 10.0)
 	exp := math.Trunc(30)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -17,7 +16,7 @@ func TestPerimeterOfTriangle(t *testing.T) {
 
 // perimeter of square funct_tests
 func TestPerimeterOfSquare(t *testing.T) {
-	res := functs.PerimeterOfSquare(5.0)
+	res := PerimeterOfSquare(5.0)
 	exp := math.Trunc(20.0)
 	if res != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -27,7 +26,7 @@ func TestPerimeterOfSquare(t *testing.T) {
 
 // perimeter of rectangle funct_tests
 func TestPerimeterOfRegularRectangle(t *testing.T) {
-	res := functs.PerimeterOfRegularRectangle(10.0, 5)
+	res := PerimeterOfRegularRectangle(10.0, 5)
 	exp := math.Trunc(30.0)
 	if res != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -36,7 +35,7 @@ func TestPerimeterOfRegularRectangle(t *testing.T) {
 
 // perimeter of rectangle funct_tests
 func TestPerimeterOfIrregularRectangle(t *testing.T) {
-	res := functs.PerimOfIrr4Sided(1, 5, 4, 8)
+	res := PerimOfIrr4Sided(1, 5, 4, 8)
 	exp := math.Trunc(18.0)
 	if res != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -45,7 +44,7 @@ func TestPerimeterOfIrregularRectangle(t *testing.T) {
 
 // perimeter of parallelogram funct_tests
 func TestPerimeterOfParallelogram(t *testing.T) {
-	res := functs.PerimeterOfParallelogram(2.0, 5.0)
+	res := PerimeterOfParallelogram(2.0, 5.0)
 	exp := math.Trunc(14.0)
 	if res != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -54,7 +53,7 @@ func TestPerimeterOfParallelogram(t *testing.T) {
 
 // perimeter of kite funct_tests
 func TestPerimOfKite(t *testing.T) {
-	res := functs.PerimOfRKite(5.0, 4.0)
+	res := PerimOfRKite(5.0, 4.0)
 	exp := math.Trunc(18.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -63,7 +62,7 @@ func TestPerimOfKite(t *testing.T) {
 
 // perimeter of rhombus funct_tests
 func TestPerimOfRhombus(t *testing.T) {
-	res := functs.PerimOfRRhombus(5.0)
+	res := PerimOfRRhombus(5.0)
 	exp := math.Trunc(20.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -72,7 +71,7 @@ func TestPerimOfRhombus(t *testing.T) {
 
 // perimeter of trapezoid funct_tests
 func TestPerimOfTrapezoid(t *testing.T) {
-	res := functs.PerimOfRTrapezoid(5.0, 10.0, 5.0, 20.0)
+	res := PerimOfRTrapezoid(5.0, 10.0, 5.0, 20.0)
 	exp := math.Trunc(40.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -81,7 +80,7 @@ func TestPerimOfTrapezoid(t *testing.T) {
 
 // perimeter of pentagon funct_tests
 func TestPerimOfPentagon(t *testing.T) {
-	res := functs.PerimOfRPentagon(5.0)
+	res := PerimOfRPentagon(5.0)
 	exp := math.Trunc(25.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -90,7 +89,7 @@ func TestPerimOfPentagon(t *testing.T) {
 
 // perimeter of hexagon funct_tests
 func TestPerimOfHexagon(t *testing.T) {
-	res := functs.PerimOfRHexagon(5.0)
+	res := PerimOfRHexagon(5.0)
 	exp := math.Trunc(30.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -99,7 +98,7 @@ func TestPerimOfHexagon(t *testing.T) {
 
 // perimeter of heptagon funct_tests
 func TestPerimOfHeptagon(t *testing.T) {
-	res := functs.PerimOfRHeptagon(5.0)
+	res := PerimOfRHeptagon(5.0)
 	exp := math.Trunc(35.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -108,7 +107,7 @@ func TestPerimOfHeptagon(t *testing.T) {
 
 // perimeter of octagon funct_tests
 func TestPerimOfOctagon(t *testing.T) {
-	res := functs.PerimOfROctagon(5.0)
+	res := PerimOfROctagon(5.0)
 	exp := math.Trunc(40.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -117,7 +116,7 @@ func TestPerimOfOctagon(t *testing.T) {
 
 // perimeter of nonagon funct_tests
 func TestPerimOfNonagon(t *testing.T) {
-	res := functs.PerimOfRNonagon(5.0)
+	res := PerimOfRNonagon(5.0)
 	exp := math.Trunc(45.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -126,7 +125,7 @@ func TestPerimOfNonagon(t *testing.T) {
 
 // perimeter of decagon funct_tests
 func TestPerimOfDecagon(t *testing.T) {
-	res := functs.PerimOfRDecagon(5.0)
+	res := PerimOfRDecagon(5.0)
 	exp := math.Trunc(50.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -135,7 +134,7 @@ func TestPerimOfDecagon(t *testing.T) {
 
 // perimeter of regular generic shapes funct_tests
 func TestPerimOfRegularGeneric(t *testing.T) {
-	res := functs.PerimOfRGeneral(5.0, 15.0)
+	res := PerimOfRGeneral(5.0, 15.0)
 	exp := math.Trunc(75.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -144,7 +143,7 @@ func TestPerimOfRegularGeneric(t *testing.T) {
 
 // perimeter of irregular generic shape funct_tests
 func TestPerimOfIrregularGeneric(t *testing.T) {
-	res := functs.PerimOfIrGeneral(5.0, 6.0, 5.0, 7.0, 8.0)
+	res := PerimOfIrGeneral(5.0, 6.0, 5.0, 7.0, 8.0)
 	exp := math.Trunc(31.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)

@@ -1,4 +1,4 @@
-package tests_test
+package interfaces_test
 
 import (
 	"shapelib/shape"

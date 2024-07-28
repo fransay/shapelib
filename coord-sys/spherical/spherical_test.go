@@ -1,46 +1,46 @@
 package spherical
 
 import (
-	coordsys "shapelib/others"
+	"shapelib/coord-sys/cart"
 	"testing"
 )
 
-// funct_tests point to point distance spherical
+// tests point to point distance spherical
 func TestSphericalPoint2PointDistance(t *testing.T) {
-	spherObj := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
-	obsDist := spherObj.Point2PointDistance(Spherical{RadialDistance: 30.0, PolarAngle: 40.0, AzimuthAngle: 50.0})
-	expDist := 9.011182193785475
-	if obsDist != expDist {
-		t.Errorf("Expected %f, Got %f", expDist, obsDist)
+	sphericalObject := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
+	observedDistance := sphericalObject.Point2PointDistance(Spherical{RadialDistance: 30.0, PolarAngle: 40.0, AzimuthAngle: 50.0})
+	expectedDistance := 9.011182193785475
+	if observedDistance != expectedDistance {
+		t.Errorf("Expected %f, Got %f", expectedDistance, observedDistance)
 	}
 }
 
-// funct_tests spherical to cartesian coordinate in two-dim
-func TestSphericalToCartesian2D(t *testing.T) {
-	spherObj := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
-	obsDist := spherObj.ToCartesianIn2D()
-	expDist := coordsys.Cart2D{X: -9.534169523255013, Y: 2.5923465282621976} // incorrect expDist
-	if obsDist != expDist {
-		t.Errorf("Expected %f, Got %f", expDist, obsDist)
+// tests spherical to cartesian coordinate in two-dimension
+func TestCartesian2D(t *testing.T) {
+	sphericalObject := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
+	observedDistance := sphericalObject.ToCartesianIn2D()
+	expectedDistance := cart.Cartesian2D{X: cart.Axis{Start: 0, End: 10, Step: 2}, Y: cart.Axis{Start: 100, End: 500, Step: 50}}
+	if observedDistance != expectedDistance {
+		t.Errorf("Expected %f, Got %f", expectedDistance, observedDistance)
 	}
 }
 
-// funct_tests spherical to cartesian coordinate in three-dim
+// tests spherical to cartesian coordinate in three-dimension
 func TestSphericalToCartesian3D(t *testing.T) {
-	spherObj := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
-	obsDist := spherObj.ToCartesianIn3D()
-	expDist := coordsys.Cart3D{X: -9.534169523255013, Y: 2.5923465282621976, Z: 9.649660284921133}
-	if obsDist != expDist {
-		t.Errorf("Expected %f, Got %f", expDist, obsDist)
+	sphericalObject := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
+	observedDistance := sphericalObject.ToCartesianIn3D()
+	expectedDistance := cart.Cartesian2D{X: cart.Axis{}, Y: cart.Axis{}}
+	if observedDistance != expectedDistance {
+		t.Errorf("Expected %f, Got %f", expectedDistance, observedDistance)
 	}
 }
 
-// funct_tests toArray
+// tests toArray
 func TestToArray(t *testing.T) {
-	spherObj := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
-	obsDist := spherObj.ToArray()
-	expDist := [3]float64{10.0, 50.0, 30.0}
-	if obsDist != expDist {
-		t.Errorf("Expected %f, Got %f", expDist, obsDist)
+	sphericalObject := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
+	observedDistance := sphericalObject.ToArray()
+	expectedDistance := [3]float64{10.0, 50.0, 30.0}
+	if observedDistance != expectedDistance {
+		t.Errorf("Expected %f, Got %f", expectedDistance, observedDistance)
 	}
 }

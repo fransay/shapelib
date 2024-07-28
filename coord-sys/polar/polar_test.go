@@ -6,17 +6,17 @@ import (
 	"testing"
 )
 
-// funct_tests to cartesian
+// test ToCartesian
 func TestToCartesian(t *testing.T) {
 	polarObj := Polar{Distance: 60.50, Angle: 15}
 	obs := polarObj.ToCartesian()
 	exp := types.Point2D{X: -45.961118727958684, Y: 39.34241432950557}
 	if exp != obs {
-		t.Errorf("expected %f, got %f", exp, obs)
+		t.Errorf("Expected: %f, Got: %f", exp, obs)
 	}
 }
 
-// funct_tests distance to degree minutes second representation
+// tests Distance2DMS
 func TestDistance2DMS(t *testing.T) {
 	polarObj := Polar{Distance: 60.50, Angle: 15}
 	obs := polarObj.Distance2DMS()
@@ -26,7 +26,7 @@ func TestDistance2DMS(t *testing.T) {
 	}
 }
 
-// funct_tests toRadians
+// tests ToRadians
 func TestToRadians(t *testing.T) {
 	polarObj := Polar{Distance: 3, Angle: 60}
 	obs := polarObj.ToRadians()
@@ -36,7 +36,7 @@ func TestToRadians(t *testing.T) {
 	}
 }
 
-// funct_tests point to point distance
+// test point2PointDistance
 func TestPoint2PointDistance(t *testing.T) {
 	polarObj := Polar{Distance: 3, Angle: 60}
 	var ex Polar = Polar{Distance: 5, Angle: 145}

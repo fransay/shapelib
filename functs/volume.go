@@ -86,26 +86,26 @@ func VolOfOctPrism(baseEdge, height float64) (vol float64) {
 	return vol
 }
 
-// VolOfSquarePymd return volume of square pyramid
-func VolOfSquarePymd(baseEdge, height float64) (vol float64) {
+// VolOfSquarePyramid return volume of square pyramid
+func VolOfSquarePyramid(baseEdge, height float64) (vol float64) {
 	vol = math.Pow(baseEdge, 2) * height / 3
 	return vol
 }
 
-// VolOfTriPymd return volume of a triangular pyramid
-func VolOfTriPymd(areaOfBase, height float64) (vol float64) {
+// VolOfTriangularPyramid return volume of a triangular pyramid
+func VolOfTriangularPyramid(areaOfBase, height float64) (vol float64) {
 	vol = (areaOfBase * height) / 3
 	return vol
 }
 
-// VolOfPentPymd return volume of pentagonal pyramid
-func VolOfPentPymd(baseEdge, height float64) (vol float64) {
+// VolOfPentagonalPyramid return volume of pentagonal pyramid
+func VolOfPentagonalPyramid(baseEdge, height float64) (vol float64) {
 	vol = (5 * math.Tan(54.0) * height * math.Pow(baseEdge, 2)) / 12
 	return vol
 }
 
-// VolOfHexaPymd return volume of hexagonal pyramid
-func VolOfHexaPymd(baseEdge, height float64) (vol float64) {
+// VolOfHexagonalPyramid return volume of hexagonal pyramid
+func VolOfHexagonalPyramid(baseEdge, height float64) (vol float64) {
 	vol = (math.Sqrt(3) * math.Pow(baseEdge, 2) * height) / 2
 	return vol
 }

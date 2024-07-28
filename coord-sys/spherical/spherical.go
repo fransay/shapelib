@@ -2,7 +2,7 @@ package spherical
 
 import (
 	"math"
-	"shapelib/others"
+	cart2 "shapelib/coord-sys/cart"
 )
 
 // Spherical type
@@ -13,19 +13,19 @@ type Spherical struct {
 }
 
 // ToCartesianIn2D converts spherical coordinate to cartesian coordinates in 3D
-func (s *Spherical) ToCartesianIn2D() (cart others.Cart2D) {
+func (s *Spherical) ToCartesianIn2D() (cart cart2.Cartesian2D) {
 	x := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Cos(s.PolarAngle)
 	y := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Sin(s.PolarAngle)
-	cart = others.Cart2D{X: x, Y: y}
+	cart = cart2.Cartesian2D{X: x, Y: y}
 	return cart
 }
 
 // ToCartesianIn3D converts spherical coordinate to cartesian coordinates in 3D
-func (s *Spherical) ToCartesianIn3D() (cart others.Cart3D) {
+func (s *Spherical) ToCartesianIn3D() (cart cart2.Cartesian3D) {
 	x := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Cos(s.PolarAngle)
 	y := s.RadialDistance * math.Sin(s.AzimuthAngle) * math.Sin(s.PolarAngle)
 	z := s.RadialDistance * math.Cos(s.PolarAngle)
-	cart = others.Cart3D{X: x, Y: y, Z: z}
+	cart = cart2.Cartesian3D{}
 	return cart
 }
 

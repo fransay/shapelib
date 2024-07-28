@@ -1,12 +1,11 @@
-package tests_test
+package shape_test
 
 import (
-	"shapelib/shape"
 	"testing"
 )
 
 func TestRectangle(t *testing.T) {
-	var rectangle = shape.Rectangle{Length: 15, Width: 20}
+	var rectangle = Rectangle{Length: 15, Width: 20}
 	// area by length width
 	resultOfAreaByLengthWidth := rectangle.AreaByLengthWidth()
 	expectedAreaByLengthWidth := 3000.0
