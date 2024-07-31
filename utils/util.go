@@ -31,7 +31,7 @@ func Deg2Rad(deg float64) (rad float64) {
 	return rad
 }
 
-// Distance return distance between two stations with coordinates in an array form
+// Distance returns distance between two stations with coordinates in an array form
 func Distance(stn1, stn2 []float64) (dist float64) {
 	dist = math.Sqrt(math.Abs(stn2[0]-stn1[0]) + math.Abs(stn2[1]-stn1[1]))
 	return dist
@@ -50,16 +50,28 @@ func IsClose(a float64, b float64, tolerance float64) (isClose bool) {
 	return isClose
 }
 
-// CompareTrio an equality boolean check of three float64 types
+// CompareTrio returns an equality boolean check of three float64 types
 func CompareTrio(a, b, c float64) (comp bool) {
 	comp = (a == b) && (a == c) && (b == c)
 	return comp
 }
 
-// CompareDuo an equality boolean check of three float64 types
+// CompareDuo returns an equality boolean check of three float64 types
 func CompareDuo(a, b float64) (comp bool) {
 	comp = a == b
 	return comp
+}
+
+// IsElementSame checks if elements of [float64] type in array are the same.
+func IsElementSame(arr []float64) bool {
+	currentElement := arr[0]
+	tolerance := 0.005
+	for _, element := range arr {
+		if !IsClose(element, currentElement, tolerance) {
+			return false
+		}
+	}
+	return false
 }
 
 // func IsCollinear(a , b, c Point)

@@ -1,6 +1,7 @@
 package types
 
 import (
+	"log"
 	"math"
 	"shapelib/functs"
 	"shapelib/utils"
@@ -68,4 +69,35 @@ func (p *Point2D) pointOnLine(segment LineSegment) (onLine bool) {
 	var area = functs.AreaCoordinates(*p, segment.PointA, segment.PointB)
 	onLine = utils.IsClose(area, 0, 0.001)
 	return onLine
+}
+
+// IsCollinear checks if a set of the points lie on the same line
+func IsCollinear(points ...Point2D) (isCollinear bool) {
+	var slopeList []float64
+	numberOfPoints := len(points)
+	currentIndex := 0
+
+	if numberOfPoints <= 2 {
+		log.Panic("Can't determine collinearity!")
+	}
+	for currentIndex < numberOfPoints-2 {
+		nextIndex := currentIndex + 1
+		firstSlope := slope(points[currentIndex], points[nextIndex])
+		secondSlope := slope(points[nextIndex], points[nextIndex+1])
+		slopeList = append(slopeList, firstSlope, secondSlope)
+		currentIndex++
+	}
+
+	if utils.IsElementSame(slopeList) {
+		isCollinear = true
+	} else {
+		isCollinear = false
+	}
+	return isCollinear
+}
+
+// Determine the slope f
+func slope(pointOne, pointTwo Point2D) float64 {
+	grad := (pointTwo.Y - pointOne.Y) / (pointTwo.X - pointOne.X)
+	return grad
 }

@@ -135,5 +135,4 @@ func TestContains(t *testing.T) {
 		t.Errorf("Expected %v, Got %v", ContainsPolygonExpected, ContainsPolygonObserved)
 
 	}
-
 }

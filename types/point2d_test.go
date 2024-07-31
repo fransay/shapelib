@@ -1,6 +1,7 @@
 package types_test
 
 import (
+	"shapelib/types"
 	"testing"
 )
 
@@ -91,7 +92,7 @@ func TestPointRotate(t *testing.T) {
 
 }
 
-// funct_tests scale
+// test scale
 func TestPointScale(t *testing.T) {
 	var pointOne = Point2D{X: 2.0, Y: 5.0}
 	pointScaleExpected := Point2D{X: 4, Y: 20}
@@ -99,5 +100,15 @@ func TestPointScale(t *testing.T) {
 	if pointScaleExpected != pointScaleObserved {
 		t.Errorf("Expected %f, got %f", pointScaleExpected, pointScaleObserved)
 	}
+}
 
+// test collinearity
+func TestCollinear(t *testing.T) {
+	observed := types.IsCollinear(
+		types.Point2D{X: 3, Y: 5}, types.Point2D{X: 10, Y: 50},
+		types.Point2D{X: 30, Y: 70}, types.Point2D{X: 80, Y: 15})
+	const expected = false
+	if observed != expected {
+		t.Errorf("Expected %t, Got %t", expected, observed)
+	}
 }
