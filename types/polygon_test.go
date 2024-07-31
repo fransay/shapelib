@@ -1,12 +1,13 @@
 package types_test
 
 import (
+	"shapelib/types"
 	"testing"
 )
 
-// number of nodes funct_tests
+// TestPolygonNumberOfNodes return the total number of nodes in a polygon
 func TestPolygonNumberOfNodes(t *testing.T) {
-	var polygonOne = Polygon{Point2D{X: 7, Y: 9}, Point2D{X: 2, Y: 6}, Point2D{X: 4, Y: 8}}
+	var polygonOne = types.Polygon{Point2D{X: 7, Y: 9}, Point2D{X: 2, Y: 6}, Point2D{X: 4, Y: 8}}
 	var numberOfNodesResult = polygonOne.NumberOfNodes()
 	var numberOfNodesExpected = 3
 	if numberOfNodesResult != numberOfNodesExpected {
@@ -17,14 +18,14 @@ func TestPolygonNumberOfNodes(t *testing.T) {
 // number of line segment funct_tests
 func TestPolygonLineSegment(t *testing.T) {
 	// polygon instance one
-	var polygonOne = Polygon{Point2D{X: 7, Y: 9}, Point2D{X: 2, Y: 6}, Point2D{X: 4, Y: 8}}
+	var polygonOne = types.Polygon{Point2D{X: 7, Y: 9}, Point2D{X: 2, Y: 6}, Point2D{X: 4, Y: 8}}
 	var numberOfLineSegmentResult = polygonOne.NumberOfLineSegments()
 	var numberOfLineSegmentExpected = 3
 	if numberOfLineSegmentExpected != numberOfLineSegmentResult {
 		t.Errorf("Expected %d, Got %d", numberOfLineSegmentExpected, numberOfLineSegmentResult)
 	}
 	// polygon instance two
-	var polygonTwo = Polygon{Point2D{X: 7, Y: 9}, Point2D{X: 2, Y: 6}, Point2D{X: 4, Y: 8}, Point2D{X: 4, Y: 50}}
+	var polygonTwo = types.Polygon{Point2D{X: 7, Y: 9}, Point2D{X: 2, Y: 6}, Point2D{X: 4, Y: 8}, Point2D{X: 4, Y: 50}}
 	var numberOfLineSegmentTwoResult = polygonTwo.NumberOfLineSegments()
 	var numberOfLineSegmentTwoExpected = 4
 	if numberOfLineSegmentTwoExpected != numberOfLineSegmentTwoResult {

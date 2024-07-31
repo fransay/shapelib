@@ -6,9 +6,7 @@ import (
 )
 
 type Circle struct {
-	Diameter float64
 	Radius   float64
-	Chord    float64
 	Centroid types.Point2D
 }
 

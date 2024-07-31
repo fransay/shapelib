@@ -5,6 +5,7 @@ import (
 	"shapelib/utils"
 )
 
+// Triangle defines a triangle given all sides/length
 type Triangle struct {
 	SideOne   float64
 	SideTwo   float64
@@ -12,6 +13,9 @@ type Triangle struct {
 	Height    float64
 	Base      float64
 }
+
+// TriangleC defines a triangle given all coordinates
+type TriangleC [3][2]float64
 
 const (
 	isosceles   = "Isosceles"
@@ -56,3 +60,20 @@ func (t *Triangle) Type() (typeT string) {
 	}
 	return typeT
 }
+
+// Center returns a point at the center of the triangle
+func (tc *TriangleC) Center() (pt [2]float64) {
+	var x float64
+	var y float64
+	for _, pnt := range tc {
+		x += pnt[0]
+		y += pnt[1]
+	}
+	pt = [2]float64{x / 3, y / 3}
+	return pt
+}
+
+// todo: thirdPoint() -> ThirdPoint takes 2 points and checks which point is the 3rd in the Triangle
+// todo: linearRings() -> LinearRings returns the coordinates of the linear rings
+// todo: Area() -> Area returns twice the area of the oriented triangle (a,b,c), i.e. the area is positive if the triangle is oriented counterclockwise.
+// todo: Contains() -> Accepts a new triangle as a parameter and checks to see if a triangle is in the TriangleC

@@ -61,3 +61,7 @@ func CompareDuo(a, b float64) (comp bool) {
 	comp = a == b
 	return comp
 }
+
+// func IsCollinear(a , b, c Point)
+// todo: IsCollinear() returns weather a set of point lie on the same
+// todo: RoundToPrec()  round the given value to the precision value. The precision value should be a power of 10.
