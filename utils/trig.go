@@ -2,7 +2,7 @@ package utils
 
 import "math"
 
-// Cot returns the cotangent of the
+// Cot return the cotangent of an angle in degree decimals
 func Cot(angle float64) float64 { return 1 / (math.Tan(angle)) }
 
 // SumOfInteriorAngle return the sum of interior angle of a regular polygon

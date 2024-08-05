@@ -62,8 +62,8 @@ func CompareDuo(a, b float64) (comp bool) {
 	return comp
 }
 
-// IsElementSame checks if elements of [float64] type in array are the same.
-func IsElementSame(arr []float64) bool {
+// IsFloatElementSame checks if elements of [float64] type in array are the same.
+func IsFloatElementSame(arr []float64) bool {
 	currentElement := arr[0]
 	tolerance := 0.005
 	for _, element := range arr {
@@ -74,6 +74,4 @@ func IsElementSame(arr []float64) bool {
 	return false
 }
 
-// func IsCollinear(a , b, c Point)
-// todo: IsCollinear() returns weather a set of point lie on the same
-// todo: RoundToPrec()  round the given value to the precision value. The precision value should be a power of 10.
+//

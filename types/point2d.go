@@ -88,7 +88,7 @@ func IsCollinear(points ...Point2D) (isCollinear bool) {
 		currentIndex++
 	}
 
-	if utils.IsElementSame(slopeList) {
+	if utils.IsFloatElementSame(slopeList) {
 		isCollinear = true
 	} else {
 		isCollinear = false
