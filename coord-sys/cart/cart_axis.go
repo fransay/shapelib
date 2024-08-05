@@ -6,3 +6,8 @@ type Axis struct {
 	End   float64
 	Step  float64
 }
+
+// New initialises a fresh Axis object
+func (a *Axis) New(start float64, end float64, step float64) *Axis {
+	return &Axis{start, end, step}
+}

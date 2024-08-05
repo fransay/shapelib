@@ -37,7 +37,7 @@ func (p *Polygon) Centroid() (cent Point2D) {
 
 // Perimeter TODO: Fix perimeter
 // Perimeter returns the total perimeter of a polygon
-func (p Polygon) Perimeter() (perim float64) {
+func (p *Polygon) Perimeter() (perim float64) {
 	for i, j := 0, 1; j < len(p); i, j = i+1, j+1 {
 		// destruct element
 		startPoint := []float64{p[i].X, p[i].Y}

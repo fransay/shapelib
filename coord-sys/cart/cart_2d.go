@@ -10,16 +10,8 @@ type Cartesian2D struct {
 	OriginPoint types.Point2D
 }
 
-// Init constructor of Cartesian2D
-func Init(X, Y Axis) *Cartesian2D {
-	return &Cartesian2D{
-		X: X,
-		Y: Y,
-	}
-}
-
-// NewCart2D returns a non-referenced Cartesian2D object
-func (c *Cartesian2D) NewCart2D(X Axis, Y Axis) *Cartesian2D {
+// NewCartesian2D initialises a new Cartesian2D
+func (c *Cartesian2D) NewCartesian2D(X Axis, Y Axis) *Cartesian2D {
 	return &Cartesian2D{
 		X: X,
 		Y: Y,
@@ -50,8 +42,8 @@ func (c *Cartesian2D) Origin() types.Point2D {
 	return types.Point2D{X: c.X.Start, Y: c.Y.Start}
 }
 
-// PointInCart checks if a point lies in the cartesian vector space
-func (c *Cartesian2D) PointInCart(point types.Point2D) bool {
+// PointInCartesian checks if a point lies in the cartesian vector space
+func (c *Cartesian2D) PointInCartesian(point types.Point2D) bool {
 	if (point.X < c.X.Start || point.X > c.X.End) || (point.Y < c.Y.Start || point.Y > c.Y.End) {
 		return false
 	}
@@ -77,3 +69,6 @@ func (c *Cartesian2D) Quadrant() (quadrant int) {
 	}
 	return quadrant
 }
+
+// Dim returns the dimension of the coordinate system.
+func (c *Cartesian2D) Dim() float64 { return 2 }

@@ -62,7 +62,8 @@ func (c *Circle) CircleFromPoints(a, b, d types.Point2D) (Circle, error) {
 	eqnAB := [3]float64{1.0, -2.0, lineConstantAB}
 	eqnBD := [3]float64{1.0, -2.0, lineConstantBD}
 	intersectedPoint := LineIntersectGivenEqn(eqnAB, eqnBD)
-	radius := distance(intersectedPoint, a) // radius -> intersectedPoint <-> any arbitrary points on the circle
+	// radius -> intersectedPoint <-> any arbitrary points on the circle
+	radius := distance(intersectedPoint, a)
 	return Circle{radius, intersectedPoint}, nil
 }
 
@@ -82,7 +83,7 @@ func gradient(pt1, pt2 types.Point2D) float64 {
 // LineIntersectGivenEqn returns the intersectional point of a two line given their equations
 // equation of lines take this format, e.g y = 3x + 6 , which is represented in LineIntersectGivenEqn
 // arguments as [1,3,6], i.e. the coefficient of the variables in the equation of the line.
-func LineIntersectGivenEqn(lineOne, lineTwo [3]float64) (intersectPoint types.Point2D) {}
+func LineIntersectGivenEqn(lineOne, lineTwo [3]float64) (intersectPoint types.Point2D) {} // todo: complete function
 
 // AsLineString returns a line string given a set of points that defines a circle
 func (c *Circle) AsLineString(points ...types.Point2D) (types.LineString, error) {

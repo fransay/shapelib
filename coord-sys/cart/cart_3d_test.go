@@ -3,6 +3,7 @@ package cart_test
 import (
 	"reflect"
 	"shapelib/coord-sys/cart"
+	"shapelib/types"
 	"testing"
 )
 
@@ -32,5 +33,12 @@ func TestCart3D(t *testing.T) {
 	expectedZ3D := []float64{10, 20, 30}
 	if !reflect.DeepEqual(resultZ3D, expectedZ3D) {
 		t.Errorf("Expected: %v, Got: %v", expectedY3D, resultY3D)
+	}
+
+	// test origin
+	resultOrigin := cart3D.Origin()
+	expectedOrigin := types.Point3D{X: 0, Y: 5, Z: 10}
+	if !reflect.DeepEqual(resultOrigin, expectedOrigin) {
+		t.Errorf("Expect2d %v, Got %v", expectedOrigin, resultOrigin)
 	}
 }

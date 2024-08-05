@@ -7,15 +7,13 @@ import (
 	"shapelib/utils"
 )
 
-// Point2D point type
-// characterise by x and y coordination
+// Point2D point type characterise by x and y coordination
 type Point2D struct {
 	X float64
 	Y float64
 }
 
-// Size of a point2D is dimensionless
-// i.e, it has no size, hence return 0.0
+// Size of a point2D is dimensionless i.e, it has no size, hence return 0.0
 func (p *Point2D) Size() (size float64) {
 	return 0.0
 }
@@ -57,8 +55,7 @@ func (p *Point2D) Scale(scalarVector []float64) (scale Point2D) {
 	return scale
 }
 
-// IsEqual returns a boolean that shows where Point instance is equal
-// to another object of Point type.
+// IsEqual returns a boolean that shows where Point instance is equal to another object of Point type.
 func (p *Point2D) IsEqual(point Point2D) (isEqual bool) {
 	isEqual = point.X == p.X && point.Y == p.Y
 	return isEqual
@@ -96,7 +93,7 @@ func IsCollinear(points ...Point2D) (isCollinear bool) {
 	return isCollinear
 }
 
-// Determine the slope f
+// Determine the gradient between two points.
 func slope(pointOne, pointTwo Point2D) float64 {
 	grad := (pointTwo.Y - pointOne.Y) / (pointTwo.X - pointOne.X)
 	return grad
