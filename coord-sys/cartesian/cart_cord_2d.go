@@ -1,4 +1,4 @@
-package cart
+package cartesian
 
 import (
 	"shapelib/types"

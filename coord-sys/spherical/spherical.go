@@ -2,7 +2,7 @@ package spherical
 
 import (
 	"math"
-	cart2 "shapelib/coord-sys/cart"
+	cart2 "shapelib/coord-sys/cartesian"
 )
 
 // Spherical type

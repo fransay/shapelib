@@ -1,16 +1,16 @@
-package cart_test
+package cartesian_test
 
 import (
 	"reflect"
-	"shapelib/coord-sys/cart"
+	"shapelib/coord-sys/cartesian"
 	"shapelib/types"
 	"testing"
 )
 
 func TestCart2D(t *testing.T) {
-	cart2dObject := cart.Cartesian2D{
-		X: cart.Axis{Start: 0, Step: 4, End: 20},
-		Y: cart.Axis{Start: 60, Step: 5, End: 70},
+	cart2dObject := cartesian.Cartesian2D{
+		X: cartesian.Axis{Start: 0, Step: 4, End: 20},
+		Y: cartesian.Axis{Start: 60, Step: 5, End: 70},
 	}
 
 	// tests for x values

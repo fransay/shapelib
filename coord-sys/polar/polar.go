@@ -2,7 +2,7 @@ package polar
 
 import (
 	"math"
-	"shapelib/types"
+	cart2 "shapelib/coord-sys/cartesian"
 )
 
 // Polar type
@@ -12,14 +12,14 @@ type Polar struct {
 }
 
 // ToCartesian converts polar to cartesian coordinates
-func (p *Polar) ToCartesian() (c types.Point2D) {
+func (p *Polar) ToCartesian() (c cart2.Cart2D) {
 	x := p.Distance * math.Cos(p.Angle)
 	y := p.Distance * math.Sin(p.Angle)
-	c = types.Point2D{X: x, Y: y}
+	c = cart2.Cart2D{X: x, Y: y}
 	return c
 }
 
-// Distance2DMS converts Distance to degree minutes and seconds representation
+// Distance2DMS converts distance to degree minutes and seconds representation
 func (p *Polar) Distance2DMS() (dms []float64) {
 	var degree = math.Floor(p.Distance) // whole number part
 	var decimalMinutes = (p.Distance - degree) * 60
@@ -35,11 +35,11 @@ func (p *Polar) ToRadians() (rad float64) {
 	return rad
 }
 
-// Point2PointDistance Distance to another point with a polar representation
-func (p *Polar) Point2PointDistance(point Polar) (res float64) {
+// Point2PointDistance returns to distance between self.point and other point
+func (p *Polar) Point2PointDistance(point Polar) (dist float64) {
 	addDist := p.Distance + point.Distance
 	prodDist := p.Distance * point.Distance
 	addAngle := p.Angle + point.Angle
-	res = math.Sqrt(addDist - 2*prodDist*math.Cos(addAngle))
-	return res
+	dist = math.Sqrt(addDist - 2*prodDist*math.Cos(addAngle))
+	return dist
 }

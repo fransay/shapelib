@@ -1,17 +1,17 @@
-package cart_test
+package cartesian_test
 
 import (
 	"reflect"
-	"shapelib/coord-sys/cart"
+	"shapelib/coord-sys/cartesian"
 	"shapelib/types"
 	"testing"
 )
 
 func TestCart3D(t *testing.T) {
-	cart3D := cart.Cartesian3D{
-		X: cart.Axis{Start: 0, Step: 5, End: 15},
-		Y: cart.Axis{Start: 5, Step: 5, End: 20},
-		Z: cart.Axis{Start: 10, Step: 10, End: 30},
+	cart3D := cartesian.Cartesian3D{
+		X: cartesian.Axis{Start: 0, Step: 5, End: 15},
+		Y: cartesian.Axis{Start: 5, Step: 5, End: 20},
+		Z: cartesian.Axis{Start: 10, Step: 10, End: 30},
 	}
 
 	// 3D x values

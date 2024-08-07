@@ -1,4 +1,4 @@
-package cart
+package cartesian
 
 // Axis defines an axis in a cartesian plane
 type Axis struct {

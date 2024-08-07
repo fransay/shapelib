@@ -1,7 +1,7 @@
 package spherical
 
 import (
-	"shapelib/coord-sys/cart"
+	"shapelib/coord-sys/cartesian"
 	"testing"
 )
 
@@ -19,7 +19,7 @@ func TestSphericalPoint2PointDistance(t *testing.T) {
 func TestCartesian2D(t *testing.T) {
 	sphericalObject := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
 	observedDistance := sphericalObject.ToCartesianIn2D()
-	expectedDistance := cart.Cartesian2D{X: cart.Axis{Start: 0, End: 10, Step: 2}, Y: cart.Axis{Start: 100, End: 500, Step: 50}}
+	expectedDistance := cartesian.Cartesian2D{X: cartesian.Axis{Start: 0, End: 10, Step: 2}, Y: cartesian.Axis{Start: 100, End: 500, Step: 50}}
 	if observedDistance != expectedDistance {
 		t.Errorf("Expected %f, Got %f", expectedDistance, observedDistance)
 	}
@@ -29,7 +29,7 @@ func TestCartesian2D(t *testing.T) {
 func TestSphericalToCartesian3D(t *testing.T) {
 	sphericalObject := Spherical{RadialDistance: 10.0, PolarAngle: 50.0, AzimuthAngle: 30.0}
 	observedDistance := sphericalObject.ToCartesianIn3D()
-	expectedDistance := cart.Cartesian2D{X: cart.Axis{}, Y: cart.Axis{}}
+	expectedDistance := cartesian.Cartesian2D{X: cartesian.Axis{}, Y: cartesian.Axis{}}
 	if observedDistance != expectedDistance {
 		t.Errorf("Expected %f, Got %f", expectedDistance, observedDistance)
 	}
