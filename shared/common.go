@@ -10,7 +10,6 @@ func AreaByCoordinates(cords ...types.Point2D) float64 {
 		forPass += cords[i].Y * cords[j].X
 		backPass += cords[j].Y * cords[i].X
 	}
-	// results of area are negated due to orientation of types.Point2D
-	var area = -1 * (forPass - backPass) / 2
+	var area = -1 * (forPass - backPass) / 2 // results of area are negated due to orientation of types.Point2D
 	return area
 }

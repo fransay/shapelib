@@ -4,6 +4,7 @@ import (
 	"testing"
 )
 
+// Test IsClose
 func TestIsClose(t *testing.T) {
 	res := IsClose(10.00, 45.00, 0.001)
 	if res != false {
@@ -11,6 +12,7 @@ func TestIsClose(t *testing.T) {
 	}
 }
 
+// Test Diff
 func TestDiff(t *testing.T) {
 	res := Diff(10.0, 15.0)
 	if res != 5.0 {
@@ -18,6 +20,7 @@ func TestDiff(t *testing.T) {
 	}
 }
 
+// Test EqualSlice
 func TestEqualSlice(t *testing.T) {
 	var sliceOne = []float64{1, 2, 3, 4}
 	var sliceTwo = []float64{1, 2, 3, 4}
@@ -27,6 +30,7 @@ func TestEqualSlice(t *testing.T) {
 	}
 }
 
+// Test Rad2Deg
 func TestRad2Deg(t *testing.T) {
 	res := Rad2Deg(40)
 	exp := 2291.831180523293
@@ -36,6 +40,7 @@ func TestRad2Deg(t *testing.T) {
 
 }
 
+// Test Deg2Rad
 func TestDeg2Rad(t *testing.T) {
 	res := Deg2Rad(40)
 	exp := 0.6981317007977318
@@ -44,6 +49,7 @@ func TestDeg2Rad(t *testing.T) {
 	}
 }
 
+// Test Distance
 func TestDistance(t *testing.T) {
 	res := Distance([]float64{4, 6}, []float64{8, 2})
 	exp := 2.8284271247461903
@@ -52,6 +58,7 @@ func TestDistance(t *testing.T) {
 	}
 }
 
+// Test CompareTrio
 func TestCompareTrio(t *testing.T) {
 	res := CompareTrio(1, 2, 3)
 	if res != false {
@@ -59,9 +66,19 @@ func TestCompareTrio(t *testing.T) {
 	}
 }
 
+// Test CompareDuo
 func TestCompareDuo(t *testing.T) {
 	res := CompareDuo(1, 1)
 	if res != true {
 		t.Errorf("Got %v, Expected %v", res, true)
+	}
+}
+
+// Test IsArrayElementFloat64
+func TestIsArrayElementFloat64(t *testing.T) {
+	arr := []float64{1, 4, 5}
+	observed := IsArrayElementFloat64(arr)
+	if observed != true {
+		t.Errorf("Got %v, Expected %v", observed, true)
 	}
 }

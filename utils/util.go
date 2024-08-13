@@ -57,13 +57,10 @@ func CompareTrio(a, b, c float64) (comp bool) {
 }
 
 // CompareDuo returns an equality boolean check of three float64 types
-func CompareDuo(a, b float64) (comp bool) {
-	comp = a == b
-	return comp
-}
+func CompareDuo(a, b float64) bool { return a == b }
 
-// IsFloatElementSame checks if elements of [float64] type in array are the same.
-func IsFloatElementSame(arr []float64) bool {
+// IsArrayElementFloat64 checks if elements of type float64 in array are the same.
+func IsArrayElementFloat64(arr []float64) bool {
 	currentElement := arr[0]
 	tolerance := 0.005
 	for _, element := range arr {
@@ -73,5 +70,3 @@ func IsFloatElementSame(arr []float64) bool {
 	}
 	return false
 }
-
-//

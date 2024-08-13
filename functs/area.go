@@ -134,15 +134,13 @@ func AreaOfOval(semiMajorAxis float64, semiMinorAxis float64) (area float64) {
 	return area
 }
 
-// AreaOfEllipse returns the area of an oval
+// AreaOfEllipse returns the area of an ellipse
 func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 	area = AreaOfOval(semiMajorAxis, semiMinorAxis)
 	return area
 }
 
-// AreaCoordinates returns the area of any two-dimensional
-// shape given the coordinates of the vertices, using the
-// shoelace algorithm...
+// AreaCoordinates returns the area of any two-dimensional shape given the coordinates of the vertices, using the shoelace algorithm...
 func AreaCoordinates(cords ...types.Point2D) float64 {
 	var forPass float64
 	var backPass float64
@@ -151,7 +149,6 @@ func AreaCoordinates(cords ...types.Point2D) float64 {
 		forPass += cords[i].Y * cords[j].X
 		backPass += cords[j].Y * cords[i].X
 	}
-	// results of area are negated due to orientation of types.Point2D
-	var area = -1 * (forPass - backPass) / 2
+	var area = -1 * (forPass - backPass) / 2 // results of area are negated due to orientation of types.Point2D
 	return area
 }
