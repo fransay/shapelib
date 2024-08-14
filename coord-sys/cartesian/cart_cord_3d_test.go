@@ -39,6 +39,6 @@ func TestCart3D(t *testing.T) {
 	resultOrigin := cart3D.Origin()
 	expectedOrigin := types.Point3D{X: 0, Y: 5, Z: 10}
 	if !reflect.DeepEqual(resultOrigin, expectedOrigin) {
-		t.Errorf("Expect2d %v, Got %v", expectedOrigin, resultOrigin)
+		t.Errorf("Expected %v, Got %v", expectedOrigin, resultOrigin)
 	}
 }
