@@ -25,4 +25,32 @@ func TestCart3D(t *testing.T) {
 	if observedSubCart3D != expectedSubCart3D {
 		t.Errorf("Expect %v, Got %v", expectedSubCart3D, observedSubCart3D)
 	}
+
+	// test MulCart3D
+	observedMulCart3D := cart3d.MulCart3D(&Cart3D{X: 2, Y: 3, Z: 4})
+	expectedMulCart3D := Cart3D{X: 100, Y: 60, Z: 40}
+	if observedMulCart3D != expectedMulCart3D {
+		t.Errorf("Expect %v, Got %v", expectedMulCart3D, observedMulCart3D)
+	}
+
+	// test MulScalar3D
+	observedMulScalar3D := cart3d.MulScalar3D(5.0)
+	expectedMulScalar3D := Cart3D{X: 250.0, Y: 100.0, Z: 500.0}
+	if observedMulScalar3D != expectedMulScalar3D {
+		t.Errorf("Expect %v, Got %v", expectedMulScalar3D, observedMulScalar3D)
+	}
+
+	// test DivCart3D
+	observedDivCart3D := cart3d.DivCart3D(&Cart3D{X: 2, Y: 2, Z: 2})
+	expectedDivCart3D := Cart3D{X: 25, Y: 10, Z: 5}
+	if observedDivCart3D != expectedDivCart3D {
+		t.Errorf("Expect %v, Got %v", expectedDivCart3D, observedDivCart3D)
+	}
+
+	// test DivScalar
+	observedDivScalar := cart3d.DivScalar(5.0)
+	expectedDivScalar := Cart3D{X: 10.0, Y: 4.0, Z: 2.0}
+	if observedDivScalar != expectedDivScalar {
+		t.Errorf("Expect %v, Got %v", expectedDivScalar, observedDivScalar)
+	}
 }

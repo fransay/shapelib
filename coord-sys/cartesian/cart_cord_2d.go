@@ -71,4 +71,4 @@ func (c *Cartesian2D) Quadrant() (quadrant int) {
 }
 
 // Dim returns the dimension of the coordinate system.
-func (c *Cartesian2D) Dim() float64 { return 2 }
+func (c *Cartesian2D) Dim() float64 { return 2.0 }
