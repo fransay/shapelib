@@ -47,15 +47,15 @@ func (t *Triangle) Perimeter() (perimeter float64) {
 // Type returns the type of the triangle, either isosceles, scalene
 // or equilateral
 func (t *Triangle) Type() (typeT string) {
-	if utils.CompareTrio(t.SideOne, t.SideTwo, t.SideThree) {
+	if utils.CompareThreeFloat64(t.SideOne, t.SideTwo, t.SideThree) {
 		typeT = equilateral
 	}
 
-	if utils.CompareDuo(t.SideOne, t.SideTwo) || utils.CompareDuo(t.SideTwo, t.SideThree) || utils.CompareDuo(t.SideOne, t.SideThree) {
+	if utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
 		typeT = isosceles
 	}
 
-	if !utils.CompareDuo(t.SideOne, t.SideTwo) || !utils.CompareDuo(t.SideTwo, t.SideThree) || !utils.CompareDuo(t.SideOne, t.SideThree) {
+	if !utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || !utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || !utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
 		typeT = scalene
 	}
 	return typeT

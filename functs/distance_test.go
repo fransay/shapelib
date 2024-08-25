@@ -36,3 +36,13 @@ func TestHaversineDistance(t *testing.T) {
 		t.Errorf("Ëxpected %f, Got %f", haversineDistanceExp, haversineDistanceObs)
 	}
 }
+
+func TestChebyshevDistance(t *testing.T) {
+	firstPoint := types.Point2D{X: 5, Y: 20}
+	secondPoint := types.Point2D{X: 4, Y: 8}
+	var observedChebyshevDistance = ChebyshevDistance(firstPoint, secondPoint)
+	const expectedChebyshevDistance = 1
+	if observedChebyshevDistance != expectedChebyshevDistance {
+		t.Errorf("Ëxpected %f, Got %f", expectedChebyshevDistance, observedChebyshevDistance)
+	}
+}

@@ -1,14 +1,12 @@
-// Package functs: The perimeter of a 2D shape is the total distance around it.
-// Package functs: Provide free functions for computing perimeters of a wide array of 2D
 package functs
 
-// PerimeterOfTriangle : perimeter of a regular triangle
-func PerimeterOfTriangle(sideA, sideB, sideC float64) (perim float64) {
-	perim = sideA + sideB + sideC
-	return perim
+// PerimeterOfTriangle return perimeter of a regular triangle
+func PerimeterOfTriangle(sideA, sideB, sideC float64) (perimeter float64) {
+	perimeter = sideA + sideB + sideC
+	return perimeter
 }
 
-// PerimeterOfSquare : perimeter of a regular square
+// PerimeterOfSquare returns perimeter of a regular square
 func PerimeterOfSquare(side float64) (perimeter float64) {
 	perimeter = side * 4
 	return perimeter
@@ -20,83 +18,77 @@ func PerimeterOfRegularRectangle(sideLength, sideWidth float64) (perimeter float
 	return perimeter
 }
 
-// PerimeterOfParallelogram :perimeter of a regular parallelogram
-func PerimeterOfParallelogram(northSide, westSide float64) (perim float64) {
-	perim = (northSide * 2) + (westSide * 2)
-	return perim
+// PerimeterOfParallelogram returns perimeter of a regular parallelogram
+func PerimeterOfParallelogram(northSide, westSide float64) (perimeter float64) {
+	perimeter = (northSide * 2) + (westSide * 2)
+	return perimeter
 
 }
 
-// PerimOfRKite :perimeter of a regular Kite
-func PerimOfRKite(shortDiag, longDiag float64) (perim float64) {
-	perim = (shortDiag * 2) + (longDiag * 2)
-	return perim
+// PerimeterOfRegularKite returns perimeter of a regular kite
+func PerimeterOfRegularKite(shortDiag, longDiag float64) (perimeter float64) {
+	perimeter = (shortDiag * 2) + (longDiag * 2)
+	return perimeter
 
 }
 
-// PerimOfRRhombus :perimeter of a regular Rhombus
-func PerimOfRRhombus(side float64) (perim float64) {
-	perim = side * 4
-	return perim
+// PerimeterOfRegularRhombus returns perimeter of a regular rhombus
+func PerimeterOfRegularRhombus(side float64) (perimeter float64) {
+	perimeter = side * 4
+	return perimeter
 }
 
-// PerimOfRTrapezoid :a trapezoid has unequal sides
-func PerimOfRTrapezoid(side1, side2, side3, side4 float64) (perim float64) {
-	perim = side1 + side2 + side3 + side4
-	return perim
+// PerimeterOfRegularTrapezoid returns perimeter of trapezoid with unequal sides
+func PerimeterOfRegularTrapezoid(side1, side2, side3, side4 float64) (perimeter float64) {
+	perimeter = side1 + side2 + side3 + side4
+	return perimeter
 }
 
-// PERIMETER OF FIVE SIDED FIGURES
-
-// PerimOfRPentagon :perimeter of regular Pentagon
-func PerimOfRPentagon(side float64) (perim float64) {
-	perim = side * 5
-	return perim
+// PerimeterOfRegularPentagon returns perimeter of regular pentagon
+func PerimeterOfRegularPentagon(side float64) (perimeter float64) {
+	perimeter = side * 5
+	return perimeter
 
 }
 
-// PerimOfRHexagon :perimeter of a regular Hexagon
-func PerimOfRHexagon(side float64) (perim float64) {
-	perim = side * 6
-	return perim
+// PerimeterOfRegularHexagon returns perimeter of a regular hexagon
+func PerimeterOfRegularHexagon(side float64) (perimeter float64) {
+	perimeter = side * 6
+	return perimeter
 }
 
-// PERIMETER OF SEVEN SIDED FIGURES
-
-// PerimOfRHeptagon :perimeter of a regular Heptagon
-func PerimOfRHeptagon(side float64) (perim float64) {
-	perim = side * 7
-	return perim
+// PerimeterOfRegularHeptagon returns perimeter of a regular heptagon
+func PerimeterOfRegularHeptagon(side float64) (perimeter float64) {
+	perimeter = side * 7
+	return perimeter
 }
 
-// PerimOfROctagon :perimeter of a regular Octagon
-func PerimOfROctagon(side float64) (perim float64) {
-	perim = side * 8
-	return perim
+// PerimeterOfRegularOctagon returns perimeter of a regular octagon
+func PerimeterOfRegularOctagon(side float64) (perimeter float64) {
+	perimeter = side * 8
+	return perimeter
 }
 
-// PERIMETER OF NINE SIDED FIGURES
-
-// PerimOfRNonagon  :perimeter of a regular Nonagon
-func PerimOfRNonagon(side float64) (perim float64) {
-	perim = side * 9
-	return perim
+// PerimeterOfRegularNonagon returns perimeter of a regular nonagon
+func PerimeterOfRegularNonagon(side float64) (perimeter float64) {
+	perimeter = side * 9
+	return perimeter
 }
 
-// PerimOfRDecagon :perimeter of a regular Decagon
-func PerimOfRDecagon(side float64) (perim float64) {
-	perim = side * 10
-	return perim
+// PerimeterOfRegularDecagon returns perimeter of a regular decagon
+func PerimeterOfRegularDecagon(side float64) (perimeter float64) {
+	perimeter = side * 10
+	return perimeter
 }
 
-// PerimOfRGeneral :perimeter of a regular generic shape
-func PerimOfRGeneral(sideLength float64, numberOfSides float64) (perim float64) {
-	perim = sideLength * numberOfSides
-	return perim
+// PerimeterOfRegularGeneric returns perimeter of a regular generic shape
+func PerimeterOfRegularGeneric(sideLength float64, numberOfSides float64) (perimeter float64) {
+	perimeter = sideLength * numberOfSides
+	return perimeter
 }
 
-// PerimOfIrGeneral :perimeter of an irregular generic shape
-func PerimOfIrGeneral(side ...float64) (perim float64) {
+// PerimeterOfIrregularGeneric returns perimeter of an irregular generic shape
+func PerimeterOfIrregularGeneric(side ...float64) (perimeter float64) {
 	var total float64
 	for _, value := range side {
 		total = total + value
@@ -105,8 +97,8 @@ func PerimOfIrGeneral(side ...float64) (perim float64) {
 
 }
 
-// PerimOfIrr4Sided returns the perimeter of an irregular four sides figure
-func PerimOfIrr4Sided(sideOne, sideTwo, sideThree, sideFour float64) (perimeter float64) {
+// PerimeterOfIrregularFourSided returns the perimeter of an irregular four sides figure
+func PerimeterOfIrregularFourSided(sideOne, sideTwo, sideThree, sideFour float64) (perimeter float64) {
 	perimeter = sideOne + sideTwo + sideThree + sideFour
 	return perimeter
 }

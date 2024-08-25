@@ -50,14 +50,14 @@ func IsClose(a float64, b float64, tolerance float64) (isClose bool) {
 	return isClose
 }
 
-// CompareTrio returns an equality boolean check of three float64 types
-func CompareTrio(a, b, c float64) (comp bool) {
+// CompareThreeFloat64 returns an equality boolean check of three float64 types
+func CompareThreeFloat64(a, b, c float64) (comp bool) {
 	comp = (a == b) && (a == c) && (b == c)
 	return comp
 }
 
-// CompareDuo returns an equality boolean check of three float64 types
-func CompareDuo(a, b float64) bool { return a == b }
+// CompareTwoFloat64 returns an equality boolean check of three float64 types
+func CompareTwoFloat64(a, b float64) bool { return a == b }
 
 // IsArrayElementFloat64 checks if elements of type float64 in array are the same.
 func IsArrayElementFloat64(arr []float64) bool {

@@ -7,28 +7,34 @@ import (
 )
 
 // EuclideanDistance returns Euclidean distance between two points in a 2-dimensional space
-func EuclideanDistance(pointOne, pointTwo types.Point2D) (dist float64) {
+func EuclideanDistance(pointOne, pointTwo types.Point2D) (euclidDist float64) {
 	deltaX := pointTwo.X - pointOne.X
 	deltaY := pointOne.Y - pointOne.Y
-	dist = math.Sqrt(math.Pow(deltaX, 2) + math.Pow(deltaY, 2))
-	return dist
+	euclidDist = math.Sqrt(math.Pow(deltaX, 2) + math.Pow(deltaY, 2))
+	return euclidDist
 }
 
 // MinkowskiDistance returns minkowski distance of points in an N dimensional space,
-func MinkowskiDistance(PointA, PointB types.Point2D, p float64) (distMinkowski float64) {
-	var deltaA = math.Pow(PointA.X-PointA.Y, p)
-	var deltaB = math.Pow(PointB.X-PointB.Y, p)
+func MinkowskiDistance(pointA, pointB types.Point2D, p float64) (distMinkowski float64) {
+	var deltaA = math.Pow(pointA.X-pointA.Y, p)
+	var deltaB = math.Pow(pointB.X-pointB.Y, p)
 	distMinkowski = math.Pow(deltaA+deltaB, 1/p)
 	return distMinkowski
 }
 
 // HaversineDistance returns the physical space between to locations on earth
-func HaversineDistance(PointA, PointB types.LatLong) (dist float64) {
+func HaversineDistance(pointA, pointB types.LatLong) (haverDist float64) {
 	const radiusOfEarth = 6371 // in kilometers
-	latitudeDiff := utils.Deg2Rad(PointA.Latitude - PointB.Latitude)
-	longitudeDiff := utils.Deg2Rad(PointA.Longitude - PointB.Longitude)
-	haversine := math.Pow(math.Sinh(latitudeDiff/2), 2) + math.Cos(PointA.Latitude)*math.Cos(PointA.Latitude)*math.Pow(math.Sin(longitudeDiff/2), 2)
+	latitudeDiff := utils.Deg2Rad(pointA.Latitude - pointB.Latitude)
+	longitudeDiff := utils.Deg2Rad(pointA.Longitude - pointB.Longitude)
+	haversine := math.Pow(math.Sinh(latitudeDiff/2), 2) + math.Cos(pointA.Latitude)*math.Cos(pointA.Latitude)*math.Pow(math.Sin(longitudeDiff/2), 2)
 	centralAngle := 2 * math.Atan2(math.Sqrt(haversine), math.Sqrt(1-haversine))
-	dist = radiusOfEarth * centralAngle
-	return dist
+	haverDist = radiusOfEarth * centralAngle
+	return haverDist
+}
+
+// ChebyshevDistance returns the max distance along any coordinate dimension
+func ChebyshevDistance(pointA, pointB types.Point2D) (chebDist float64) {
+	chebDist = math.Max(pointB.X-pointA.X, pointB.Y-pointA.Y)
+	return chebDist
 }

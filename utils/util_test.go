@@ -10,6 +10,11 @@ func TestIsClose(t *testing.T) {
 	if res != false {
 		t.Errorf("Got: %v, Expected: %v", res, false)
 	}
+
+	res2 := IsClose(10.00, 10.00, 0.001)
+	if res2 != true {
+		t.Errorf("Got: %v, Expected: %v", res2, true)
+	}
 }
 
 // Test Diff
@@ -58,17 +63,17 @@ func TestDistance(t *testing.T) {
 	}
 }
 
-// Test CompareTrio
+// Test CompareThreeFloat64
 func TestCompareTrio(t *testing.T) {
-	res := CompareTrio(1, 2, 3)
+	res := CompareThreeFloat64(1, 2, 3)
 	if res != false {
 		t.Errorf("Got %v, Expected %v", res, false)
 	}
 }
 
-// Test CompareDuo
+// Test CompareTwoFloat64
 func TestCompareDuo(t *testing.T) {
-	res := CompareDuo(1, 1)
+	res := CompareTwoFloat64(1, 1)
 	if res != true {
 		t.Errorf("Got %v, Expected %v", res, true)
 	}

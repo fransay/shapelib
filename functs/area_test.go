@@ -141,7 +141,6 @@ func TestAreaOfRDecagon(t *testing.T) {
 	if math.Trunc(res) != exp {
 		t.Errorf("Expected %f Got %f", exp, res)
 	}
-
 }
 
 // tests area of a regular heptagon
@@ -151,7 +150,6 @@ func TestAreaOfRHeptagon(t *testing.T) {
 	if math.Trunc(res) != exp {
 		t.Errorf("Expected %f Got %f", exp, res)
 	}
-
 }
 
 // tests area of a regular dodecagon
@@ -179,7 +177,6 @@ func TestAreaOfSemiCircle(t *testing.T) {
 	if math.Trunc(res) != exp {
 		t.Errorf("Expected %f Got %f", exp, res)
 	}
-
 }
 
 // tests area of a quad circle
@@ -199,7 +196,6 @@ func TestAreaOfOval(t *testing.T) {
 		t.Errorf("Expected %f Got %f", exp, res)
 
 	}
-
 }
 
 // tests area of an ellipse
@@ -210,7 +206,6 @@ func TestAreaOfEllipse(t *testing.T) {
 		t.Errorf("Expected %f Got %f", exp, res)
 
 	}
-
 }
 
 // tests area given coordinates
