@@ -9,7 +9,7 @@ import (
 type Triangle struct {
 	SideOne   float64
 	SideTwo   float64
-	SideThree float64
+	SideThree float64 // todo: remove all sides
 	Height    float64
 	Base      float64
 }

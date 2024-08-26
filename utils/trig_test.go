@@ -13,6 +13,15 @@ func TestCot(t *testing.T) {
 	}
 }
 
+func TestInteriorAngle(t *testing.T) {
+	geom := 5
+	expectedInteriorAngle := 45.0
+	observedInteriorAngle := InteriorAngle(geom)
+	if expectedInteriorAngle != observedInteriorAngle {
+		t.Errorf("expect %f, actual %f", expectedInteriorAngle, observedInteriorAngle)
+	}
+}
+
 func TestSumOfExteriorAngle(t *testing.T) {
 	result := SumOfInteriorAngle(5)
 	expect := 540

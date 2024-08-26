@@ -1,11 +1,12 @@
 package shape_test
 
 import (
+	"shapelib/shape"
 	"testing"
 )
 
 func TestTriangle(t *testing.T) {
-	triangle := Triangle{SideOne: 5, SideTwo: 10, SideThree: 15, Base: 20, Height: 30}
+	triangle := shape.Triangle{SideOne: 5, SideTwo: 10, SideThree: 15, Base: 20, Height: 30}
 	// area by sides
 	resultAreaBySides := triangle.AreaBySides()
 	expectedAreaBySides := 34.0

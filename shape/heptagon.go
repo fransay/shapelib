@@ -23,8 +23,7 @@ func (h *Heptagon) Perimeter() (perimeter float64) {
 	return perimeter
 }
 
-// Apothem returns the distance from the center of the hexagon
-// to the midpoint on any side
+// Apothem returns the distance from the center of the hexagon to the midpoint on any side
 func (h *Heptagon) Apothem() float64 {
 	return h.side / (2 * math.Tan(math.Pi/7))
 }

@@ -4,6 +4,7 @@ import (
 	"errors"
 	"math"
 	"shapelib/types"
+	"shapelib/utils"
 )
 
 var ErrorOfCollinearity = errors.New("points are collinear")
@@ -17,6 +18,18 @@ type Circle struct {
 func (c *Circle) Area() (area float64) {
 	area = math.Pi * math.Pow(c.Radius, 2)
 	return area
+}
+
+// ArcLength returns the arc length of a circle given the angle of arc extent in degrees
+func (c *Circle) ArcLength(angle, radius float64) (arc float64) {
+	angleInRadians := utils.Deg2Rad(angle)
+	return angleInRadians * radius
+}
+
+// SectorArea returns the sector area of a circle
+func (c *Circle) SectorArea(angle, radius float64) (area float64) {
+	angleInRadians := utils.Deg2Rad(angle)
+	return angleInRadians * radius * 0.5
 }
 
 // Circumference returns the circumference of a circle

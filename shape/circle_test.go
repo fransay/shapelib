@@ -1,14 +1,16 @@
 package shape_test
 
 import (
+	"shapelib/shape"
+	"shapelib/types"
 	"testing"
 )
 
 func TestCircle(t *testing.T) {
-	var circle = Circle{Diameter: 60, Radius: 30}
+	var cir = shape.Circle{Radius: 60, Centroid: types.Point2D{X: 20, Y: 45}}
 
 	// area of a circle
-	resultOfAreaOfCircle := circle.Area()
+	resultOfAreaOfCircle := cir.Area()
 	expectedAreaOfCircle := 5.0
 
 	if expectedAreaOfCircle != resultOfAreaOfCircle {
@@ -16,7 +18,7 @@ func TestCircle(t *testing.T) {
 	}
 
 	// circumference of a circle
-	resultCircumferenceOfCircle := circle.Circumference()
+	resultCircumferenceOfCircle := cir.Area()
 	expectedCircumferenceOfCircle := 188.5714285714286
 
 	if resultCircumferenceOfCircle != expectedCircumferenceOfCircle {
