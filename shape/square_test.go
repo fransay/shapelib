@@ -1,11 +1,12 @@
 package shape_test
 
 import (
+	"shapelib/shape"
 	"testing"
 )
 
 func TestSquare(t *testing.T) {
-	square := Square{Length: 3.0}
+	square := shape.Square{Length: 3.0}
 
 	// Area
 	res := square.Area()

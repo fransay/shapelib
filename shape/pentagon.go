@@ -26,3 +26,17 @@ func (p *Pentagon) Diagonal() (diagonal float64) {
 	diagonal = p.Side * math.Sqrt(5-2*math.Sqrt(5))
 	return diagonal
 }
+
+// Circumcircle return the circumference of a circumcircle drawn around the pentagon
+func (p *Pentagon) Circumcircle() float64 {
+	sqrt5 := math.Sqrt(5)
+	r := (p.Side / 2) * math.Sqrt((5+sqrt5)/2)
+	return r
+}
+
+// Incircle return the circumference of an incircle drawn in a pentagon
+func (p *Pentagon) Incircle() float64 {
+	sqrt5 := math.Sqrt(5)
+	r := (p.Side / 2) * math.Sqrt((5-sqrt5)/2)
+	return r
+}
