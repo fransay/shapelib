@@ -73,6 +73,11 @@ func (tc *TriangleC) Center() (pt [2]float64) {
 	return pt
 }
 
+func (tc *TriangleC) ThirdPoint()  {}
+func (tc *TriangleC) LinearRings() {}
+func (tc *TriangleC) Area()        {}
+func (tc *TriangleC) Contains()    {}
+
 // todo: thirdPoint() -> ThirdPoint takes 2 points and checks which point is the 3rd in the Triangle
 // todo: linearRings() -> LinearRings returns the coordinates of the linear rings
 // todo: Area() -> Area returns twice the area of the oriented triangle (a,b,c), i.e. the area is positive if the triangle is oriented counterclockwise.
