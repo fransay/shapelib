@@ -4,6 +4,7 @@ import (
 	"log"
 	"math"
 	"shapelib/functs"
+	"shapelib/shape"
 	"shapelib/utils"
 )
 
@@ -13,15 +14,30 @@ type Point2D struct {
 	Y float64
 }
 
+// NewPoint2D returns a new point. i.e constructor
+func NewPoint2D(x, y int) *Point2D {
+	return &Point2D{float64(x), float64(y)}
+}
+
 // Size of a point2D is dimensionless i.e, it has no size, hence return 0.0
 func (p *Point2D) Size() (size float64) {
 	return 0.0
+}
+
+// Len return the number of points in the receiver, always equal to 1
+func (p *Point2D) Len() float64 {
+	return 1.0
 }
 
 // Coordinates of point2D type returned in an array
 func (p *Point2D) Coordinates() (coordinates []float64) {
 	coordinates = []float64{p.X, p.Y}
 	return coordinates
+}
+
+// Buffer returns a circle with a given radius where this.Point2D is the center
+func (p *Point2D) Buffer(radius float64) *shape.Circle {
+	return &shape.Circle{Radius: radius, Centroid: *p}
 }
 
 // Polar returns a polar coordinate of a cartesian representation
