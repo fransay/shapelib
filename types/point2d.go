@@ -1,12 +1,14 @@
 package types
 
 import (
-	"log"
+	"errors"
 	"math"
 	"shapelib/functs"
 	"shapelib/shape"
 	"shapelib/utils"
 )
+
+var collinearityError = errors.New("collinearity error, points don't lie on the same line")
 
 // Point2D point type characterise by x and y coordination
 type Point2D struct {
@@ -17,6 +19,18 @@ type Point2D struct {
 // NewPoint2D returns a new point. i.e constructor
 func NewPoint2D(x, y int) *Point2D {
 	return &Point2D{float64(x), float64(y)}
+}
+
+// DistanceTo returns the distance between self and other point
+func (p *Point2D) DistanceTo(pt Point2D) (distance float64) {
+	distance = math.Sqrt(math.Pow(p.X-pt.X, 2) + math.Pow(p.Y-pt.Y, 2))
+	return distance
+}
+
+// BearingTo returns the bearing between self and other point.
+func (p *Point2D) BearingTo(pt Point2D) (bearing float64) {
+	bearing = math.Atan2(p.Y-pt.Y, p.X-pt.X)
+	return bearing
 }
 
 // Size of a point2D is dimensionless i.e, it has no size, hence return 0.0
@@ -84,14 +98,20 @@ func (p *Point2D) pointOnLine(segment LineSegment) (onLine bool) {
 	return onLine
 }
 
+// Determine the gradient between two points.
+func slope(pointOne, pointTwo Point2D) float64 {
+	grad := (pointTwo.Y - pointOne.Y) / (pointTwo.X - pointOne.X)
+	return grad
+}
+
 // IsCollinear checks if a set of the points lie on the same line
-func IsCollinear(points ...Point2D) (isCollinear bool) {
+func IsCollinear(points ...Point2D) (isCollinear bool, err error) {
 	var slopeList []float64
 	numberOfPoints := len(points)
 	currentIndex := 0
 
 	if numberOfPoints <= 2 {
-		log.Panic("Can't determine collinearity!")
+		return false, collinearityError
 	}
 	for currentIndex < numberOfPoints-2 {
 		nextIndex := currentIndex + 1
@@ -106,11 +126,5 @@ func IsCollinear(points ...Point2D) (isCollinear bool) {
 	} else {
 		isCollinear = false
 	}
-	return isCollinear
-}
-
-// Determine the gradient between two points.
-func slope(pointOne, pointTwo Point2D) float64 {
-	grad := (pointTwo.Y - pointOne.Y) / (pointTwo.X - pointOne.X)
-	return grad
+	return isCollinear, collinearityError
 }
