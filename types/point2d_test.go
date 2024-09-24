@@ -5,30 +5,27 @@ import (
 	"testing"
 )
 
-// funct_tests point2D size
+func TestNewPoint2D(t *testing.T) {
+	newPoint2D := types.NewPoint2D(20, 40)
+	point2D := types.Point2D{X: 20, Y: 40}
+	if *newPoint2D != point2D {
+		t.Errorf("NewPoint2D returned %+v, want %+v", *newPoint2D, point2D)
+	}
+}
+
 func TestSize(t *testing.T) {
-	// point instance one
 	var pointOne = types.Point2D{X: 300, Y: 450}
 	PointOneSizeResult := pointOne.Size()
 	PointOneSizeExpected := 0.0
 	if PointOneSizeExpected != PointOneSizeResult {
-		t.Errorf("Expected %f, got %f", PointOneSizeExpected, PointOneSizeResult)
+		t.Errorf("Expected %f, Got %f", PointOneSizeExpected, PointOneSizeResult)
 	}
 
-	// point instance two
 	var pointTwo = types.Point2D{X: 100, Y: 200}
 	PointTwoSizeResult := pointTwo.Size()
 	PointTwoSizeExpected := 0.0
 	if PointOneSizeExpected != PointOneSizeResult {
-		t.Errorf("Expected %f, got %f", PointTwoSizeExpected, PointTwoSizeResult)
-	}
-
-	// point instance three
-	var pointThree = types.Point2D{X: 120, Y: 650}
-	PointThreeSizeResult := pointThree.Size()
-	PointThreeSizeExpected := 0.0
-	if PointOneSizeExpected != PointOneSizeResult {
-		t.Errorf("Expected %f, got %f", PointThreeSizeExpected, PointThreeSizeResult)
+		t.Errorf("Expected %f, Got %f", PointTwoSizeExpected, PointTwoSizeResult)
 	}
 }
 
@@ -104,7 +101,7 @@ func TestPointScale(t *testing.T) {
 
 // test collinearity
 func TestCollinear(t *testing.T) {
-	observed := types.IsCollinear(types.Point2D{X: 3, Y: 5}, types.Point2D{X: 10, Y: 50}, types.Point2D{X: 30, Y: 70}, types.Point2D{X: 80, Y: 15})
+	observed, _ := types.IsCollinear(types.Point2D{X: 3, Y: 5}, types.Point2D{X: 10, Y: 50}, types.Point2D{X: 30, Y: 70}, types.Point2D{X: 80, Y: 15})
 	const expected = false
 	if observed != expected {
 		t.Errorf("Expected %t, Got %t", expected, observed)
