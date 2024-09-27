@@ -16,7 +16,7 @@ type Point2D struct {
 	Y float64
 }
 
-// NewPoint2D returns a new point. i.e constructor
+// NewPoint2D returns a new point. i.e. construct a new object of type Point2D
 func NewPoint2D(x, y int) *Point2D {
 	return &Point2D{float64(x), float64(y)}
 }
