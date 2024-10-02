@@ -50,11 +50,34 @@ func (p *Point3D) DotProduct(q *Point3D) (prod float64) {
 	return prod
 }
 
-// todo: refer to this gpt reference:
-// todo: https://chatgpt.com/c/66f61008-8cd4-8004-9e77-9008b82f0ddf
 // CrossProduct return the cross product between self and other
-func (p *Point3D) CrossProduct(q *Point3D) {}
+func (p *Point3D) CrossProduct(q *Point3D) Point3D {
+	cprod := Point3D{X: (p.Y * q.Z) - (p.Z * q.Y), Y: (p.X * q.Z) - (p.Z * q.X), Z: (p.X * q.Y) - (p.Y * q.X)}
+	return cprod
+}
 
-func (p *Point3D) Normalize() {}
+// Normalize returns normalized point of self
+func (p *Point3D) Normalize() Point3D {
+	magnitude := math.Sqrt(p.X*p.X + p.Y*p.Y + p.Z*p.Z)
+	return Point3D{X: p.X / magnitude, Y: p.Y / magnitude, Z: p.Z / magnitude}
+}
 
-//func (p *Point3D)
+// MidPoint returns midpoint between self and other point
+func (p *Point3D) MidPoint(otherPoint Point3D) Point3D {
+	return Point3D{X: (p.X + otherPoint.X) / 2, Y: (p.Y + otherPoint.Y) / 2, Z: (p.Z + otherPoint.Z) / 2}
+}
+
+// Scale returns a new point scaled by a factor
+func (p *Point3D) Scale(scalarFactor float64) Point3D {
+	return Point3D{p.X * scalarFactor, p.Y * scalarFactor, p.Z * scalarFactor}
+}
+
+// Magnitude returns the size of a Point3D
+func (p *Point3D) Magnitude() float64 {
+	return math.Sqrt((p.X * p.X) + (p.Y * p.Y) + (p.Z * p.Z))
+}
+
+// DistanceToOrigin returns distance of point relative to origin (0,0)
+func (p *Point3D) DistanceToOrigin() float64 {
+	return p.Magnitude()
+}

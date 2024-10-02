@@ -70,3 +70,5 @@ func IsArrayElementFloat64(arr []float64) bool {
 	}
 	return false
 }
+
+// todo: include midpoint function
