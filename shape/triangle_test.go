@@ -1,4 +1,4 @@
-package shape_test
+package tests
 
 import (
 	"shapelib/shape"

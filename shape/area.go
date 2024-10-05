@@ -1,8 +1,7 @@
-package functs
+package shape
 
 import (
 	"math"
-	"shapelib/types"
 )
 
 // AreaOfTriangleBH returns area of a triangle given the base and the height
@@ -141,7 +140,7 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 }
 
 // AreaCoordinates returns the area of any two-dimensional shape given the coordinates of the vertices, using the shoelace algorithm...
-func AreaCoordinates(cords ...types.Point2D) float64 {
+func AreaCoordinates(cords ...Point2D) float64 {
 	var forPass float64
 	var backPass float64
 	var numberOfCords = len(cords) - 1

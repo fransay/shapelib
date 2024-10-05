@@ -1,4 +1,4 @@
-package functs
+package utils
 
 // PerimeterOfTriangle return perimeter of a regular triangle
 func PerimeterOfTriangle(sideA, sideB, sideC float64) (perimeter float64) {

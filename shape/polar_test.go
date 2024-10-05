@@ -1,4 +1,4 @@
-package polar
+package tests
 
 import (
 	"shapelib/types"

@@ -1,4 +1,4 @@
-package functs
+package shape
 
 import (
 	"math"

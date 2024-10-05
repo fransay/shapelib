@@ -1,4 +1,4 @@
-package functs
+package utils
 
 import (
 	"math"

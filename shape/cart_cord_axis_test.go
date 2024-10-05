@@ -1,4 +1,4 @@
-package cartesian
+package tests
 
 import (
 	"log"

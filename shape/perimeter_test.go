@@ -1,4 +1,4 @@
-package functs
+package tests
 
 import (
 	"math"

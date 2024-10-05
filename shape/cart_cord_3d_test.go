@@ -1,4 +1,4 @@
-package cartesian_test
+package tests
 
 import (
 	"reflect"

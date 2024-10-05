@@ -1,4 +1,4 @@
-package cartesian
+package shape
 
 import "math"
 

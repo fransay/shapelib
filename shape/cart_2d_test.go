@@ -1,7 +1,6 @@
-package cartesian
+package shape
 
 import (
-	"shapelib/coord-sys/polar"
 	"testing"
 )
 

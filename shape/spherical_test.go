@@ -1,4 +1,4 @@
-package spherical
+package tests
 
 import (
 	"shapelib/coord-sys/cartesian"

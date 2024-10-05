@@ -1,8 +1,7 @@
-package functs
+package shape
 
 import (
 	"math"
-	"shapelib/types"
 	"testing"
 )
 
@@ -210,7 +209,7 @@ func TestAreaOfEllipse(t *testing.T) {
 
 // tests area given coordinates
 func TestAreaCoordinates(t *testing.T) {
-	var res = AreaCoordinates(types.Point2D{X: 1, Y: 4}, types.Point2D{X: 3, Y: 6}, types.Point2D{X: 8, Y: 5})
+	var res = AreaCoordinates(Point2D{X: 1, Y: 4}, Point2D{X: 3, Y: 6}, Point2D{X: 8, Y: 5})
 	var exp = math.Trunc(-19.500)
 	if math.Trunc(res) != exp {
 		t.Errorf("Expected %f Got %f", exp, res)
