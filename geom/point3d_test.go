@@ -1,4 +1,4 @@
-package tests
+package geom
 
 import (
 	"testing"
@@ -29,7 +29,8 @@ func TestPoint3DTranslate3D(t *testing.T) {
 // funct_tests scale
 func TestPoint3DScale(t *testing.T) {
 	var point3DSizeObj = Point3D{X: 2, Y: 3, Z: 3}
-	var point3DScale3DObserved = point3DSizeObj.Scale([]float64{1, 2, 3})
+	var pointScalar = 2.0
+	var point3DScale3DObserved = point3DSizeObj.Scale(pointScalar)
 	var point3DScale3DExpected = Point3D{X: 2, Y: 6, Z: 9}
 	if point3DScale3DObserved != point3DScale3DExpected {
 		t.Errorf("Expected %f, Got %f", point3DScale3DExpected, point3DScale3DObserved)

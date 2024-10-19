@@ -1,11 +1,9 @@
-package types
+package geom
 
 import (
 	"errors"
 	"math"
-	"shapelib/functs"
 	"shapelib/shape"
-	"shapelib/utils"
 )
 
 var collinearityError = errors.New("collinearity error, points don't lie on the same line")
@@ -72,7 +70,7 @@ func (p *Point2D) Translate2D(shiftVector Point2D) (translate Point2D) {
 
 // Rotate returns a transformed point undergone a rotation transformation
 func (p *Point2D) Rotate(rotationAngle float64) (rotate Point2D) {
-	angleRad := utils.Deg2Rad(rotationAngle)
+	angleRad := Deg2Rad(rotationAngle)
 	rotate.X = p.X + math.Cos(angleRad) - p.Y*math.Sin(angleRad)
 	rotate.Y = p.X*math.Sin(angleRad) + p.Y*math.Cos(angleRad)
 	return rotate
@@ -93,8 +91,8 @@ func (p *Point2D) IsEqual(point Point2D) (isEqual bool) {
 
 // pointOnLine determines if a point falls on a line segment or not
 func (p *Point2D) pointOnLine(segment LineSegment) (onLine bool) {
-	var area = functs.AreaCoordinates(*p, segment.PointA, segment.PointB)
-	onLine = utils.IsClose(area, 0, 0.001)
+	var area = AreaCoordinates(*p, segment.PointA, segment.PointB)
+	onLine = IsClose(area, 0, 0.001)
 	return onLine
 }
 
@@ -121,7 +119,7 @@ func IsCollinear(points ...Point2D) (isCollinear bool, err error) {
 		currentIndex++
 	}
 
-	if utils.IsArrayElementFloat64(slopeList) {
+	if IsArrayElementFloat64(slopeList) {
 		isCollinear = true
 	} else {
 		isCollinear = false
