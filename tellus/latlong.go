@@ -1,5 +1,7 @@
 package tellus
 
+import "math"
+
 // LatLong type
 type LatLong struct {
 	Latitude  float64 // in degrees
@@ -33,4 +35,14 @@ func conv(f float64) (fr []float64) {
 	return fr
 }
 
-// todo: distance, bearing, geodesic, time zones converter.
+// Distance return the distance between two latlongs based on haversine
+func (l *LatLong) Distance(other LatLong) float64 {
+	var radiusOfEarth = 6371.0 // in km
+	var deltaLat = other.Latitude - l.Latitude
+	var deltaLong = other.Longitude - l.Longitude
+	var a = (math.Sin(deltaLat/2) * math.Sin(deltaLat/2)) * math.Cos(l.Latitude) * math.Cos(other.Latitude) * math.Sin(deltaLong/2)
+	var c = 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
+	return radiusOfEarth * c
+}
+
+// todo: geodesic, time zones converter.
