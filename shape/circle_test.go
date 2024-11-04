@@ -1,13 +1,11 @@
-package shape_test
+package shape
 
 import (
-	"shapelib/shape"
-	"shapelib/types"
 	"testing"
 )
 
 func TestCircle(t *testing.T) {
-	var cir = shape.Circle{Radius: 60, Centroid: types.Point2D{X: 20, Y: 45}}
+	var cir = Circle{Radius: 60, Centroid: Point2D{X: 20, Y: 45}}
 
 	// area of a circle
 	resultOfAreaOfCircle := cir.Area()

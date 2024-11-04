@@ -7,7 +7,6 @@ import (
 	"shapelib/utils"
 )
 
-// todo: use an pointer intera
 // EuclideanDistance returns Euclidean distance between two points in a 2-dimensional space
 func EuclideanDistance(pointOne, pointTwo geom.Point2D) (euclidDist float64) {
 	deltaX := pointTwo.X - pointOne.X
