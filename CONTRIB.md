@@ -1,6 +1,6 @@
 # Contribution Guideline
 Thank you for your willingness to contribute to shapelib. Your contributes are the golden! 
-Put a smile on someone's in the universe :earth_africa:
+Put a smile on someone's face in the universe :earth_africa:
 
 ## How to Contribute Code
 1. Fork the repository.
