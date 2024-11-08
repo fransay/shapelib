@@ -3,7 +3,6 @@ package shape
 import (
 	"errors"
 	"math"
-	"shapelib/types"
 	"shapelib/utils"
 )
 
@@ -11,7 +10,7 @@ var ErrorOfCollinearity = errors.New("points are collinear")
 
 type Circle struct {
 	Radius   float64 // from the center to the circumference of the circle
-	Centroid types.Point2D
+	Centroid Point2D
 }
 
 // Area returns the area of a circle
@@ -45,7 +44,7 @@ func (c *Circle) ChordLength(sagitta float64) (chord float64) {
 }
 
 // ContainsPoint checks if a point lies in the radius extent of a circle
-func (c *Circle) ContainsPoint(point types.Point2D) bool {
+func (c *Circle) ContainsPoint(point Point2D) bool {
 	distanceBtnPointAndCenter := math.Sqrt(math.Pow(point.X-c.Centroid.X, 2) + math.Pow(point.Y-c.Centroid.Y, 2))
 	if distanceBtnPointAndCenter <= c.Radius {
 		return true
@@ -56,9 +55,9 @@ func (c *Circle) ContainsPoint(point types.Point2D) bool {
 // CircleFromPoints forms a new circle given three arbitrary set of point that lie
 // on the circumference of a circle collinear point means all three points are highly
 // unlikely to be on the circumference.
-func (c *Circle) CircleFromPoints(a, b, d types.Point2D) (Circle, error) {
+func (c *Circle) CircleFromPoints(a, b, d Point2D) (Circle, error) {
 	// check if points are collinear; collinear points can for a circle
-	if types.IsCollinear(a, b, d) == true {
+	if IsCollinear(a, b, d) == true {
 		return Circle{}, ErrorOfCollinearity
 	}
 	slopeAB := gradient(a, b)
@@ -81,12 +80,12 @@ func (c *Circle) CircleFromPoints(a, b, d types.Point2D) (Circle, error) {
 }
 
 // distance return the distance between two points
-func distance(pt1, pt2 types.Point2D) float64 {
+func distance(pt1, pt2 Point2D) float64 {
 	return math.Sqrt(math.Pow(pt2.X-pt1.X, 2) + math.Pow(pt2.X-pt1.X, 2))
 }
 
 // gradient return the gradient / slope of a perpendicular bisector.
-func gradient(pt1, pt2 types.Point2D) float64 {
+func gradient(pt1, pt2 Point2D) float64 {
 	deltaY := pt2.Y - pt1.Y
 	deltaX := pt2.X - pt2.X
 	grad := deltaY / deltaX
@@ -99,12 +98,12 @@ func gradient(pt1, pt2 types.Point2D) float64 {
 func LineIntersectGivenEqn(lineOne, lineTwo [3]float64) (intersectPoint types.Point2D) {} // todo: complete function
 
 // AsLineString returns a line string given a set of points that defines a circle
-func (c *Circle) AsLineString(points ...types.Point2D) (types.LineString, error) {
+func (c *Circle) AsLineString(points ...Point2D) (LineString, error) {
 	var nilError error = errors.New("no points to form line string")
 	if points == nil || len(points) == 0 {
-		return types.LineString{}, nilError
+		return LineString{}, nilError
 	}
-	var lineString types.LineString
+	var lineString LineString
 	for _, point := range points {
 		lineString = append(lineString, point)
 	}

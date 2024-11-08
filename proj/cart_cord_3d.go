@@ -1,6 +1,7 @@
-package shape
+package cartesian
 
 import (
+	"shapelib/types"
 )
 
 type Cartesian3D struct {
