@@ -1,12 +1,14 @@
-package utils
+package props
 
 import (
 	"math"
+	"shapelib/geom"
+	"shapelib/tellus"
+	"shapelib/utils"
 )
 
-// todo: use an pointer intera
 // EuclideanDistance returns Euclidean distance between two points in a 2-dimensional space
-func EuclideanDistance(pointOne, pointTwo types.Point2D) (euclidDist float64) {
+func EuclideanDistance(pointOne, pointTwo geom.Point2D) (euclidDist float64) {
 	deltaX := pointTwo.X - pointOne.X
 	deltaY := pointOne.Y - pointOne.Y
 	euclidDist = math.Sqrt(math.Pow(deltaX, 2) + math.Pow(deltaY, 2))
@@ -14,7 +16,7 @@ func EuclideanDistance(pointOne, pointTwo types.Point2D) (euclidDist float64) {
 }
 
 // MinkowskiDistance returns minkowski distance of points in an N dimensional space,
-func MinkowskiDistance(pointA, pointB types.Point2D, p float64) (distMinkowski float64) {
+func MinkowskiDistance(pointA, pointB geom.Point2D, p float64) (distMinkowski float64) {
 	var deltaA = math.Pow(pointA.X-pointA.Y, p)
 	var deltaB = math.Pow(pointB.X-pointB.Y, p)
 	distMinkowski = math.Pow(deltaA+deltaB, 1/p)
@@ -22,7 +24,7 @@ func MinkowskiDistance(pointA, pointB types.Point2D, p float64) (distMinkowski f
 }
 
 // HaversineDistance returns the physical space between to locations on earth
-func HaversineDistance(pointA, pointB types.LatLong) (haverDist float64) {
+func HaversineDistance(pointA, pointB tellus.LatLong) (haverDist float64) {
 	const radiusOfEarth = 6371 // in kilometers
 	latitudeDiff := utils.Deg2Rad(pointA.Latitude - pointB.Latitude)
 	longitudeDiff := utils.Deg2Rad(pointA.Longitude - pointB.Longitude)
@@ -33,7 +35,7 @@ func HaversineDistance(pointA, pointB types.LatLong) (haverDist float64) {
 }
 
 // ChebyshevDistance returns the max distance along any coordinate dimension
-func ChebyshevDistance(pointA, pointB types.Point2D) (chebDist float64) {
+func ChebyshevDistance(pointA, pointB geom.Point2D) (chebDist float64) {
 	chebDist = math.Max(pointB.X-pointA.X, pointB.Y-pointA.Y)
 	return chebDist
 }

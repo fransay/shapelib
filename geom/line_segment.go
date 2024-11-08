@@ -1,14 +1,26 @@
-package types
+package geom
 
 import (
 	"math"
 	"shapelib/utils"
 )
 
+// Dimension of a line segment === 1
+const Dimension = 1
+
 // LineSegment type
 type LineSegment struct {
 	PointA Point2D
 	PointB Point2D
+}
+
+// Construct new line segment.
+func NewLineSegment(pointA Point2D, pointB Point2D) *LineSegment {
+	return &LineSegment{
+		PointA: pointA,
+		PointB: pointB,
+	}
+
 }
 
 // Distance Euclidean distance of a line segment
@@ -60,4 +72,11 @@ func (l *LineSegment) Scale(scalarVector []float64) (ls LineSegment) {
 	ls = *l
 	return ls
 
+}
+
+// Gradient return the slope of line segment
+func (l *LineSegment) Gradient() float64 {
+	deltaY := l.PointB.Y - l.PointA.Y
+	deltaX := l.PointB.X - l.PointB.Y
+	return deltaY / deltaX
 }

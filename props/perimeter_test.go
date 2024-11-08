@@ -1,11 +1,11 @@
-package tests
+package props
 
 import (
 	"math"
 	"testing"
 )
 
-// perimeter of triangle funct_tests
+// Perimeter of triangle
 func TestPerimeterOfTriangle(t *testing.T) {
 	res := PerimeterOfTriangle(10.0, 10.0, 10.0)
 	exp := math.Trunc(30)
@@ -14,7 +14,7 @@ func TestPerimeterOfTriangle(t *testing.T) {
 	}
 }
 
-// perimeter of square funct_tests
+// Perimeter of square
 func TestPerimeterOfSquare(t *testing.T) {
 	res := PerimeterOfSquare(5.0)
 	exp := math.Trunc(20.0)
@@ -24,7 +24,7 @@ func TestPerimeterOfSquare(t *testing.T) {
 
 }
 
-// perimeter of rectangle funct_tests
+// Perimeter of rectangle
 func TestPerimeterOfRegularRectangle(t *testing.T) {
 	res := PerimeterOfRegularRectangle(10.0, 5)
 	exp := math.Trunc(30.0)
@@ -33,7 +33,7 @@ func TestPerimeterOfRegularRectangle(t *testing.T) {
 	}
 }
 
-// perimeter of rectangle funct_tests
+// Perimeter of rectangle
 func TestPerimeterOfIrregularRectangle(t *testing.T) {
 	res := PerimeterOfIrregularFourSided(1, 5, 4, 8)
 	exp := math.Trunc(18.0)
@@ -42,7 +42,7 @@ func TestPerimeterOfIrregularRectangle(t *testing.T) {
 	}
 }
 
-// perimeter of parallelogram funct_tests
+// Perimeter of parallelogram
 func TestPerimeterOfParallelogram(t *testing.T) {
 	res := PerimeterOfParallelogram(2.0, 5.0)
 	exp := math.Trunc(14.0)
@@ -51,7 +51,7 @@ func TestPerimeterOfParallelogram(t *testing.T) {
 	}
 }
 
-// perimeter of kite funct_tests
+// Perimeter of kite
 func TestPerimOfKite(t *testing.T) {
 	res := PerimeterOfRegularKite(5.0, 4.0)
 	exp := math.Trunc(18.0)
@@ -60,7 +60,7 @@ func TestPerimOfKite(t *testing.T) {
 	}
 }
 
-// perimeter of rhombus funct_tests
+// Perimeter of rhombus
 func TestPerimOfRhombus(t *testing.T) {
 	res := PerimeterOfRegularRhombus(5.0)
 	exp := math.Trunc(20.0)
@@ -69,7 +69,7 @@ func TestPerimOfRhombus(t *testing.T) {
 	}
 }
 
-// perimeter of trapezoid funct_tests
+// Perimeter of trapezoid
 func TestPerimOfTrapezoid(t *testing.T) {
 	res := PerimeterOfRegularTrapezoid(5.0, 10.0, 5.0, 20.0)
 	exp := math.Trunc(40.0)
@@ -78,7 +78,7 @@ func TestPerimOfTrapezoid(t *testing.T) {
 	}
 }
 
-// perimeter of pentagon funct_tests
+// Perimeter of pentagon
 func TestPerimOfPentagon(t *testing.T) {
 	res := PerimeterOfRegularPentagon(5.0)
 	exp := math.Trunc(25.0)
@@ -87,7 +87,7 @@ func TestPerimOfPentagon(t *testing.T) {
 	}
 }
 
-// perimeter of hexagon funct_tests
+// Perimeter of hexagon
 func TestPerimOfHexagon(t *testing.T) {
 	res := PerimeterOfRegularHexagon(5.0)
 	exp := math.Trunc(30.0)
@@ -96,7 +96,7 @@ func TestPerimOfHexagon(t *testing.T) {
 	}
 }
 
-// perimeter of heptagon funct_tests
+// Perimeter of heptagon
 func TestPerimOfHeptagon(t *testing.T) {
 	res := PerimeterOfRegularHeptagon(5.0)
 	exp := math.Trunc(35.0)
@@ -105,7 +105,7 @@ func TestPerimOfHeptagon(t *testing.T) {
 	}
 }
 
-// perimeter of octagon funct_tests
+// Perimeter of octagon
 func TestPerimOfOctagon(t *testing.T) {
 	res := PerimeterOfRegularOctagon(5.0)
 	exp := math.Trunc(40.0)
@@ -114,7 +114,7 @@ func TestPerimOfOctagon(t *testing.T) {
 	}
 }
 
-// perimeter of nonagon funct_tests
+// Perimeter of nonagon
 func TestPerimOfNonagon(t *testing.T) {
 	res := PerimeterOfRegularNonagon(5.0)
 	exp := math.Trunc(45.0)
@@ -123,7 +123,7 @@ func TestPerimOfNonagon(t *testing.T) {
 	}
 }
 
-// perimeter of decagon funct_tests
+// Perimeter of decagon
 func TestPerimOfDecagon(t *testing.T) {
 	res := PerimeterOfRegularDecagon(5.0)
 	exp := math.Trunc(50.0)
@@ -132,7 +132,7 @@ func TestPerimOfDecagon(t *testing.T) {
 	}
 }
 
-// perimeter of regular generic shapes funct_tests
+// Perimeter of regular generic shapes
 func TestPerimOfRegularGeneric(t *testing.T) {
 	res := PerimeterOfRegularGeneric(5.0, 15.0)
 	exp := math.Trunc(75.0)
@@ -141,7 +141,7 @@ func TestPerimOfRegularGeneric(t *testing.T) {
 	}
 }
 
-// perimeter of irregular generic shape funct_tests
+// Perimeter of irregular generic shape
 func TestPerimOfIrregularGeneric(t *testing.T) {
 	res := PerimeterOfIrregularGeneric(5.0, 6.0, 5.0, 7.0, 8.0)
 	exp := math.Trunc(31.0)

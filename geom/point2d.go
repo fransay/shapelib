@@ -1,11 +1,10 @@
-package shape
+package geom
 
 import (
 	"errors"
 	"math"
-	"shapelib/functs"
-	"shapelib/shape"
 	"shapelib/utils"
+	"shapelib/shape"
 )
 
 var collinearityError = errors.New("collinearity error, points don't lie on the same line")
@@ -93,7 +92,7 @@ func (p *Point2D) IsEqual(point Point2D) (isEqual bool) {
 
 // pointOnLine determines if a point falls on a line segment or not
 func (p *Point2D) pointOnLine(segment LineSegment) (onLine bool) {
-	var area = functs.AreaCoordinates(*p, segment.PointA, segment.PointB)
+	var area = AreaCoordinates(*p, segment.PointA, segment.PointB)
 	onLine = utils.IsClose(area, 0, 0.001)
 	return onLine
 }
