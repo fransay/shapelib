@@ -1,17 +1,15 @@
-package tests
+package proj
 
 import (
 	"reflect"
-	"shapelib/coord-sys/cartesian"
-	"shapelib/types"
 	"testing"
 )
 
-func TestCart3D(t *testing.T) {
-	cart3D := cartesian.Cartesian3D{
-		X: cartesian.Axis{Start: 0, Step: 5, End: 15},
-		Y: cartesian.Axis{Start: 5, Step: 5, End: 20},
-		Z: cartesian.Axis{Start: 10, Step: 10, End: 30},
+func TestCartesian3D(t *testing.T) {
+	cart3D := Cartesian3D{
+		X: Axis{Start: 0, Step: 5, End: 15},
+		Y: Axis{Start: 5, Step: 5, End: 20},
+		Z: Axis{Start: 10, Step: 10, End: 30},
 	}
 
 	// 3D x values
@@ -37,7 +35,7 @@ func TestCart3D(t *testing.T) {
 
 	// test origin
 	resultOrigin := cart3D.Origin()
-	expectedOrigin := types.Point3D{X: 0, Y: 5, Z: 10}
+	expectedOrigin := Point3D{X: 0, Y: 5, Z: 10}
 	if !reflect.DeepEqual(resultOrigin, expectedOrigin) {
 		t.Errorf("Expected %v, Got %v", expectedOrigin, resultOrigin)
 	}
