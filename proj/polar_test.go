@@ -1,7 +1,6 @@
-package tests
+package proj
 
 import (
-	"shapelib/types"
 	ut "shapelib/utils"
 	"testing"
 )
@@ -10,7 +9,7 @@ import (
 func TestToCartesian(t *testing.T) {
 	polarObj := Polar{Distance: 60.50, Angle: 15}
 	obs := polarObj.ToCartesian()
-	exp := types.Point2D{X: -45.961118727958684, Y: 39.34241432950557}
+	exp := Point2D{X: -45.961118727958684, Y: 39.34241432950557}
 	if exp != obs {
 		t.Errorf("Expected: %f, Got: %f", exp, obs)
 	}

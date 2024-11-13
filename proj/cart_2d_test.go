@@ -1,4 +1,4 @@
-package shape
+package proj
 
 import (
 	"testing"
@@ -9,7 +9,7 @@ func TestCart2D(t *testing.T) {
 
 	// test ToPolar
 	observedToPolar := cart2d.ToPolar()
-	expectedToPolar := polar.Polar{Distance: 30.9, Angle: 49}
+	expectedToPolar := Polar{Distance: 30.9, Angle: 49}
 	if observedToPolar != expectedToPolar {
 		t.Errorf("Expect %v, Got %v", expectedToPolar, observedToPolar)
 	}

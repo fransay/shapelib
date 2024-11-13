@@ -1,4 +1,4 @@
-package cartesian
+package proj
 
 import "testing"
 

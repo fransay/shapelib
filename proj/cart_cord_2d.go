@@ -1,13 +1,12 @@
-package cartesian
+package proj
 
 import (
-	"shapelib/types"
 )
 
 type Cartesian2D struct {
 	X           Axis
 	Y           Axis
-	OriginPoint types.Point2D
+	OriginPoint Point2D
 }
 
 // NewCartesian2D initialises a new Cartesian2D
@@ -35,15 +34,15 @@ func (c *Cartesian2D) YValues() (arr []float64) {
 }
 
 // Origin return the origin of the coordinate system.
-func (c *Cartesian2D) Origin() types.Point2D {
+func (c *Cartesian2D) Origin() Point2D {
 	if &c.OriginPoint != nil {
 		return c.OriginPoint
 	}
-	return types.Point2D{X: c.X.Start, Y: c.Y.Start}
+	return Point2D{X: c.X.Start, Y: c.Y.Start}
 }
 
 // PointInCartesian checks if a point lies in the cartesian vector space
-func (c *Cartesian2D) PointInCartesian(point types.Point2D) bool {
+func (c *Cartesian2D) PointInCartesian(point Point2D) bool {
 	if (point.X < c.X.Start || point.X > c.X.End) || (point.Y < c.Y.Start || point.Y > c.Y.End) {
 		return false
 	}

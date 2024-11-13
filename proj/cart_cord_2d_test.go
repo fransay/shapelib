@@ -1,4 +1,4 @@
-package cartesian_test
+package proj
 
 import (
 	"reflect"
@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestCart2D(t *testing.T) {
+func TestCartesian2D(t *testing.T) {
 	cart2dObject := cartesian.Cartesian2D{
 		X: cartesian.Axis{Start: 0, Step: 4, End: 20},
 		Y: cartesian.Axis{Start: 60, Step: 5, End: 70},

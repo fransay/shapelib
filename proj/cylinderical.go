@@ -1,8 +1,7 @@
-package spherical
+package proj
 
 import (
 	"math"
-	"shapelib/coord-sys/cartesian"
 )
 
 type Cylinderical struct {
@@ -21,8 +20,8 @@ func (c *Cylinderical) Init(distance, angle, height float64) *Cylinderical {
 }
 
 // ToCartesian returns a cartesian equivalent of cylinderical representations
-func (c *Cylinderical) ToCartesian() cartesian.Cart3D {
-	return cartesian.Cart3D{
+func (c *Cylinderical) ToCartesian() Cart3D {
+	return Cart3D{
 		X: c.Distance * math.Cos(c.Angle),
 		Y: c.Distance * math.Sin(c.Angle),
 		Z: c.Height,

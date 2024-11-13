@@ -1,8 +1,7 @@
-package shape
+package proj
 
 import (
 	"math"
-	"shapelib/coord-sys/polar"
 )
 
 type Cart2D struct {
@@ -17,10 +16,10 @@ func (c *Cart2D) Init(x, y float64) *Cart2D {
 
 // ToPolar returns the equivalent polar coordinate, defaults origin
 // to Cart2D{X: 0, Y: 0}
-func (c *Cart2D) ToPolar() polar.Polar {
+func (c *Cart2D) ToPolar() Polar {
 	distance := math.Sqrt(c.X*c.X + c.Y*c.Y)
 	angle := math.Atan(c.Y / c.X) // angle is bearing
-	return polar.Polar{Distance: distance, Angle: angle}
+	return Polar{Distance: distance, Angle: angle}
 }
 
 // AddCart2D returns the sum of this.Cart2D and other.Cart2D

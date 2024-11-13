@@ -1,14 +1,12 @@
-package cartesian
+package proj
 
-import (
-	"shapelib/types"
-)
+import ()
 
 type Cartesian3D struct {
 	X           Axis
 	Y           Axis
 	Z           Axis
-	OriginPoint types.Point3D
+	OriginPoint Point3D
 }
 
 // Init initialises a new Cartesian3D object
@@ -45,11 +43,11 @@ func (c *Cartesian3D) ZValues() (arr []float64) {
 }
 
 // Origin returns the origin of Cartesian3D
-func (c *Cartesian3D) Origin() types.Point3D {
+func (c *Cartesian3D) Origin() Point3D {
 	if &c.OriginPoint != nil {
 		return c.OriginPoint
 	}
-	return types.Point3D{X: c.X.Start, Y: c.Y.Start, Z: c.Z.Start}
+	return Point3D{X: c.X.Start, Y: c.Y.Start, Z: c.Z.Start}
 }
 
 // Dim returns the dimension of Cartesian3D

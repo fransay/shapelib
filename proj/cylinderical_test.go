@@ -1,4 +1,4 @@
-package tests
+package proj
 
 import (
 	"shapelib/coord-sys/cartesian"
