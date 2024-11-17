@@ -6,7 +6,7 @@ type Pointer interface {
 
 // Point represents the fundamental point geometric type
 type Point struct {
-	geomt
+	geomm
 }
 
 // Area returns area of p which is always zero
@@ -21,9 +21,18 @@ func (p *Point) Length() float64 {
 	return 0.0
 }
 
-// IsEmpty checks if p has a nil SRID or dimension
+// IsEmpty checks if p has a nil SRID, a negative SRID.
+// or negative dimension
 func (p *Point) IsEmpty() bool {
-	if p.geomt.Srid.ID == 0 {
+	if p.geomm.Srid.ID == 0 || p.geomm.Srid.ID < 0 {
+		return true
+	}
+	return false
+}
+
+// IsPointDIMStand return a check bool if a point has standard dimension
+func (p *Point) IsPointDIMStand() bool {
+	if p.geomm.Dim.checkStandDIM() {
 		return true
 	}
 	return false

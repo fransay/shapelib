@@ -1,1 +1,1 @@
-# Geodesty
+# Geodesy
