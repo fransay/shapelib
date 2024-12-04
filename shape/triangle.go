@@ -58,7 +58,16 @@ func (t *Triangle) Type() (typeT string) {
 	return typeT
 }
 
-// todo: thirdPoint() -> ThirdPoint takes 2 points and checks which point is the 3rd in the Triangle
-// todo: linearRings() -> LinearRings returns the coordinates of the linear rings
-// todo: Area() -> Area returns twice the area of the oriented triangle (a,b,c), i.e. the area is positive if the triangle is oriented counterclockwise.
-// todo: Contains() -> Accepts a new triangle as a parameter and checks to see if a triangle is in the TriangleByCoord
+// PointInTriangle checks if a point lies in a triangle
+func (t *Triangle) PointInTriangle() (in bool) {
+	in = false
+	// todo: put logic here
+	return in
+}
+
+// ContainsTriangle checks if a triangle completely lies in instant triangle
+func (t *Triangle) ContainsTriangle() (contain bool) {
+	contain = false
+	//todo: put logic here
+	return contain
+}

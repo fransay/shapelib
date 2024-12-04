@@ -7,7 +7,7 @@ import (
 func TestCircle(t *testing.T) {
 	var cir = Circle{Radius: 60, Centroid: Point2D{X: 20, Y: 45}}
 
-	// area of a circle
+	// Area of a circle
 	resultOfAreaOfCircle := cir.Area()
 	expectedAreaOfCircle := 5.0
 
@@ -15,7 +15,7 @@ func TestCircle(t *testing.T) {
 		t.Errorf("Got %v, expected %v", resultOfAreaOfCircle, expectedAreaOfCircle)
 	}
 
-	// circumference of a circle
+	// Circumference of a circle
 	resultCircumferenceOfCircle := cir.Area()
 	expectedCircumferenceOfCircle := 188.5714285714286
 
