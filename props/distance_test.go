@@ -8,7 +8,7 @@ import (
 )
 
 // Test euclidean distance
-func TestEDistance(t *testing.T) {
+func TestEuclideanDistance(t *testing.T) {
 	// object one
 	var eDistanceOneResult = EuclideanDistance(geom.Point2D{X: 5, Y: 20}, geom.Point2D{X: 4, Y: 8})
 	var eDistanceOneExpected = 1.0
@@ -48,3 +48,7 @@ func TestChebyshevDistance(t *testing.T) {
 		t.Errorf("Ëxpected %f, Got %f", expectedChebyshevDistance, observedChebyshevDistance)
 	}
 }
+
+// other distances to explore:
+// 1. hamming distance
+// 2. frechet distance

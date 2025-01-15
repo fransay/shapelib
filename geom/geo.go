@@ -25,5 +25,5 @@ type geomm struct {
 	// spatial reference ID
 	Srid SRID
 	// dimension of geometry, i.e point = 0, line = 1, etc.
-	Dim int
+	Dim DIM
 }

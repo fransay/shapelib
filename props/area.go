@@ -152,3 +152,5 @@ func AreaCoordinates(cords ...geom.Point2D) float64 {
 	var area = -1 * (forPass - backPass) / 2 // results of area are negated due to orientation of types.Point2D
 	return area
 }
+
+// todo: include area of irregular shapes

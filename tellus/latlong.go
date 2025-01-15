@@ -45,4 +45,5 @@ func (l *LatLong) Distance(other LatLong) float64 {
 	return radiusOfEarth * c
 }
 
-// todo: geodesic, time zones converter.
+func (l *LatLong) Geodesic(other LatLong) {}
+

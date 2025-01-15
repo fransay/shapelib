@@ -72,4 +72,4 @@ func IsArrayElementFloat64(arr []float64) bool {
 }
 
 
-// todo: include midpoint function
+
