@@ -8,7 +8,7 @@ func New(dm int) DIM {
 	return DIM(dm)
 }
 
-// Check if dimension is a standard type
+// Check if dimension is a standard dimension
 func (d *DIM) checkStandDIM() (isStand bool) {
 	if *d < 0 || *d > 3 {
 		isStand = false

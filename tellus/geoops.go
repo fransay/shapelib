@@ -1,3 +1,4 @@
 package tellus
 
-func (l *LatLong) Buffer(){}
+// geoops: geospatial operations
+type Geoops struct{}

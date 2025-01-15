@@ -71,5 +71,6 @@ func IsArrayElementFloat64(arr []float64) bool {
 	return false
 }
 
-
-
+func AddTwoInt(a, b int) int {
+	return a + b
+}

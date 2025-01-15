@@ -30,12 +30,11 @@ func (p *Point) IsEmpty() bool {
 	return false
 }
 
-// IsPointDIMStand return a check bool if a point has standard dimension
+// IsPointDIMStand return a check bool if a point has standard
+// dimension
 func (p *Point) IsPointDIMStand() bool {
 	if p.geomm.Dim.checkStandDIM() {
 		return true
 	}
 	return false
 }
-
-// todos: implement SRID of geometries. especially point in this case

@@ -47,3 +47,13 @@ func (l *LatLong) Distance(other LatLong) float64 {
 
 func (l *LatLong) Geodesic(other LatLong) {}
 
+func (l *LatLong) ToUTM() {}
+
+func (l *LatLong) UTMZone() (zone float64) {
+	zone = (l.Longitude+180)/6 + 1
+	return zone
+}
+
+func (l *LatLong) Buffer() {}
+
+func (l *LatLong) Reproject() {}

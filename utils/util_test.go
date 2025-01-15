@@ -87,3 +87,11 @@ func TestIsArrayElementFloat64(t *testing.T) {
 		t.Errorf("Got %v, Expected %v", observed, true)
 	}
 }
+
+// AddTwoInt returns the addition of two integers
+func TestAddTwoInt(t *testing.T) {
+	addTwoInts := AddTwoInt(1, 5)
+	if addTwoInts != 6 {
+		t.Errorf("addition operand not functional")
+	}
+}

@@ -1,3 +1,5 @@
 package tellus
 
-func (l *LatLong) Reproject(){}
+type Projection struct{}
+
+func (p *Projection) Reproject() {}
