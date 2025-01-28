@@ -7,3 +7,4 @@ const eccentricity = 0.0818191908426
 const meanRadius = 6371.0088          // in kilometers
 const equatorialCircumference = 40075 // in kilometers
 const polarCircumference = 40008      // kilometers
+const semiMajorAxis = 6378137.0       // in meters.
