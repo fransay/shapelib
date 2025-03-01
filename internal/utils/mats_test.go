@@ -1,16 +1,9 @@
 package utils
 
 import (
-	"fmt"
 	"math"
 	"testing"
 )
-
-func TestMat(t *testing.T) {
-	mat1 := NewMat(2, 3)
-	// test methods on matrices.
-	fmt.Println(mat1)
-}
 
 func TestCot(t *testing.T) {
 	result := Cot(60)

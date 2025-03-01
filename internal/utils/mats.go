@@ -2,16 +2,6 @@ package utils
 
 import "math"
 
-// Mat defines a matrix type for n
-type Mat2D struct {
-	row int // number of row of matrix
-	col int // number of columns of designated matrix
-}
-
-func NewMat(row, col int) *Mat2D {
-	return &Mat2D{row: row, col: col}
-}
-
 // Cot return the cotangent of an angle in degree decimals
 func Cot(angle float64) float64 { return 1 / (math.Tan(angle)) }
 
