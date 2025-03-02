@@ -1,9 +1,16 @@
 package utils
 
+// MaxtrixDimension defines a dimensions of a matrix, as (row x column)
+type MatrixDimension struct {
+	row []int,
+	col []int,
+}
+
+func NewMatrixDimension struct {}
+
 // Matrix type with any dimension
 type Matrix struct {
-	row     int
-	col     int
+	dim MatrixDimension
 	matType any // typical of a number type (int, float64)
 }
 
@@ -15,3 +22,5 @@ func NewMatrix(row int, column int, matType any) *Matrix {
 		matType: matType,
 	}
 }
+
+func 
