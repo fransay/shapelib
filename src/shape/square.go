@@ -2,11 +2,16 @@ package shape
 
 import "math"
 
+const squareInteriorAngle = 90.0
+
+// Square defines a equal sided quadrilateral, i.e plane figure
 type Square struct {
 	Length float64
 }
 
-const squareInteriorAngle = 90.0
+func NewSquare() *Square {
+	return &Square{}
+}
 
 // Area returns the area of a square
 func (s *Square) Area() (area float64) {
@@ -56,4 +61,9 @@ func (s *Square) GoldenRation() (goldenRatio float64) {
 // IsQuad is a placeholder method for defining the quadrilateral interface
 func (s *Square) IsQuad() bool {
 	return true
+}
+
+// GetSumOfInteriorAngles returns the sum of interior angles in a square
+func (s *Square) GetSumOfInteriorAngles() float64 {
+	return squareInteriorAngle * 4
 }

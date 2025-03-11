@@ -1,5 +1,6 @@
 package utils
 
+import "testing"
 
 // TestAddTwoInt tests the addition of two integers
 func TestAddTwoInt(t *testing.T) {
@@ -34,7 +35,7 @@ func TestCompareDuo(t *testing.T) {
 	}
 }
 
-// Test IsClose 
+// Test IsClose
 func TestIsClose(t *testing.T) {
 	res := IsClose(10.00, 45.00, 0.001)
 	if res != false {

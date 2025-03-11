@@ -44,9 +44,6 @@ func (c *Cartesian3D) ZValues() (arr []float64) {
 
 // Origin returns the origin of Cartesian3D
 func (c *Cartesian3D) Origin() geom.Point3D {
-	if &c.OriginPoint != nil {
-		return c.OriginPoint
-	}
 	return geom.Point3D{X: c.X.Start, Y: c.Y.Start, Z: c.Z.Start}
 }
 

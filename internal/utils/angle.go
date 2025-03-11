@@ -1,5 +1,7 @@
 package utils
 
+import "math"
+
 // Rad2Deg convert radians to degree
 func Rad2Deg(radians float64) (deg float64) {
 	deg = radians * (180 / math.Pi)
@@ -11,4 +13,3 @@ func Deg2Rad(deg float64) (rad float64) {
 	rad = deg * (math.Pi / 180)
 	return rad
 }
-

@@ -7,6 +7,11 @@ type Rectangle struct {
 	Width  float64
 }
 
+// NewRectangle initialises a new Rectangle object
+func NewRectangle(length, width float64) *Rectangle {
+	return &Rectangle{Length: length, Width: width}
+}
+
 // AreaByLengthWidth returns area of rectangle by Length and Width
 func (r *Rectangle) AreaByLengthWidth() (area float64) {
 	return r.Length * r.Width

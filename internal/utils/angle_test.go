@@ -1,5 +1,7 @@
 package utils
 
+import "testing"
+
 // Test Rad2Deg
 func TestRad2Deg(t *testing.T) {
 	res := Rad2Deg(40)

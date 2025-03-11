@@ -2,7 +2,8 @@ package shape
 
 import (
 	"math"
-	"shapelib/utils"
+
+	"github.com/fransay/shapelib/internal/utils"
 )
 
 const (
@@ -18,6 +19,17 @@ type Triangle struct {
 	SideThree float64 // todo: remove all sides
 	Height    float64
 	Base      float64
+}
+
+// Initialise a new triangle for t
+func NewTriangle(sideOne, sideTwo, sideThree, height, base float64) *Triangle {
+	return &Triangle{
+		SideOne:   sideOne,
+		SideTwo:   sideTwo,
+		SideThree: sideThree,
+		Height:    height,
+		Base:      base,
+	}
 }
 
 // AreaBySides returns the area of a triangle given the sides

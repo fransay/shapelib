@@ -1,5 +1,7 @@
 package utils
 
+import "testing"
+
 // Test Distance
 func TestDistance(t *testing.T) {
 	res := Distance([]float64{4, 6}, []float64{8, 2})

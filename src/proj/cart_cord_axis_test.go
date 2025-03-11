@@ -2,8 +2,9 @@ package proj
 
 import (
 	"log"
-	"shapelib/utils"
 	"testing"
+
+	"github.com/fransay/shapelib/internal/utils"
 )
 
 func TestCartCordAxis(t *testing.T) {

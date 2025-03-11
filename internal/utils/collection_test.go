@@ -1,4 +1,6 @@
-package utils 
+package utils
+
+import "testing"
 
 // Test EqualSlice
 func TestEqualSlice(t *testing.T) {
@@ -18,4 +20,3 @@ func TestIsArrayElementFloat64(t *testing.T) {
 		t.Errorf("Got %v, Expected %v", observed, true)
 	}
 }
-
