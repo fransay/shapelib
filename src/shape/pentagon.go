@@ -2,12 +2,17 @@ package shape
 
 import "math"
 
+const pentagonInteriorAngle = 105
+const pentagonExteriorAngle = 108
+
 type Pentagon struct {
 	Side float64
 }
 
-const pentagonInteriorAngle = 105
-const pentagonExteriorAngle = 108
+// Initialise a new pentagon object
+func NewPentagon(side float64) *Pentagon {
+	return &Pentagon{Side: side}
+}
 
 // Area return area of pentagon
 func (p *Pentagon) Area() (area float64) {

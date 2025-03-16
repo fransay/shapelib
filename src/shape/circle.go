@@ -16,6 +16,13 @@ type Circle struct {
 	Centroid geom.Point2D
 }
 
+func NewCircle(radius float64, centroid geom.Point2D) *Circle {
+	return &Circle{
+		Radius:   radius,
+		Centroid: centroid,
+	}
+}
+
 // Area returns the area of a circle
 func (c *Circle) Area() (area float64) {
 	area = math.Pi * math.Pow(c.Radius, 2)
@@ -103,7 +110,7 @@ func gradient(pt1, pt2 geom.Point2D) float64 {
 // equation of lines take this format, e.g y = 3x + 6 , which is represented in LineIntersectGivenEqn
 // arguments as [1,3,6], i.e. the coefficient of the variables in the equation of the line.
 func LineIntersectGivenEqn(lineOne, lineTwo [3]float64) (intersectPoint geom.Point2D) {
-	return *geom.NewPoint2D(1, 2)
+	return *geom.NewPoint2D(1, 2) // todo: change this point and apply real implementation.
 } // todo: complete function
 
 // AsLineString returns a line string given a set of points that defines a circle

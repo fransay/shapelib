@@ -41,3 +41,8 @@ func (r *Rectangle) NewRectangle(length, width float64) *Rectangle {
 func (r Rectangle) IsQuad() bool {
 	return true
 }
+
+// IsSquare returns a boolean check to see if all length is equal to width
+func (r Rectangle) IsSquare() bool {
+	return r.Length == r.Width
+}

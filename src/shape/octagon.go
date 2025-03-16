@@ -6,6 +6,11 @@ type Octagon struct {
 	Side float64
 }
 
+// Initilise a new octagon object
+func NewOctagon(side float64) *Octagon {
+	return &Octagon{Side: side}
+}
+
 // Area returns the area of octagon
 func (o *Octagon) Area() float64 {
 	return 2 * (1 + math.Sqrt(o.Side)) * math.Pow(o.Side, 2)

@@ -46,7 +46,7 @@ func TestChebyshevDistance(t *testing.T) {
 	var observedChebyshevDistance = ChebyshevDistance(firstPoint, secondPoint)
 	const expectedChebyshevDistance = 1
 	if observedChebyshevDistance != expectedChebyshevDistance {
-		t.Errorf("Ëxpected %f, Got %f", expectedChebyshevDistance, observedChebyshevDistance)
+		t.Errorf("Expected %v, Got %v", expectedChebyshevDistance, observedChebyshevDistance)
 	}
 }
 

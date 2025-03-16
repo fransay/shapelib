@@ -1,9 +1,19 @@
 package shape
 
+// Parallelogram type
 type Parallelogram struct {
 	Base   float64
 	Height float64
 	Side   float64
+}
+
+// Initialise a new parallelogram object
+func NewParallelogram(base, height, side float64) *Parallelogram {
+	return &Parallelogram{
+		Base:   base,
+		Height: height,
+		Side:   side,
+	}
 }
 
 // AreaByBaseHeight return area of parallelogram
