@@ -50,6 +50,6 @@ func TestChebyshevDistance(t *testing.T) {
 	}
 }
 
-// other distances to explore:
+// test for other distances to explore:
 // 1. hamming distance
 // 2. frechet distance

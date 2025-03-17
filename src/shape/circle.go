@@ -11,16 +11,21 @@ import (
 
 var ErrorOfCollinearity = errors.New("points are collinear")
 
+// Circle type
 type Circle struct {
 	Radius   float64 // from the center to the circumference of the circle
 	Centroid geom.Point2D
 }
 
-func NewCircle(radius float64, centroid geom.Point2D) *Circle {
+// Initialise a new circle object
+func NewCircle(radius float64, centroid geom.Point2D) (*Circle, error) {
+	if radius < 0.0 {
+		return nil, errors.New("can't create a new circle, radius can't be negative")
+	}
 	return &Circle{
 		Radius:   radius,
 		Centroid: centroid,
-	}
+	}, nil
 }
 
 // Area returns the area of a circle
