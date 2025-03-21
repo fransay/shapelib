@@ -1,4 +1,4 @@
-package geom
+package geog
 
 type SRID struct {
 	// unique identifier

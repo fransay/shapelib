@@ -1,4 +1,4 @@
-package tellus
+package geog
 
 type Projection struct{}
 

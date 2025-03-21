@@ -7,10 +7,12 @@ import (
 )
 
 const (
-	isosceles   = "Isosceles"
-	equilateral = "Equilateral"
-	scalene     = "Scalene"
+	Isosceles   = "Isosceles"
+	Equilateral = "Equilateral"
+	Scalene     = "Scalene"
 )
+
+const SumOfAnglesInTriangle = 180
 
 // Triangle defines a triangle given all sides/length
 type Triangle struct {
@@ -21,7 +23,7 @@ type Triangle struct {
 	Base      float64
 }
 
-// Initialise a new triangle for t
+// NewTriangle initialise a new triangle object
 func NewTriangle(sideOne, sideTwo, sideThree, height, base float64) *Triangle {
 	return &Triangle{
 		SideOne:   sideOne,
@@ -53,25 +55,25 @@ func (t *Triangle) Perimeter() (perimeter float64) {
 	return perimeter
 }
 
-// Type returns the type of the triangle, either isosceles, scalene
-// or equilateral
-func (t *Triangle) Type() (typeT string) {
+// Type returns the type of the triangle, either isosceles, scalene or equilateral
+func (t *Triangle) Type() (triangleType string) {
 	if utils.CompareThreeFloat64(t.SideOne, t.SideTwo, t.SideThree) {
-		typeT = equilateral
+		triangleType = Equilateral
 	}
 
 	if utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
-		typeT = isosceles
+		triangleType = Isosceles
 	}
 
 	if !utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || !utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || !utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
-		typeT = scalene
+		triangleType = Scalene
 	}
-	return typeT
+	return triangleType
 }
 
 // PointInTriangle checks if a point lies in a triangle
-func (t *Triangle) PointInTriangle() (in bool) {
+func (t *Triangle) PointInTriangle(x, y float64) (in bool) {
+	// x,y defines the coordinates of the points
 	in = false
 	// todo: put logic here
 	return in

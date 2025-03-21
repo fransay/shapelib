@@ -9,8 +9,9 @@ type Square struct {
 	Length float64
 }
 
-func NewSquare() *Square {
-	return &Square{}
+// NewSquare initialises a new square object
+func NewSquare(length float64) *Square {
+	return &Square{Length: length}
 }
 
 // Area returns the area of a square

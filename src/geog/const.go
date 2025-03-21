@@ -1,4 +1,4 @@
-package tellus
+package geog
 
 const equatorialRadius = 6378.137 // in kilometers
 const polarRadius = 6356.752      // in kilometers

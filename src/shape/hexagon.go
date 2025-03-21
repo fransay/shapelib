@@ -6,6 +6,7 @@ import (
 	"github.com/fransay/shapelib/internal/utils"
 )
 
+// Hexagon type
 type Hexagon struct {
 	side float64
 }

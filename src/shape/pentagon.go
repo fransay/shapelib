@@ -5,6 +5,7 @@ import "math"
 const pentagonInteriorAngle = 105
 const pentagonExteriorAngle = 108
 
+// Pentagon type
 type Pentagon struct {
 	Side float64
 }

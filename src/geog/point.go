@@ -1,8 +1,5 @@
-package geom
+package geog
 
-type Pointer interface {
-	Point2D | Point3D
-}
 
 // Point represents the fundamental point geometric type
 type Point struct {

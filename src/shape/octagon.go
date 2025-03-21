@@ -2,6 +2,7 @@ package shape
 
 import "math"
 
+// Octagon type
 type Octagon struct {
 	Side float64
 }

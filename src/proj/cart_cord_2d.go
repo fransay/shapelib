@@ -34,9 +34,6 @@ func (c *Cartesian2D) YValues() (arr []float64) {
 
 // Origin return the origin of the coordinate system.
 func (c *Cartesian2D) Origin() geom.Point2D {
-	if &c.OriginPoint != nil {
-		return c.OriginPoint
-	}
 	return geom.Point2D{X: c.X.Start, Y: c.Y.Start}
 }
 

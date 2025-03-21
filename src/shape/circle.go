@@ -13,8 +13,8 @@ var ErrorOfCollinearity = errors.New("points are collinear")
 
 // Circle type
 type Circle struct {
-	Radius   float64 // from the center to the circumference of the circle
-	Centroid geom.Point2D
+	Radius   float64 // from the center to the circumference of the circle.
+	Centroid geom.Point2D // defines the center of the circle.
 }
 
 // Initialise a new circle object

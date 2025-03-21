@@ -1,7 +1,9 @@
-package tellus
+package geog
 
 import (
 	"testing"
+
+	"github.com/fransay/shapelib/internal/utils"
 )
 
 func TestLatLong(t *testing.T) {
@@ -18,7 +20,7 @@ func TestLatLong(t *testing.T) {
 	// ToDMS
 	observedToLatDMS, observedToLongDMS := latlong1.ToDMS()
 	expectedToLatDMS, expectedToLongDMS := []float64{80.0, 0.0, 0.0}, []float64{45.0, 0.0, 0.0}
-	if EqualSlice(observedToLatDMS, expectedToLatDMS) != true {
+	if utils.EqualSlice(observedToLatDMS, expectedToLatDMS) != true {
 		t.Errorf("slices are not equal")
 	}
 	if utils.EqualSlice(observedToLongDMS, expectedToLongDMS) != true {
