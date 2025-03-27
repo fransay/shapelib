@@ -5,6 +5,12 @@ import "github.com/fransay/shapelib/internal/utils"
 // LineString type
 type LineString []Point2D // Non-Homogenous 2D point Type
 
+// NewLineString initialises a point of 2D
+func NewLineString(points ...Point2D) *LineString {
+	ls := LineString(points)
+	return &ls
+}
+
 // Length of a linestring
 func (l LineString) Length() (totLength float64) {
 	for i, j := 0, 1; j < len(l); i, j = i+1, j+1 {

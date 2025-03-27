@@ -5,8 +5,20 @@ import (
 )
 
 func TestTriangle(t *testing.T) {
-	triangle := Triangle{SideOne: 5, SideTwo: 10, SideThree: 15, Base: 20, Height: 30}
-	// area by sides
+	triangle := Triangle{
+		SideOne:   5,
+		SideTwo:   10,
+		SideThree: 15,
+		Base:      20,
+		Height:    30}
+
+	//area by heron's method
+	resultAreaByHeron := triangle.AreaByHeron()
+	expectedAreaByHeron := 34.0
+	if resultAreaByHeron != expectedAreaByHeron {
+		t.Errorf("Got %v, expected %v", resultAreaByHeron, expectedAreaByHeron)
+	}
+	// area by sides:: basic
 	resultAreaBySides := triangle.AreaBySides()
 	expectedAreaBySides := 34.0
 	if resultAreaBySides != expectedAreaBySides {

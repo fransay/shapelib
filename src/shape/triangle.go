@@ -12,7 +12,8 @@ const (
 	Scalene     = "Scalene"
 )
 
-const SumOfAnglesInTriangle = 180
+const SumOfInteriorAnglesInTriangle = 180
+const SumOfExteriorAnglesInTriangle = 360
 
 // Triangle defines a triangle given all sides/length
 type Triangle struct {
@@ -32,6 +33,13 @@ func NewTriangle(sideOne, sideTwo, sideThree, height, base float64) *Triangle {
 		Height:    height,
 		Base:      base,
 	}
+}
+
+// AreaByHeron returns the area of a triangle using heron's method.
+func (t *Triangle) AreaByHeron() (areaByHeron float64) {
+	var s = (t.SideOne + t.SideTwo + t.SideThree) / 3
+	areaByHeron = math.Sqrt((s * (s - t.SideOne) * (s * t.SideTwo) * (s * t.SideThree)))
+	return areaByHeron
 }
 
 // AreaBySides returns the area of a triangle given the sides
@@ -69,19 +77,4 @@ func (t *Triangle) Type() (triangleType string) {
 		triangleType = Scalene
 	}
 	return triangleType
-}
-
-// PointInTriangle checks if a point lies in a triangle
-func (t *Triangle) PointInTriangle(x, y float64) (in bool) {
-	// x,y defines the coordinates of the points
-	in = false
-	// todo: put logic here
-	return in
-}
-
-// ContainsTriangle checks if a triangle completely lies in instant triangle
-func (t *Triangle) ContainsTriangle() (contain bool) {
-	contain = false
-	//todo: put logic here
-	return contain
 }
