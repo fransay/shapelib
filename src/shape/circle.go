@@ -13,7 +13,7 @@ var ErrorOfCollinearity = errors.New("points are collinear")
 
 // Circle type
 type Circle struct {
-	Radius   float64 // from the center to the circumference of the circle.
+	Radius   float64      // from the center to the circumference of the circle.
 	Centroid geom.Point2D // defines the center of the circle.
 }
 
@@ -61,10 +61,7 @@ func (c *Circle) ChordLength(sagitta float64) (chord float64) {
 // ContainsPoint checks if a point lies in the radius extent of a circle
 func (c *Circle) ContainsPoint(point geom.Point2D) bool {
 	distanceBtnPointAndCenter := math.Sqrt(math.Pow(point.X-c.Centroid.X, 2) + math.Pow(point.Y-c.Centroid.Y, 2))
-	if distanceBtnPointAndCenter <= c.Radius {
-		return true
-	}
-	return false
+	return distanceBtnPointAndCenter <= c.Radius
 }
 
 // CircleFromPoints forms a new circle given three arbitrary set of point that lie
@@ -76,7 +73,7 @@ func (c *Circle) CircleFromPoints(a, b, d geom.Point2D) (Circle, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if isCollinear == true {
+	if isCollinear {
 		return Circle{}, ErrorOfCollinearity
 	}
 	slopeAB := gradient(a, b)
@@ -121,7 +118,7 @@ func LineIntersectGivenEqn(lineOne, lineTwo [3]float64) (intersectPoint geom.Poi
 // AsLineString returns a line string given a set of points that defines a circle
 func (c *Circle) AsLineString(points ...geom.Point2D) (geom.LineString, error) {
 	var nilError error = errors.New("no points to form line string")
-	if points == nil || len(points) == 0 {
+	if len(points) == 0 {
 		return geom.LineString{}, nilError
 	}
 	var lineString geom.LineString

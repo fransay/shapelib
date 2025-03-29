@@ -4,42 +4,43 @@ import (
 	"testing"
 )
 
-func TestTriangle(t *testing.T) {
-	triangle := Triangle{
-		SideOne:   5,
-		SideTwo:   10,
-		SideThree: 15,
-		Base:      20,
-		Height:    30}
+var triangle = Triangle{
+	SideOne:   50.0,
+	SideTwo:   60.0,
+	SideThree: 30.0,
+	Base:      30.0,
+	Height:    10.0}
 
-	//area by heron's method
-	resultAreaByHeron := triangle.AreaByHeron()
-	expectedAreaByHeron := 34.0
-	if resultAreaByHeron != expectedAreaByHeron {
-		t.Errorf("Got %v, expected %v", resultAreaByHeron, expectedAreaByHeron)
-	}
-	// area by sides:: basic
+func TestAreaBySides(t *testing.T) {
 	resultAreaBySides := triangle.AreaBySides()
-	expectedAreaBySides := 34.0
+	expectedAreaBySides := 748.3314773547883
 	if resultAreaBySides != expectedAreaBySides {
 		t.Errorf("Got %v, expected %v", resultAreaBySides, expectedAreaBySides)
 	}
-	// area by base && height
+}
+
+func TestAreaByBaseAndHeight(t *testing.T) {
 	resultAreaByBaseAndHeight := triangle.AreaByBaseHeight()
-	expectedAreaByBaseAndHeight := 34.0
+	expectedAreaByBaseAndHeight := 150.0
 	if resultAreaByBaseAndHeight != expectedAreaByBaseAndHeight {
 		t.Errorf("Got %v, expected %v", resultAreaByBaseAndHeight, expectedAreaByBaseAndHeight)
 	}
-	// perimeter
+}
+
+func TestPerimeter(t *testing.T) {
 	resultPerimeter := triangle.Perimeter()
-	expectedPerimeter := 15.0
+	expectedPerimeter := 140.0
 	if resultPerimeter != expectedPerimeter {
 		t.Errorf("Got %v, expected %v", resultPerimeter, expectedPerimeter)
 	}
-	// type
+
+}
+
+func TestType(t *testing.T) {
 	resultType := triangle.Type()
 	expectedType := "Scalene"
 	if resultType != expectedType {
-		t.Errorf("Got %v, expected %v", resultType, expectedPerimeter)
+		t.Errorf("Got %v, expected %v", resultType, expectedType)
 	}
+
 }

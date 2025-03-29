@@ -35,14 +35,7 @@ func NewTriangle(sideOne, sideTwo, sideThree, height, base float64) *Triangle {
 	}
 }
 
-// AreaByHeron returns the area of a triangle using heron's method.
-func (t *Triangle) AreaByHeron() (areaByHeron float64) {
-	var s = (t.SideOne + t.SideTwo + t.SideThree) / 3
-	areaByHeron = math.Sqrt((s * (s - t.SideOne) * (s * t.SideTwo) * (s * t.SideThree)))
-	return areaByHeron
-}
-
-// AreaBySides returns the area of a triangle given the sides
+// AreaBySides returns the area of a triangle given the sides, using t
 func (t *Triangle) AreaBySides() (areaBySides float64) {
 	semiPerimeter := (t.SideOne + t.SideTwo + t.SideThree) / 2
 	areaBySides = math.Sqrt(
@@ -67,13 +60,9 @@ func (t *Triangle) Perimeter() (perimeter float64) {
 func (t *Triangle) Type() (triangleType string) {
 	if utils.CompareThreeFloat64(t.SideOne, t.SideTwo, t.SideThree) {
 		triangleType = Equilateral
-	}
-
-	if utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
+	} else if utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
 		triangleType = Isosceles
-	}
-
-	if !utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || !utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || !utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
+	} else if !utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || !utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || !utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
 		triangleType = Scalene
 	}
 	return triangleType
