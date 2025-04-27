@@ -34,7 +34,7 @@ func (s *Square) Diagional() (diag float64) {
 
 // CircumRadius returns the diagonal Length of a square
 func (s *Square) CircumRadius() (circumRad float64) {
-	circumRad = s.Length * (math.Sqrt(2))
+	circumRad = (s.Length * (math.Sqrt(2))) / 2
 	return circumRad
 }
 
@@ -60,7 +60,7 @@ func (s *Square) GoldenRation() (goldenRatio float64) {
 }
 
 // IsQuad is a placeholder method for defining the quadrilateral interface
-func (s *Square) IsQuad() bool {
+func (s Square) IsQuad() bool {
 	return true
 }
 

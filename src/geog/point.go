@@ -1,6 +1,5 @@
 package geog
 
-
 // Point represents the fundamental point geometric type
 type Point struct {
 	geomm

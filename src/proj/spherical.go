@@ -2,7 +2,6 @@ package proj
 
 import (
 	"math"
-
 )
 
 // Spherical type

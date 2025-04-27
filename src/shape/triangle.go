@@ -4,6 +4,7 @@ import (
 	"math"
 
 	"github.com/fransay/shapelib/internal/utils"
+	"github.com/fransay/shapelib/src/geom"
 )
 
 const (
@@ -66,4 +67,38 @@ func (t *Triangle) Type() (triangleType string) {
 		triangleType = Scalene
 	}
 	return triangleType
+}
+
+// TriangleByCoordinates defined by cartesian coordinates.
+type TriangleByCoordinates struct {
+	PointOne   geom.Point2D
+	PointTwo   geom.Point2D
+	PointThree geom.Point2D
+}
+
+// NewTriangleByCoordinates initialises a new TriangleByCoordinates object
+func NewTriangleByCoordinates(pointOne, pointTwo, pointThree geom.Point2D) *TriangleByCoordinates {
+	return &TriangleByCoordinates{
+		PointOne:   pointOne,
+		PointTwo:   pointTwo,
+		PointThree: pointThree,
+	}
+}
+
+// Center returns the centroid of a triangle
+func (tc *TriangleByCoordinates) Center() (pt geom.Point2D) {
+	x := tc.PointOne.X + tc.PointTwo.X + tc.PointThree.X
+	y := tc.PointOne.Y + tc.PointTwo.Y + tc.PointThree.Y
+	pt.X = x / 3
+	pt.Y = y / 3
+	return pt
+}
+
+// Area returns the area of triangle given the coordinates
+func (tc *TriangleByCoordinates) Area() (area float64) {
+	pt1 := tc.PointOne
+	pt2 := tc.PointTwo
+	pt3 := tc.PointThree
+	area = math.Abs(pt1.X*(pt2.Y-pt3.Y)+pt2.X*(pt3.Y-pt1.Y)+pt3.X*(pt1.Y-pt2.Y)) / 2
+	return area
 }

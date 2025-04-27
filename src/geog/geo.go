@@ -1,6 +1,5 @@
 package geog
 
-
 // geomm defined a set of fundamental charateristics every geometry must have, e.g a spatial reference
 // identification, dimensionality, etc.
 type geomm struct {
@@ -9,7 +8,6 @@ type geomm struct {
 	// dimension of geometry, i.e point = 0, line = 1, etc.
 	Dim DIM
 }
-
 
 // Dimension type
 type DIM int
@@ -28,4 +26,3 @@ func (d *DIM) checkStandDIM() (isStand bool) {
 	}
 	return isStand
 }
-

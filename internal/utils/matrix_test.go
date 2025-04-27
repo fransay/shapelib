@@ -4,5 +4,4 @@ import (
 	"testing"
 )
 
-func TestMat(t *testing.T) {
-}
+func TestMat(t *testing.T) {}
