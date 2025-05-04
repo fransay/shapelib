@@ -1,44 +1,41 @@
 package shape
 
 import (
+	"fmt"
+	. "github.com/franela/goblin"
+	"github.com/fransay/shapelib/internal/utils"
 	"testing"
 )
 
 func TestPentagon(t *testing.T) {
-	pentagon := Pentagon{Side: 20}
-	// area
-	observedAreaPentagon := pentagon.Area()
-	expectedAreaPentagon := 100.0
-	if observedAreaPentagon != expectedAreaPentagon {
-		t.Errorf("Expected %v Got %v", observedAreaPentagon, expectedAreaPentagon)
-	}
-
-	// perimeter
-	observedPerimeterPentagon := pentagon.Area()
-	expectedPerimeterPentagon := 100.0
-	if observedPerimeterPentagon != expectedPerimeterPentagon {
-		t.Errorf("Expected %v Got %v", observedPerimeterPentagon, expectedPerimeterPentagon)
-	}
-
-	// diagonal
-	observedDiagonalPentagon := pentagon.Diagonal()
-	expectedDiagonalPentagon := 100.0
-	if observedDiagonalPentagon != expectedDiagonalPentagon {
-		t.Errorf("Expected %v Got %v", observedDiagonalPentagon, expectedDiagonalPentagon)
-	}
-
-	// circumcircle
-	observedCircumcirclePentagon := pentagon.Circumcircle()
-	expectedCircumcirclePentagon := 100.0
-	if observedCircumcirclePentagon != expectedCircumcirclePentagon {
-		t.Errorf("Expected %v Got %v", observedCircumcirclePentagon, expectedCircumcirclePentagon)
-	}
-
-	// incircle
-	observedIncirclePentagon := pentagon.Incircle()
-	expectedIncirclePentagon := 100.0
-	if observedIncirclePentagon != expectedIncirclePentagon {
-		t.Errorf("Expected %v Got %v", observedIncirclePentagon, expectedIncirclePentagon)
-	}
-
+	g := Goblin(t)
+	var pent = NewPentagon(20.0)
+	g.Describe("Test Pentagon Methods", func() {
+		g.It("Area", func() {
+			area := pent.Area()
+			isClose := utils.IsClose(area, 688.19096, 0.0001)
+			g.Assert(isClose).Equal(true)
+		})
+		g.It("Perimeter", func() {
+			perimeter := pent.Perimeter()
+			isClose := utils.IsClose(perimeter, 100.00, 0.0001)
+			g.Assert(isClose).Equal(true)
+		})
+		g.It("Diagonal", func() {
+			diagonal := pent.Diagonal()
+			isClose := utils.IsClose(diagonal, 32.36068, 0.0001)
+			g.Assert(isClose).Equal(true)
+		})
+		g.It("Circumcircle", func() {
+			circle := pent.Circumcircle()
+			isClose := utils.IsClose(circle, 17.013023469465875, 0.0001)
+			g.Assert(isClose).Equal(true)
+		})
+		g.It("Incircle", func() {
+			circle := pent.Incircle()
+			fmt.Print(circle)
+			isClose := utils.IsClose(circle, 13.763677654669326, 0.0001)
+			g.Assert(isClose).Equal(true)
+		})
+	})
 }

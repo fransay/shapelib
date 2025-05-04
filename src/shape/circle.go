@@ -17,7 +17,7 @@ type Circle struct {
 	Centroid geom.Point2D // defines the center of the circle.
 }
 
-// Initialise a new circle object
+// NewCircle constructs a new circle object
 func NewCircle(radius float64, centroid geom.Point2D) (*Circle, error) {
 	if radius < 0.0 {
 		return nil, errors.New("can't create a new circle, radius can't be negative")

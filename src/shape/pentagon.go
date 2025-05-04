@@ -2,22 +2,19 @@ package shape
 
 import "math"
 
-const pentagonInteriorAngle = 105
-const pentagonExteriorAngle = 108
-
 // Pentagon type
 type Pentagon struct {
-	Side float64
+	Side float64 // length of side
 }
 
-// Initialise a new pentagon object
+// NewPentagon initialise a new pentagon object
 func NewPentagon(side float64) *Pentagon {
 	return &Pentagon{Side: side}
 }
 
 // Area return area of pentagon
 func (p *Pentagon) Area() (area float64) {
-	area = 0.25 * math.Sqrt(5+(5+2*math.Sqrt(5))) * math.Pow(p.Side, 2)
+	area = math.Sqrt(5*(5+(2*math.Sqrt(5)))) / 4 * (math.Pow(p.Side, 2))
 	return area
 }
 
@@ -27,22 +24,18 @@ func (p *Pentagon) Perimeter() (perimeter float64) {
 	return perimeter
 }
 
-// Diagonal return the Length of diagonal of pentagon
+// Diagonal return the length of diagonal of pentagon
 func (p *Pentagon) Diagonal() (diagonal float64) {
-	diagonal = p.Side * math.Sqrt(5-2*math.Sqrt(5))
+	diagonal = p.Side * (1 + math.Sqrt(5)) / 2
 	return diagonal
 }
 
 // Circumcircle return the circumference of a circumcircle drawn around the pentagon
 func (p *Pentagon) Circumcircle() float64 {
-	sqrt5 := math.Sqrt(5)
-	r := (p.Side / 2) * math.Sqrt((5+sqrt5)/2)
-	return r
+	return p.Side / 1.17557
 }
 
-// Incircle return the circumference of an incircle drawn in a pentagon
+// Incircle return the circumference of an inner circle drawn in a pentagon
 func (p *Pentagon) Incircle() float64 {
-	sqrt5 := math.Sqrt(5)
-	r := (p.Side / 2) * math.Sqrt((5-sqrt5)/2)
-	return r
+	return p.Side / 1.4531
 }
