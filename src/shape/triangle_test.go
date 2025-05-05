@@ -1,72 +1,59 @@
 package shape
 
 import (
+	"github.com/franela/goblin"
+	"github.com/fransay/shapelib/internal/utils"
 	"testing"
 
 	"github.com/fransay/shapelib/src/geom"
 )
 
-var triangle = Triangle{
-	SideOne:   50.0,
-	SideTwo:   60.0,
-	SideThree: 30.0,
-	Base:      30.0,
-	Height:    10.0}
+func TestTriangle(t *testing.T) {
+	g := goblin.Goblin(t)
+	var triangle = Triangle{
+		SideOne:   50.0,
+		SideTwo:   60.0,
+		SideThree: 30.0,
+		Base:      30.0,
+		Height:    10.0}
+	g.Describe("Area by sides", func() {
+		areaBySides := triangle.AreaBySides()
+		isClose := utils.IsClose(areaBySides, 748.3314773547883, 0.0001)
+		g.Assert(isClose).Equal(true)
+	})
 
-func TestAreaBySides(t *testing.T) {
-	resultAreaBySides := triangle.AreaBySides()
-	expectedAreaBySides := 748.3314773547883
-	if resultAreaBySides != expectedAreaBySides {
-		t.Errorf("Got = %v, Expected = %v", resultAreaBySides, expectedAreaBySides)
-	}
+	g.Describe("Area by base and height", func() {
+		areaByBaseHeight := triangle.AreaByBaseHeight()
+		isClose := utils.IsClose(areaByBaseHeight, 150.0, 0.0001)
+		g.Assert(isClose).Equal(true)
+	})
+	g.Describe("Area by perimeter", func() {
+		perimeter := triangle.Perimeter()
+		isClose := utils.IsClose(perimeter, 140.0, 0.0001)
+		g.Assert(isClose).Equal(true)
+	})
+
+	g.Describe("Area by Type", func() {
+		ttype := triangle.Type()
+		g.Assert(ttype).Equal("Scalene")
+	})
 }
 
-func TestAreaByBaseAndHeight(t *testing.T) {
-	resultAreaByBaseAndHeight := triangle.AreaByBaseHeight()
-	expectedAreaByBaseAndHeight := 150.0
-	if resultAreaByBaseAndHeight != expectedAreaByBaseAndHeight {
-		t.Errorf("Got = %v, Expected = %v", resultAreaByBaseAndHeight, expectedAreaByBaseAndHeight)
-	}
-}
-
-func TestPerimeter(t *testing.T) {
-	resultPerimeter := triangle.Perimeter()
-	expectedPerimeter := 140.0
-	if resultPerimeter != expectedPerimeter {
-		t.Errorf("Got = %v, Expected = %v", resultPerimeter, expectedPerimeter)
+func TestTriangleCoordinates(t *testing.T) {
+	g := goblin.Goblin(t)
+	var triangleByCoordinates = TriangleByCoordinates{
+		PointOne:   geom.Point2D{X: 50, Y: 160},
+		PointTwo:   geom.Point2D{X: 70, Y: 120},
+		PointThree: geom.Point2D{X: 45, Y: 500},
 	}
 
-}
+	g.Describe("Center", func() {
+		center := triangleByCoordinates.Center()
+		g.Assert(center).Equal(geom.Point2D{X: 55, Y: 260})
+	})
 
-func TestType(t *testing.T) {
-	resultType := triangle.Type()
-	expectedType := "Scalene"
-	if resultType != expectedType {
-		t.Errorf("Got =  %v, Expected = %v", resultType, expectedType)
-	}
-
-}
-
-var traingleByCoordinates = TriangleByCoordinates{
-	PointOne:   geom.Point2D{X: 50, Y: 160},
-	PointTwo:   geom.Point2D{X: 70, Y: 120},
-	PointThree: geom.Point2D{X: 45, Y: 500},
-}
-
-// triangle by coordinates
-func TestCenter(t *testing.T) {
-	var observedCenterCoordinates = traingleByCoordinates.Center()
-	var expectedCenterCoordinates = geom.Point2D{X: 55, Y: 260}
-	if !observedCenterCoordinates.IsEqual(expectedCenterCoordinates) {
-		t.Errorf("observed coordinates is not equal to expected.")
-	}
-
-}
-
-func TestArea(t *testing.T) {
-	var observedAreaCoordinates = traingleByCoordinates.Area()
-	var expectedAreaCoordinates = 3300.00
-	if observedAreaCoordinates != expectedAreaCoordinates {
-		t.Errorf("observed area %v is not equal to expected area %v", observedAreaCoordinates, expectedAreaCoordinates)
-	}
+	g.Describe("Area", func() {
+		area := triangleByCoordinates.Area()
+		g.Assert(area).Equal(3300.00)
+	})
 }
