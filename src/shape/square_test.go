@@ -1,62 +1,52 @@
 package shape
 
 import (
-	"testing"
-
+	"github.com/franela/goblin"
 	"github.com/fransay/shapelib/internal/utils"
+	"testing"
 )
 
 func TestSquare(t *testing.T) {
-	square := Square{Length: 3.0}
+	g := goblin.Goblin(t)
+	g.Describe("Test Square methods", func() {
+		square := Square{Length: 3.0}
+		g.It("Area", func() {
+			area := square.Area()
+			g.Assert(area).Equal(9.0)
+		})
 
-	// Area
-	res := square.Area()
-	exp := 9.0
-	if res != exp {
-		t.Errorf("Got %f, Expected %f", res, exp)
-	}
+		g.It("Perimeter", func() {
+			perimeter := square.Perimeter()
+			g.Assert(perimeter).Equal(12.0)
+		})
 
-	// Perimeter
-	resPerim := square.Perimeter()
-	expPerim := 12.0
-	if resPerim != expPerim {
-		t.Errorf("Got %f, Expected %f", resPerim, expPerim)
-	}
+		g.It("Diagonal", func() {
+			diagonal := square.Diagonal()
+			isClose := utils.IsClose(diagonal, 4.242640687119286, 0.001)
+			g.Assert(isClose).IsTrue()
+		})
 
-	// Diagonal
-	resDiag := square.Diagional()
-	expDiag := 4.242641
-	if !utils.IsClose(resDiag, expDiag, 0.1) {
-		t.Errorf("Got %f, Expected %f", resDiag, expDiag)
-	}
+		g.It("CircumRadius", func() {
+			circumRadius := square.CircumRadius()
+			isClose := utils.IsClose(circumRadius, 2.121320343559643, 0.001)
+			g.Assert(isClose).IsTrue()
+		})
 
-	// CircumReference
-	resCircumRef := square.CircumRadius()
-	expCircumRef := 4.242641 / 2
-	if !utils.IsClose(resCircumRef, expCircumRef, 0.1) {
-		t.Errorf("Got %f, Expected %f", resCircumRef, expCircumRef)
-	}
+		g.It("InRadius", func() {
+			inRadius := square.InRadius()
+			isClose := utils.IsClose(inRadius, 1.5, 0.00001)
+			g.Assert(isClose).IsTrue()
+		})
 
-	// InRadius
-	resRad := square.InRadius()
-	expInRad := 1.500000
-	if resRad != expInRad {
-		t.Errorf("Got %f, Expected %f", resRad, expInRad)
-	}
+		g.It("Apothem", func() {
+			apothem := square.Apothem()
+			g.Assert(apothem).Equal(1.500000)
+		})
 
-	// Apothem
-	apotRad := square.Apothem()
-	expRad := 1.500000
-	if apotRad != expRad {
-		t.Errorf("Got %f, Expected %f", apotRad, expRad)
-	}
-
-	// GoldenRation
-	resGoldRat := square.GoldenRation()
-	expGoldRat := 1.414214
-
-	if !utils.IsClose(resGoldRat, expGoldRat, 0.1) {
-		t.Errorf("Got %f, Expected %f", resGoldRat, expGoldRat)
-	}
-
+		g.It("Golden Ratio", func() {
+			goldenRatio := square.GoldenRation()
+			isClose := utils.IsClose(goldenRatio, 1.4142135623730951, 0.00001)
+			g.Assert(isClose).IsTrue()
+		})
+	})
 }
