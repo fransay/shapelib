@@ -1,6 +1,8 @@
 package shape
 
-import "math"
+import (
+	"math"
+)
 
 type Rectangle struct {
 	Length float64
@@ -19,7 +21,12 @@ func (r *Rectangle) AreaByLengthWidth() (area float64) {
 
 // AreaByDiagonal return area of rectangle given the diagonal
 func (r *Rectangle) AreaByDiagonal(diagonal float64) (area float64) {
-	return 0.5 * diagonal * diagonal
+	if r.Length != 0 {
+		area = r.Length * math.Sqrt((diagonal*diagonal)-(r.Length*r.Length))
+	} else {
+		area = r.Width * math.Sqrt((diagonal*diagonal)-(r.Width*r.Width))
+	}
+	return area
 }
 
 // Perimeter returns the perimeter of rectangle
