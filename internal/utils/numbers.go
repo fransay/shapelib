@@ -29,3 +29,11 @@ func Diff(a, b float64) (diff float64) {
 	diff = math.Abs(b - a)
 	return diff
 }
+
+func SumTotalFloat(x []float64) float64 {
+	var sum float64
+	for _, v := range x {
+		sum += v
+	}
+	return sum
+}
