@@ -1,6 +1,7 @@
 package shape
 
 import (
+	"errors"
 	"math"
 
 	"github.com/fransay/shapelib/internal/utils"
@@ -17,37 +18,46 @@ func NewPolygon(pts []geom.Point2D) *Polygon {
 	return &Polygon{pts}
 }
 
-// Area returns area of a polygon using shoelace
-func (p Polygon) Area() (area float64) {
+// Area returns the area of a polygon using the shoelace formula
+func (p Polygon) Area() float64 {
 	var forwardPass, backwardPass float64
-	for i, j := 0, 1; j < len(p.pts); i, j = i+1, j+1 {
-		startPoint := p.pts[i]
-		terminalPoint := p.pts[j]
-		forwardPass += startPoint.X * terminalPoint.Y
-		backwardPass += terminalPoint.X * startPoint.Y
-		area = (forwardPass - backwardPass) / 2
+	n := len(p.pts)
+	for i := 0; i < n; i++ {
+		j := (i + 1) % n
+		forwardPass += p.pts[i].X * p.pts[j].Y
+		backwardPass += p.pts[j].X * p.pts[i].Y
 	}
+	area := 0.5 * (forwardPass - backwardPass)
 	return math.Abs(area)
 }
 
-// Centroid returns the centre point of polygon
-func (p Polygon) Centroid() (cent geom.Point2D) {
+// Centroid returns the center (centroid) of a polygon
+func (p Polygon) Centroid() (cent geom.Point2D, err error) {
 	var xSum, ySum float64
-	for _, values := range p.pts {
-		xSum += values.X
-		ySum += values.Y
+	n := len(p.pts)
+	if n == 0 {
+		return geom.Point2D{}, errors.New("can't determine the centroid")
 	}
-	cent = geom.Point2D{X: xSum / 2, Y: ySum / 2}
-	return cent
+	for _, pt := range p.pts {
+		xSum += pt.X
+		ySum += pt.Y
+	}
+	cent = geom.Point2D{
+		X: xSum / float64(n),
+		Y: ySum / float64(n),
+	}
+	return cent, nil
 }
 
 // SegmentDistances returns all segment distances
 func (p Polygon) SegmentDistances() []float64 {
-	segmentDistances := make([]float64, 0)
-	for i, j := 0, 1; j < len(p.pts); i, j = i+1, j+1 {
+	n := len(p.pts)
+	segmentDistances := make([]float64, 0, n)
+	for i := 0; i < n; i++ {
+		j := (i + 1) % n
 		startPoint := []float64{p.pts[i].X, p.pts[i].Y}
-		nextPoint := []float64{p.pts[j].X, p.pts[j].Y}
-		segDistance := utils.Distance(startPoint, nextPoint)
+		endPoint := []float64{p.pts[j].X, p.pts[j].Y}
+		segDistance := utils.Distance(startPoint, endPoint)
 		segmentDistances = append(segmentDistances, segDistance)
 	}
 	return segmentDistances
@@ -64,8 +74,15 @@ func (p Polygon) Perimeter() (perimeter float64) {
 }
 
 // ShortestLineSegment returns the shortest line segment of a polygon
-func (p Polygon) ShortestLineSegment() int {
-	return 0.0
+func (p Polygon) ShortestLineSegment() float64 {
+	segDistances := p.SegmentDistances()
+	minLine := segDistances[0]
+	for _, dist := range segDistances {
+		if dist < minLine {
+			minLine = dist
+		}
+	}
+	return minLine
 }
 
 // IsClosed returns a boolean if a polygon is closed or not

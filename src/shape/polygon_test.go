@@ -19,6 +19,10 @@ func TestPolygon(t *testing.T) {
 			numberOfNodes := polygon.NumberOfNodes()
 			g.Assert(numberOfNodes).Equal(3)
 		})
+		g.It("Area", func() {
+			area := polygon.Area()
+			g.Assert(area).Equal(247.5)
+		})
 		g.It("Line segment", func() {})
 		g.It("Centroid", func() {})
 		g.It("Number of Line Segments", func() {})
