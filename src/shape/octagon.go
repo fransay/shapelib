@@ -7,7 +7,7 @@ type Octagon struct {
 	Side float64
 }
 
-// Initilise a new octagon object
+// NewOctagon initialses a new octagon object
 func NewOctagon(side float64) *Octagon {
 	return &Octagon{Side: side}
 }
@@ -30,5 +30,5 @@ func (o *Octagon) Apothem() float64 {
 
 // InteriorDiagonal returns the length of the inner diameter
 func (o *Octagon) InteriorDiagonal() float64 {
-	return o.Side * math.Sqrt(4+2*math.Sqrt2)
+	return o.Side * math.Sqrt(4+(2*math.Sqrt2))
 }

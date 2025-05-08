@@ -144,8 +144,10 @@ func (p Polygon) Scale(scalarVector []float64) (scale Polygon) {
 }
 
 // IsEqual returns equal status in boolean by comparing two polygons
+
 func (p Polygon) IsEqual(polygon Polygon) (equal bool) {
 	// for two polygons to be equal, they must be of the same or similar length
+	// for two polygons to be equal be of the same shape, size and possibly the same orientation and position
 	equal = false
 	containSuccessChecker := 0
 	for _, polygonElement := range p.pts {
@@ -160,13 +162,17 @@ func (p Polygon) IsEqual(polygon Polygon) (equal bool) {
 	return equal
 }
 
-// Contains checks if a point is in a polygon
+// Contains determines whether a point is in a polygon or not.
 func (p Polygon) Contains(poly Polygon, point geom.Point2D) (contains bool) {
-	contains = false
-	for _, pointElement := range poly.pts {
-		if pointElement == point {
-			contains = true
+	x, y := point.X, point.Y
+	crossings := 0
+	numberOfVertices := p.NumberOfNodes()
+	for i := 0; i < numberOfVertices; i++ {
+		x1, y1 := poly.pts[i].X, poly.pts[i].Y
+		x2, y2 := poly.pts[(i+1)%numberOfVertices].X, poly.pts[(i+1)%numberOfVertices].Y
+		if y1 <= y && y > y2 && (x-x1)*(y2-y1) < (x2-x1)*(y-y1) {
+			crossings += 1
 		}
 	}
-	return contains
+	return crossings%2 == 1
 }

@@ -8,7 +8,7 @@ type LatLong struct {
 	Longitude float64 // in degrees
 }
 
-// Initialise new LatLong object
+// NewLatLong initialises a new LatLong object
 func NewLatLong(lat, long float64) LatLong {
 	return LatLong{Latitude: lat, Longitude: long}
 }

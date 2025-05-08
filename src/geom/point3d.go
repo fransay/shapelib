@@ -52,8 +52,8 @@ func (p *Point3D) DotProduct(q *Point3D) (prod float64) {
 
 // CrossProduct return the cross product between self and other
 func (p *Point3D) CrossProduct(q *Point3D) Point3D {
-	cprod := Point3D{X: (p.Y * q.Z) - (p.Z * q.Y), Y: (p.X * q.Z) - (p.Z * q.X), Z: (p.X * q.Y) - (p.Y * q.X)}
-	return cprod
+	crossProduct := Point3D{X: (p.Y * q.Z) - (p.Z * q.Y), Y: (p.X * q.Z) - (p.Z * q.X), Z: (p.X * q.Y) - (p.Y * q.X)}
+	return crossProduct
 }
 
 // Normalize returns normalized point of self

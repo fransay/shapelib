@@ -38,8 +38,8 @@ func NewMatrix(dim MatrixDimension, matType any) *Matrix {
 // translation
 // reflection
 // shearing
-// orthogonalisation
-// adjugate
+// orthogonality
+// adjudicate
 // cofactor matrix
 // compute eigenvalues
 // compute eigenvectors

@@ -3,8 +3,6 @@ package shape
 import (
 	"errors"
 	"math"
-
-	"github.com/fransay/shapelib/internal/utils"
 )
 
 // Decagon type
@@ -24,7 +22,7 @@ func NewDecagon(side float64) (*Decagon, error) {
 
 // Area returns area of a decagon
 func (d *Decagon) Area() (area float64) {
-	area = (5 / 2) * math.Pow(d.Side, 2) * utils.Cot(math.Pi/10)
+	area = 5 * ((d.Side * d.Side) * (math.Sqrt(5 + (2 + math.Sqrt(5))))) / 2
 	return area
 }
 

@@ -11,7 +11,7 @@ func (p *Point) Area() float64 {
 	return 0.0
 }
 
-// Length return the length of p which is alway zero
+// Length return the length of p which is always zero
 // since a point is dimensionless.
 func (p *Point) Length() float64 {
 	return 0.0

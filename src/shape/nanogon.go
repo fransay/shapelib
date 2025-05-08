@@ -6,7 +6,6 @@ import (
 	"github.com/fransay/shapelib/internal/utils"
 )
 
-// Nanogon type
 type Nanogon struct {
 	side float64
 }

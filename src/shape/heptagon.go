@@ -7,18 +7,15 @@ import (
 	"github.com/fransay/shapelib/internal/utils"
 )
 
-// Number of sides of a heptagon
-const numberOfSides = 7
-
 // Heptagon type
 type Heptagon struct {
 	Side float64
 }
 
-// Initialise a new pentagon object
+// NewHeptagon initialises a new pentagon object
 func NewHeptagon(side float64) (*Heptagon, error) {
 	if side < 0 {
-		return nil, errors.New("can't create heptagon object, sidec length can't be les than zero")
+		return nil, errors.New("can't create heptagon object, side length can't be les than zero")
 
 	}
 	return &Heptagon{Side: side}, nil
@@ -33,7 +30,7 @@ func (h *Heptagon) Area() (area float64) {
 
 // Perimeter returns the area of a heptagon in unit squares
 func (h *Heptagon) Perimeter() (perimeter float64) {
-	perimeter = h.Side * numberOfSides
+	perimeter = h.Side * 7
 	return perimeter
 }
 

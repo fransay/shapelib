@@ -15,7 +15,7 @@ func NewUTM(easting float64, northing float64) *UTM {
 	}
 }
 
-// Distance returns the euclidean distance between
+// Distance returns the Euclidean distance between
 // two positions in UTM.
 func (utm *UTM) Distance(utm1 UTM) float64 {
 	deltaEastings := utm1.Easting - utm.Easting

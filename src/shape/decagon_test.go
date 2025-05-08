@@ -1,20 +1,21 @@
 package shape
 
-import "testing"
+import (
+	"github.com/franela/goblin"
+	"testing"
+)
 
 func TestDecagon(t *testing.T) {
-	decagon := Decagon{}
-	// area
-	observedAreaOfDecagon := decagon.Area()
-	expectedAreaOfDecagon := 40.0
-	if observedAreaOfDecagon != expectedAreaOfDecagon {
-		t.Errorf("Expected ,%v, got %v", expectedAreaOfDecagon, observedAreaOfDecagon)
-	}
-
-	// perimeter
-	observedPerimeterOfDecagon := decagon.Perimeter()
-	expectedPerimeterOfDecagon := 40.0
-	if observedAreaOfDecagon != expectedPerimeterOfDecagon {
-		t.Errorf("Expected %v got %v", expectedAreaOfDecagon, observedPerimeterOfDecagon)
-	}
+	g := goblin.Goblin(t)
+	decagon, _ := NewDecagon(20)
+	g.Describe("Test Decagon", func() {
+		g.It("Area", func() {
+			area := decagon.Area()
+			g.Assert(area).Equal(3077.68)
+		})
+		g.It("Perimeter", func() {
+			perimeter := decagon.Perimeter()
+			g.Assert(perimeter).Equal(200)
+		})
+	})
 }
