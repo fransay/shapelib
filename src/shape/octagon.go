@@ -7,7 +7,7 @@ type Octagon struct {
 	Side float64
 }
 
-// NewOctagon initialses a new octagon object
+// NewOctagon inits a new octagon object
 func NewOctagon(side float64) *Octagon {
 	return &Octagon{Side: side}
 }

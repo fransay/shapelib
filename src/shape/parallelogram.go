@@ -7,7 +7,7 @@ type Parallelogram struct {
 	Side   float64
 }
 
-// Initialise a new parallelogram object
+// NewParallelogram initialises a new parallelogram object
 func NewParallelogram(base, height, side float64) *Parallelogram {
 	return &Parallelogram{
 		Base:   base,

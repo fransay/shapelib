@@ -1,9 +1,18 @@
 package props
 
 import (
+	"github.com/franela/goblin"
 	"math"
 	"testing"
 )
+
+func TestPerimeter(t *testing.T) {
+	g := goblin.Goblin(t)
+	g.Describe("Perimeter Of Plane Figures/Shapes", func() {
+		g.It("Test Perimeter of Triangle", func() {})
+		g.It("Test Perimeter of Square", func() {})
+	})
+}
 
 // Perimeter of triangle
 func TestPerimeterOfTriangle(t *testing.T) {
@@ -26,7 +35,7 @@ func TestPerimeterOfSquare(t *testing.T) {
 
 // Perimeter of rectangle
 func TestPerimeterOfRegularRectangle(t *testing.T) {
-	res := PerimeterOfRegularRectangle(10.0, 5)
+	res := PerimeterOfRectangle(10.0, 5)
 	exp := math.Trunc(30.0)
 	if res != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -53,7 +62,7 @@ func TestPerimeterOfParallelogram(t *testing.T) {
 
 // Perimeter of kite
 func TestPerimOfKite(t *testing.T) {
-	res := PerimeterOfRegularKite(5.0, 4.0)
+	res := PerimeterOfKite(5.0, 4.0)
 	exp := math.Trunc(18.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -62,7 +71,7 @@ func TestPerimOfKite(t *testing.T) {
 
 // Perimeter of rhombus
 func TestPerimOfRhombus(t *testing.T) {
-	res := PerimeterOfRegularRhombus(5.0)
+	res := PerimeterOfRhombus(5.0)
 	exp := math.Trunc(20.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -71,7 +80,7 @@ func TestPerimOfRhombus(t *testing.T) {
 
 // Perimeter of trapezoid
 func TestPerimOfTrapezoid(t *testing.T) {
-	res := PerimeterOfRegularTrapezoid(5.0, 10.0, 5.0, 20.0)
+	res := PerimeterOfTrapezoid(5.0, 10.0, 5.0, 20.0)
 	exp := math.Trunc(40.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -80,7 +89,7 @@ func TestPerimOfTrapezoid(t *testing.T) {
 
 // Perimeter of pentagon
 func TestPerimOfPentagon(t *testing.T) {
-	res := PerimeterOfRegularPentagon(5.0)
+	res := PerimeterOfPentagon(5.0)
 	exp := math.Trunc(25.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -89,7 +98,7 @@ func TestPerimOfPentagon(t *testing.T) {
 
 // Perimeter of hexagon
 func TestPerimOfHexagon(t *testing.T) {
-	res := PerimeterOfRegularHexagon(5.0)
+	res := PerimeterOfHexagon(5.0)
 	exp := math.Trunc(30.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -98,7 +107,7 @@ func TestPerimOfHexagon(t *testing.T) {
 
 // Perimeter of heptagon
 func TestPerimOfHeptagon(t *testing.T) {
-	res := PerimeterOfRegularHeptagon(5.0)
+	res := PerimeterOfHeptagon(5.0)
 	exp := math.Trunc(35.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -107,7 +116,7 @@ func TestPerimOfHeptagon(t *testing.T) {
 
 // Perimeter of octagon
 func TestPerimOfOctagon(t *testing.T) {
-	res := PerimeterOfRegularOctagon(5.0)
+	res := PerimeterOfOctagon(5.0)
 	exp := math.Trunc(40.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -116,7 +125,7 @@ func TestPerimOfOctagon(t *testing.T) {
 
 // Perimeter of nonagon
 func TestPerimOfNonagon(t *testing.T) {
-	res := PerimeterOfRegularNonagon(5.0)
+	res := PerimeterOfNonagon(5.0)
 	exp := math.Trunc(45.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -125,7 +134,7 @@ func TestPerimOfNonagon(t *testing.T) {
 
 // Perimeter of decagon
 func TestPerimOfDecagon(t *testing.T) {
-	res := PerimeterOfRegularDecagon(5.0)
+	res := PerimeterOfDecagon(5.0)
 	exp := math.Trunc(50.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
@@ -134,7 +143,7 @@ func TestPerimOfDecagon(t *testing.T) {
 
 // Perimeter of regular generic shapes
 func TestPerimOfRegularGeneric(t *testing.T) {
-	res := PerimeterOfRegularGeneric(5.0, 15.0)
+	res := PerimeterOfGenericFigure(5.0, 15.0)
 	exp := math.Trunc(75.0)
 	if math.Trunc(res) != exp {
 		t.Errorf("expected %f, got %f", exp, res)
