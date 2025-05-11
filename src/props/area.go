@@ -6,29 +6,27 @@ import (
 	"github.com/fransay/shapelib/src/geom"
 )
 
-// AreaOfTriangleBH returns area of a triangle given the base and the height
-func AreaOfTriangleBH(base, height float64) (area float64) {
-	area = 0.5 * base * height
+// AreaOfTriangleGivenBH returns area of a triangle given the base and the height
+func AreaOfTriangleGivenBH(base, height float64) (area float64) {
+	area = (base * height) / 2
 	return area
 }
 
-// AreaOfTriangleSide returns the area of a triangle given all three sides
-func AreaOfTriangleSide(side1, side2, side3 float64) (area float64) {
-	averageSides := (side1 + side2 + side3) / 3
-	compute := averageSides * (averageSides - side1) * (averageSides - side2) * (averageSides - side3)
-	area = math.Sqrt(compute)
+// AreaOfTriangleGivenSide returns the area of a triangle given all three sides
+func AreaOfTriangleGivenSide(side1, side2, side3 float64) (area float64) {
+	semiPerimeter := (side1 + side2 + side3) / 2
+	area = math.Sqrt(semiPerimeter * (semiPerimeter - side1) * (semiPerimeter - side2) * (semiPerimeter - side3))
 	return area
-
 }
 
-// AreaOfTriangleAngle returns the area of a triangle given two sides and an angle
-func AreaOfTriangleAngle(side1, side2, angle float64) (area float64) {
-	area = (side1 * side2) * math.Sin(angle) / 2
+// AreaOfTriangleGivenAngle returns the area of a triangle given two sides and an angle
+func AreaOfTriangleGivenAngle(side1, side2, angle float64) (area float64) {
+	area = ((side1 * side2) * math.Sin(angle)) / 2
 	return area
 
 }
 
-// AreaOfSquare :return the area of square given the length
+// AreaOfSquare return the area of square given the length
 func AreaOfSquare(length float64) (area float64) {
 	area = length * length
 	return area
@@ -54,7 +52,7 @@ func AreaOfKite(diag1, diag2 float64) (area float64) {
 
 // AreaOfRhombus returns the area of a rhombus given the main diagonals
 func AreaOfRhombus(diag1, diag2 float64) (area float64) {
-	area = AreaOfKite(diag1, diag2)
+	area = (diag1 + diag2) / 2
 	return area
 }
 
@@ -64,43 +62,43 @@ func AreaOfTrapezoid(side1, side2, height float64) (area float64) {
 	return area
 }
 
-// AreaOfRPentagon returns the area of a regular pentagon given the side
-func AreaOfRPentagon(side float64) (area float64) {
+// AreaOfPentagon returns the area of a regular pentagon given the side
+func AreaOfPentagon(side float64) (area float64) {
 	area = 0.25 * math.Sqrt(5.0*(5.0+(2.0*math.Sqrt(5.0)))) * (side * side)
 	return area
 
 }
 
-// AreaOfRHexagon returns the area of a regular hexagon given the side
-func AreaOfRHexagon(side float64) (area float64) {
+// AreaOfHexagon returns the area of a regular hexagon given the side
+func AreaOfHexagon(side float64) (area float64) {
 	area = 1.5 * math.Sqrt(3) * math.Pow(side, 2)
 	return area
 
 }
 
-// AreaOfRHeptagon returns the area of a regular heptagon given the side
-func AreaOfRHeptagon(side float64) (area float64) {
+// AreaOfHeptagon returns the area of a regular heptagon given the side
+func AreaOfHeptagon(side float64) (area float64) {
 	const apothem float64 = 3.634
 	area = apothem * side * side
 	return area
 }
 
-// AreaOfROctagon returns the area of a regular octagon given the side
-func AreaOfROctagon(side float64) (area float64) {
+// AreaOfOctagon returns the area of a regular octagon given the side
+func AreaOfOctagon(side float64) (area float64) {
 	area = 2 * (1 + math.Sqrt(2.0)) * (side * side)
 	return area
 }
 
-// AreaOfRNonagon returns the area of a regular nonagon given the side
-func AreaOfRNonagon(side float64) (area float64) {
+// AreaOfNonagon returns the area of a regular nonagon given the side
+func AreaOfNonagon(side float64) (area float64) {
 	const cotangent = 2.747477
 	area = (9 / 4) * math.Pow(side, 2.0) * cotangent
 	return area
 
 }
 
-// AreaOfRDecagon returns the area of a regular decagon given the side
-func AreaOfRDecagon(side float64) (area float64) {
+// AreaOfDecagon returns the area of a regular decagon given the side
+func AreaOfDecagon(side float64) (area float64) {
 	area = 2.5 * math.Pow(side, 2.0) * math.Sqrt(5.0+2*math.Sqrt(5.0))
 	return area
 }
@@ -141,12 +139,12 @@ func AreaOfEllipse(semiMajorAxis, semiMinorAxis float64) (area float64) {
 	return area
 }
 
-// AreaCoordinates returns the area of any two-dimensional shape given the coordinates of the vertices, using the shoelace algorithm...
-func AreaCoordinates(cords ...geom.Point2D) float64 {
+// AreaGivenCoordinates returns the area of any two-dimensional shape given the coordinates of the vertices, using the shoelace algorithm...
+func AreaGivenCoordinates(cords ...geom.Point2D) float64 {
 	var forPass float64
 	var backPass float64
 	var numberOfCords = len(cords) - 1
-	for i, j := 0, 1; j <= numberOfCords; i, j = i+1, j+1 {
+	for i, j := 0, 1; j <= numberOfCords; i, j = i+1, j+1 { // todo: fix area given coordinates
 		forPass += cords[i].Y * cords[j].X
 		backPass += cords[j].Y * cords[i].X
 	}
