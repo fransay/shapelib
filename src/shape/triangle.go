@@ -13,9 +13,6 @@ const (
 	Scalene     = "Scalene"
 )
 
-const SumOfInteriorAnglesInTriangle = 180
-const SumOfExteriorAnglesInTriangle = 360
-
 // Triangle defines a triangle given all sides/length
 type Triangle struct {
 	SideOne   float64

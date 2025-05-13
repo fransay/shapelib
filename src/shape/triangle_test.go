@@ -10,12 +10,12 @@ import (
 
 func TestTriangle(t *testing.T) {
 	g := goblin.Goblin(t)
-	var triangle = Triangle{
-		SideOne:   50.0,
-		SideTwo:   60.0,
-		SideThree: 30.0,
-		Base:      30.0,
-		Height:    10.0}
+	var triangle = NewTriangle(
+		50.0,
+		60.0,
+		30.0,
+		30.0,
+		10.0)
 	g.Describe("Area by sides", func() {
 		areaBySides := triangle.AreaBySides()
 		isClose := utils.IsClose(areaBySides, 748.3314773547883, 0.0001)
@@ -41,11 +41,7 @@ func TestTriangle(t *testing.T) {
 
 func TestTriangleCoordinates(t *testing.T) {
 	g := goblin.Goblin(t)
-	var triangleByCoordinates = TriangleByCoordinates{
-		PointOne:   geom.Point2D{X: 50, Y: 160},
-		PointTwo:   geom.Point2D{X: 70, Y: 120},
-		PointThree: geom.Point2D{X: 45, Y: 500},
-	}
+	var triangleByCoordinates = NewTriangleByCoordinates(geom.Point2D{X: 50, Y: 160}, geom.Point2D{X: 70, Y: 120}, geom.Point2D{X: 45, Y: 500})
 
 	g.Describe("Center", func() {
 		center := triangleByCoordinates.Center()

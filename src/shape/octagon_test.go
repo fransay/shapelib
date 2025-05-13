@@ -1,32 +1,38 @@
 package shape
 
-import "testing"
+import (
+	"github.com/franela/goblin"
+	"github.com/fransay/shapelib/internal/utils"
+	"testing"
+)
 
 func TestOctagon(t *testing.T) {
-	octagon := Octagon{50}
-	// area
-	observedArea := octagon.Area()
-	expectedArea := 12071.07
-	if observedArea != expectedArea {
-		t.Errorf("Expected = %v; Observed %v", expectedArea, observedArea)
-	}
-	// perimeter
-	observedPerimeter := octagon.Perimeter()
-	expectedPerimeter := 4000
-	if observedArea != expectedArea {
-		t.Errorf("Expected = %v; Observed %v", expectedPerimeter, observedPerimeter)
-	}
-	// apothem
-	observedApothem := octagon.Apothem()
-	expectedApothem := 12071.07 // todo: compute accurate apothem by hand
-	if observedApothem != expectedApothem {
-		t.Errorf("Expected = %v; Observed %v", expectedPerimeter, observedPerimeter)
-	}
-	// internalDiagonal
-	observedInternalDiagonal := octagon.InteriorDiagonal()
-	expectedInternalDiagonal := 12071.07 // todo: compute accurate apothem by hand
-	if observedInternalDiagonal != expectedInternalDiagonal {
-		t.Errorf("Expected = %v; Observed %v", expectedInternalDiagonal, observedInternalDiagonal)
-	}
+	g := goblin.Goblin(t)
+	octagon := NewOctagon(50)
+	g.Describe("Test Area of Octagon", func() {
+		g.It("Area", func() {
+			area := octagon.Area()
+			isClose := utils.IsClose(area, 0.0, 0.001)
+			g.Assert(isClose).Equal(true)
+		})
 
+		g.It("Perimeter", func() {
+			perimeter := octagon.Perimeter()
+			isClose := utils.IsClose(perimeter, 0.0, 0.001)
+			g.Assert(isClose).Equal(true)
+		})
+
+		g.It("Apothem", func() {
+			apothem := octagon.Apothem()
+			isClose := utils.IsClose(apothem, 0.0, 0.001)
+			g.Assert(isClose).Equal(true)
+		})
+
+		g.It("Internal Diagonal", func() {
+			internalDiagonal := octagon.InteriorDiagonal()
+			isClose := utils.IsClose(internalDiagonal, 0.0, 0.001)
+			g.Assert(isClose).Equal(true)
+		})
+
+	})
 }

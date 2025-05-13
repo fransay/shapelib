@@ -9,7 +9,7 @@ type geomm struct {
 	Dim DIM
 }
 
-// Dimension type
+// DIM defines a dimension type
 type DIM int
 
 // New Dimensional type
