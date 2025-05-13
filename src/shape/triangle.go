@@ -17,7 +17,7 @@ const (
 type Triangle struct {
 	SideOne   float64
 	SideTwo   float64
-	SideThree float64 // todo: remove all sides
+	SideThree float64
 	Height    float64
 	Base      float64
 }
@@ -66,7 +66,7 @@ func (t *Triangle) Type() (triangleType string) {
 	return triangleType
 }
 
-// TriangleByCoordinates defined by cartesian coordinates.
+// TriangleByCoordinates defines a triangle by coordinates.
 type TriangleByCoordinates struct {
 	PointOne   geom.Point2D
 	PointTwo   geom.Point2D
@@ -93,9 +93,7 @@ func (tc *TriangleByCoordinates) Center() (pt geom.Point2D) {
 
 // Area returns the area of triangle given the coordinates
 func (tc *TriangleByCoordinates) Area() (area float64) {
-	pt1 := tc.PointOne
-	pt2 := tc.PointTwo
-	pt3 := tc.PointThree
+	pt1, pt2, pt3 := tc.PointOne, tc.PointTwo, tc.PointThree
 	area = math.Abs(pt1.X*(pt2.Y-pt3.Y)+pt2.X*(pt3.Y-pt1.Y)+pt3.X*(pt1.Y-pt2.Y)) / 2
 	return area
 }
