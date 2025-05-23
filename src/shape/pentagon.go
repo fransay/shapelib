@@ -4,7 +4,7 @@ import "math"
 
 // Pentagon type
 type Pentagon struct {
-	Side float64 // length of side
+	Side float64 // length of Side
 }
 
 // NewPentagon initialise a new pentagon object

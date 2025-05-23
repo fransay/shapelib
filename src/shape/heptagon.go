@@ -15,7 +15,7 @@ type Heptagon struct {
 // NewHeptagon initialises a new pentagon object
 func NewHeptagon(side float64) (*Heptagon, error) {
 	if side < 0 {
-		return nil, errors.New("can't create heptagon object, side length can't be les than zero")
+		return nil, errors.New("can't create heptagon object, Side length can't be les than zero")
 
 	}
 	return &Heptagon{Side: side}, nil
@@ -34,7 +34,7 @@ func (h *Heptagon) Perimeter() (perimeter float64) {
 	return perimeter
 }
 
-// Apothem returns the distance from the center of the hexagon to the midpoint on any side
+// Apothem returns the distance from the center of the hexagon to the midpoint on any Side
 func (h *Heptagon) Apothem() float64 {
 	return h.Side / (2 * math.Tan(math.Pi/7))
 }

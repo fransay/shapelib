@@ -23,7 +23,7 @@ func (o *Octagon) Perimeter() float64 {
 }
 
 // Apothem returns the distance from the center of octagon to
-// the midpoint on any side.
+// the midpoint on any Side.
 func (o *Octagon) Apothem() float64 {
 	return (o.Side / 2) * (math.Sqrt(2 + math.Sqrt(2)))
 }
