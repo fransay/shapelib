@@ -30,7 +30,7 @@ func (tc *TriangleByCoordinates) Center() (pt geom.Point2D) {
 	return pt
 }
 
-// Area returns the area of triangle given the coordinates
+// Area returns the computed area of triangle by coordinates.
 func (tc *TriangleByCoordinates) Area() (area float64) {
 	pt1, pt2, pt3 := tc.PointOne, tc.PointTwo, tc.PointThree
 	area = math.Abs(pt1.X*(pt2.Y-pt3.Y)+pt2.X*(pt3.Y-pt1.Y)+pt3.X*(pt1.Y-pt2.Y)) / 2

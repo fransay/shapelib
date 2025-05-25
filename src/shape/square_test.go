@@ -9,7 +9,7 @@ import (
 func TestSquare(t *testing.T) {
 	g := goblin.Goblin(t)
 	g.Describe("Test Square methods", func() {
-		square := Square{Length: 3.0}
+		square := NewSquare(3.0)
 		g.It("Area", func() {
 			area := square.Area()
 			g.Assert(area).Equal(9.0)

@@ -8,10 +8,10 @@ import (
 
 func TestRectangle(t *testing.T) {
 	g := goblin.Goblin(t)
-	var rectangle = Rectangle{Length: 15, Width: 20}
-	g.Describe("Test 25Rectangle", func() {
+	var rectangle = NewRectangle(15, 20)
+	g.Describe("Test Rectangle", func() {
 		g.It("Area By Length Width", func() {
-			areaByLengthWidth := rectangle.AreaByLengthWidth()
+			areaByLengthWidth := rectangle.Area()
 			g.Assert(areaByLengthWidth).Equal(300.0)
 		})
 

@@ -2,9 +2,7 @@ package shape
 
 import "math"
 
-const squareInteriorAngle = 90.0
-
-// Square defines an equal sided quadrilateral, i.e plane figure
+// Square defines an equal sided quadrilateral
 type Square struct {
 	Length float64
 }
@@ -38,7 +36,7 @@ func (s Square) CircumRadius() (circumRad float64) {
 	return circumRad
 }
 
-// InRadius returns the radius of the incircle
+// InRadius returns the radius of the in-circle
 func (s Square) InRadius() (inRadius float64) {
 	inRadius = s.Length / 2
 	return inRadius
@@ -66,5 +64,6 @@ func (s Square) IsQuad() bool {
 
 // GetSumOfInteriorAngles returns the sum of interior angles in a square
 func (s Square) GetSumOfInteriorAngles() float64 {
+	const squareInteriorAngle = 90.0
 	return squareInteriorAngle * 4
 }

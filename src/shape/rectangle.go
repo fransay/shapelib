@@ -4,6 +4,8 @@ import (
 	"math"
 )
 
+// Rectangle defines a quadrilateral with opposite sides
+// equal in length and all angle between the sides are 90 degrees
 type Rectangle struct {
 	Length float64
 	Width  float64
@@ -14,13 +16,13 @@ func NewRectangle(length, width float64) *Rectangle {
 	return &Rectangle{Length: length, Width: width}
 }
 
-// AreaByLengthWidth returns area of rectangle by Length and Width
-func (r *Rectangle) AreaByLengthWidth() (area float64) {
+// Area returns area of rectangle
+func (r Rectangle) Area() (area float64) {
 	return r.Length * r.Width
 }
 
 // AreaByDiagonal return area of rectangle given the diagonal
-func (r *Rectangle) AreaByDiagonal(diagonal float64) (area float64) {
+func (r Rectangle) AreaByDiagonal(diagonal float64) (area float64) {
 	if r.Length != 0 {
 		area = r.Length * math.Sqrt((diagonal*diagonal)-(r.Length*r.Length))
 	} else {
@@ -30,18 +32,13 @@ func (r *Rectangle) AreaByDiagonal(diagonal float64) (area float64) {
 }
 
 // Perimeter returns the perimeter of rectangle
-func (r *Rectangle) Perimeter() (perimeter float64) {
+func (r Rectangle) Perimeter() (perimeter float64) {
 	return 2 * (r.Length + r.Width)
 }
 
 // Diagonal returns the Length of a rectangle's diagonal
-func (r *Rectangle) Diagonal() (diagonal float64) {
+func (r Rectangle) Diagonal() (diagonal float64) {
 	return math.Sqrt((math.Pow(r.Width, 2)) + math.Pow(r.Width, 2))
-}
-
-// NewRectangle returns a new rectangle object
-func (r *Rectangle) NewRectangle(length, width float64) *Rectangle {
-	return &Rectangle{Length: length, Width: width}
 }
 
 // IsQuad is a placeholder method for defining the quadrilateral interface

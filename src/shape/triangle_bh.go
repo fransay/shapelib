@@ -1,11 +1,12 @@
 package shape
 
-// TriangleByBaseHeight
+// TriangleByBaseHeight defines a triangle by base and height
 type TriangleByBaseHeight struct {
 	Base   float64
 	Height float64
 }
 
+// NewTriangleByBaseHeight initialises a new TriangleByBaseHeight object
 func NewTriangleByBaseHeight(base, height float64) *TriangleByBaseHeight {
 	return &TriangleByBaseHeight{
 		Base:   base,

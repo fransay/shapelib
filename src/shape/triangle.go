@@ -19,7 +19,7 @@ type Triangle struct {
 	SideThree float64
 }
 
-// NewTriangle initialise a new triangle object
+// NewTriangle initialise a new Triangle object
 func NewTriangle(sideOne, sideTwo, sideThree float64) *Triangle {
 	return &Triangle{
 		SideOne:   sideOne,
@@ -28,7 +28,7 @@ func NewTriangle(sideOne, sideTwo, sideThree float64) *Triangle {
 	}
 }
 
-// Area returns the area of a triangle given the sides, using t
+// Area returns the computed area of triangle given sides
 func (t *Triangle) Area() (areaBySides float64) {
 	semiPerimeter := (t.SideOne + t.SideTwo + t.SideThree) / 2
 	areaBySides = math.Sqrt(
