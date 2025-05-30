@@ -89,7 +89,10 @@ func (c *Circle) CircleFromPoints(a, b, d geom.Point2D) (Circle, error) {
 
 	eqnAB := [3]float64{1.0, -2.0, lineConstantAB}
 	eqnBD := [3]float64{1.0, -2.0, lineConstantBD}
-	intersectedPoint := LineIntersectGivenEqn(eqnAB, eqnBD)
+	intersectedPoint, err := LineIntersectGivenEqn(eqnAB, eqnBD)
+	if err != nil {
+		return Circle{}, err
+	}
 	// radius -> intersectedPoint <-> any arbitrary points on the circle
 	radius := distance(intersectedPoint, a)
 	return Circle{radius, intersectedPoint}, nil
@@ -110,10 +113,18 @@ func gradient(pt1, pt2 geom.Point2D) float64 {
 
 // LineIntersectGivenEqn returns the intersectional point of a two line given their equations
 // equation of lines take this format, e.g y = 3x + 6 , which is represented in LineIntersectGivenEqn
-// arguments as [1,3,6], i.e. the coefficient of the variables in the equation of the line.
-func LineIntersectGivenEqn(lineOne, lineTwo [3]float64) (intersectPoint geom.Point2D) {
-	return *geom.NewPoint2D(1, 2) // todo: change this point and apply real implementation.
-} // todo: complete function
+// arguments as {}float64[1,3,6], i.e. the coefficient of the variables in the equation of the line.
+func LineIntersectGivenEqn(lineOne, lineTwo [3]float64) (intersectPoint geom.Point2D, err error) {
+	a1, b1, c1 := lineOne[0], lineOne[1], lineOne[2]
+	a2, b2, c2 := lineTwo[0], lineTwo[1], lineTwo[2]
+	det := a1*b2 - a2*b1
+	if det == 0 {
+		return geom.Point2D{}, errors.New("lines are parallel or coincident, no unique intersection point")
+	}
+	x := (b1*c2 - b2*c1) / det
+	y := (a2*c1 - a1*c2) / det
+	return *geom.NewPoint2D(int(x), int(y)), nil
+}
 
 // AsLineString returns a line string given a set of points that defines a circle
 func (c *Circle) AsLineString(points ...geom.Point2D) (geom.LineString, error) {

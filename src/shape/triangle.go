@@ -47,9 +47,13 @@ func (t *Triangle) Perimeter() (perimeter float64) {
 func (t *Triangle) Type() (triangleType string) {
 	if utils.CompareThreeFloat64(t.SideOne, t.SideTwo, t.SideThree) {
 		triangleType = Equilateral
-	} else if utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
+	} else if utils.CompareTwoFloat64(t.SideOne, t.SideTwo) ||
+		utils.CompareTwoFloat64(t.SideTwo, t.SideThree) ||
+		utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
 		triangleType = Isosceles
-	} else if !utils.CompareTwoFloat64(t.SideOne, t.SideTwo) || !utils.CompareTwoFloat64(t.SideTwo, t.SideThree) || !utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
+	} else if !utils.CompareTwoFloat64(t.SideOne, t.SideTwo) ||
+		!utils.CompareTwoFloat64(t.SideTwo, t.SideThree) ||
+		!utils.CompareTwoFloat64(t.SideOne, t.SideThree) {
 		triangleType = Scalene
 	}
 	return triangleType
