@@ -1,9 +1,10 @@
 package shape
 
 import (
+	"testing"
+
 	"github.com/franela/goblin"
 	"github.com/fransay/shapelib/src/geom"
-	"testing"
 )
 
 func TestTriangleByCoordinates(t *testing.T) {

@@ -1,8 +1,9 @@
 package shape
 
 import (
-	"github.com/franela/goblin"
 	"testing"
+
+	"github.com/franela/goblin"
 )
 
 func TestTriangleByBaseHeight(t *testing.T) {

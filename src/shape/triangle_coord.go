@@ -1,8 +1,9 @@
 package shape
 
 import (
-	"github.com/fransay/shapelib/src/geom"
 	"math"
+
+	"github.com/fransay/shapelib/src/geom"
 )
 
 // TriangleByCoordinates defines a triangle by coordinates.

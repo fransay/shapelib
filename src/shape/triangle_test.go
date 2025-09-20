@@ -1,9 +1,10 @@
 package shape
 
 import (
+	"testing"
+
 	"github.com/franela/goblin"
 	"github.com/fransay/shapelib/internal/utils"
-	"testing"
 )
 
 func TestTriangle(t *testing.T) {

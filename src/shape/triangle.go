@@ -14,9 +14,9 @@ const (
 
 // Triangle defines a triangle given all sides/length
 type Triangle struct {
-	SideOne   float64
-	SideTwo   float64
-	SideThree float64
+	SideOne   float64 // first side
+	SideTwo   float64 // second side
+	SideThree float64 // three side
 }
 
 // NewTriangle initialise a new Triangle object
@@ -40,6 +40,12 @@ func (t *Triangle) Area() (areaBySides float64) {
 // Perimeter returns the perimeter of a triangle
 func (t *Triangle) Perimeter() (perimeter float64) {
 	perimeter = t.SideOne + t.SideTwo + t.SideThree
+	return perimeter
+}
+
+// SemiPerimeter return the semi-perimeter of a triangle
+func (t *Triangle) SemiPerimeter() (perimeter float64) {
+	perimeter = (t.SideOne + t.SideTwo + t.SideThree) / 2
 	return perimeter
 }
 
