@@ -35,7 +35,7 @@ func conv(f float64) (fr []float64) {
 	return fr
 }
 
-// Distance return the distance between two latlongs based on haversine
+// Distance return the distance between two lat longs based on haversine
 func (l *LatLong) Distance(other LatLong) float64 {
 	var radiusOfEarth = 6371.0 // in km
 	var deltaLat = other.Latitude - l.Latitude

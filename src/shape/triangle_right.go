@@ -45,3 +45,10 @@ func NonMaxDistance(a, b, c, max float64) (float64, float64) {
 	}
 	return a, b
 }
+
+func (tri *TriangleRight) Perimeter() float64 {
+	distanceSideOne := distance(tri.PointOne, tri.PointTwo)
+	distanceSideTwo := distance(tri.PointTwo, tri.PointThree)
+	distanceSideThree := distance(tri.PointOne, tri.PointThree)
+	return distanceSideOne + distanceSideTwo + distanceSideThree
+}

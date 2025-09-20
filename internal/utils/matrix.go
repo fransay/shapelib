@@ -1,6 +1,6 @@
 package utils
 
-// MaxtrixDimension defines a dimensions of a matrix, as (row x column)
+// MatrixDimension defines a dimensions of a matrix, as (row x column)
 type MatrixDimension struct {
 	row []int
 	col []int
@@ -28,7 +28,7 @@ func NewMatrix(dim MatrixDimension, matType any) *Matrix {
 // transpose
 // conjugate transpose
 // inverse
-// pseudoo-inverse
+// pseudo-inverse
 // determinant
 // trace
 // rank
