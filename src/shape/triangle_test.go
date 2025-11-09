@@ -51,5 +51,4 @@ func TestTriangle(t *testing.T) {
 			g.Assert(isClose).Equal(true)
 		})
 	})
-
 }
